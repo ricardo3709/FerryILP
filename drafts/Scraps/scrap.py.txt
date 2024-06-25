@@ -1,0 +1,25 @@
+
+
+
+// An idea for (1a)
+// We need loaded from date the following: NumberOfLines and Dset[l]
+// We can get both from the variable numberOfFirstSailings
+
+
+NumberOfLines = len(numberOfFirstSailings)
+Lset = range(0, NumberOfLines)
+
+
+for l in Lset:
+	Dset[l] = range(0, numberOfFirstSailings[l])
+	model += pulp.lpSum(xVariable[l, d] for d in Dset(l)) == 1
+
+
+// An idea for (1b)
+
+for s in Zset:
+	for d in Dset(l[s]):
+		mode += pulp.lpSum(yVariable[v, l[s], h[s, d]] for v in Vset) == xVariable[l[s], d]
+
+
+
