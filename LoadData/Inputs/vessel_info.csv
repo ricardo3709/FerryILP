@@ -1,0 +1,28 @@
+﻿Vessel code,Description,F2,F3,F4,F5,F6,F7,F8,F9,F10,Replace with EV
+FF1,First Fleet Class Vessel 1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+FF2,First Fleet Class Vessel 2,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+FF3,First Fleet Class Vessel 3,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+FF4,First Fleet Class Vessel 4,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+FF5,First Fleet Class Vessel 5,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+FF6,First Fleet Class Vessel 6,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+FF7,First Fleet Class Vessel 7,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+FF8,First Fleet Class Vessel 8,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+EC1,Emerald Class 1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes
+EC2,Emerald Class 2,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes
+EC3,Emerald Class 3,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes
+EC4,Emerald Class 4,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes
+EC5,Emerald Class 5,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes
+RR1,River Run 1,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR2,River Run 2,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR3,River Run 3,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR4,River Run 4,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR5,River Run 5,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR6,River Run 6,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR7,River Run 7,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR8,River Run 8,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR9,River Run 9,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR10,River Run 10,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR11,River Run 11,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+RR12,River Run 12,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+24M,???,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No
+10M ,Mini catamaran,No,No,No,No,No,No,No,No,Yes,Yes
