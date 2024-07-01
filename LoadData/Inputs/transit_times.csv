@@ -3,8 +3,6 @@ F2,Circular Quay,Mosman,15
 F2,Mosman,Taronga Zoo,6
 F2,Taronga Zoo,Circular Quay,12
 F2,Taronga Zoo,Cremorne Point,2
-F3,Circular Quay,Parramatta,54
-F3,Parramatta,Circular Quay,54
 F3,Circular Quay,Drummoyne,14
 F3,Circular Quay,Cockatoo Is,11
 F3,Circular Quay,Barangaroo,10
@@ -23,8 +21,6 @@ F3,Kissing Point,Meadowbank,4
 F3,Meadowbank,Syd Olym Pk,2
 F3,Syd Olym Park,Rydalmere,10
 F3,Rydalmere,Parramatta,19
-F4,Circular Quay,Pyrmont Bay,13
-F4,Pyrmont Bay,Circular Quay,13
 F4,Circular Quay,Milsons Point,5
 F4,Milsons Point ,McMahons Point,2
 F4,McMahons Point,Balmain East,5
