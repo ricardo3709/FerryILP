@@ -1,0 +1,33 @@
+# 1 July updates notes
+
+1, Set B Bc and Bplus
+
+2, cal_fj(j) function
+
+3, sailing set Zset
+
+4, Constraint 1b
+
+5, location of the Lset, Vset, and Zset
+
+6, vessel_ino.csv --> new column Sv
+
+7， H_vj function
+
+8, f_j function
+
+9, G_j function
+
+10, constraint 1c
+
+11, constrain 1e
+
+12, cal_phi
+
+13, cal_R_l
+
+14, constriant 1f, 1g
+
+15,line_info --> new column rv
+
+16, transit_times --> OD matrix now, new OD,Circular quay to Paramatta is mannuly calculated by the time from CQ to Rydalmere + Rydalmere to Prmt, AND FOR from Circular Quay to Pyrmont Bay

@@ -1,0 +1,65 @@
+# The lines defined:
+
+### F2 
+
+line 1 Circular Quay --> Mosman (Outbound)
+
+line 2 Mosman --> Circular Quay (Inbound)
+
+line 3 Circular Quay --> Taronga Zoo (Outbound)
+
+line 4 Taronga Zoo --> Circular Quay (Inbound)
+
+### F3, assumption: Sublines are simplified, only consider the two lines below.
+
+line 5 Circular Quay --> Barangaroo --> Parramatta (Outbound)
+
+line 6 Parramatta --> Barangeroo --> Circular Quay (Inbound)
+
+### F4 
+
+line 7 Circular Quay --> Barangaroo --> Pyrmont Bay (Outbound)
+
+line 8 Pyrmont Bay --> Barangaroo --> Circular Quay (Inbound)
+
+### F5
+
+line 9 Circular Quay --> Circular Quay (Loop)
+
+### F6
+
+line 10 Circular Quay --> Mosman (Outbound)
+
+line 11 Mosman --> Circular Quay (Inbound)
+
+### F7
+
+line 12 Circular Quay --> Double Bay (Outbound)
+
+linev13 Double Bay --> Circular Quay (Inbound)
+
+### F8, assumption: Sublines are simplified.
+
+subline Circular Quay --> Woolwich (Outbound)
+
+subline Woolwich --> Circular Quay (Inbound)
+
+line 14 Circular Quay --> Cockatoo Is (Outbound)
+
+line 15 Cockatoo Is --> Circular Quay (Inbound)
+
+### F9, assumption: Sublines are simplified.
+
+subline  Circular Quay --> Rose Bay (Outbound)
+
+subline  Rose Bay --> Circular Quay (Inbound)
+
+line 16 Circular Quay --> Watsons Bay (Outbound)
+
+line 17 Watsons Bay --> Circular Quay (Inbound)
+
+### F10
+
+line 18 Barangaroo --> Blackwattle Bay (Outbound)
+
+line 19 CBlackwattle Bay --> Barangaroo (Inbound)
