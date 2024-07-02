@@ -1,4 +1,4 @@
-﻿Route_No,Line_No,O,I,T,dw_O,dw_I,dw_T,First_sailing,Time_underway_to_I,Time_underway_to_T,Line_duration,Min_operating_speed,rv
+﻿Route_No,Line_No,O,I,T,dw_O,dw_I,dw_T,First_sailing,Time_underway_to_I,Time_underway_to_T,Line_duration,Min_operating_speed,rj
 F2,1,Circular Quay,None,Mosman,4,None,7,6:48,None,15,22,13,0.041818
 F2,2,Mosman,None,Circular Quay,5,None,8,7:14,None,15,23,13,0.041818
 F2,3,Circular Quay,None,Taronga Zoo,4,None,10,8:50,None,12,22,13,0.041818
