@@ -1,0 +1,7 @@
+1, the OD matrix for rebalancing times
+2, cal_xi(j1,j2) function
+3, cal_xi0(v,j) function
+4, cal_phi(j,w) function
+5, cal_E(w,t) function
+6, constraint 4
+7, Cw function
