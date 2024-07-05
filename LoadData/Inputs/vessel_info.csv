@@ -1,28 +1,28 @@
-﻿Vessel code,Description,F2,F3,F4,F5,F6,F7,F8,F9,F10,Replace with EV,Sv
-FF1,First Fleet Class Vessel 1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-FF2,First Fleet Class Vessel 2,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-FF3,First Fleet Class Vessel 3,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-FF4,First Fleet Class Vessel 4,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-FF5,First Fleet Class Vessel 5,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-FF6,First Fleet Class Vessel 6,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-FF7,First Fleet Class Vessel 7,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-FF8,First Fleet Class Vessel 8,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-EC1,Emerald Class 1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay
-EC2,Emerald Class 2,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay
-EC3,Emerald Class 3,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Pyrmont Bay
-EC4,Emerald Class 4,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay
-EC5,Emerald Class 5,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay
-RR1,River Run 1,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Circular Quay
-RR2,River Run 2,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Rydalmere
-RR3,River Run 3,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Drummoyne
-RR4,River Run 4,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk
-RR5,River Run 5,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk
-RR6,River Run 6,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk
-RR7,River Run 7,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Cabarita
-RR8,River Run 8,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Chiswick
-RR9,River Run 9,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Barangaroo
-RR10,River Run 10,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk
-RR11,River Run 11,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk
-RR12,River Run 12,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Parramatta
-24M,???,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Circular Quay
-10M ,Mini catamaran,No,No,No,No,No,No,No,No,Yes,Yes,Barangaroo
+﻿Vessel code,Description,F2,F3,F4,F5,F6,F7,F8,F9,F10,Replace with EV,Sv,rv
+FF1,First Fleet Class Vessel 1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+FF2,First Fleet Class Vessel 2,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+FF3,First Fleet Class Vessel 3,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+FF4,First Fleet Class Vessel 4,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+FF5,First Fleet Class Vessel 5,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+FF6,First Fleet Class Vessel 6,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+FF7,First Fleet Class Vessel 7,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+FF8,First Fleet Class Vessel 8,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+EC1,Emerald Class 1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182
+EC2,Emerald Class 2,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.106363636
+EC3,Emerald Class 3,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.106363636
+EC4,Emerald Class 4,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.106363636
+EC5,Emerald Class 5,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.106363636
+RR1,River Run 1,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Circular Quay,0
+RR2,River Run 2,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Rydalmere,0
+RR3,River Run 3,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Drummoyne,0
+RR4,River Run 4,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk,0
+RR5,River Run 5,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk,0
+RR6,River Run 6,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk,0
+RR7,River Run 7,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Cabarita,0
+RR8,River Run 8,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Chiswick,0
+RR9,River Run 9,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Barangaroo,0
+RR10,River Run 10,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk,0
+RR11,River Run 11,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Syd Olym Pk,0
+RR12,River Run 12,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Parramatta,0
+24M,???,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Circular Quay,0
+10M ,Mini catamaran,No,No,No,No,No,No,No,No,Yes,Yes,Barangaroo,0.041818182
