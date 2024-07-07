@@ -2,3 +2,5 @@
 2, Revise function cal_phi(j,t)
 3, Objedction function 7,8,9,10
 4, .ipynb file name changed, parameters example --> ILP_Drafts
+
+5, function xi0(v,j) is updated.
