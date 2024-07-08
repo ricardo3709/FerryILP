@@ -23,21 +23,24 @@ print('All .csv files have been loaded successfully.')
 
 ## Other input required
 # Simulation time parameters
-initial_time_hour = int(input("Enter the initial hour (0-23): "))
-initial_time_minute = int(input("Enter the initial minute (0-59): "))
-initial_time = time(initial_time_hour, initial_time_minute)
+initial_time = time(5,0)
+period_length = 5 # min
+total_operation_hours = 24 # hours
 
-period_length = int(input("Enter the period length in minutes: "))
-total_operation_hours = int(input("Enter the total operation hours: "))
+# nc, Minimum num of crew break
+nc = 5 
 
-nc = int(input("Enter the minimum number of crew breaks: "))
+# Dc, Crew break duration (fixed)
+Dc = 60
 
-Dc = int(input("Enter the crew break duration in minutes: "))
-
-Tc = int(input("Enter the maximum separation time for crew breaks in minutes: "))
+# Tc, Maximum seperation time for crew breakings
+Tc = 4*60
 
 # rv+, charging rate
 rv_plus = 2100 # kW
+
+# rv, discharging rate for revalancing, based on max speed of the vessel
+vessel_df['rv']
 
 # pc. Plugging/Unplugging time
 pc = 2 # min
