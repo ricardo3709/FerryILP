@@ -902,6 +902,8 @@ x = {}
 for l in Lset:
     for d in Dset[l]:
         x[l, d] = model.addVar(vtype=GRB.BINARY, name=f"x_{l}_{d}")
+print('Variable x is ready.')
+
 
 # variable y[v, j, t]
 y = {}
@@ -909,12 +911,14 @@ for v in Vset:
     for j in Jset:
         for t in Tset:
             y[v, j, t] = model.addVar(vtype=GRB.BINARY, name=f"y_{v}_{j}_{t}")
+print('Variable y is ready.')
 
 # variable Q[v, t]
 Q = {}
 for v in Vset: 
     for t in Tset:
         Q[v, t] = model.addVar(vtype=GRB.CONTINUOUS, lb=0.0, ub=1.0, name=f"Q_{v}_{t}")
+print('Variable Q is ready.')
 
 # variable z[j, w]
 z = {}
@@ -923,6 +927,7 @@ for j in Jset:
     C_j = cal_C(j)
     for w in C_j: 
         z[w,j] = model.addVar(vtype=GRB.BINARY, name=f"z_{w}_{j}")
+print('Variable z is ready.')
 
 # variable Z[l, w, t]
 Z = {}
@@ -932,6 +937,7 @@ for l in Lset:
     for w in C_lS:
         for t in Tset:
             Z[l, w, t] = model.addVar(vtype=GRB.BINARY, name=f"Z_{l}_{w}_{t}")
+print('Variable Z is ready.')
 
 # variable Z'[l, w, t]
 Z_prime = {}
@@ -941,9 +947,7 @@ for l in Lset:
     for w in C_lS:
         for t in Tset:
             Z_prime[l, w, t] = model.addVar(vtype=GRB.BINARY, name=f"Z_prime_{l}_{w}_{t}")
-
-print('All variables are ready.')
-
+print("Variable Z' is ready.")
 
 
 ## -------------------- Constraints --------------------
