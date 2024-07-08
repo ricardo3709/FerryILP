@@ -896,6 +896,7 @@ print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')
 
 # Create model
 model = gp.Model("Ferry Timetabling")
+model.setParam('OutputFlag', 1)
 print('model created!\n')
 
 print('Start loading variable!')
@@ -1156,8 +1157,9 @@ model.setObjective(rebalancing_time, GRB.MINIMIZE)
 print('Model is ready to run now.')
 
 ## -------------------- Optimization --------------------
+print('Starting optimization...')
 model.optimize()
-
+print('Optimization call completed.')
 
 
 def save_variable_results(var_dict, filename):
