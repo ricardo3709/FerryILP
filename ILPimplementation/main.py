@@ -1130,3 +1130,48 @@ print('Model is ready to run now.')
 
 ## -------------------- Optimization --------------------
 model.optimize()
+
+# Check if the model has been solved
+if model.status == GRB.OPTIMAL:
+    print("Optimization was successful. Saving results...")
+    # Example: Saving variable x values
+    x_results = {k: x[k].X for k in x.keys() if x[k].X > 1e-6}  # Only save non-zero values
+    x_df = pd.DataFrame(list(x_results.items()), columns=['Variable', 'Value'])
+    x_df.to_csv('x_variable_results.csv', index=False)
+    
+    # Similarly for other variables if needed
+    # Example for y
+    y_results = {k: y[k].X for k in y.keys() if y[k].X > 1e-6}
+    y_df = pd.DataFrame(list(y_results.items()), columns=['Variable', 'Value'])
+    y_df.to_csv('y_variable_results.csv', index=False)
+    
+    print("Results saved to CSV files.")
+else:
+    print("Optimization did not reach optimality.")
+
+# Adding progress prints
+def print_progress(iteration, total, prefix='', suffix='', decimals=1, bar_length=100):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        bar_length  - Optional  : character length of bar (Int)
+    """
+    str_format = "{0:." + str(decimals) + "f}"
+    percents = str_format.format(100 * (iteration / float(total)))
+    filled_length = int(round(bar_length * iteration / float(total)))
+    bar = '█' * filled_length + '-' * (bar_length - filled_length)
+
+    print(f'\r{prefix} |{bar}| {percents}% {suffix}', end='\r')
+    if iteration == total:
+        print()
+
+# Usage example in a loop
+total_iterations = len(Tset)
+for i, t in enumerate(Tset, 1):
+    print_progress(i, total_iterations, prefix = 'Progress:', suffix = 'Complete', bar_length = 50)
+    # your code here, e.g., adding constraints
