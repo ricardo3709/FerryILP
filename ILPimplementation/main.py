@@ -1151,23 +1151,28 @@ print('Model is ready to run now.')
 ## -------------------- Optimization --------------------
 model.optimize()
 
+
+
+def save_variable_results(var_dict, filename):
+    results = {k: var_dict[k].X for k in var_dict.keys()}  # Save all values
+    df = pd.DataFrame(list(results.items()), columns=['Variable', 'Value'])
+    df.to_csv(filename, index=False)
+    print(f"Results saved to {filename}.")
+
 # Check if the model has been solved
 if model.status == GRB.OPTIMAL:
     print("Optimization was successful. Saving results...")
-    # Example: Saving variable x values
-    x_results = {k: x[k].X for k in x.keys() if x[k].X > 1e-6}  # Only save non-zero values
-    x_df = pd.DataFrame(list(x_results.items()), columns=['Variable', 'Value'])
-    x_df.to_csv('x_variable_results.csv', index=False)
     
-    # Similarly for other variables if needed
-    # Example for y
-    y_results = {k: y[k].X for k in y.keys() if y[k].X > 1e-6}
-    y_df = pd.DataFrame(list(y_results.items()), columns=['Variable', 'Value'])
-    y_df.to_csv('y_variable_results.csv', index=False)
-    
-    print("Results saved to CSV files.")
+    # Save results for different variables
+    save_variable_results(x, 'x_variable_results.csv')
+    save_variable_results(y, 'y_variable_results.csv')
+    save_variable_results(Q, 'Q_variable_results.csv')
+    save_variable_results(z, 'z_variable_results.csv')
+    save_variable_results(Z, 'Z_variable_results.csv')
+    save_variable_results(Z_prime, 'Z_prime_variable_results.csv')
 else:
     print("Optimization did not reach optimality.")
+
 
 # Adding progress prints
 def print_progress(iteration, total, prefix='', suffix='', decimals=1, bar_length=100):
