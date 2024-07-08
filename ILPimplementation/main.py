@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import time
 import gurobipy as gp
 from gurobipy import GRB
+import numpy as np
 
 ## -------------------- Load csv files --------------------
 # Station and wharves dataframe
@@ -165,7 +166,7 @@ def cal_Rl(l):
     try:
         route_data = line_df[line_df['Line_No'] == l][['O', 'I', 'T']].iloc[0]
         # Filter out NaN values and convert to list
-        R_l = [station for station in route_data if not pd.isna(station)]
+        R_l = [station for station in route_data if station not in [None, '', ' ', np.nan, np.NaN]]
         return R_l
     except IndexError:
         raise ValueError(f"No data available for line number {l}.")
