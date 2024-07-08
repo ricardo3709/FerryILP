@@ -895,8 +895,8 @@ print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')
 ## -------------------- Varibles --------------------
 print('start creating model\n')
 # Create model
-model = gp.Model("Ferry Timetabling Project")
-# model.setParam('OutputFlag', 1)
+model = gp.Model("Ferry ILP")
+
 print('model created!\n')
 
 print('Start loading variable!')
