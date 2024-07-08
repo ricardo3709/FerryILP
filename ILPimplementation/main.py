@@ -554,6 +554,7 @@ def cal_C(j):
         C_j = []
         if isinstance(j, int) and j in Lset:
             R_l = cal_Rl(j)  # stations visited by the line
+            print(R_l)
             for S in R_l:
                 C_lS = cal_C_lS(S)
                 C_j.extend(C_lS)  # Use extend to avoid nested lists
