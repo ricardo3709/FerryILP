@@ -19,7 +19,7 @@ vessel_df = pd.read_csv('ILPimplementation/vessel_info.csv')
 # charging berths dataframe
 charging_berth = pd.read_csv('ILPimplementation/charging_berths.csv')
 
-print('All .csv files have been loaded successfully.')
+print('All .csv files have been loaded successfully.\n')
 
 
 ## Other input required
@@ -888,7 +888,7 @@ def cal_E(w, t):
 D_l = [cal_D(l) for l in Lset]
 Dset = {l: d for l, d in zip(Lset, D_l)}
 
-print('Vset, Wset, Tset, Jset, and Dset have been defined.')
+print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')
 
 
 
@@ -897,6 +897,7 @@ print('Vset, Wset, Tset, Jset, and Dset have been defined.')
 
 # Create model
 model = gp.Model("Ferry Timetabling")
+print('model created!\n')
 
 # variable x[l, d]
 x = {}
@@ -948,7 +949,7 @@ for l in Lset:
     for w in C_lS:
         for t in Tset:
             Z_prime[l, w, t] = model.addVar(vtype=GRB.BINARY, name=f"Z_prime_{l}_{w}_{t}")
-print("Variable Z' is ready.")
+print("Variable Z' is ready.\n")
 
 
 ## -------------------- Constraints --------------------
@@ -1124,7 +1125,7 @@ print('constraint 6a ok.')
 for v in Vset:
     model.addConstr(sum(y[v, j, t + t_prime] for j in Bc for t_prime in range(1, Tc//period_length+1) for t in Tset if t < (Tset[-1] - (Tc//period_length+1))) >= 1, name=f"max_distance_pauses_v{v}_t{t}")
 print('constraint 6b ok.')
-print('All constraintrs are ready.')
+print('All constraintrs are ready.\n')
 
 
 ## -------------------- Objective Functions --------------------
