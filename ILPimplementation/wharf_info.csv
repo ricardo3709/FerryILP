@@ -1,0 +1,51 @@
+﻿Station,Abbrev_Name,Wharf_No,Loading_berths,Non_loading_berths,Crew_pause
+Circular Quay,CQ,CQ1,1,1,Yes
+Circular Quay,CQ,CQ2,1,1,Yes
+Circular Quay,CQ,CQ3,1,1,Yes
+Circular Quay,CQ,CQ4,1,1,Yes
+Circular Quay,CQ,CQ5,1,1,Yes
+Parramatta,Pm,Pm1,1,0,No
+Rydalmere,Ryd,Ryd1,1,0,No
+Sydney Olympic Park,SOP,SOP1,2,0,No
+Cabarita,Cab,Cab1,2,0,No
+Chiswick,Chs,Chs1,1,0,No
+Drummoyne,Drm,Drm1,1,0,No
+Cockatoo Island,CI,CI1,2,0,No
+Woolwich,Wl,Wl1,1,0,No
+Barangaroo,Bar,Bar1,1,1,Yes
+Barangaroo,Bar,Bar2,1,1,Yes
+Barangaroo,Bar,Bar4,1,1,Yes
+Barangaroo,Bar,Bar5,1,1,Yes
+Pyrmont Bay,PB,PB1,1,0,No
+Mosman,Mos,Mos1,2,0,No
+Taronga Zoo,TZ,TZ1,2,0,No
+Watsons Bay,WB,WB1,1,0,No
+Rose Bay,RB,RB1,1,0,No
+Double Bay,DB,DB1,1,0,No
+Balmain Shipyard,BSY,BSY1,0,2,Yes
+Balmain Shipyard,BSY,BSY2,0,2,Yes
+Balmain Shipyard,BSY,BSY3,0,2,Yes
+Balmain Shipyard,BSY,BSY4,0,2,Yes
+Balmain Shipyard,BSY,BSY5,0,2,Yes
+Balmain Shipyard,BSY,BSY6,0,2,Yes
+Blackwattle Bay,BWB,BWB1,1,0,No
+Pyrmont Bay,PB,PB1,1,0,No
+Balmain East,BE,BE1,2,0,No
+McMahons Point,McM,McM1,2,0,No
+Milsons Point,Mls,Mls1,2,0,No
+Huntleys Point,HP,HP1,1,0,No
+Abbotsford,Ab,Ab1,1,0,No
+Kissing Point,KP,KP1,1,0,No
+Meadowbank,Mb,Mb1,1,0,No
+Kirribilli,Kir,Kir1,1,0,No
+North Sydney,NS,NS1,1,0,No
+Neutral Bay,NB,NB1,1,0,No
+Kurraba Point,Kur,Kur1,1,0,No
+Cremorne Point,CP,CP1,1,0,No
+South Mosman,SM,SM1,1,0,No
+Old Cremorne,OC,OC1,1,0,No
+Darling Point,DP,DP1,1,0,No
+Garden Island,GI,GI1,1,0,No
+Balmain,Bal,Bal1,1,0,No
+Birchgrove,Bch,Bch1,1,0,No
+Greenwich Point,GP,GP1,1,0,No
