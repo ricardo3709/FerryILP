@@ -53,7 +53,7 @@ pc = 2 # min
 Lset = line_df['Line_No'].unique().tolist()
 
 # Zset: Set of Sailing 
-nl_ls= [len(headway_df[f'h{l}'].dropna().tolist())+1 for l in Lset]
+nl_ls= [len(headway_df[f"h{l}"].dropna().tolist())+1 for l in Lset]
 s_ls = [list(range(1,nl+1)) for nl in nl_ls]
 Zset = []
 
