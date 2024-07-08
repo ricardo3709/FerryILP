@@ -192,6 +192,7 @@ def cal_C_lS(S):
     
     # Check if station exists in DataFrame
     if S not in wharf_df['Station'].values:
+        
         raise ValueError(f"Station {S} is not found in the DataFrame.")
     
     try:
@@ -896,7 +897,6 @@ print('Vset, Wset, Tset, Jset, and Dset have been defined.')
 # Create model
 model = gp.Model("Ferry Timetabling")
 
-
 # variable x[l, d]
 x = {}
 for l in Lset:
@@ -919,6 +919,7 @@ for v in Vset:
 # variable z[j, w]
 z = {}
 for j in Jset:
+    print(j)
     C_j = cal_C(j)
     for w in C_j: 
         z[w,j] = model.addVar(vtype=GRB.BINARY, name=f"z_{w}_{j}")
