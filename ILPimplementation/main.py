@@ -893,7 +893,7 @@ print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')
 
 
 ## -------------------- Varibles --------------------
-print('start creat model\n')
+print('start creating model\n')
 # Create model
 model = gp.Model("Ferry Timetabling Project")
 # model.setParam('OutputFlag', 1)
