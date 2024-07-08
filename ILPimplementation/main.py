@@ -5,18 +5,18 @@ from gurobipy import GRB
 
 ## -------------------- Load csv files --------------------
 # Station and wharves dataframe
-wharf_df = pd.read_csv('wharf_info.csv')
+wharf_df = pd.read_csv('ILPimplementation/wharf_info.csv')
 # lines dataframe
-line_df = pd.read_csv('line_info.csv')
+line_df = pd.read_csv('ILPimplementation/line_info.csv')
 line_df['First_sailing'] = pd.to_datetime(line_df['First_sailing'], format='%H:%M')
 # Wharf to wharf transit time dataframe
-tt_df = pd.read_csv('rebalancing_times.csv',index_col='From/To')
+tt_df = pd.read_csv('ILPimplementation/rebalancing_times.csv',index_col='From/To')
 # Headways dataframe
-headway_df = pd.read_csv('headways.csv')
+headway_df = pd.read_csv('ILPimplementation/headways.csv')
 # vessels
-vessel_df = pd.read_csv('vessel_info.csv')
+vessel_df = pd.read_csv('ILPimplementation/vessel_info.csv')
 # charging berths dataframe
-charging_berth = pd.read_csv('charging_berths.csv')
+charging_berth = pd.read_csv('ILPimplementation/charging_berths.csv')
 
 print('All .csv files have been loaded successfully.')
 
@@ -199,7 +199,7 @@ def cal_C_lS(S):
         raise ValueError("DataFrame must include 'Station' and 'Wharf_No' columns.")
     
 
- def cal_Sv(v):
+def cal_Sv(v):
     """
     Retrieve the starting station for a given vessel identified by its vessel code.
     
@@ -942,12 +942,12 @@ print('All variables are ready.')
 
 
 
-
 ## -------------------- Constraints --------------------
 
 # Constraint 1a
 for l in Lset:
     model.addConstr(sum(x[l, d] for d in Dset[l]) == 1, name=f"departure_time_constraint_{l}")
+print('constraint 1a ok.')
 
 # Constraint 1b
 for sailing in Zset:  
@@ -959,6 +959,7 @@ for sailing in Zset:
         t = h_sd
         # print(f'If the first sailing start at {d}, the {s}th sailing departure time is {t}')
         model.addConstr(sum(y[v, l, t] for v in Vset) == x[l, d],name=f"assign_vessel_s{s}_d{d}")
+print('constraint 1b ok.')
 
 # Constraint 1c
 for v in Vset:
@@ -966,6 +967,7 @@ for v in Vset:
         H_vj = cal_H(v,j)
         for t in [t for t in Tset if t not in H_vj]:
             y[v, j, t].ub = 0  # Set upper bound of y[v,j,t] to 0
+print('constraint 1c ok.')
 
 # Constraint 1d
 for t in Tset:
@@ -973,6 +975,7 @@ for t in Tset:
         li_v = cal_li(v)
         for j in [l for l in Lset if l not in li_v]:
             y[v, j, t].ub = 0  # Set upper bound of y[v,j,t] to 0
+print('constraint 1d ok.')
 
 # Constraint 1e
 for v in Vset:   
@@ -981,11 +984,13 @@ for v in Vset:
         t = xi0_v_j
         if t in Tset:
             model.addConstr(sum(y[v, j, t] for j in Jset) == 1,name=f"assign_task_j{j}_t{t}")
+print('constraint 1e ok.')
 
 # Constraint 1f 
 for v in Vset:
     for t in Tset:
         model.addConstr(sum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t)) <= 1,name=f"task_overlap_v{v}_t{t}")
+print('constraint 1f ok.')
 
 # Constraint 1g
 for l in Lset:
@@ -994,6 +999,7 @@ for l in Lset:
     for S in [station for station in R_l if station != A_l]:
         C_lS = cal_C_lS(S)
         model.addConstr(sum(z[w, l] for w in C_lS) == 1,name=f"select_one_wharf_{l}_station_{S}")
+print('constraint 1g ok.')
 
 # Constraint 1h
 for l in Lset:
@@ -1003,6 +1009,7 @@ for l in Lset:
             A_l = cal_Rl(l)[-1] # last station
             C_lS = cal_C_lS(A_l) # available wharves at last station
             model.addConstr(sum(Z[l, w, t] for w in C_lS) == sum(y[v, l, t - F_l] for v in Vset),name=f"last_wharf_use_{l}_t{t}")
+print('constraint 1h ok.')
 
 # Constraint 1i
 for l in Lset:
@@ -1013,6 +1020,7 @@ for l in Lset:
         for t in Tset:
             if t > muF_l: 
                 model.addConstr(Z_prime[l, w, t] == sum(Z[l, w, t - k] for k in range(muF_l)), name=f"wharf_occupation_{l}_{w}_t{t}")
+print('constraint 1i ok.')
 
 # Constraint 1j
 for v in Vset:
@@ -1022,6 +1030,7 @@ for v in Vset:
                 phi_w = f'phi_{w}'
                 # j = w
                 model.addConstr(y[v, w, t] <= y[v, w, t - 1] + y[v, phi_w, t - 1], name=f"full_period_charging_start_v{v}_w{w}_t{t}")
+print('constraint 1j ok.')
 
 # Constraint 1k
 for v in Vset:
@@ -1031,6 +1040,7 @@ for v in Vset:
                 phi_w = f'phi_{w}'
                 # j = w
                 model.addConstr(y[v, w, t] <= y[v, w, t + 1] + y[v, phi_w, t + 1], name=f"full_period_charging_2_v{v}_w{w}_t{t}")
+print('constraint 1k ok.')
 
 # Constraint 2 
 # This constraint requires a very long time to run.
@@ -1040,6 +1050,7 @@ for v in Vset:
             print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
             if cal_taskF(j, t) != []:
                 model.addConstr(sum(y[v, j_prime, t + cal_mu(j) + cal_xi(j, j_prime)] for j_prime in cal_taskF(j, t)) >= y[v, j, t], name=f"follow_task_v{v}_j{j}_t{t}")
+print('constraint 2 ok.')
 
 # Constraint 3
 # This constraint requires a very long time to run.
@@ -1050,6 +1061,7 @@ for v in Vset:
                 for t_prime in range(t + cal_mu(j), t + cal_mu(j) + cal_xi(j, j_prime)):
                     print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
                     model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1, name=f"no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
+print('constraint 3 ok.')
 
 # Constraint 4
 # This constraint requires a very long time to run.
@@ -1061,15 +1073,18 @@ for w in Wset:
         # Sum over Z_prime with key check
         sum_Z_prime = sum(Z_prime[l, w, t] for l in Lset if (l, w, t) in Z_prime) 
         model.addConstr(sum_yz + sum_Z_prime <= cal_Cw(w), name=f"capacity_constraint_w{w}_t{t}")
+print('constraint 4 ok.')
 
 # Constraint 5a, 5b
 for v in Vset:
     for t in Tset:
         model.addConstr(Q[v, t] >= 0, name=f"battery_non_negative_v{v}_t{t}") 
+print('constraint 5a ok.')
 
 for v in Vset:
     for t in Tset:
         model.addConstr(Q[v, t] <= 1, name=f"battery_max_capacity_v{v}_t{t}") 
+print('constraint 5b ok.')
 
 # Constraint 5c
 # This constraint requires a very long time to run.
@@ -1089,15 +1104,17 @@ for v in Vset:
                             - rv * (1 - sum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t))) 
                             >= Q[v, t], 
                             name=f"battery_update_v{v}_t{t}")
-            
+print('constraint 5c ok.')
+
 # Constraint 6a
 for v in Vset:
     model.addConstr(sum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_v{v}")
+print('constraint 6a ok.')
 
 # Constraint 6b
 for v in Vset:
     model.addConstr(sum(y[v, j, t + t_prime] for j in Bc for t_prime in range(1, Tc//period_length+1) for t in Tset if t < (Tset[-1] - (Tc//period_length+1))) >= 1, name=f"max_distance_pauses_v{v}_t{t}")
-
+print('constraint 6b ok.')
 print('All constraintrs are ready.')
 
 
