@@ -892,13 +892,13 @@ print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')
 
 
 
-
 ## -------------------- Varibles --------------------
 
 # Create model
 model = gp.Model("Ferry Timetabling")
 print('model created!\n')
 
+print('Start loading variable!')
 # variable x[l, d]
 x = {}
 for l in Lset:
