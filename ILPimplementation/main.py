@@ -166,7 +166,7 @@ def cal_Rl(l):
     try:
         route_data = line_df[line_df['Line_No'] == l][['O', 'I', 'T']].iloc[0]
         # Filter out NaN values and convert to list
-        R_l = [station for station in route_data if station not in [None, '', ' ', np.nan, np.NaN]]
+        R_l = [station for station in route_data if station not in [ None,'None', '', ' ', np.nan, np.NaN]]
         return R_l
     except IndexError:
         raise ValueError(f"No data available for line number {l}.")
@@ -193,7 +193,6 @@ def cal_C_lS(S):
     
     # Check if station exists in DataFrame
     if S not in wharf_df['Station'].values:
-        
         raise ValueError(f"Station {S} is not found in the DataFrame.")
     
     try:
@@ -555,7 +554,7 @@ def cal_C(j):
         C_j = []
         if isinstance(j, int) and j in Lset:
             R_l = cal_Rl(j)  # stations visited by the line
-            print(R_l)
+            # print(R_l)
             for S in R_l:
                 C_lS = cal_C_lS(S)
                 C_j.extend(C_lS)  # Use extend to avoid nested lists
