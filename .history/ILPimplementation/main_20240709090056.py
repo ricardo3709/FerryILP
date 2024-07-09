@@ -1071,7 +1071,7 @@ for v in tqdm(Vset, desc='Constraint 3'):
         for t in Tset:
             for j_prime in cal_taskF(j, t):
                 for t_prime in range(t + cal_mu(j), t + cal_mu(j) + cal_xi(j, j_prime)):
-                    # print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
+                    print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
                     model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1, name=f"no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
 # print('constraint 3 ok.')
 

@@ -999,32 +999,32 @@ for v in tqdm(Vset, desc='Constraint 1e'):
 # print('constraint 1e ok.')
 
 # Constraint 1f 
-for v in tqdm(Vset, desc='Constraint 1f'):
+for v in tqdm(Vset):
     for t in Tset:
         model.addConstr(sum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t)) <= 1,name=f"task_overlap_v{v}_t{t}")
-# print('constraint 1f ok.')
+print('constraint 1f ok.')
 
 # Constraint 1g
-for l in tqdm(Lset, desc='Constraint 1g'):
+for l in Lset:
     R_l = cal_Rl(l)
     A_l = R_l[-1] # last station
     for S in [station for station in R_l if station != A_l]:
         C_lS = cal_C_lS(S)
         model.addConstr(sum(z[w, l] for w in C_lS) == 1,name=f"select_one_wharf_{l}_station_{S}")
-# print('constraint 1g ok.')
+print('constraint 1g ok.')
 
 # Constraint 1h
-for l in tqdm(Lset, desc='Constraint 1h'):
+for l in Lset:
     F_l = cal_F(l)
     for t in Tset:
         if t > F_l:
             A_l = cal_Rl(l)[-1] # last station
             C_lS = cal_C_lS(A_l) # available wharves at last station
             model.addConstr(sum(Z[l, w, t] for w in C_lS) == sum(y[v, l, t - F_l] for v in Vset),name=f"last_wharf_use_{l}_t{t}")
-# print('constraint 1h ok.')
+print('constraint 1h ok.')
 
 # Constraint 1i
-for l in tqdm(Lset, desc='Constraint 1i'):
+for l in Lset:
     A_l = cal_Rl(l)[-1]
     C_lS = cal_C_lS(A_l)
     for w in C_lS:
@@ -1032,52 +1032,52 @@ for l in tqdm(Lset, desc='Constraint 1i'):
         for t in Tset:
             if t > muF_l: 
                 model.addConstr(Z_prime[l, w, t] == sum(Z[l, w, t - k] for k in range(muF_l)), name=f"wharf_occupation_{l}_{w}_t{t}")
-# print('constraint 1i ok.')
+print('constraint 1i ok.')
 
 # Constraint 1j
-for v in tqdm(Vset, desc='Constraint 1j'):
+for v in Vset:
     for w in Bplus:
         for t in Tset: 
             if t > 1:
                 phi_w = f'phi_{w}'
                 # j = w
                 model.addConstr(y[v, w, t] <= y[v, w, t - 1] + y[v, phi_w, t - 1], name=f"full_period_charging_start_v{v}_w{w}_t{t}")
-# print('constraint 1j ok.')
+print('constraint 1j ok.')
 
 # Constraint 1k
-for v in tqdm(Vset, desc='Constraint 1k'):
+for v in Vset:
     for w in Bplus:
         for t in Tset: 
             if t <= Tset[-1]-1:
                 phi_w = f'phi_{w}'
                 # j = w
                 model.addConstr(y[v, w, t] <= y[v, w, t + 1] + y[v, phi_w, t + 1], name=f"full_period_charging_2_v{v}_w{w}_t{t}")
-# print('constraint 1k ok.')
+print('constraint 1k ok.')
 
 # Constraint 2 
 # This constraint requires a very long time to run.
-for v in tqdm(Vset, desc='Constraint 2'):
+for v in Vset:
     for j in Jset:
         for t in Tset:
-            # print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
+            print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
             if cal_taskF(j, t) != []:
                 model.addConstr(sum(y[v, j_prime, t + cal_mu(j) + cal_xi(j, j_prime)] for j_prime in cal_taskF(j, t)) >= y[v, j, t], name=f"follow_task_v{v}_j{j}_t{t}")
-# print('constraint 2 ok.')
+print('constraint 2 ok.')
 
 # Constraint 3
 # This constraint requires a very long time to run.
-for v in tqdm(Vset, desc='Constraint 3'):
+for v in Vset:
     for j in Jset:
         for t in Tset:
             for j_prime in cal_taskF(j, t):
                 for t_prime in range(t + cal_mu(j), t + cal_mu(j) + cal_xi(j, j_prime)):
-                    # print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
+                    print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
                     model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1, name=f"no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
-# print('constraint 3 ok.')
+print('constraint 3 ok.')
 
 # Constraint 4
 # This constraint requires a very long time to run.
-for w in tqdm(Wset, desc='Constraint 4'):
+for w in Wset:
     for t in Tset:
         print(w, t)
         # Sum over y and z
@@ -1085,22 +1085,22 @@ for w in tqdm(Wset, desc='Constraint 4'):
         # Sum over Z_prime with key check
         sum_Z_prime = sum(Z_prime[l, w, t] for l in Lset if (l, w, t) in Z_prime) 
         model.addConstr(sum_yz + sum_Z_prime <= cal_Cw(w), name=f"capacity_constraint_w{w}_t{t}")
-# print('constraint 4 ok.')
+print('constraint 4 ok.')
 
 # Constraint 5a, 5b
-for v in tqdm(Vset, desc='Constraint 5a'):
+for v in Vset:
     for t in Tset:
         model.addConstr(Q[v, t] >= 0, name=f"battery_non_negative_v{v}_t{t}") 
-# print('constraint 5a ok.')
+print('constraint 5a ok.')
 
-for v in tqdm(Vset, desc='Constraint 5b'):
+for v in Vset:
     for t in Tset:
         model.addConstr(Q[v, t] <= 1, name=f"battery_max_capacity_v{v}_t{t}") 
-# print('constraint 5b ok.')
+print('constraint 5b ok.')
 
 # Constraint 5c
 # This constraint requires a very long time to run.
-for v in tqdm(Vset, desc='Constraint 5c'):
+for v in Vset:
     for t in Tset:
         rv = vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc()[0]
         if t == 1:
@@ -1116,17 +1116,17 @@ for v in tqdm(Vset, desc='Constraint 5c'):
                             - rv * (1 - sum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t))) 
                             >= Q[v, t], 
                             name=f"battery_update_v{v}_t{t}")
-# print('constraint 5c ok.')
+print('constraint 5c ok.')
 
 # Constraint 6a
-for v in tqdm(Vset, desc='Constraint 6a'):
+for v in Vset:
     model.addConstr(sum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_v{v}")
-# print('constraint 6a ok.')
+print('constraint 6a ok.')
 
 # Constraint 6b
-for v in tqdm(Vset, desc='Constraint 6b'):
+for v in Vset:
     model.addConstr(sum(y[v, j, t + t_prime] for j in Bc for t_prime in range(1, Tc//period_length+1) for t in Tset if t < (Tset[-1] - (Tc//period_length+1))) >= 1, name=f"max_distance_pauses_v{v}_t{t}")
-# print('constraint 6b ok.')
+print('constraint 6b ok.')
 print('All constraintrs are ready.\n')
 
 

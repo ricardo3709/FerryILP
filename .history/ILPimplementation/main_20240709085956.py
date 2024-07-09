@@ -1059,10 +1059,10 @@ for v in tqdm(Vset, desc='Constraint 1k'):
 for v in tqdm(Vset, desc='Constraint 2'):
     for j in Jset:
         for t in Tset:
-            # print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
+            print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
             if cal_taskF(j, t) != []:
                 model.addConstr(sum(y[v, j_prime, t + cal_mu(j) + cal_xi(j, j_prime)] for j_prime in cal_taskF(j, t)) >= y[v, j, t], name=f"follow_task_v{v}_j{j}_t{t}")
-# print('constraint 2 ok.')
+print('constraint 2 ok.')
 
 # Constraint 3
 # This constraint requires a very long time to run.
@@ -1071,7 +1071,7 @@ for v in tqdm(Vset, desc='Constraint 3'):
         for t in Tset:
             for j_prime in cal_taskF(j, t):
                 for t_prime in range(t + cal_mu(j), t + cal_mu(j) + cal_xi(j, j_prime)):
-                    # print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
+                    print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
                     model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1, name=f"no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
 # print('constraint 3 ok.')
 

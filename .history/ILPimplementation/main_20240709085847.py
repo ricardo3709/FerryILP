@@ -1059,10 +1059,10 @@ for v in tqdm(Vset, desc='Constraint 1k'):
 for v in tqdm(Vset, desc='Constraint 2'):
     for j in Jset:
         for t in Tset:
-            # print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
+            print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
             if cal_taskF(j, t) != []:
                 model.addConstr(sum(y[v, j_prime, t + cal_mu(j) + cal_xi(j, j_prime)] for j_prime in cal_taskF(j, t)) >= y[v, j, t], name=f"follow_task_v{v}_j{j}_t{t}")
-# print('constraint 2 ok.')
+print('constraint 2 ok.')
 
 # Constraint 3
 # This constraint requires a very long time to run.
@@ -1071,9 +1071,9 @@ for v in tqdm(Vset, desc='Constraint 3'):
         for t in Tset:
             for j_prime in cal_taskF(j, t):
                 for t_prime in range(t + cal_mu(j), t + cal_mu(j) + cal_xi(j, j_prime)):
-                    # print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
+                    print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
                     model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1, name=f"no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
-# print('constraint 3 ok.')
+print('constraint 3 ok.')
 
 # Constraint 4
 # This constraint requires a very long time to run.
@@ -1085,22 +1085,22 @@ for w in tqdm(Wset, desc='Constraint 4'):
         # Sum over Z_prime with key check
         sum_Z_prime = sum(Z_prime[l, w, t] for l in Lset if (l, w, t) in Z_prime) 
         model.addConstr(sum_yz + sum_Z_prime <= cal_Cw(w), name=f"capacity_constraint_w{w}_t{t}")
-# print('constraint 4 ok.')
+print('constraint 4 ok.')
 
 # Constraint 5a, 5b
-for v in tqdm(Vset, desc='Constraint 5a'):
+for v in Vset:
     for t in Tset:
         model.addConstr(Q[v, t] >= 0, name=f"battery_non_negative_v{v}_t{t}") 
-# print('constraint 5a ok.')
+print('constraint 5a ok.')
 
-for v in tqdm(Vset, desc='Constraint 5b'):
+for v in Vset:
     for t in Tset:
         model.addConstr(Q[v, t] <= 1, name=f"battery_max_capacity_v{v}_t{t}") 
-# print('constraint 5b ok.')
+print('constraint 5b ok.')
 
 # Constraint 5c
 # This constraint requires a very long time to run.
-for v in tqdm(Vset, desc='Constraint 5c'):
+for v in Vset:
     for t in Tset:
         rv = vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc()[0]
         if t == 1:
@@ -1116,17 +1116,17 @@ for v in tqdm(Vset, desc='Constraint 5c'):
                             - rv * (1 - sum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t))) 
                             >= Q[v, t], 
                             name=f"battery_update_v{v}_t{t}")
-# print('constraint 5c ok.')
+print('constraint 5c ok.')
 
 # Constraint 6a
-for v in tqdm(Vset, desc='Constraint 6a'):
+for v in Vset:
     model.addConstr(sum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_v{v}")
-# print('constraint 6a ok.')
+print('constraint 6a ok.')
 
 # Constraint 6b
-for v in tqdm(Vset, desc='Constraint 6b'):
+for v in Vset:
     model.addConstr(sum(y[v, j, t + t_prime] for j in Bc for t_prime in range(1, Tc//period_length+1) for t in Tset if t < (Tset[-1] - (Tc//period_length+1))) >= 1, name=f"max_distance_pauses_v{v}_t{t}")
-# print('constraint 6b ok.')
+print('constraint 6b ok.')
 print('All constraintrs are ready.\n')
 
 
