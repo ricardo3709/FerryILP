@@ -1061,7 +1061,6 @@ for v in tqdm(Vset, desc='Constraint 2'):
         for t in Tset:
             # print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
             if cal_taskF(j, t) != []:
-                c.Profile
                 model.addConstr(sum(y[v, j_prime, t + cal_mu(j) + cal_xi(j, j_prime)] for j_prime in cal_taskF(j, t)) >= y[v, j, t], name=f"follow_task_v{v}_j{j}_t{t}")
 # print('constraint 2 ok.')
 

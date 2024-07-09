@@ -2,7 +2,7 @@
 
 #PBS -P RDS-FEI-FTP-RW             
 #PBS -l select=1:ncpus=8:mem=16GB
-#PBS -l walltime=00:05:00
+#PBS -l walltime=02:00:00
 #PBS -N FerryILP
 #PBS -m abe
 #PBS -M llin7797@uni.sydney.edu.au
