@@ -4,9 +4,8 @@ import gurobipy as gp
 from gurobipy import GRB
 import numpy as np
 from tqdm import tqdm
-import pickle
 
-## -------------------- Load csv files ----------------------------------------
+## -------------------- Load csv files --------------------
 # Station and wharves dataframe
 wharf_df = pd.read_csv('ILPimplementation/wharf_info.csv')
 # lines dataframe
@@ -23,31 +22,88 @@ charging_berth = pd.read_csv('ILPimplementation/charging_berths.csv')
 
 print('All .csv files have been loaded successfully.\n')
 
-## -------------------- Input other paramters values --------------------------
+
+## Other input required
 # Simulation time parameters
 initial_time = time(5,0)
-period_length = 5 # mins
+period_length = 5 # min
 total_operation_hours = 24 # hours
 
 # nc, Minimum num of crew break
-nc = 1
+nc = 5 
 
 # Dc, Crew break duration (fixed)
-Dc = 60 # mins
+Dc = 60
 
 # Tc, Maximum seperation time for crew breakings
-Tc = 24*60 # mins
+Tc = 4*60
 
 # rv+, charging rate
 rv_plus = 2100 # kW
 
 # rv, discharging rate for revalancing, based on max speed of the vessel
+vessel_df['rv']
 
 # pc. Plugging/Unplugging time
 pc = 2 # min
 
 
-## -------------------- Functions ----------------------------------------------
+## -------------------- Sets defined --------------------
+
+# Lset: Set of Lines
+Lset = line_df['Line_No'].unique().tolist()
+
+# Zset: Set of Sailing 
+nl_ls= [len(headway_df[f"h{l}"].dropna().tolist()) + 1 for l in Lset]
+s_ls = [list(range(1,nl+1)) for nl in nl_ls]
+Zset = []
+
+for line in Lset:
+    for sailing in s_ls[line-1]:
+        Zset.append(f'{line}_{sailing}')
+
+# Vset: Set of Vessels
+Vset = vessel_df['Vessel code'].unique().tolist()
+
+# Wset: Set of Wharves
+Wset = wharf_df['Wharf_No'].unique().tolist()
+
+# Tset: Set of Time Periods
+Tset = [i for i in range(1, total_operation_hours * 60 // period_length + 1)]
+
+# Jset: Set of tasks (Defined based on the Set B, Bc, and Bplus)
+# B+, set of wharves to charge
+Bplus = [wharf for wharf in charging_berth['Wharf_No'].unique().tolist()]
+# print(f'The set of wharves for vessels can charge, B+: {Bplus}')
+
+# Non loading berths
+original_non_loading_berths = wharf_df[wharf_df['Non_loading_berths'] != 0]['Wharf_No'].unique().tolist()
+
+# Bc, set of wharves to crew pause, is copy of set B
+Bc = ['cp_' + wharf for wharf in original_non_loading_berths] # or Bc = wharf_df[wharf_df['Crew_pause'] == 'Yes']['Wharf_No'].unique().tolist()    they result in the same set
+# print(f'The set of wharves for vessels can do crew pause, Bc: {Bc}')
+
+# B, set of wharves to wait, any wharf with a charger belongs to B, and B contains wharves with original non loading berths
+B = original_non_loading_berths.copy() 
+
+for wharf in Bplus:
+    if wharf in B: # wharf with a charger
+        B.remove(wharf)
+        B.append(f'phi_{wharf}') # mark as phi(w)
+    else:
+        B.append(f'phi_{wharf}')  # input directly
+
+# print(f'The set of wharves for vessels can wait, B: {B}')
+
+# Jset = Lset + B + B+ + Bc
+Jset = [ele for ele in Lset + B + Bc + Bplus]
+
+# Dset: Set of possible first sailing time (Defined later after the functions)
+
+
+
+## -------------------- Functions --------------------
+
 def cal_Cw(w):
     """
     Calculate the total capacity (number of berths) of a specific wharf.
@@ -85,6 +141,7 @@ def cal_Cw(w):
     except Exception as e:
         raise Exception(f"An unexpected error occurred while calculating the capacity for wharf {w}: {str(e)}")
 
+
 def cal_Rl(l):
     """
     Calculate the route for a given line number from a DataFrame.
@@ -117,6 +174,7 @@ def cal_Rl(l):
     except KeyError:
         raise ValueError("DataFrame must include 'Line_No', 'O', 'I', 'T' columns.")
     
+
 def cal_C_lS(S):
     """
     Calculate the set of usable wharves for a given station of a line.
@@ -145,6 +203,7 @@ def cal_C_lS(S):
     except KeyError:
         raise ValueError("DataFrame must include 'Station' and 'Wharf_No' columns.")
     
+
 def cal_Sv(v):
     """
     Retrieve the starting station for a given vessel identified by its vessel code.
@@ -174,6 +233,7 @@ def cal_Sv(v):
         raise ValueError("DataFrame must include 'Vessel code' and 'Sv' columns.")
     except IndexError:
         raise ValueError(f"No data available for vessel code {v}. The vessel might not be listed.")   
+
 
 def cal_li(v):
     """
@@ -207,6 +267,7 @@ def cal_li(v):
         raise ValueError("DataFrame must include 'Vessel code', 'Route_No', 'O', and necessary route columns.")
     except IndexError:
         raise ValueError(f"No data available for vessel code {v}.")
+
 
 def cal_D(l):
     '''
@@ -275,6 +336,7 @@ def cal_h(s, d, line):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
+    
 
 def cal_mu(j):
     """
@@ -308,6 +370,7 @@ def cal_mu(j):
         raise ValueError(f"Missing data for task {j}: {str(e)}")
     except Exception as e:
         raise Exception(f"An unexpected error occurred: {str(e)}")
+    
 
 def cal_q(v, j, t):
     """
@@ -357,6 +420,7 @@ def cal_q(v, j, t):
     else: # the vessel is rebalncing, rv will be captured by the constraint
         return 0
 
+
 def get_task_location(j, type):
     """
     Retrieve the starting station or wharf location for a given task.
@@ -396,6 +460,7 @@ def get_task_location(j, type):
     except Exception as e:
         raise Exception(f"An error occurred while retrieving the location for task {j}: {str(e)}")
 
+
 def cal_xi(j1, j2):
     """
     Calculate the rebalancing time needed to travel from the end of task j1 to the start of task j2.
@@ -430,6 +495,7 @@ def cal_xi(j1, j2):
     except Exception as e:
         raise Exception(f"An error occurred while calculating transition time from {j1} to {j2}: {str(e)}")
     
+
 def cal_xi0(v, j):
     """
     Calculate the time periods required for vessel v to travel from its starting position to the starting point of task j.
@@ -469,6 +535,7 @@ def cal_xi0(v, j):
     except Exception as e:
         raise Exception(f"An error occurred: {str(e)}")
     
+
 def cal_C(j):
     """
     Calculate all wharves that could be used given task j.
@@ -500,6 +567,7 @@ def cal_C(j):
         return C_j
     except Exception as e:
         raise Exception(f"An error occurred: {str(e)}")
+
 
 def cal_delta(j, w):
     """
@@ -558,6 +626,7 @@ def cal_delta(j, w):
     except Exception as e:
         raise Exception(f"Unexpected error occurred: {str(e)}")
 
+
 def cal_F(l):
     """
     Calculate the number of time periods from the start of a sailing until arrival at the last station of line l.
@@ -583,6 +652,7 @@ def cal_F(l):
     except KeyError:
         raise ValueError("Missing 'Time_underway_to_T' in line_df.")
 
+
 def cal_muF(l):
     """
     Calculate the number of time periods a wharf is occupied at the last station by line l, including any safety buffer.
@@ -607,6 +677,7 @@ def cal_muF(l):
         raise ValueError(f"No data available for line number {l}.")
     except KeyError:
         raise ValueError("Missing 'dw_T' in line_df.")
+
 
 def cal_phi(j, t):
     """
@@ -636,6 +707,7 @@ def cal_phi(j, t):
         return phi_j_t
     except Exception as e:
         raise ValueError(f"An error occurred calculating φ(j, t): {str(e)}")
+
 
 def cal_f(j):
     """
@@ -672,6 +744,7 @@ def cal_f(j):
         print(f"An error occurred: {e}")
         return None
     
+
 def cal_G(j):
     """
     Calculate the set of valid start times for task j.
@@ -711,6 +784,7 @@ def cal_G(j):
         return G_j
     except Exception as e:
         raise ValueError(f"An error occurred processing task {j}: {str(e)}")
+
 
 def cal_H(v, j):
     """
@@ -785,6 +859,7 @@ def cal_taskF(j, t):
     except Exception as e:
         raise Exception(f"An unexpected error occurred: {str(e)}")
     
+
 def cal_E(w, t):
     """
     Calculate the set of pairs (j, t') such that starting task j at time t' results in using a wharf
@@ -811,52 +886,6 @@ def cal_E(w, t):
     return E_wt
 
 
-## -------------------- Sets defined -----------------------------------------
-
-# Lset: Set of Lines
-Lset = line_df['Line_No'].unique().tolist()
-
-# Zset: Set of Sailing 
-nl_ls= [len(headway_df[f"h{l}"].dropna().tolist())+1 for l in Lset]
-s_ls = [list(range(1,nl+1)) for nl in nl_ls]
-Zset = []
-for line in Lset:
-    for sailing in s_ls[line-1]:
-        Zset.append(f'{line}_{sailing}')
-
-# Vset: Set of Vessels
-Vset = vessel_df['Vessel code'].unique().tolist()
-
-# Wset: Set of Wharves
-Wset = wharf_df['Wharf_No'].unique().tolist()
-
-# Tset: Set of Time Periods
-Tset = [i for i in range(1, total_operation_hours * 60 // period_length + 1)]
-
-# Jset: Set of tasks 
-# (Defined based on the Set B, Bc, and Bplus)
-# B+, set of wharves to charge
-Bplus = [wharf for wharf in charging_berth['Wharf_No'].unique().tolist()]
-
-# Non loading berths
-original_non_loading_berths = wharf_df[wharf_df['Non_loading_berths'] != 0]['Wharf_No'].unique().tolist()
-
-# Bc, set of wharves to crew pause, is copy of set B
-Bc = ['cp_' + wharf for wharf in original_non_loading_berths]
-
-# B, set of wharves to wait, any wharf with a charger belongs to B, and B contains wharves with original non loading berths
-B = original_non_loading_berths.copy() 
-for wharf in Bplus:
-    if wharf in B: # wharf with a charger
-        B.remove(wharf)
-        B.append(f'phi_{wharf}') # mark as phi(w)
-    else:
-        B.append(f'phi_{wharf}')  # input directly
-
-# Jset = Lset + B + B+ + Bc
-Jset = [ele for ele in Lset + B + Bc + Bplus]
-
-# Dset: Set of possible first sailing time
 D_l = [cal_D(l) for l in Lset]
 Dset = {l: d for l, d in zip(Lset, D_l)}
 
@@ -864,15 +893,21 @@ print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')
 
 
 
-## -------------------- Varibles ---------------------------------------------
+## -------------------- Varibles --------------------
+print('start creating model\n')
 # Create model
 model = gp.Model("Ferry ILP")
 
+print('model created!\n')
+
+print('Start loading variable!')
 # variable x[l, d]
 x = {}
 for l in Lset:
     for d in Dset[l]:
         x[l, d] = model.addVar(vtype=GRB.BINARY, name=f"x_{l}_{d}")
+print('Variable x is ready.')
+
 
 # variable y[v, j, t]
 y = {}
@@ -880,19 +915,23 @@ for v in Vset:
     for j in Jset:
         for t in Tset:
             y[v, j, t] = model.addVar(vtype=GRB.BINARY, name=f"y_{v}_{j}_{t}")
+print('Variable y is ready.')
 
 # variable Q[v, t]
 Q = {}
 for v in Vset: 
     for t in Tset:
         Q[v, t] = model.addVar(vtype=GRB.CONTINUOUS, lb=0.0, ub=1.0, name=f"Q_{v}_{t}")
+print('Variable Q is ready.')
 
 # variable z[j, w]
 z = {}
 for j in Jset:
+    print(j)
     C_j = cal_C(j)
     for w in C_j: 
         z[w,j] = model.addVar(vtype=GRB.BINARY, name=f"z_{w}_{j}")
+print('Variable z is ready.')
 
 # variable Z[l, w, t]
 Z = {}
@@ -902,6 +941,7 @@ for l in Lset:
     for w in C_lS:
         for t in Tset:
             Z[l, w, t] = model.addVar(vtype=GRB.BINARY, name=f"Z_{l}_{w}_{t}")
+print('Variable Z is ready.')
 
 # variable Z'[l, w, t]
 Z_prime = {}
@@ -911,39 +951,27 @@ for l in Lset:
     for w in C_lS:
         for t in Tset:
             Z_prime[l, w, t] = model.addVar(vtype=GRB.BINARY, name=f"Z_prime_{l}_{w}_{t}")
-
-## -------------------- pkl files --------------------------------------------
-with open('ILPimplementation/taskF_results.pkl', 'rb') as f:
-    taskF_results = pickle.load(f)
-
-with open('ILPimplementation/mu_results.pkl', 'rb') as f:
-    mu_results = pickle.load(f)
-
-with open('ILPimplementation/xi_jj_results.pkl', 'rb') as f:
-    xi_results = pickle.load(f)
-
-with open('ILPimplementation/phi_results.pkl', 'rb') as f:
-    phi_results = pickle.load(f)
-
-with open('ILPimplementation/E_results.pkl', 'rb') as f:
-    E_results = pickle.load(f)
+print("Variable Z' is ready.\n")
 
 
-## -------------------- Constraints ------------------------------------------
+## -------------------- Constraints --------------------
+
 # Constraint 1a
 for l in tqdm(Lset, desc='Constraint 1a'):
     model.addConstr(gp.quicksum(x[l, d] for d in Dset[l]) == 1, name=f"departure_time_constraint_{l}")
+# print('constraint 1a ok.')
 
 # Constraint 1b
 for sailing in tqdm(Zset, desc='Constraint 1b'):  
     l = int(sailing.split('_')[0]) # line
     s = int(sailing.split('_')[1]) # nth sailing
     # print(f'line:{l}')
-    for d in Dset[l]:  
+    for d in Dset[l]:  #  
         h_sd = cal_h(s,d,l)
         t = h_sd
         # print(f'If the first sailing start at {d}, the {s}th sailing departure time is {t}')
         model.addConstr(gp.quicksum(y[v, l, t] for v in Vset) == x[l, d],name=f"assign_vessel_s{s}_d{d}")
+# print('constraint 1b ok.')
 
 # Constraint 1c
 for v in tqdm(Vset, desc='Constraint 1c'):
@@ -951,6 +979,7 @@ for v in tqdm(Vset, desc='Constraint 1c'):
         H_vj = cal_H(v,j)
         for t in [t for t in Tset if t not in H_vj]:
             y[v, j, t].ub = 0  # Set upper bound of y[v,j,t] to 0
+# print('constraint 1c ok.')
 
 # Constraint 1d
 for t in tqdm(Tset, desc='Constraint 1d'):
@@ -958,6 +987,7 @@ for t in tqdm(Tset, desc='Constraint 1d'):
         li_v = cal_li(v)
         for j in [l for l in Lset if l not in li_v]:
             y[v, j, t].ub = 0  # Set upper bound of y[v,j,t] to 0
+# print('constraint 1d ok.')
 
 # Constraint 1e
 for v in tqdm(Vset, desc='Constraint 1e'):   
@@ -966,11 +996,13 @@ for v in tqdm(Vset, desc='Constraint 1e'):
         t = xi0_v_j
         if t in Tset:
             model.addConstr(gp.quicksum(y[v, j, t] for j in Jset) == 1,name=f"assign_task_j{j}_t{t}")
+# print('constraint 1e ok.')
 
 # Constraint 1f 
 for v in tqdm(Vset, desc='Constraint 1f'):
     for t in Tset:
-        model.addConstr(gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in phi_results[(j,t)]) <= 1,name=f"task_overlap_v{v}_t{t}")
+        model.addConstr(gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t)) <= 1,name=f"task_overlap_v{v}_t{t}")
+# print('constraint 1f ok.')
 
 # Constraint 1g
 for l in tqdm(Lset, desc='Constraint 1g'):
@@ -979,6 +1011,7 @@ for l in tqdm(Lset, desc='Constraint 1g'):
     for S in [station for station in R_l if station != A_l]:
         C_lS = cal_C_lS(S)
         model.addConstr(gp.quicksum(z[w, l] for w in C_lS) == 1,name=f"select_one_wharf_{l}_station_{S}")
+# print('constraint 1g ok.')
 
 # Constraint 1h
 for l in tqdm(Lset, desc='Constraint 1h'):
@@ -988,6 +1021,7 @@ for l in tqdm(Lset, desc='Constraint 1h'):
             A_l = cal_Rl(l)[-1] # last station
             C_lS = cal_C_lS(A_l) # available wharves at last station
             model.addConstr(gp.quicksum(Z[l, w, t] for w in C_lS) == gp.quicksum(y[v, l, t - F_l] for v in Vset),name=f"last_wharf_use_{l}_t{t}")
+# print('constraint 1h ok.')
 
 # Constraint 1i
 for l in tqdm(Lset, desc='Constraint 1i'):
@@ -998,6 +1032,7 @@ for l in tqdm(Lset, desc='Constraint 1i'):
         for t in Tset:
             if t > muF_l: 
                 model.addConstr(Z_prime[l, w, t] == gp.quicksum(Z[l, w, t - k] for k in range(muF_l)), name=f"wharf_occupation_{l}_{w}_t{t}")
+# print('constraint 1i ok.')
 
 # Constraint 1j
 for v in tqdm(Vset, desc='Constraint 1j'):
@@ -1007,6 +1042,7 @@ for v in tqdm(Vset, desc='Constraint 1j'):
                 phi_w = f'phi_{w}'
                 # j = w
                 model.addConstr(y[v, w, t] <= y[v, w, t - 1] + y[v, phi_w, t - 1], name=f"full_period_charging_start_v{v}_w{w}_t{t}")
+# print('constraint 1j ok.')
 
 # Constraint 1k
 for v in tqdm(Vset, desc='Constraint 1k'):
@@ -1016,79 +1052,82 @@ for v in tqdm(Vset, desc='Constraint 1k'):
                 phi_w = f'phi_{w}'
                 # j = w
                 model.addConstr(y[v, w, t] <= y[v, w, t + 1] + y[v, phi_w, t + 1], name=f"full_period_charging_2_v{v}_w{w}_t{t}")
+# print('constraint 1k ok.')
 
-# Constraint 2 new
+# Constraint 2 
+# This constraint requires a very long time to run.
 for v in tqdm(Vset, desc='Constraint 2'):
     for j in Jset:
         for t in Tset:
-            follow_tasks = taskF_results[(j, t)]
-            if follow_tasks != []:
-                model.addConstr(gp.quicksum(y[v, j_prime, t + mu_results[j] + xi_results[(j, j_prime)]] for j_prime in follow_tasks) >= y[v, j, t], name=f"follow_task_v{v}_j{j}_t{t}")
+            # print(f'Current vessel: {v}; current task: {j}; current time {t}; number of possible following tasks: {len(cal_taskF(j, t))}')
+            if cal_taskF(j, t) != []:
+                model.addConstr(gp.quicksum(y[v, j_prime, t + cal_mu(j) + cal_xi(j, j_prime)] for j_prime in cal_taskF(j, t)) >= y[v, j, t], name=f"follow_task_v{v}_j{j}_t{t}")
+# print('constraint 2 ok.')
 
-# Constraint 3 new
+# Constraint 3
+# This constraint requires a very long time to run.
 for v in tqdm(Vset, desc='Constraint 3'):
     for j in Jset:
         for t in Tset:
-            for j_prime in taskF_results[(j, t)]:
-                for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]):
+            for j_prime in cal_taskF(j, t):
+                for t_prime in range(t + cal_mu(j), t + cal_mu(j) + cal_xi(j, j_prime)):
+                    # print(f"Current vessel: {v}; current task: {j}; current time {t}; current j'{j_prime}; current t' {t_prime}")
                     model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1, name=f"no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
+# print('constraint 3 ok.')
 
-# Constraint 4 new
+# Constraint 4
+# This constraint requires a very long time to run.
 for w in tqdm(Wset, desc='Constraint 4'):
     for t in Tset:
+        print(w, t)
         # Sum over y and z
-        sum_yz = gp.quicksum(y[v, j, t_prime] * z[w, j] for v in Vset for (j, t_prime) in E_results[(w, t)])
+        sum_yz = gp.quicksum(y[v, j, t_prime] * z[w, j] for v in Vset for (j, t_prime) in cal_E(w, t))
         # Sum over Z_prime with key check
         sum_Z_prime = gp.quicksum(Z_prime[l, w, t] for l in Lset if (l, w, t) in Z_prime) 
         model.addConstr(sum_yz + sum_Z_prime <= cal_Cw(w), name=f"capacity_constraint_w{w}_t{t}")
+# print('constraint 4 ok.')
 
 # Constraint 5a, 5b
 for v in tqdm(Vset, desc='Constraint 5a'):
     for t in Tset:
         model.addConstr(Q[v, t] >= 0, name=f"battery_non_negative_v{v}_t{t}") 
+# print('constraint 5a ok.')
 
 for v in tqdm(Vset, desc='Constraint 5b'):
     for t in Tset:
         model.addConstr(Q[v, t] <= 1, name=f"battery_max_capacity_v{v}_t{t}") 
+# print('constraint 5b ok.')
 
-# Constraint 5c new
-rv = {}
-for v in Vset:
-    rv_value = vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0]
-    rv[v] = rv_value
-
-Qv0 = {}
-for v in Vset:
-    rv0_value = vessel_df[vessel_df['Vessel code'] == v]['Qv0'].iloc()[0]
-    Qv0[v] = rv0_value
-
+# Constraint 5c
+# This constraint requires a very long time to run.
 for v in tqdm(Vset, desc='Constraint 5c'):
     for t in Tset:
+        rv = vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc()[0]
         if t == 1:
-            model.addConstr(Qv0[v] 
-                        + gp.quicksum(cal_q(v, j, t - t_prime) * y[v, j, t_prime] for j in Jset for t_prime in phi_results[(j, t)]) 
-                        - rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in phi_results[(j, t)])) 
+            Qv0 = vessel_df[vessel_df['Vessel code'] == v]['Qv0'].iloc()[0]
+            model.addConstr( Qv0 
+                        + gp.quicksum(cal_q(v, j, t - t_prime) * y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t)) 
+                        - rv * (1 - gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t))) 
                         >= Q[v, t], 
                         name=f"battery_update_v{v}_t{t}")     
         else:
             model.addConstr(Q[v, t - 1] 
-                            + gp.quicksum(cal_q(v, j, t - t_prime) * y[v, j, t_prime] for j in Jset for t_prime in phi_results[(j, t)]) 
-                            - rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in phi_results[(j, t)])) 
+                            + gp.quicksum(cal_q(v, j, t - t_prime) * y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t)) 
+                            - rv * (1 - gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t))) 
                             >= Q[v, t], 
                             name=f"battery_update_v{v}_t{t}")
+# print('constraint 5c ok.')
 
 # Constraint 6a
 for v in tqdm(Vset, desc='Constraint 6a'):
     model.addConstr(gp.quicksum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_v{v}")
+# print('constraint 6a ok.')
 
 # Constraint 6b
 for v in tqdm(Vset, desc='Constraint 6b'):
     model.addConstr(gp.quicksum(y[v, j, t + t_prime] for j in Bc for t_prime in range(1, Tc//period_length+1) for t in Tset if t < (Tset[-1] - (Tc//period_length+1))) >= 1, name=f"max_distance_pauses_v{v}_t{t}")
-
+# print('constraint 6b ok.')
 print('All constraintrs are ready.\n')
-
-
-
 
 ## -------------------- Objective Functions --------------------
 
@@ -1106,32 +1145,21 @@ M = Tset[-1] # ??
 for v in Vset:
     model.addConstr(psi[v] >= (1 / M) * gp.quicksum(y[v, l, t] for l in Lset for t in Tset), name=f"utilize_vessel_{v}")
 
-# Objective Function 9: Minimizing Rebalancing Time (new)
-rebalancing_time = gp.quicksum(1 - gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in phi_results[(j, t)])for v in Vset for t in Tset)
+
+# Objective Function 9: Minimizing Rebalancing Time
+# This constraint requires a very long time to run.
+rebalancing_time = gp.quicksum(
+    1 - gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in cal_phi(j, t))
+    for v in Vset for t in Tset)
 model.setObjective(rebalancing_time, GRB.MINIMIZE)
 
 
+print('Model is ready to run now.')
+
 ## -------------------- Optimization --------------------
-print('Starting optimization...\n')
-
-# Modify parameters for detailed output and diagnostics
-model.setParam('OutputFlag', 1)
-model.setParam('InfUnbdInfo', 1)
-model.setParam('Presolve', 2)
-model.setParam('ScaleFlag', 1)
-
+print('Starting optimization...')
 model.optimize()
-
-
-print('Optimization call completed.\n')
-
-# Check if model is infeasible and run diagnostics
-if model.status == GRB.INFEASIBLE:
-    print("Model is infeasible; computing IIS")
-    model.computeIIS()
-    model.write("model3.ilp")
-elif model.status == GRB.OPTIMAL:
-    print("Optimal solution found.")
+print('Optimization call completed.')
 
 
 def save_variable_results(var_dict, filename):
@@ -1153,3 +1181,31 @@ if model.status == GRB.OPTIMAL:
     save_variable_results(Z_prime, 'Z_prime_variable_results.csv')
 else:
     print("Optimization did not reach optimality.")
+
+
+# Adding progress prints
+def print_progress(iteration, total, prefix='', suffix='', decimals=1, bar_length=100):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        bar_length  - Optional  : character length of bar (Int)
+    """
+    str_format = "{0:." + str(decimals) + "f}"
+    percents = str_format.format(100 * (iteration / float(total)))
+    filled_length = int(round(bar_length * iteration / float(total)))
+    bar = '█' * filled_length + '-' * (bar_length - filled_length)
+
+    print(f'\r{prefix} |{bar}| {percents}% {suffix}', end='\r')
+    if iteration == total:
+        print()
+
+# Usage example in a loop
+total_iterations = len(Tset)
+for i, t in enumerate(Tset, 1):
+    print_progress(i, total_iterations, prefix = 'Progress:', suffix = 'Complete', bar_length = 50)
+    # your code here, e.g., adding constraints
