@@ -33,7 +33,7 @@ period_length = 5 # mins
 total_operation_hours = 24 # hours
 
 # nc, Minimum num of crew break
-nc = 2
+nc = 3
 
 # Dc, Crew break duration (fixed)
 Dc = 10 # mins
@@ -1124,20 +1124,20 @@ for v in tqdm(Vset, desc='Constraint 5c'):
                             >= Q[v, t], 
                             name=f"battery_update_v{v}_t{t}")
 
-# Constraint 6a
-for v in tqdm(Vset, desc='Constraint 6a'):
-    model.addConstr(gp.quicksum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_{v}")
+# # Constraint 6a
+# for v in tqdm(Vset, desc='Constraint 6a'):
+#     model.addConstr(gp.quicksum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_{v}")
 
-# Constraint 6b
-for v in tqdm(Vset, desc='Constraint 6b'):
-    # Compute the sum for each vehicle v
-    constraint_sum = gp.quicksum(y[v, j, t + t_prime] 
-                                 for j in Bc 
-                                 for t_prime in range(1, Tc // period_length + 1) 
-                                 for t in Tset if t < (Tset[-1] - (Tc // period_length + 1)))
-    model.addConstr(constraint_sum >= 1, name=f"max_period_pauses_v{v}_t{t}")
+# # Constraint 6b
+# for v in tqdm(Vset, desc='Constraint 6b'):
+#     # Compute the sum for each vehicle v
+#     constraint_sum = gp.quicksum(y[v, j, t + t_prime] 
+#                                  for j in Bc 
+#                                  for t_prime in range(1, Tc // period_length + 1) 
+#                                  for t in Tset if t < (Tset[-1] - (Tc // period_length + 1)))
+#     model.addConstr(constraint_sum >= 1, name=f"max_period_pauses_v{v}_t{t}")
 
-print('All constraintrs are ready.\n')
+# print('All constraintrs are ready.\n')
 
 
 ## -------------------- Objective Functions --------------------
@@ -1151,7 +1151,7 @@ for v in Vset:
 model.setObjective(gp.quicksum(psi[v] for v in Vset), GRB.MINIMIZE)
 
 # Objective Function 8
-M = Tset[-1] # ??
+M = Tset[-1]
 
 for v in Vset:
     model.addConstr(psi[v] >= (1 / M) * gp.quicksum(y[v, l, t] for l in Lset for t in Tset), name=f"utilize_vessel_{v}")
@@ -1169,7 +1169,7 @@ model.setParam('OutputFlag', 1)
 model.setParam('InfUnbdInfo', 1)
 model.setParam('Presolve', 2)
 model.setParam('ScaleFlag', 1)
-model.setParam('FeasibilityTol', 1e-9)
+model.setParam('FeasibilityTol', 1e-6)
 
 model.optimize()
 
@@ -1185,7 +1185,7 @@ if model.status == GRB.INFEASIBLE:
     for v in model.getVars():
         if v.IISLB > 0 or v.IISUB > 0:
             print(f"{v.VarName} is in the IIS.")
-    model.write("model4.ilp")
+    model.write("modelilp")
 
 def save_variable_results(var_dict, filename):
     results = {k: (var_dict[k].X if var_dict[k].Xn <= var_dict[k].UB and var_dict[k].Xn >= var_dict[k].LB else "Out of bounds") for k in var_dict.keys()}
@@ -1194,11 +1194,10 @@ def save_variable_results(var_dict, filename):
     print(f"Results saved to {filename} with {len(results)} entries.")
 
 
-# Check if the model has been solved
 if model.status == GRB.OPTIMAL:
     print("Optimization was successful. Saving results...")
     
-    # Save results for different variables
+    # Save results
     save_variable_results(x, 'x_variable_results.csv')
     save_variable_results(y, 'y_variable_results.csv')
     save_variable_results(Q, 'Q_variable_results.csv')

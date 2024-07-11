@@ -1,8 +1,0 @@
-\ Model Ferry ILP_copy
-\ LP format - for model browsing. Use MPS format to capture full model detail.
-Minimize
- 
-Subject To
- max_period_pauses_vFF1_t288: >= 1
-Bounds
-End
