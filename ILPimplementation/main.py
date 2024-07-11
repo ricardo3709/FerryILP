@@ -6,6 +6,7 @@ import numpy as np
 from tqdm import tqdm
 import pickle
 
+
 ## -------------------- Load csv files ----------------------------------------
 # Station and wharves dataframe
 wharf_df = pd.read_csv('ILPimplementation/wharf_info.csv')
@@ -23,6 +24,8 @@ charging_berth = pd.read_csv('ILPimplementation/charging_berths.csv')
 
 print('All .csv files have been loaded successfully.\n')
 
+
+
 ## -------------------- Input other paramters values --------------------------
 # Simulation time parameters
 initial_time = time(5,0)
@@ -30,16 +33,16 @@ period_length = 5 # mins
 total_operation_hours = 24 # hours
 
 # nc, Minimum num of crew break
-nc = 1
+nc = 2
 
 # Dc, Crew break duration (fixed)
-Dc = 60 # mins
+Dc = 10 # mins
 
 # Tc, Maximum seperation time for crew breakings
-Tc = 24*60 # mins
+Tc = 12*60 # mins
 
 # rv+, charging rate
-rv_plus = 2100 # kW
+rv_plus = 2100*period_length/60/1100 # kW*h/kwh --> %  new modification (11July)
 
 # rv, discharging rate for revalancing, based on max speed of the vessel
 
@@ -547,6 +550,7 @@ def cal_delta(j, w):
                 raise ValueError(f"Task {j} should occupy its own wharf {j.split('_')[-1]}, not {w}.")
             mu_j = cal_mu(j)
             delta_j_w = [(w, time) for time in range(mu_j)] 
+            return delta_j_w
 
         else:
             raise ValueError(f"Task {j} is unrecognized or has an inappropriate data type.")
@@ -804,6 +808,7 @@ def cal_E(w, t):
         # print(f'target wharf: {w}, current task {j}, wharf available for task:{C_j}') 
         if w in C_j:
             delta_jw = cal_delta(j, w)  # Set of time units allowed between t' and t for task j and wharf w
+            # print(delta_jw)
             for t_prime in [time for time in Tset if time <= t]:
                 if (t - t_prime) in [usage[1] for usage in delta_jw]:
                     E_wt.append((j, t_prime)) # store the task and it's start time
@@ -862,7 +867,66 @@ Dset = {l: d for l, d in zip(Lset, D_l)}
 
 print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')
 
+## -------------------- pkl files -------------------------------------------- new modification (11jul)
 
+# This cannot be stored in advance, since currently focusing on modifying the parameters to make the model feasible, and each time the parameters change might lead to a new matrix.
+# So it's better to calculate these files every time to avoid issues.
+
+# # cal_taskF(j, t), taskF_results
+# taskF_results = {}
+# for j in tqdm(Jset, desc='taskF_results'):
+#     for t in Tset:
+#         taskF_results[(j, t)] = cal_taskF(j, t)
+
+# # cal_mu(j), mu_results
+# mu_results = {}
+# for j in tqdm(Jset, desc='mu_results'):
+#     mu_results[j] = cal_mu(j)
+
+# # cal_xi(j, j_prime), xi_results
+# xi_results = {}
+# for j in tqdm(Jset, desc='xi_results'):
+#     for j_prime in Jset:
+#         xi_results[(j, j_prime)] = cal_xi(j, j_prime)
+
+# # cal_phi(j, t) phi_results
+# phi_results = {}
+# for j in tqdm(Jset, desc='phi_results'):
+#     for t in Tset:
+#         phi_results[(j, t)] = cal_phi(j, t)
+
+# # cal_E(w, t), E_results
+# E_results = {}
+# for w in tqdm(Wset, desc='E_results'):
+#     for t in Tset:
+#         # print(w,t)
+#         E_results[(w, t)] = cal_E(w, t)
+
+# # Save
+# with open('ILPimplementation/taskF_results.pkl', 'wb') as f:
+#     pickle.dump(taskF_results, f)
+# with open('ILPimplementation/mu_results.pkl', 'wb') as f:
+#     pickle.dump(mu_results, f)
+# with open('ILPimplementation/xi_jj_results.pkl', 'wb') as f:
+#     pickle.dump(xi_results, f)
+# with open('ILPimplementation/phi_results.pkl', 'wb') as f:
+#     pickle.dump(phi_results, f)
+# with open('ILPimplementation/E_results.pkl', 'wb') as f:
+#     pickle.dump(E_results, f)
+
+# read 
+with open('ILPimplementation/taskF_results.pkl', 'rb') as f:
+    taskF_results = pickle.load(f)
+with open('ILPimplementation/mu_results.pkl', 'rb') as f:
+    mu_results = pickle.load(f)
+with open('ILPimplementation/xi_jj_results.pkl', 'rb') as f:# read
+    xi_results = pickle.load(f)
+with open('ILPimplementation/E_results.pkl', 'rb') as f:
+    E_results = pickle.load(f)
+with open('ILPimplementation/phi_results.pkl', 'rb') as f: # read
+    phi_results = pickle.load(f)
+
+print('All results matrixes ready!')
 
 ## -------------------- Varibles ---------------------------------------------
 # Create model
@@ -912,22 +976,6 @@ for l in Lset:
         for t in Tset:
             Z_prime[l, w, t] = model.addVar(vtype=GRB.BINARY, name=f"Z_prime_{l}_{w}_{t}")
 
-## -------------------- pkl files --------------------------------------------
-with open('ILPimplementation/taskF_results.pkl', 'rb') as f:
-    taskF_results = pickle.load(f)
-
-with open('ILPimplementation/mu_results.pkl', 'rb') as f:
-    mu_results = pickle.load(f)
-
-with open('ILPimplementation/xi_jj_results.pkl', 'rb') as f:
-    xi_results = pickle.load(f)
-
-with open('ILPimplementation/phi_results.pkl', 'rb') as f:
-    phi_results = pickle.load(f)
-
-with open('ILPimplementation/E_results.pkl', 'rb') as f:
-    E_results = pickle.load(f)
-
 
 ## -------------------- Constraints ------------------------------------------
 # Constraint 1a
@@ -938,11 +986,9 @@ for l in tqdm(Lset, desc='Constraint 1a'):
 for sailing in tqdm(Zset, desc='Constraint 1b'):  
     l = int(sailing.split('_')[0]) # line
     s = int(sailing.split('_')[1]) # nth sailing
-    # print(f'line:{l}')
     for d in Dset[l]:  
         h_sd = cal_h(s,d,l)
         t = h_sd
-        # print(f'If the first sailing start at {d}, the {s}th sailing departure time is {t}')
         model.addConstr(gp.quicksum(y[v, l, t] for v in Vset) == x[l, d],name=f"assign_vessel_s{s}_d{d}")
 
 # Constraint 1c
@@ -996,7 +1042,7 @@ for l in tqdm(Lset, desc='Constraint 1i'):
     for w in C_lS:
         muF_l = cal_muF(l)
         for t in Tset:
-            if t > muF_l: 
+            if t > muF_l - 1: # new modification 
                 model.addConstr(Z_prime[l, w, t] == gp.quicksum(Z[l, w, t - k] for k in range(muF_l)), name=f"wharf_occupation_{l}_{w}_t{t}")
 
 # Constraint 1j
@@ -1017,7 +1063,7 @@ for v in tqdm(Vset, desc='Constraint 1k'):
                 # j = w
                 model.addConstr(y[v, w, t] <= y[v, w, t + 1] + y[v, phi_w, t + 1], name=f"full_period_charging_2_v{v}_w{w}_t{t}")
 
-# Constraint 2 new
+# Constraint 2 
 for v in tqdm(Vset, desc='Constraint 2'):
     for j in Jset:
         for t in Tset:
@@ -1025,15 +1071,16 @@ for v in tqdm(Vset, desc='Constraint 2'):
             if follow_tasks != []:
                 model.addConstr(gp.quicksum(y[v, j_prime, t + mu_results[j] + xi_results[(j, j_prime)]] for j_prime in follow_tasks) >= y[v, j, t], name=f"follow_task_v{v}_j{j}_t{t}")
 
-# Constraint 3 new
+# Constraint 3 
 for v in tqdm(Vset, desc='Constraint 3'):
     for j in Jset:
         for t in Tset:
             for j_prime in taskF_results[(j, t)]:
                 for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]):
-                    model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1, name=f"no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
+                    if t_prime in Tset:# mew modification
+                        model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1, name=f"no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
 
-# Constraint 4 new
+# Constraint 4 
 for w in tqdm(Wset, desc='Constraint 4'):
     for t in Tset:
         # Sum over y and z
@@ -1051,7 +1098,7 @@ for v in tqdm(Vset, desc='Constraint 5b'):
     for t in Tset:
         model.addConstr(Q[v, t] <= 1, name=f"battery_max_capacity_v{v}_t{t}") 
 
-# Constraint 5c new
+# Constraint 5c 
 rv = {}
 for v in Vset:
     rv_value = vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0]
@@ -1079,15 +1126,18 @@ for v in tqdm(Vset, desc='Constraint 5c'):
 
 # Constraint 6a
 for v in tqdm(Vset, desc='Constraint 6a'):
-    model.addConstr(gp.quicksum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_v{v}")
+    model.addConstr(gp.quicksum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_{v}")
 
 # Constraint 6b
 for v in tqdm(Vset, desc='Constraint 6b'):
-    model.addConstr(gp.quicksum(y[v, j, t + t_prime] for j in Bc for t_prime in range(1, Tc//period_length+1) for t in Tset if t < (Tset[-1] - (Tc//period_length+1))) >= 1, name=f"max_distance_pauses_v{v}_t{t}")
+    # Compute the sum for each vehicle v
+    constraint_sum = gp.quicksum(y[v, j, t + t_prime] 
+                                 for j in Bc 
+                                 for t_prime in range(1, Tc // period_length + 1) 
+                                 for t in Tset if t < (Tset[-1] - (Tc // period_length + 1)))
+    model.addConstr(constraint_sum >= 1, name=f"max_period_pauses_v{v}_t{t}")
 
 print('All constraintrs are ready.\n')
-
-
 
 
 ## -------------------- Objective Functions --------------------
@@ -1106,39 +1156,43 @@ M = Tset[-1] # ??
 for v in Vset:
     model.addConstr(psi[v] >= (1 / M) * gp.quicksum(y[v, l, t] for l in Lset for t in Tset), name=f"utilize_vessel_{v}")
 
-# Objective Function 9: Minimizing Rebalancing Time (new)
+# Objective Function 9: Minimizing Rebalancing Time
 rebalancing_time = gp.quicksum(1 - gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in phi_results[(j, t)])for v in Vset for t in Tset)
 model.setObjective(rebalancing_time, GRB.MINIMIZE)
 
 
 ## -------------------- Optimization --------------------
-print('Starting optimization...\n')
+print(f"Starting optimization with {model.NumVars} variables and {model.NumConstrs} constraints.\n")
 
 # Modify parameters for detailed output and diagnostics
 model.setParam('OutputFlag', 1)
 model.setParam('InfUnbdInfo', 1)
 model.setParam('Presolve', 2)
 model.setParam('ScaleFlag', 1)
+model.setParam('FeasibilityTol', 1e-9)
 
 model.optimize()
 
+print(f"Optimization completed with status: {model.Status}")
 
-print('Optimization call completed.\n')
-
-# Check if model is infeasible and run diagnostics
 if model.status == GRB.INFEASIBLE:
-    print("Model is infeasible; computing IIS")
+    print("Model is infeasible; computing IIS...")
     model.computeIIS()
-    model.write("model3.ilp")
-elif model.status == GRB.OPTIMAL:
-    print("Optimal solution found.")
-
+    print("The following constraints and/or bounds are contributing to the infeasibility:")
+    for c in model.getConstrs():
+        if c.IISConstr:
+            print(f"{c.constrName} is in the IIS.")
+    for v in model.getVars():
+        if v.IISLB > 0 or v.IISUB > 0:
+            print(f"{v.VarName} is in the IIS.")
+    model.write("model4.ilp")
 
 def save_variable_results(var_dict, filename):
-    results = {k: var_dict[k].X for k in var_dict.keys()}  # Save all values
+    results = {k: (var_dict[k].X if var_dict[k].Xn <= var_dict[k].UB and var_dict[k].Xn >= var_dict[k].LB else "Out of bounds") for k in var_dict.keys()}
     df = pd.DataFrame(list(results.items()), columns=['Variable', 'Value'])
     df.to_csv(filename, index=False)
-    print(f"Results saved to {filename}.")
+    print(f"Results saved to {filename} with {len(results)} entries.")
+
 
 # Check if the model has been solved
 if model.status == GRB.OPTIMAL:
@@ -1153,3 +1207,4 @@ if model.status == GRB.OPTIMAL:
     save_variable_results(Z_prime, 'Z_prime_variable_results.csv')
 else:
     print("Optimization did not reach optimality.")
+
