@@ -1,0 +1,4 @@
+I tried multithreading, but it was a bit cumbersome and I didn't quite understand it, so I used a pre-saved pkl file to speed up the process.
+Because separating the files requires modifying the parameters in each equation, which requires a lot of related details to be modified, it is currently decided to run it in one file.
+The model can bre run now but it is infeasible
+constraint 6s causing issue for the model now, mainly associated withe the Dc, Tc, nc values. 
