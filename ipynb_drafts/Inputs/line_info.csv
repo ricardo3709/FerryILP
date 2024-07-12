@@ -1,0 +1,20 @@
+﻿Route_No,Line_No,O,I,T,dw_O,dw_I,dw_T,First_sailing,Time_underway_to_I,Time_underway_to_T,Line_duration,Min_operating_speed,rj
+F2,1,Circular Quay,None,Mosman,4,None,7,6:48,None,15,22,13,0.041818
+F2,2,Mosman,None,Circular Quay,5,None,8,7:14,None,15,23,13,0.041818
+F2,3,Circular Quay,None,Taronga Zoo,4,None,10,8:50,None,12,22,13,0.041818
+F2,4,Taronga Zoo,None,Circular Quay,5,None,10,9:12,None,23,33,13,0.041818
+F3,5,Circular Quay,Barangaroo,Parramatta,4,5,8,6:47,11,86,94,20,0
+F3,6,Parramatta,Barangaroo,Circular Quay,5,5,9,5:57,75,86,95,20,0
+F4,7,Circular Quay,Barangaroo,Pyrmont Bay,5,6,7,6:10,22,27,34,13,0.041818
+F4,8,Pyrmont Bay,Barangaroo,Circular Quay,5,6,10,6:19,3,27,37,13,0.041818
+F5,9,Circular Quay,None,Circular Quay,5,None,10,5:57,None,27,37,13,0.041818
+F6,10,Circular Quay,None,Mosman,4,None,9,6:05,None,22,31,13,0.041818
+F6,11,Mosman,None,Circular Quay,5,None,10,6:24,None,22,32,13,0.041818
+F7,12,Circular Quay,None,Double Bay,4,None,7,6:27,None,18,25,13,0.041818
+F7,13,Double Bay,None,Circular Quay,5,None,8,6:50,None,18,26,13,0.041818
+F8,14,Circular Quay,None,Cockatoo Island,4,None,9,6:15,None,29,38,13,0.041818
+F8,15,Cockatoo Island,None,Circular Quay,5,None,9,6:24,None,28,37,13,0.041818
+F9,16,Circular Quay,None,Watsons Bay,4,None,11,6:05,None,23,34,25,0.106364
+F9,17,Watsons Bay,None,Circular Quay,5,None,12,6:38,None,13,25,25,0.106364
+F10,18,Barangaroo,None,Blackwattle Bay,4,None,6,6:26,None,13,19,13,0.041818
+F10,19,Blackwattle Bay,None,Barangaroo,4,None,6,6:41,None,13,19,13,0.041818

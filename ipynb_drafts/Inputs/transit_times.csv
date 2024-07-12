@@ -1,0 +1,95 @@
+Route,O,D,Time underway
+F2,Circular Quay,Mosman,15
+F2,Mosman,Taronga Zoo,6
+F2,Taronga Zoo,Circular Quay,12
+F2,Taronga Zoo,Cremorne Point,2
+F3,Circular Quay,Drummoyne,14
+F3,Circular Quay,Cockatoo Is,11
+F3,Circular Quay,Barangaroo,10
+F3,Barangaroo,Drummoyne,12
+F3,Barangaroo,Cockatoo Is,9
+F3,Barangaroo,Syd Olym Pk,25
+F3,Circular Quay,Syd Olym Pk,27
+F3,Circular Quay,Rydalmere,35
+F3,Cockatoo Is,Drummoyne,3
+F3,Drummoyne,Huntleys Point,4
+F3,Huntleys Point,Chiswick,2
+F3,Chiswick,Abbotsford,3
+F3,Abbotsford,Cabarita,4
+F3,Cabarita,Kissing Point,3
+F3,Kissing Point,Meadowbank,4
+F3,Meadowbank,Syd Olym Pk,2
+F3,Syd Olym Park,Rydalmere,10
+F3,Rydalmere,Parramatta,19
+F4,Circular Quay,Milsons Point,5
+F4,Milsons Point ,McMahons Point,2
+F4,McMahons Point,Balmain East,5
+F4,Balmain East,Barangaroo,5
+F4,Barangaroo,Pyrmont Bay,3
+F5,Circular Quay,Kirribilli,6
+F5,Kirribilli,North Sydney,2
+F5,North Sydney,Neutral Bay,2
+F5,Neutral Bay,Kurraba Point,2
+F5,Kurraba Point,Kirribilli,4
+F6,Circular Quay,Cremorne Point,9
+F6,Cremorne Point,South Mosman,4
+F6,South Mosman,Old Cremorne,2
+F6,Old Cremorne,Mosman,2
+F7,Circular Quay,Garden Is,8
+F7,Garden Is,Darling Point,6
+F7,Darling Point,Double Bay,5
+F8,Circular Quay,Balmain ,11
+F8,Balmain,Birchgrove,5
+F8,Birchgrove,Greenwich Point,2
+F8,Greenwich Point,Woolwich,2
+F8,Woolwich,Cockatoo Is,5
+F9,Circular Quay,Rose Bay,12
+F9,Rose Bay,Watsons Bay,10
+F10,Barangaroo,Blackwattle Bay,13
+F2,Mosman,Circular Quay,15
+F2,Taronga Zoo,Mosman,6
+F2,Circular Quay,Taronga Zoo,12
+F2,Cremorne Point,Taronga Zoo,2
+F3,Drummoyne,Circular Quay,14
+F3,Cockatoo Is,Circular Quay,11
+F3,Barangaroo,Circular Quay,10
+F3,Drummoyne,Barangaroo,12
+F3,Cockatoo Is,Barangaroo,9
+F3,Syd Olym Pk,Barangaroo,25
+F3,Syd Olym Pk,Circular Quay,27
+F3,Rydalmere,Circular Quay,35
+F3,Drummoyne,Cockatoo Is,3
+F3,Huntleys Point,Drummoyne,4
+F3,Chiswick,Huntleys Point,2
+F3,Abbotsford,Chiswick,3
+F3,Cabarita,Abbotsford,4
+F3,Kissing Point,Cabarita,3
+F3,Meadowbank,Kissing Point,4
+F3,Syd Olym Pk,Meadowbank,2
+F3,Rydalmere,Syd Olym Park,10
+F3,Parramatta,Rydalmere,19
+F4,Milsons Point,Circular Quay,5
+F4,McMahons Point,Milsons Point ,2
+F4,Balmain East,McMahons Point,5
+F4,Barangaroo,Balmain East,5
+F4,Pyrmont Bay,Barangaroo,3
+F5,Kirribilli,Circular Quay,6
+F5,North Sydney,Kirribilli,2
+F5,Neutral Bay,North Sydney,2
+F5,Kurraba Point,Neutral Bay,2
+F5,Kirribilli,Kurraba Point,4
+F6,Cremorne Point,Circular Quay,9
+F6,South Mosman,Cremorne Point,4
+F6,Old Cremorne,South Mosman,2
+F6,Mosman,Old Cremorne,2
+F7,Garden Is,Circular Quay,8
+F7,Darling Point,Garden Is,6
+F7,Double Bay,Darling Point,5
+F8,Balmain ,Circular Quay,11
+F8,Birchgrove,Balmain,5
+F8,Greenwich Point,Birchgrove,2
+F8,Woolwich,Greenwich Point,2
+F8,Cockatoo Is,Woolwich,5
+F9,Rose Bay,Circular Quay,12
+F9,Watsons Bay,Rose Bay,10
+F10,Blackwattle Bay,Barangaroo,13

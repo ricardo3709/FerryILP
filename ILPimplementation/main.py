@@ -9,21 +9,20 @@ import pickle
 
 ## -------------------- Load csv files ----------------------------------------
 # Station and wharves dataframe
-wharf_df = pd.read_csv('ILPimplementation/wharf_info.csv')
+wharf_df = pd.read_csv('ILPimplementation/csv_inputs/wharf_info.csv')
 # lines dataframe
-line_df = pd.read_csv('ILPimplementation/line_info.csv')
+line_df = pd.read_csv('ILPimplementation/csv_inputs/line_info.csv')
 line_df['First_sailing'] = pd.to_datetime(line_df['First_sailing'], format='%H:%M')
 # Wharf to wharf transit time dataframe
-tt_df = pd.read_csv('ILPimplementation/rebalancing_times.csv',index_col='From/To')
+tt_df = pd.read_csv('ILPimplementation/csv_inputs/rebalancing_times.csv',index_col='From/To')
 # Headways dataframe
-headway_df = pd.read_csv('ILPimplementation/headways.csv')
+headway_df = pd.read_csv('ILPimplementation/csv_inputs/headways.csv')
 # vessels
-vessel_df = pd.read_csv('ILPimplementation/vessel_info.csv')
+vessel_df = pd.read_csv('ILPimplementation/csv_inputs/vessel_info.csv')
 # charging berths dataframe
-charging_berth = pd.read_csv('ILPimplementation/charging_berths.csv')
+charging_berth = pd.read_csv('ILPimplementation/csv_inputs/charging_berths.csv')
 
 print('All .csv files have been loaded successfully.\n')
-
 
 
 ## -------------------- Input other paramters values --------------------------
@@ -33,13 +32,13 @@ period_length = 5 # mins
 total_operation_hours = 24 # hours
 
 # nc, Minimum num of crew break
-nc = 3
+nc = 1
 
 # Dc, Crew break duration (fixed)
 Dc = 10 # mins
 
 # Tc, Maximum seperation time for crew breakings
-Tc = 12*60 # mins
+Tc = 24*60 # mins
 
 # rv+, charging rate
 rv_plus = 2100*period_length/60/1100 # kW*h/kwh --> %  new modification (11July)
@@ -658,16 +657,7 @@ def cal_f(j):
         
         last_period = Tset[-1]  # Last time period in the set
         
-        # Calculate mu(j) based on the type of task
-        if j in Lset:
-            mu_j = line_df[line_df['Line_No'] == j]['Line_duration'].iloc()[0] // period_length + 1
-        elif j in Bc:
-            mu_j = Dc // period_length + 1
-        elif j in Bplus or j in B:
-            mu_j = 1  # Fixed duration for waiting tasks
-        else:
-            # If task j is unrecognized
-            return None
+        mu_j = cal_mu(j) # new modification 12Jul
 
         # Calculate the latest feasible start time
         last_start_time = last_period + 1 - mu_j
@@ -872,58 +862,58 @@ print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')
 # This cannot be stored in advance, since currently focusing on modifying the parameters to make the model feasible, and each time the parameters change might lead to a new matrix.
 # So it's better to calculate these files every time to avoid issues.
 
-# # cal_taskF(j, t), taskF_results
-# taskF_results = {}
-# for j in tqdm(Jset, desc='taskF_results'):
-#     for t in Tset:
-#         taskF_results[(j, t)] = cal_taskF(j, t)
+# cal_taskF(j, t), taskF_results
+taskF_results = {}
+for j in tqdm(Jset, desc='taskF_results'):
+    for t in Tset:
+        taskF_results[(j, t)] = cal_taskF(j, t)
 
-# # cal_mu(j), mu_results
-# mu_results = {}
-# for j in tqdm(Jset, desc='mu_results'):
-#     mu_results[j] = cal_mu(j)
+# cal_mu(j), mu_results
+mu_results = {}
+for j in tqdm(Jset, desc='mu_results'):
+    mu_results[j] = cal_mu(j)
 
-# # cal_xi(j, j_prime), xi_results
-# xi_results = {}
-# for j in tqdm(Jset, desc='xi_results'):
-#     for j_prime in Jset:
-#         xi_results[(j, j_prime)] = cal_xi(j, j_prime)
+# cal_xi(j, j_prime), xi_results
+xi_results = {}
+for j in tqdm(Jset, desc='xi_results'):
+    for j_prime in Jset:
+        xi_results[(j, j_prime)] = cal_xi(j, j_prime)
 
-# # cal_phi(j, t) phi_results
-# phi_results = {}
-# for j in tqdm(Jset, desc='phi_results'):
-#     for t in Tset:
-#         phi_results[(j, t)] = cal_phi(j, t)
+# cal_phi(j, t) phi_results
+phi_results = {}
+for j in tqdm(Jset, desc='phi_results'):
+    for t in Tset:
+        phi_results[(j, t)] = cal_phi(j, t)
 
-# # cal_E(w, t), E_results
-# E_results = {}
-# for w in tqdm(Wset, desc='E_results'):
-#     for t in Tset:
-#         # print(w,t)
-#         E_results[(w, t)] = cal_E(w, t)
+# cal_E(w, t), E_results
+E_results = {}
+for w in tqdm(Wset, desc='E_results'):
+    for t in Tset:
+        # print(w,t)
+        E_results[(w, t)] = cal_E(w, t)
 
-# # Save
-# with open('ILPimplementation/taskF_results.pkl', 'wb') as f:
-#     pickle.dump(taskF_results, f)
-# with open('ILPimplementation/mu_results.pkl', 'wb') as f:
-#     pickle.dump(mu_results, f)
-# with open('ILPimplementation/xi_jj_results.pkl', 'wb') as f:
-#     pickle.dump(xi_results, f)
-# with open('ILPimplementation/phi_results.pkl', 'wb') as f:
-#     pickle.dump(phi_results, f)
-# with open('ILPimplementation/E_results.pkl', 'wb') as f:
-#     pickle.dump(E_results, f)
+# Save
+with open('ILPimplementation/pkl_files/taskF_results.pkl', 'wb') as f:
+    pickle.dump(taskF_results, f)
+with open('ILPimplementation/pkl_files/mu_results.pkl', 'wb') as f:
+    pickle.dump(mu_results, f)
+with open('ILPimplementation/pkl_files/xi_jj_results.pkl', 'wb') as f:
+    pickle.dump(xi_results, f)
+with open('ILPimplementation/pkl_files/phi_results.pkl', 'wb') as f:
+    pickle.dump(phi_results, f)
+with open('ILPimplementation/pkl_files/E_results.pkl', 'wb') as f:
+    pickle.dump(E_results, f)
 
 # read 
-with open('ILPimplementation/taskF_results.pkl', 'rb') as f:
+with open('ILPimplementation/pkl_files/taskF_results.pkl', 'rb') as f:
     taskF_results = pickle.load(f)
-with open('ILPimplementation/mu_results.pkl', 'rb') as f:
+with open('ILPimplementation/pkl_files/mu_results.pkl', 'rb') as f:
     mu_results = pickle.load(f)
-with open('ILPimplementation/xi_jj_results.pkl', 'rb') as f:# read
+with open('ILPimplementation/pkl_files/xi_jj_results.pkl', 'rb') as f:# read
     xi_results = pickle.load(f)
-with open('ILPimplementation/E_results.pkl', 'rb') as f:
+with open('ILPimplementation/pkl_files/E_results.pkl', 'rb') as f:
     E_results = pickle.load(f)
-with open('ILPimplementation/phi_results.pkl', 'rb') as f: # read
+with open('ILPimplementation/pkl_files/phi_results.pkl', 'rb') as f: # read
     phi_results = pickle.load(f)
 
 print('All results matrixes ready!')
@@ -1011,7 +1001,7 @@ for v in tqdm(Vset, desc='Constraint 1e'):
         xi0_v_j = cal_xi0(v,j)
         t = xi0_v_j
         if t in Tset:
-            model.addConstr(gp.quicksum(y[v, j, t] for j in Jset) == 1,name=f"assign_task_j{j}_t{t}")
+            model.addConstr(gp.quicksum(y[v, j, t] for j in Jset) == 1,name=f"assign_task_v{v}_j{j}_t{t}")
 
 # Constraint 1f 
 for v in tqdm(Vset, desc='Constraint 1f'):
@@ -1124,20 +1114,18 @@ for v in tqdm(Vset, desc='Constraint 5c'):
                             >= Q[v, t], 
                             name=f"battery_update_v{v}_t{t}")
 
-# # Constraint 6a
-# for v in tqdm(Vset, desc='Constraint 6a'):
-#     model.addConstr(gp.quicksum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_{v}")
+# Constraint 6a
+for v in tqdm(Vset, desc='Constraint 6a'):
+    model.addConstr(gp.quicksum(y[v, j, t] for j in Bc for t in Tset) >= nc, name=f"min_crew_pauses_{v}")
 
-# # Constraint 6b
-# for v in tqdm(Vset, desc='Constraint 6b'):
-#     # Compute the sum for each vehicle v
-#     constraint_sum = gp.quicksum(y[v, j, t + t_prime] 
-#                                  for j in Bc 
-#                                  for t_prime in range(1, Tc // period_length + 1) 
-#                                  for t in Tset if t < (Tset[-1] - (Tc // period_length + 1)))
-#     model.addConstr(constraint_sum >= 1, name=f"max_period_pauses_v{v}_t{t}")
+# Constraint 6b
+for v in Vset:
+    for t in Tset:
+        if t < (Tset[-1] - (Tc // period_length + 1)):
+            for t_prime in range(1, Tc // period_length + 1):
+                model.addConstr(gp.quicksum(y[v, j, t + t_prime] for j in Bc) >= 1, name=f"max_distance_pauses_v{v}_t{t}_t{t}_t_prime{t_prime}") #12JUl
 
-# print('All constraintrs are ready.\n')
+print('All constraintrs are ready.\n')
 
 
 ## -------------------- Objective Functions --------------------
@@ -1164,12 +1152,11 @@ model.setObjective(rebalancing_time, GRB.MINIMIZE)
 ## -------------------- Optimization --------------------
 print(f"Starting optimization with {model.NumVars} variables and {model.NumConstrs} constraints.\n")
 
-# Modify parameters for detailed output and diagnostics
+# Modify parameters
 model.setParam('OutputFlag', 1)
 model.setParam('InfUnbdInfo', 1)
 model.setParam('Presolve', 2)
 model.setParam('ScaleFlag', 1)
-model.setParam('FeasibilityTol', 1e-6)
 
 model.optimize()
 
