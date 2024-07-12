@@ -1172,7 +1172,7 @@ if model.status == GRB.INFEASIBLE:
     for v in model.getVars():
         if v.IISLB > 0 or v.IISUB > 0:
             print(f"{v.VarName} is in the IIS.")
-    model.write("modelilp")
+    model.write("model.ilp")
 
 def save_variable_results(var_dict, filename):
     results = {k: (var_dict[k].X if var_dict[k].Xn <= var_dict[k].UB and var_dict[k].Xn >= var_dict[k].LB else "Out of bounds") for k in var_dict.keys()}
