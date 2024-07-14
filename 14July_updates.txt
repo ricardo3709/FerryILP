@@ -1,0 +1,16 @@
+Model Debugging Overview 11-14July
+
+Initially, the model repeatedly ran into feasibility issues. 
+Initial investigations pinpointed "crew pause" tasks as potential culprits. 
+However, removing these tasks only uncovered further complexities, which were too computationally intensive to resolve through the Irreducible Inconsistent Subsystem (IIS) analysis.
+
+Restarted with the first a few constraints of the model and adjusted key input parameters, such as the starting site Sv.
+the model could have multiple solutions based solely on constraints from 1a to 1k.
+
+and then gradually integrating more constraints:
+- + Constraint 4: Integrating constraint 4 with the base model (1a-1k) led to infeasibility. By relaxing the values of variable x, which adjusts the first sailing time, feasible solutions were obtained.
+- + Constraints 6a and 6b: Similarly, adding constraints 6a and 6b made the model infeasible, but it was solvable upon relaxing variable x.
+- + Combining Constraints 4, 6a, and 6b: This combination once again resulted in infeasibility, but feasible solutions emerged after adjusting variable x. But the solution make no sailing at all --> not reasonable
+- For constraints 2, 3, and 5a to 5c: These constraints significantly increased computational load and did not yield solutions even with a relaxed variable x.
+
+the ILPimplementation/Output_files currently stores the results for model with constraints from 1a to 1k and 4 only and with relaxation for the x variable (Line 19 can have its first sailing at the expected times). 
