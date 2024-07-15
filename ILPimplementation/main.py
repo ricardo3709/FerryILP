@@ -1202,16 +1202,16 @@ def save_relaxed_variable_results(model, var_dict, filename):
 
 save_relaxed_variable_results(model, x, 'ILPimplementation/Output_files/relaxed_x_variable_results.csv')
 
+
 if model.status == GRB.OPTIMAL:
     print("Optimization was successful. Saving results...")
     
     # Save results
-    save_variable_results(x, 'ILPimplementation/Output_files/x_variable_results.csv')
-    save_variable_results(y, 'ILPimplementation/Output_files/y_variable_results.csv')
-    save_variable_results(Q, 'ILPimplementation/Output_files/Q_variable_results.csv')
-    save_variable_results(z, 'ILPimplementation/Output_files/z_variable_results.csv')
-    save_variable_results(Z, 'ILPimplementation/Output_files/Z_variable_results.csv')
-    save_variable_results(Z_prime, 'ILPimplementation/Output_files/Z_prime_variable_results.csv')
+    save_variable_results(x, 'ILPimplementation/Output_files/x_ld_results.csv')
+    save_variable_results(y, 'ILPimplementation/Output_files/y_vjt_results.csv')
+    save_variable_results(Q, 'ILPimplementation/Output_files/Q_vt_results.csv')
+    save_variable_results(z, 'ILPimplementation/Output_files/z_wj_results.csv')
+    save_variable_results(Z, 'ILPimplementation/Output_files/Z_lwt_results.csv')
+    save_variable_results(Z_prime, 'ILPimplementation/Output_files/Z_prime_lwt_results.csv')
 else:
     print("Optimization did not reach optimality.")
-
