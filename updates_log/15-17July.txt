@@ -1,0 +1,17 @@
+1, Folder Reorganization:
+The entire folder has been reorganized for better structure and readability.
+
+2, Notebook Consolidation:
+The original ipynb draft is now named AllCodes.ipynb. This notebook includes all the original code drafts. Each cell can be run individually to understand and test the correctness of single functions or constraints.
+
+3, New Results Processing Notebook:
+A new file named ResultsProcessDraft.ipynb has been created (still incomplete). This notebook contains the draft code for processing final variable outputs, converting them into the required timetables, etc.
+
+4, Main Script Reorganization:
+The original main.py file has been split into multiple smaller files, which are now located in the ILPimplementation folder.
+The original, lengthy, and cluttered main.py file has been renamed to main_drafts.py and archived.
+The code logic within these files remains unchanged, but the structure has been modified to facilitate better collaboration between the files.
+
+5, CSV Inputs Adjustment:
+The CSV input files in the ILPimplementation folder have been adjusted to test different constraints or parameters, or to check if short-term timetabling models are feasible. These files are not derived from the actual input data in the Excel file.
+The original data is archived in the ILPimplementation/csv_inputs_original_copy folder.
