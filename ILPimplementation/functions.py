@@ -147,7 +147,7 @@ def cal_q(config, v, j, t):
         stops = R_l[1:]  # remove the origin station
         if len(stops) == 1:
             a = int(line_data['Time_underway_to_T'].iloc()[0] // config.period_length + 1)
-            dw = int(line_data['dw_T'].iloc()[0] // config.period_length + 1)
+            dw = int(line_data['dw_T'].iloc()[0] // config.period_length + 1) 
             if t in range(a, a+dw+1):
                 return 0
             else:
@@ -191,8 +191,12 @@ def cal_xi(config, j1, j2):
         start_location_j2 = get_task_location(config, j2, 0)
         if end_location_j1 not in config.tt_df.columns or start_location_j2 not in config.tt_df.columns:
             return 24*60 + 1  # Very long time to ensure no rebalancing happens
-        travel_time = config.tt_df.loc[end_location_j1, start_location_j2]
-        return travel_time // config.period_length + 1
+        
+        travel_time = config.tt_df.loc[end_location_j1, start_location_j2]  # 29July revised
+        if pd.isna(travel_time): # 29July revised
+            return 24*60 + 1# 29July revised
+        else:  # 29July revised
+            return travel_time // config.period_length + 1 # 29July revised        
     except Exception as e:
         raise Exception(f"An error occurred calculating travel time from {j1} to {j2}: {str(e)}")
 
@@ -205,8 +209,11 @@ def cal_xi0(config, v, j):
             return 0
         if not S_v in config.tt_df.columns or not task_station in config.tt_df.columns:
             return 24*60+1  # Max value to avoid rebalancing
-        travel_time = config.tt_df.loc[S_v, task_station]
-        return travel_time // config.period_length + 1
+        travel_time = config.tt_df.loc[S_v, task_station] # 29July revised
+        if pd.isna(travel_time): # 29July revised
+            return 24*60 + 1# 29July revised 
+        else: # 29July revised
+            return travel_time // config.period_length + 1 # 29July revised
     except Exception as e:
         raise Exception(f"An error occurred: {str(e)}")
 
@@ -230,7 +237,7 @@ def cal_delta(config, j, w):
     try:
         if isinstance(j, int) and j in config.Lset:
             line_data = config.line_df[config.line_df['Line_No'] == j]
-            safety_buffer = 1  # Safety buffer of 1 time period
+            safety_buffer = line_data['Safety_buffer'].iloc[0] // config.period_length + 1  # Safety buffer = O + B + OM， 29July revised
             R_l = cal_Rl(config, j)  # Stations visited by the line
 
             # Exclude the last station
@@ -266,8 +273,9 @@ def cal_muF(config, l):
     try:
         if not isinstance(l, int):
             raise ValueError("Line number must be an integer.")
-        dw_T = config.line_df[config.line_df['Line_No'] == l]['dw_T'].iloc[0]
-        return dw_T // config.period_length + 1
+        dw_T = config.line_df[config.line_df['Line_No'] == l]['dw_T'].iloc[0] 
+        safety_buffer = config.line_df[config.line_df['Line_No'] == l]['Safety_buffer'].iloc[0] # 29July revised
+        return (dw_T + safety_buffer) // config.period_length + 1 # 29July revised
     except Exception as e:
         raise ValueError(f"An error occurred: {str(e)}")
 

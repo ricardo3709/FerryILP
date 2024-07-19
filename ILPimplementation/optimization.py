@@ -10,8 +10,8 @@ def run_optimization(model):
     model.setParam('InfUnbdInfo', 1)
     model.setParam('Presolve', 2)
     model.setParam('ScaleFlag', 1)
-    model.setParam('TimeLimit', 3600)  # 1-hour time limit
-    model.setParam('MIPGap', 0.015)  # 1.5% optimality gap
+    model.setParam('TimeLimit', 3000)  # time limit
+    model.setParam('MIPGap', 0.2)  # optimality gap
     model.setParam('Heuristics', 0.5)  # 50% heuristic emphasis
 
     model.optimize()
@@ -30,12 +30,12 @@ def run_optimization(model):
     # Calculate IIS if model is infeasible
     if model.Status == gp.GRB.INFEASIBLE:
         print("Model is infeasible; computing IIS...")
-        # model.computeIIS()
-        # print("The following constraints and/or bounds are contributing to the infeasibility:")
-        # for c in model.getConstrs():
-        #     if c.IISConstr:
-        #         print(f"{c.ConstrName} is in the IIS.")
-        # model.write("model.ilp")
+        model.computeIIS()
+        print("The following constraints and/or bounds are contributing to the infeasibility:")
+        for c in model.getConstrs():
+            if c.IISConstr:
+                print(f"{c.ConstrName} is in the IIS.")
+        model.write("model.ilp")
 
 def save_variable_results(var_dict, filename):
     results = {k: (var_dict[k].X if var_dict[k].X <= var_dict[k].UB and var_dict[k].X >= var_dict[k].LB else "Out of bounds") for k in var_dict.keys()}

@@ -1,0 +1,29 @@
+1. Simplification Issue in F3 Sailing Routes:
+Assuming the F3 sailing sequence as "cq <--> brg <--> prmt" is an unrealistic simplification. 
+This assumption will likely lead to increased congestion at the docks for cq and brg, impacting the availability for other tasks at these docks. 
+This does not reflect the real-world scenario.
+
+2. Wharf Occupancy and Dwell Time:
+line_info.csv file has been modified, and associated functions are modified.
+The dwell time should be calculated based on the smaller minimum dwell time. 
+And the buffer time = O + B + OM
+
+3. Rebalancing Time:
+The rebalancing time table is now updated for all sations but with blank cell for unknow infomation.
+Since there is no information for Blackwattle Bay;but it's required for F10 or issue occurs.
+The current infomation in the OD matrix about Blackwattle Bay, all the calculations are manually done so it's just an approxiamation.
+
+4. Constraints and Practical Implications:
+There are issues related to constraints 2 and 3 when dealing with two consecutive tasks at the same station. 
+For instance, in the case of F10's round trips, if the interval between the two tasks is lengthy, such as 2 time periods, constraint 2 forces the vessel to a wharf that can accommodate waiting/charging tasks. 
+However, the wharves specified in Bset and B+ set are far from F10’s Blackwattle Bay, making it difficult to satisfy constraint 3. This is a specific example I've identified, and it is unclear whether there are similar issues elsewhere in the model.
+1g 
+
+5. Revision Notes:
+Entries 1e have been revised.
+
+6. Results Processe file partially finished.
+
+
+
+

@@ -1,0 +1,29 @@
+,Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+0,10M,Waiting,Pyrmont Bay,PB1,05:30,Pyrmont Bay,PB1,05:35
+1,10M,Waiting,Pyrmont Bay,PB1,05:35,Pyrmont Bay,PB1,05:40
+2,10M,Waiting,Balmain Shipyard,BSY3,05:40,Balmain Shipyard,BSY3,05:45
+3,10M,Waiting,Cockatoo Island,CI1,05:45,Cockatoo Island,CI1,05:50
+4,10M,Crew pause,Balmain Shipyard,BSY5,05:50,Balmain Shipyard,BSY5,05:59
+5,10M,Waiting,Barangaroo,Bar5,06:00,Barangaroo,Bar5,06:05
+6,10M,Waiting,Barangaroo,Bar4,06:05,Barangaroo,Bar4,06:10
+7,10M,18,Barangaroo,Bar1,06:10,Blackwattle Bay,BWB1,06:25
+8,10M,19,Blackwattle Bay,BWB1,06:30,Barangaroo,Bar5,06:45
+9,10M,18,Barangaroo,Bar1,06:50,Blackwattle Bay,BWB1,07:05
+10,10M,19,Blackwattle Bay,BWB1,07:10,Barangaroo,Bar5,07:25
+11,10M,18,Barangaroo,Bar1,07:30,Blackwattle Bay,BWB1,07:45
+12,10M,19,Blackwattle Bay,BWB1,07:50,Barangaroo,Bar2,08:05
+13,10M,18,Barangaroo,Bar1,08:10,Blackwattle Bay,BWB1,08:25
+14,10M,19,Blackwattle Bay,BWB1,08:30,Barangaroo,Bar4,08:45
+15,10M,18,Barangaroo,Bar1,08:50,Blackwattle Bay,BWB1,09:05
+16,10M,19,Blackwattle Bay,BWB1,09:10,Barangaroo,Bar4,09:25
+17,10M,18,Barangaroo,Bar1,09:30,Blackwattle Bay,BWB1,09:45
+18,10M,19,Blackwattle Bay,BWB1,09:50,Barangaroo,Bar2,10:05
+19,10M,18,Barangaroo,Bar1,10:10,Blackwattle Bay,BWB1,10:25
+20,10M,19,Blackwattle Bay,BWB1,10:30,Barangaroo,Bar5,10:45
+21,10M,Waiting,Circular Quay,CQ5,10:50,Circular Quay,CQ5,10:55
+22,10M,Crew pause,Balmain Shipyard,BSY3,10:55,Balmain Shipyard,BSY3,11:04
+23,10M,Waiting,Chiswick,Chs1,11:05,Chiswick,Chs1,11:10
+24,10M,Waiting,Parramatta,Pm1,11:10,Parramatta,Pm1,11:15
+25,10M,Waiting,Cockatoo Island,CI1,11:15,Cockatoo Island,CI1,11:20
+26,10M,Waiting,Parramatta,Pm1,11:20,Parramatta,Pm1,11:25
+27,10M,Waiting,Cockatoo Island,CI1,11:25,Cockatoo Island,CI1,11:30

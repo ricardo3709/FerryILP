@@ -34,11 +34,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
 
     # Constraint 1e
     for v in tqdm(config.Vset, desc='Constraint 1e'):
-        for j in config.Jset:
-            xi0_v_j = functions['cal_xi0'](config, v, j)
-            t = xi0_v_j
-            if t in config.Tset:
-                model.addConstr(gp.quicksum(y[v, j, t] for j in config.Jset) == 1, name=f"1e: assign_task_v{v}_j{j}_t{t}")
+        model.addConstr(gp.quicksum(y[v, j, functions['cal_xi0'](config, v, j)] for j in config.Jset if functions['cal_xi0'](config, v, j) in config.Tset) == 1, name=f"1e: assign_task_v{v}_j{j}_t{t}")
 
     # Constraint 1f
     for v in tqdm(config.Vset, desc='Constraint 1f'):
@@ -49,7 +45,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     for l in tqdm(config.Lset, desc='Constraint 1g'):
         R_l = functions['cal_Rl'](config, l)
         A_l = R_l[-1]  # last station
-        for S in [station for station in R_l if station != A_l]:
+        for S in R_l[:-1]: # 29July revised, original code: for S in [station for station in R_l if station != A_l]:
             C_lS = functions['cal_C_lS'](config, S)
             model.addConstr(gp.quicksum(z[w, l] for w in C_lS) == 1, name=f"1g: select_one_wharf_{l}_station_{S}")
 
@@ -89,44 +85,27 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                     model.addConstr(y[v, w, t] <= y[v, w, t + 1] + y[v, phi_w, t + 1], name=f"1k: full_period_charging_2_v{v}_w{w}_t{t}")
 
 
-    # # Combined Constraint 2 and 3 for rueduing loop and saving time
-    # for v in tqdm(config.Vset, desc='Combined Constraint 2 and 3'):
-    #     for j in config.Jset:
-    #         for t in config.Tset:
-    #             follow_tasks = taskF_results[(j, t)]
-    #             if follow_tasks:
-    #                 # Ensure immediate follow-up task
-    #                 follow_task_sum = gp.quicksum(
-    #                     y[v, j_prime, t + mu_results[j] + xi_results[(j, j_prime)]] 
-    #                     for j_prime in follow_tasks
-    #                 )
-    #                 model.addConstr(follow_task_sum >= y[v, j, t], name=f"combined_follow_task_v{v}_j{j}_t{t}")
-
-    #                 # Ensure no overlapping tasks
-    #                 for j_prime in follow_tasks:
-    #                     for t_prime in range(t, t + mu_results[j] + xi_results[(j, j_prime)]):
-    #                         if t_prime in config.Tset:
-    #                             model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1,
-    #                                             name=f"combined_no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
-
-    # Constraint 2
+    # Combined Constraint 2
     for v in tqdm(config.Vset, desc='Constraint 2'):
         for j in config.Jset:
             for t in config.Tset:
                 follow_tasks = taskF_results[(j, t)]
                 if follow_tasks:
-                    model.addConstr(
-                        gp.quicksum(y[v, j_prime, t + mu_results[j] + xi_results[(j, j_prime)]] for j_prime in follow_tasks) >= y[v, j, t],
-                        name=f"2: follow_task_v{v}_j{j}_t{t}"
-                    )
+                    buffer = 3
+                    follow_task = gp.quicksum(y[v, j_prime, t_prime] 
+                                            for j_prime in follow_tasks 
+                                            for t_prime in range(t + mu_results[j] + xi_results[(j, j_prime)], 
+                                                                t + mu_results[j] + xi_results[(j, j_prime)] + buffer)
+                                            if t_prime in config.Tset)
+                    model.addConstr(follow_task >= y[v, j, t], name=f"2: follow_task_v{v}_j{j}_t{t}")
 
-    # # Constraint 3
+    # Constraint 3                   
     # for v in tqdm(config.Vset, desc='Constraint 3'):
     #     for j in config.Jset:
     #         for t in config.Tset:
     #             for j_prime in taskF_results[(j, t)]:
     #                 for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]):
-    #                     if t_prime in config.Tset:
+    #                     if å in config.Tset:
     #                         model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1,name=f"3: no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
 
 

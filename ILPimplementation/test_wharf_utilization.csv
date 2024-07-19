@@ -1,0 +1,42 @@
+,Variable,Value,Vessel,Task,Start_Time,Start_Wharf,Occupied_time
+32545,"EC5,phi_Bar1,2",1.0,EC5,phi_Bar1,2,Bar1,[2]
+77905,"RR1,phi_Bar1,2",1.0,RR1,phi_Bar1,2,Bar1,[2]
+57746,"FF5,phi_Bar1,3",1.0,FF5,phi_Bar1,3,Bar1,[3]
+47667,"FF3,phi_Bar1,4",1.0,FF3,phi_Bar1,4,Bar1,[4]
+7351,"24M,phi_Bar1,8",1.0,24M,phi_Bar1,8,Bar1,[8]
+119313,"RR6,cp_Bar1,10",1.0,RR6,cp_Bar1,10,Bar1,"[10, 11]"
+7354,"24M,phi_Bar1,11",1.0,24M,phi_Bar1,11,Bar1,[11]
+12396,"EC1,phi_Bar1,13",1.0,EC1,phi_Bar1,13,Bar1,[13]
+123284,"RR7,phi_Bar1,21",1.0,RR7,phi_Bar1,21,Bar1,[21]
+119327,"RR6,cp_Bar1,24",1.0,RR6,cp_Bar1,24,Bar1,"[24, 25]"
+103128,"RR3,phi_Bar1,25",1.0,RR3,phi_Bar1,25,Bar1,[25]
+123293,"RR7,phi_Bar1,30",1.0,RR7,phi_Bar1,30,Bar1,[30]
+123294,"RR7,phi_Bar1,31",1.0,RR7,phi_Bar1,31,Bar1,[31]
+57777,"FF5,phi_Bar1,34",1.0,FF5,phi_Bar1,34,Bar1,[34]
+128344,"RR8,phi_Bar1,41",1.0,RR8,phi_Bar1,41,Bar1,[41]
+118266,"RR6,phi_Bar1,43",1.0,RR6,phi_Bar1,43,Bar1,[43]
+67867,"FF7,phi_Bar1,44",1.0,FF7,phi_Bar1,44,Bar1,[44]
+72907,"FF8,phi_Bar1,44",1.0,FF8,phi_Bar1,44,Bar1,[44]
+57787,"FF5,phi_Bar1,44",1.0,FF5,phi_Bar1,44,Bar1,[44]
+52747,"FF4,phi_Bar1,44",1.0,FF4,phi_Bar1,44,Bar1,[44]
+42667,"FF2,phi_Bar1,44",1.0,FF2,phi_Bar1,44,Bar1,[44]
+63910,"FF6,cp_Bar1,47",1.0,FF6,cp_Bar1,47,Bar1,"[47, 48]"
+58870,"FF5,cp_Bar1,47",1.0,FF5,cp_Bar1,47,Bar1,"[47, 48]"
+7391,"24M,phi_Bar1,48",1.0,24M,phi_Bar1,48,Bar1,[48]
+98111,"RR2,phi_Bar1,48",1.0,RR2,phi_Bar1,48,Bar1,[48]
+12432,"EC1,phi_Bar1,49",1.0,EC1,phi_Bar1,49,Bar1,[49]
+113232,"RR5,phi_Bar1,49",1.0,RR5,phi_Bar1,49,Bar1,[49]
+113233,"RR5,phi_Bar1,50",1.0,RR5,phi_Bar1,50,Bar1,[50]
+113235,"RR5,phi_Bar1,52",1.0,RR5,phi_Bar1,52,Bar1,[52]
+7395,"24M,phi_Bar1,52",1.0,24M,phi_Bar1,52,Bar1,[52]
+93079,"RR12,phi_Bar1,56",1.0,RR12,phi_Bar1,56,Bar1,[56]
+88039,"RR11,phi_Bar1,56",1.0,RR11,phi_Bar1,56,Bar1,[56]
+37640,"FF1,phi_Bar1,57",1.0,FF1,phi_Bar1,57,Bar1,[57]
+128360,"RR8,phi_Bar1,57",1.0,RR8,phi_Bar1,57,Bar1,[57]
+133400,"RR9,phi_Bar1,57",1.0,RR9,phi_Bar1,57,Bar1,[57]
+84087,"RR10,cp_Bar1,64",1.0,RR10,cp_Bar1,64,Bar1,"[64, 65]"
+12449,"EC1,phi_Bar1,66",1.0,EC1,phi_Bar1,66,Bar1,[66]
+119372,"RR6,cp_Bar1,69",1.0,RR6,cp_Bar1,69,Bar1,"[69, 70]"
+103174,"RR3,phi_Bar1,71",1.0,RR3,phi_Bar1,71,Bar1,[71]
+32615,"EC5,phi_Bar1,72",1.0,EC5,phi_Bar1,72,Bar1,[72]
+27575,"EC4,phi_Bar1,72",1.0,EC4,phi_Bar1,72,Bar1,[72]
