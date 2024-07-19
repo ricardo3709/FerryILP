@@ -100,13 +100,13 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                     model.addConstr(follow_task >= y[v, j, t], name=f"2: follow_task_v{v}_j{j}_t{t}")
 
     # Constraint 3                   
-    # for v in tqdm(config.Vset, desc='Constraint 3'):
-    #     for j in config.Jset:
-    #         for t in config.Tset:
-    #             for j_prime in taskF_results[(j, t)]:
-    #                 for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]):
-    #                     if å in config.Tset:
-    #                         model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1,name=f"3: no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
+    for v in tqdm(config.Vset, desc='Constraint 3'):
+        for j in config.Jset:
+            for t in config.Tset:
+                for j_prime in taskF_results[(j, t)]:
+                    for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]):
+                        if t_prime in config.Tset and xi_results[(j, j_prime)] != 1:
+                            model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1 ,name=f"3: no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
 
 
     # Constraint 4

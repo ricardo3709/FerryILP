@@ -1,42 +1,55 @@
 ,Variable,Value,Vessel,Task,Start_Time,Start_Wharf,Occupied_time
-32545,"EC5,phi_Bar1,2",1.0,EC5,phi_Bar1,2,Bar1,[2]
-77905,"RR1,phi_Bar1,2",1.0,RR1,phi_Bar1,2,Bar1,[2]
-57746,"FF5,phi_Bar1,3",1.0,FF5,phi_Bar1,3,Bar1,[3]
-47667,"FF3,phi_Bar1,4",1.0,FF3,phi_Bar1,4,Bar1,[4]
-7351,"24M,phi_Bar1,8",1.0,24M,phi_Bar1,8,Bar1,[8]
-119313,"RR6,cp_Bar1,10",1.0,RR6,cp_Bar1,10,Bar1,"[10, 11]"
-7354,"24M,phi_Bar1,11",1.0,24M,phi_Bar1,11,Bar1,[11]
-12396,"EC1,phi_Bar1,13",1.0,EC1,phi_Bar1,13,Bar1,[13]
-123284,"RR7,phi_Bar1,21",1.0,RR7,phi_Bar1,21,Bar1,[21]
-119327,"RR6,cp_Bar1,24",1.0,RR6,cp_Bar1,24,Bar1,"[24, 25]"
-103128,"RR3,phi_Bar1,25",1.0,RR3,phi_Bar1,25,Bar1,[25]
-123293,"RR7,phi_Bar1,30",1.0,RR7,phi_Bar1,30,Bar1,[30]
-123294,"RR7,phi_Bar1,31",1.0,RR7,phi_Bar1,31,Bar1,[31]
-57777,"FF5,phi_Bar1,34",1.0,FF5,phi_Bar1,34,Bar1,[34]
-128344,"RR8,phi_Bar1,41",1.0,RR8,phi_Bar1,41,Bar1,[41]
-118266,"RR6,phi_Bar1,43",1.0,RR6,phi_Bar1,43,Bar1,[43]
-67867,"FF7,phi_Bar1,44",1.0,FF7,phi_Bar1,44,Bar1,[44]
-72907,"FF8,phi_Bar1,44",1.0,FF8,phi_Bar1,44,Bar1,[44]
-57787,"FF5,phi_Bar1,44",1.0,FF5,phi_Bar1,44,Bar1,[44]
-52747,"FF4,phi_Bar1,44",1.0,FF4,phi_Bar1,44,Bar1,[44]
-42667,"FF2,phi_Bar1,44",1.0,FF2,phi_Bar1,44,Bar1,[44]
-63910,"FF6,cp_Bar1,47",1.0,FF6,cp_Bar1,47,Bar1,"[47, 48]"
-58870,"FF5,cp_Bar1,47",1.0,FF5,cp_Bar1,47,Bar1,"[47, 48]"
-7391,"24M,phi_Bar1,48",1.0,24M,phi_Bar1,48,Bar1,[48]
-98111,"RR2,phi_Bar1,48",1.0,RR2,phi_Bar1,48,Bar1,[48]
-12432,"EC1,phi_Bar1,49",1.0,EC1,phi_Bar1,49,Bar1,[49]
-113232,"RR5,phi_Bar1,49",1.0,RR5,phi_Bar1,49,Bar1,[49]
-113233,"RR5,phi_Bar1,50",1.0,RR5,phi_Bar1,50,Bar1,[50]
-113235,"RR5,phi_Bar1,52",1.0,RR5,phi_Bar1,52,Bar1,[52]
-7395,"24M,phi_Bar1,52",1.0,24M,phi_Bar1,52,Bar1,[52]
-93079,"RR12,phi_Bar1,56",1.0,RR12,phi_Bar1,56,Bar1,[56]
-88039,"RR11,phi_Bar1,56",1.0,RR11,phi_Bar1,56,Bar1,[56]
-37640,"FF1,phi_Bar1,57",1.0,FF1,phi_Bar1,57,Bar1,[57]
-128360,"RR8,phi_Bar1,57",1.0,RR8,phi_Bar1,57,Bar1,[57]
-133400,"RR9,phi_Bar1,57",1.0,RR9,phi_Bar1,57,Bar1,[57]
-84087,"RR10,cp_Bar1,64",1.0,RR10,cp_Bar1,64,Bar1,"[64, 65]"
-12449,"EC1,phi_Bar1,66",1.0,EC1,phi_Bar1,66,Bar1,[66]
-119372,"RR6,cp_Bar1,69",1.0,RR6,cp_Bar1,69,Bar1,"[69, 70]"
-103174,"RR3,phi_Bar1,71",1.0,RR3,phi_Bar1,71,Bar1,[71]
-32615,"EC5,phi_Bar1,72",1.0,EC5,phi_Bar1,72,Bar1,[72]
-27575,"EC4,phi_Bar1,72",1.0,EC4,phi_Bar1,72,Bar1,[72]
+134425,"RR9,cp_Bar1,2",1.0,RR9,cp_Bar1,2,Bar1,"[2, 3]"
+89065,"RR11,cp_Bar1,2",1.0,RR11,cp_Bar1,2,Bar1,"[2, 3]"
+38665,"FF1,cp_Bar1,2",1.0,FF1,cp_Bar1,2,Bar1,"[2, 3]"
+63866,"FF6,cp_Bar1,3",1.0,FF6,cp_Bar1,3,Bar1,"[3, 4]"
+58826,"FF5,cp_Bar1,3",1.0,FF5,cp_Bar1,3,Bar1,"[3, 4]"
+53786,"FF4,cp_Bar1,3",1.0,FF4,cp_Bar1,3,Bar1,"[3, 4]"
+78987,"RR1,cp_Bar1,4",1.0,RR1,cp_Bar1,4,Bar1,"[4, 5]"
+53788,"FF4,cp_Bar1,5",1.0,FF4,cp_Bar1,5,Bar1,"[5, 6]"
+78989,"RR1,cp_Bar1,6",1.0,RR1,cp_Bar1,6,Bar1,"[6, 7]"
+89071,"RR11,cp_Bar1,8",1.0,RR11,cp_Bar1,8,Bar1,"[8, 9]"
+3392,"10M,cp_Bar1,9",1.0,10M,cp_Bar1,9,Bar1,"[9, 10]"
+94113,"RR12,cp_Bar1,10",1.0,RR12,cp_Bar1,10,Bar1,"[10, 11]"
+43714,"FF2,cp_Bar1,11",1.0,FF2,cp_Bar1,11,Bar1,"[11, 12]"
+134435,"RR9,cp_Bar1,12",1.0,RR9,cp_Bar1,12,Bar1,"[12, 13]"
+38676,"FF1,cp_Bar1,13",1.0,FF1,cp_Bar1,13,Bar1,"[13, 14]"
+89077,"RR11,cp_Bar1,14",1.0,RR11,cp_Bar1,14,Bar1,"[14, 15]"
+134437,"RR9,cp_Bar1,14",1.0,RR9,cp_Bar1,14,Bar1,"[14, 15]"
+38678,"FF1,cp_Bar1,15",1.0,FF1,cp_Bar1,15,Bar1,"[15, 16]"
+78999,"RR1,cp_Bar1,16",1.0,RR1,cp_Bar1,16,Bar1,"[16, 17]"
+28599,"EC4,cp_Bar1,16",1.0,EC4,cp_Bar1,16,Bar1,"[16, 17]"
+38682,"FF1,cp_Bar1,19",1.0,FF1,cp_Bar1,19,Bar1,"[19, 20]"
+89083,"RR11,cp_Bar1,20",1.0,RR11,cp_Bar1,20,Bar1,"[20, 21]"
+134443,"RR9,cp_Bar1,20",1.0,RR9,cp_Bar1,20,Bar1,"[20, 21]"
+48764,"FF3,cp_Bar1,21",1.0,FF3,cp_Bar1,21,Bar1,"[21, 22]"
+73971,"FF8,cp_Bar1,28",1.0,FF8,cp_Bar1,28,Bar1,"[28, 29]"
+89093,"RR11,cp_Bar1,30",1.0,RR11,cp_Bar1,30,Bar1,"[30, 31]"
+89095,"RR11,cp_Bar1,32",1.0,RR11,cp_Bar1,32,Bar1,"[32, 33]"
+134465,"RR9,cp_Bar1,42",1.0,RR9,cp_Bar1,42,Bar1,"[42, 43]"
+38706,"FF1,cp_Bar1,43",1.0,FF1,cp_Bar1,43,Bar1,"[43, 44]"
+73987,"FF8,cp_Bar1,44",1.0,FF8,cp_Bar1,44,Bar1,"[44, 45]"
+134467,"RR9,cp_Bar1,44",1.0,RR9,cp_Bar1,44,Bar1,"[44, 45]"
+23588,"EC3,cp_Bar1,45",1.0,EC3,cp_Bar1,45,Bar1,"[45, 46]"
+134469,"RR9,cp_Bar1,46",1.0,RR9,cp_Bar1,46,Bar1,"[46, 47]"
+23590,"EC3,cp_Bar1,47",1.0,EC3,cp_Bar1,47,Bar1,"[47, 48]"
+134471,"RR9,cp_Bar1,48",1.0,RR9,cp_Bar1,48,Bar1,"[48, 49]"
+79035,"RR1,cp_Bar1,52",1.0,RR1,cp_Bar1,52,Bar1,"[52, 53]"
+134475,"RR9,cp_Bar1,52",1.0,RR9,cp_Bar1,52,Bar1,"[52, 53]"
+79037,"RR1,cp_Bar1,54",1.0,RR1,cp_Bar1,54,Bar1,"[54, 55]"
+23598,"EC3,cp_Bar1,55",1.0,EC3,cp_Bar1,55,Bar1,"[55, 56]"
+89119,"RR11,cp_Bar1,56",1.0,RR11,cp_Bar1,56,Bar1,"[56, 57]"
+89121,"RR11,cp_Bar1,58",1.0,RR11,cp_Bar1,58,Bar1,"[58, 59]"
+74003,"FF8,cp_Bar1,60",1.0,FF8,cp_Bar1,60,Bar1,"[60, 61]"
+23604,"EC3,cp_Bar1,61",1.0,EC3,cp_Bar1,61,Bar1,"[61, 62]"
+99204,"RR2,cp_Bar1,61",1.0,RR2,cp_Bar1,61,Bar1,"[61, 62]"
+74005,"FF8,cp_Bar1,62",1.0,FF8,cp_Bar1,62,Bar1,"[62, 63]"
+89125,"RR11,cp_Bar1,62",1.0,RR11,cp_Bar1,62,Bar1,"[62, 63]"
+79045,"RR1,cp_Bar1,62",1.0,RR1,cp_Bar1,62,Bar1,"[62, 63]"
+38726,"FF1,cp_Bar1,63",1.0,FF1,cp_Bar1,63,Bar1,"[63, 64]"
+134489,"RR9,cp_Bar1,66",1.0,RR9,cp_Bar1,66,Bar1,"[66, 67]"
+3450,"10M,cp_Bar1,67",1.0,10M,cp_Bar1,67,Bar1,"[67, 68]"
+23610,"EC3,cp_Bar1,67",1.0,EC3,cp_Bar1,67,Bar1,"[67, 68]"
+38730,"FF1,cp_Bar1,67",1.0,FF1,cp_Bar1,67,Bar1,"[67, 68]"
+74013,"FF8,cp_Bar1,70",1.0,FF8,cp_Bar1,70,Bar1,"[70, 71]"
+89133,"RR11,cp_Bar1,70",1.0,RR11,cp_Bar1,70,Bar1,"[70, 71]"

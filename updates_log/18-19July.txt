@@ -23,7 +23,3 @@ However, the wharves specified in Bset and B+ set are far from F10’s Blackwatt
 Entries 1e have been revised.
 
 6. Results Processe file partially finished.
-
-
-
-
