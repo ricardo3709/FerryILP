@@ -1,0 +1,21 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+FF6,Waiting,Barangaroo,Bar2,05:40,Barangaroo,Bar2,05:45
+FF6,Waiting,Cabarita,Cab1,06:15,Cabarita,Cab1,06:20
+FF6,Waiting,Chiswick,Chs1,06:20,Chiswick,Chs1,06:25
+FF6,Waiting,Chiswick,Chs1,06:35,Chiswick,Chs1,06:40
+FF6,13,Double Bay,DB1,06:50,Circular Quay,CQ4,07:11
+FF6,Waiting,Watsons Bay,WB1,07:20,Watsons Bay,WB1,07:25
+FF6,2,Mosman,Mos1,07:25,Circular Quay,CQ5,07:43
+FF6,11,Mosman,Mos1,07:50,Circular Quay,CQ5,08:17
+FF6,Waiting,Circular Quay,CQ5,08:40,Circular Quay,CQ5,08:45
+FF6,Waiting,Pyrmont Bay,PB1,08:55,Pyrmont Bay,PB1,09:00
+FF6,Waiting,Parramatta,Pm1,09:00,Parramatta,Pm1,09:05
+FF6,Waiting,Rose Bay,RB1,09:10,Rose Bay,RB1,09:15
+FF6,Waiting,Circular Quay,CQ5,09:20,Circular Quay,CQ5,09:25
+FF6,3,Circular Quay,CQ1,09:35,Taronga Zoo,TZ1,09:53
+FF6,Waiting,Balmain Shipyard,BSY2,10:00,Balmain Shipyard,BSY2,10:05
+FF6,3,Circular Quay,CQ1,10:10,Taronga Zoo,TZ1,10:28
+FF6,Waiting,Circular Quay,CQ3,11:00,Circular Quay,CQ3,11:05
+FF6,Waiting,Parramatta,Pm1,11:05,Parramatta,Pm1,11:10
+FF6,Waiting,Parramatta,Pm1,11:20,Parramatta,Pm1,11:25
+FF6,Waiting,Watsons Bay,WB1,11:25,Watsons Bay,WB1,11:30

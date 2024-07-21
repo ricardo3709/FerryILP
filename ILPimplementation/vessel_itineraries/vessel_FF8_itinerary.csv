@@ -1,0 +1,30 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+FF8,Waiting,Cockatoo Island,CI1,05:40,Cockatoo Island,CI1,05:45
+FF8,Waiting,Chiswick,Chs1,05:55,Chiswick,Chs1,06:00
+FF8,Crew pause,Circular Quay,CQ5,06:10,Circular Quay,CQ5,06:19
+FF8,7,Circular Quay,CQ1,06:30,Pyrmont Bay,PB1,06:59
+FF8,Waiting,Chiswick,Chs1,07:10,Chiswick,Chs1,07:15
+FF8,Waiting,Balmain Shipyard,BSY5,07:25,Balmain Shipyard,BSY5,07:30
+FF8,Waiting,Circular Quay,CQ3,07:35,Circular Quay,CQ3,07:40
+FF8,Crew pause,Circular Quay,CQ5,07:40,Circular Quay,CQ5,07:49
+FF8,14,Circular Quay,CQ1,07:55,Cockatoo Island,CI1,08:29
+FF8,Waiting,Parramatta,Pm1,08:50,Parramatta,Pm1,08:55
+FF8,Waiting,Pyrmont Bay,PB1,08:55,Pyrmont Bay,PB1,09:00
+FF8,Waiting,Barangaroo,Bar4,09:00,Barangaroo,Bar4,09:05
+FF8,Waiting,Parramatta,Pm1,09:20,Parramatta,Pm1,09:25
+FF8,Waiting,Balmain Shipyard,BSY4,09:25,Balmain Shipyard,BSY4,09:30
+FF8,Waiting,Balmain Shipyard,BSY4,09:30,Balmain Shipyard,BSY4,09:35
+FF8,Waiting,Parramatta,Pm1,09:35,Parramatta,Pm1,09:40
+FF8,Crew pause,Balmain Shipyard,BSY6,09:45,Balmain Shipyard,BSY6,09:54
+FF8,Waiting,Parramatta,Pm1,09:55,Parramatta,Pm1,10:00
+FF8,Waiting,Cockatoo Island,CI1,10:00,Cockatoo Island,CI1,10:05
+FF8,Waiting,Circular Quay,CQ4,10:05,Circular Quay,CQ4,10:10
+FF8,Waiting,Barangaroo,Bar1,10:10,Barangaroo,Bar1,10:15
+FF8,Waiting,Circular Quay,CQ5,10:25,Circular Quay,CQ5,10:30
+FF8,Waiting,Parramatta,Pm1,10:30,Parramatta,Pm1,10:35
+FF8,Crew pause,Balmain Shipyard,BSY2,10:35,Balmain Shipyard,BSY2,10:44
+FF8,Crew pause,Balmain Shipyard,BSY3,10:45,Balmain Shipyard,BSY3,10:54
+FF8,Waiting,Circular Quay,CQ2,10:55,Circular Quay,CQ2,11:00
+FF8,Waiting,Barangaroo,Bar2,11:05,Barangaroo,Bar2,11:10
+FF8,Waiting,Parramatta,Pm1,11:20,Parramatta,Pm1,11:25
+FF8,Waiting,Cockatoo Island,CI1,11:25,Cockatoo Island,CI1,11:30

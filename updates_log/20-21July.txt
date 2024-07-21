@@ -1,0 +1,13 @@
+1. ILPimplementation/ResultsProcess.py
+The ResultsProcess.py file is complete and successfully processes the ILP model variable results.
+The code might be lengthy and unoptimized, and it needs to be integrated into main.py for better organization.
+
+2. Constraint 3
+Constraint 3 ensures that vessels do not overlap in their tasks, which likely introduces significant combinatorial complexity
+The model is solvable with all constraints excepts which about crew pause and charging, but due to the optimization conditions, it requires an enormous amount of computation time (24h-run has been tested but get no optimised solution).
+Currently, introducing auxiliary variables or aggregating constraints to reduce the combinatorial explosion.
+The original code for Constraint 3 in ILPimplementation/constraints.py causes extensive computation time. We are trying to solve this by introducing auxiliary variables.
+The original code is commented out but preserved for review.
+
+
+

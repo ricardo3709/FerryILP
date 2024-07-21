@@ -1,0 +1,20 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+RR8,Waiting,Barangaroo,Bar2,05:35,Barangaroo,Bar2,05:40
+RR8,Waiting,Pyrmont Bay,PB1,05:50,Pyrmont Bay,PB1,05:55
+RR8,Waiting,Pyrmont Bay,PB1,06:05,Pyrmont Bay,PB1,06:10
+RR8,Waiting,Rose Bay,RB1,06:40,Rose Bay,RB1,06:45
+RR8,16,Circular Quay,CQ1,06:50,Watsons Bay,WB1,07:20
+RR8,Waiting,Chiswick,Chs1,07:25,Chiswick,Chs1,07:30
+RR8,Waiting,Parramatta,Pm1,08:20,Parramatta,Pm1,08:25
+RR8,6,Parramatta,Pm1,08:30,Circular Quay,CQ1,10:00
+RR8,Waiting,Balmain Shipyard,BSY1,10:10,Balmain Shipyard,BSY1,10:15
+RR8,Waiting,Parramatta,Pm1,10:20,Parramatta,Pm1,10:25
+RR8,Crew pause,Balmain Shipyard,BSY1,10:25,Balmain Shipyard,BSY1,10:34
+RR8,Waiting,Chiswick,Chs1,10:35,Chiswick,Chs1,10:40
+RR8,Waiting,Pyrmont Bay,PB1,10:50,Pyrmont Bay,PB1,10:55
+RR8,Waiting,Barangaroo,Bar1,10:55,Barangaroo,Bar1,11:00
+RR8,Waiting,Cockatoo Island,CI1,11:00,Cockatoo Island,CI1,11:05
+RR8,Waiting,Chiswick,Chs1,11:05,Chiswick,Chs1,11:10
+RR8,Waiting,Cockatoo Island,CI1,11:10,Cockatoo Island,CI1,11:15
+RR8,Waiting,Parramatta,Pm1,11:20,Parramatta,Pm1,11:25
+RR8,Waiting,Cockatoo Island,CI1,11:25,Cockatoo Island,CI1,11:30

@@ -1,0 +1,19 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+RR12,Waiting,Cabarita,Cab1,05:30,Cabarita,Cab1,05:35
+RR12,Waiting,Cockatoo Island,CI1,05:40,Cockatoo Island,CI1,05:45
+RR12,16,Circular Quay,CQ1,06:00,Watsons Bay,WB1,06:30
+RR12,6,Parramatta,Pm1,07:40,Circular Quay,CQ1,09:10
+RR12,Waiting,Rose Bay,RB1,09:20,Rose Bay,RB1,09:25
+RR12,Crew pause,Balmain Shipyard,BSY1,09:35,Balmain Shipyard,BSY1,09:44
+RR12,Waiting,Rose Bay,RB1,09:45,Rose Bay,RB1,09:50
+RR12,Waiting,Cabarita,Cab1,10:05,Cabarita,Cab1,10:10
+RR12,Waiting,Chiswick,Chs1,10:20,Chiswick,Chs1,10:25
+RR12,Waiting,Parramatta,Pm1,10:25,Parramatta,Pm1,10:30
+RR12,Waiting,Parramatta,Pm1,10:30,Parramatta,Pm1,10:35
+RR12,Waiting,Cabarita,Cab1,10:35,Cabarita,Cab1,10:40
+RR12,Crew pause,Barangaroo,Bar4,10:40,Barangaroo,Bar4,10:49
+RR12,Crew pause,Barangaroo,Bar2,10:50,Barangaroo,Bar2,10:59
+RR12,Waiting,Circular Quay,CQ5,11:00,Circular Quay,CQ5,11:05
+RR12,Waiting,Cabarita,Cab1,11:10,Cabarita,Cab1,11:15
+RR12,Crew pause,Circular Quay,CQ1,11:15,Circular Quay,CQ1,11:24
+RR12,Waiting,Cabarita,Cab1,11:25,Cabarita,Cab1,11:30

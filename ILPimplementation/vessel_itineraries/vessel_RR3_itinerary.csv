@@ -1,0 +1,26 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+RR3,Waiting,Cabarita,Cab1,05:35,Cabarita,Cab1,05:40
+RR3,Waiting,Cabarita,Cab1,05:40,Cabarita,Cab1,05:45
+RR3,Waiting,Barangaroo,Bar2,06:05,Barangaroo,Bar2,06:10
+RR3,Crew pause,Circular Quay,CQ2,06:25,Circular Quay,CQ2,06:34
+RR3,Crew pause,Circular Quay,CQ2,06:35,Circular Quay,CQ2,06:44
+RR3,Waiting,Chiswick,Chs1,07:05,Chiswick,Chs1,07:10
+RR3,Waiting,Watsons Bay,WB1,07:55,Watsons Bay,WB1,08:00
+RR3,Waiting,Circular Quay,CQ5,08:00,Circular Quay,CQ5,08:05
+RR3,Waiting,Barangaroo,Bar4,08:10,Barangaroo,Bar4,08:15
+RR3,Waiting,Balmain Shipyard,BSY2,08:30,Balmain Shipyard,BSY2,08:35
+RR3,Crew pause,Circular Quay,CQ1,08:55,Circular Quay,CQ1,09:04
+RR3,Waiting,Barangaroo,Bar4,09:30,Barangaroo,Bar4,09:35
+RR3,Waiting,Balmain Shipyard,BSY1,09:55,Balmain Shipyard,BSY1,10:00
+RR3,Waiting,Balmain Shipyard,BSY1,10:00,Balmain Shipyard,BSY1,10:05
+RR3,Waiting,Balmain Shipyard,BSY1,10:10,Balmain Shipyard,BSY1,10:15
+RR3,Waiting,Cabarita,Cab1,10:15,Cabarita,Cab1,10:20
+RR3,Waiting,Parramatta,Pm1,10:20,Parramatta,Pm1,10:25
+RR3,Waiting,Barangaroo,Bar4,10:40,Barangaroo,Bar4,10:45
+RR3,Waiting,Barangaroo,Bar4,10:45,Barangaroo,Bar4,10:50
+RR3,Waiting,Pyrmont Bay,PB1,10:50,Pyrmont Bay,PB1,10:55
+RR3,Waiting,Barangaroo,Bar2,10:55,Barangaroo,Bar2,11:00
+RR3,Waiting,Barangaroo,Bar1,11:05,Barangaroo,Bar1,11:10
+RR3,Waiting,Barangaroo,Bar2,11:10,Barangaroo,Bar2,11:15
+RR3,Waiting,Parramatta,Pm1,11:20,Parramatta,Pm1,11:25
+RR3,Waiting,Balmain Shipyard,BSY4,11:25,Balmain Shipyard,BSY4,11:30
