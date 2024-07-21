@@ -33,6 +33,7 @@ def cal_Cw(config, w):
 #         raise ValueError(f"No data available for line number {l}.")
 #     except KeyError:
 #         raise ValueError("DataFrame must include 'Line_No', 'O', 'I', 'T' columns.")
+
 def cal_Rl(config, l):
     if not isinstance(l, int):
         raise ValueError("Line number must be an integer.")

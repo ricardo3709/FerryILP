@@ -1,9 +1,9 @@
-,Time,Station,Wharf
-0,06:45,Circular Quay,CQ1
-1,07:00,Mosman,Mos1
-2,07:20,Circular Quay,CQ1
-3,07:35,Mosman,Mos1
-4,07:55,Circular Quay,CQ1
-5,08:10,Mosman,Mos1
-6,08:30,Circular Quay,CQ1
-7,08:45,Mosman,Mos1
+Time,Station,Wharf
+06:35,Circular Quay,CQ1
+06:50,Mosman,Mos1
+07:10,Circular Quay,CQ1
+07:25,Mosman,Mos1
+07:45,Circular Quay,CQ1
+08:00,Mosman,Mos1
+08:20,Circular Quay,CQ1
+08:35,Mosman,Mos1

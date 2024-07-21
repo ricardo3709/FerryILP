@@ -5,14 +5,21 @@ import os
 def run_optimization(model):
     print(f"Starting optimization with {model.NumVars} variables and {model.NumConstrs} constraints.\n")
 
-    # Modify parameters
-    model.setParam('OutputFlag', 1)
-    model.setParam('InfUnbdInfo', 1)
-    model.setParam('Presolve', 2)
-    model.setParam('ScaleFlag', 1)
-    model.setParam('TimeLimit', 3000)  # time limit
-    model.setParam('MIPGap', 0.2)  # optimality gap
-    model.setParam('Heuristics', 0.5)  # 50% heuristic emphasis
+    # Modify model parameters
+
+    # Basic settings
+    model.setParam('OutputFlag', 1)       # Enable output logs
+    model.setParam('InfUnbdInfo', 1)      # Output information on infeasible or unbounded models
+    model.setParam('Presolve', 2)         # Presolve level
+    model.setParam('ScaleFlag', 1)        # Scaling
+
+    # Time limit
+    # model.setParam('TimeLimit', 12000)    # Set time limit in seconds
+    # model.setParam('SolutionLimit', 1)  # Stop after finding the first feasible solution
+
+    # Optimization strategies
+    model.setParam('MIPGap', 0.25)        # Optimality gap
+    model.setParam('Heuristics', 0.5)     # Heuristic emphasis (50%)
 
     model.optimize()
 

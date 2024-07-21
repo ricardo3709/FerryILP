@@ -67,8 +67,8 @@ Start_S = dict(zip(line_df['Line_No'].astype(str), line_df['O']))
 Start_S.update(dict(zip(wharf_df['Wharf_No'], wharf_df['Station'])))
 End_S = dict(zip(line_df['Line_No'].astype(str), line_df['T']))
 End_S.update(dict(zip(wharf_df['Wharf_No'], wharf_df['Station'])))
-Start_wharf = dict(zip(z_df['Line'].astype(str), z_df['Wharf']))
-
+linels = z_df['Line'].unique().tolist()     
+Start_wharf = {line: z_df[z_df['Line'] == line]['Wharf'].iloc[0] for line in z_df['Line'].unique()}
 
 # -------------------------------------------- Additional functions for processing --------------------------------------------
 def cal_time(period_num):
@@ -83,10 +83,10 @@ def cal_time(period_num):
     return new_time
 
 
-def start_wharf(wharf):
-    if wharf.isdigit():
-        return Start_wharf.get(wharf, wharf)
-    return wharf
+def start_wharf(task):
+    if task.isdigit():
+        return Start_wharf[int(task)]
+    return task
 
 def end_wharf(row):
     wharf = row['End_Wharf']
@@ -163,8 +163,8 @@ def cal_timetable(line):
         print('Line not exist or unsolved.')
         return None
 
-
-cal_timetable(1).to_csv('ILPimplementation/test_timetable.csv')
+for line in lines:
+    cal_timetable(line).to_csv(f'ILPimplementation/timetables/line_{line}_timetable.csv', index=False)
 
 
 # -------------------------------------------- Generate vessel itinerary --------------------------------------------
@@ -202,24 +202,72 @@ def cal_itinerary(vessel):
     itinerary.reset_index(inplace=True, drop=True)
     return itinerary
 
-cal_itinerary('10M').to_csv('ILPimplementation/test_itinerary.csv')
+
+vessels = vessel_df['Vessel code'].unique().tolist()
+for vessel in vessels:
+    cal_itinerary(vessel).to_csv(f'ILPimplementation/vessel_itineraries/vessel_{vessel}_itinerary.csv', index=False)
 
 # -------------------------------------------- Generate wharf utilization --------------------------------------------
 
-def cal_wharf_utilization(wharf, y_df, Zp_df):
-    wharf_utilization_df = y_df.copy()
-    wharf_utilization_df['Start_Wharf'] = wharf_utilization_df['Task'].apply(lambda x: x.split('_')[-1].strip())
-    wharf_utilization_df = wharf_utilization_df[wharf_utilization_df['Start_Wharf'] == wharf].sort_values('Start_Time')
-    wharf_utilization_df['Occupied_time'] = wharf_utilization_df.apply(lambda row: [int(row['Start_Time']) + x[1] for x in cal_delta(config, row['Task'], wharf)], axis=1)
+def cal_wharf_utilization(wharf):
+    # non line task
+    non_line_tasks = y_df[~y_df['Task'].str.match(r'^\d+$')]
+    utilization_data = []
 
-    #  Zp_df
+    for _, row in non_line_tasks.iterrows():
+        v = row['Vessel']
+        j = row['Task']
+        w = row['Task'].split('_')[-1]
+        t = row['Start_Time']
+        t_list = np.array([x[1] for x in cal_delta(config, j, w)]) + t
+        utilization_data.append({'v': v, 'j': j,'w': w, 't_list': t_list.tolist()})
 
-    # This part is unfinished
+    # line task
+    line_tasks = y_df[y_df['Task'].str.match(r'^\d+$')]
+    for _, row in line_tasks.iterrows():
+        v = row['Vessel']
+        j = int(row['Task'])
+        t = row['Start_Time']
+        
+        # origin
+        w_start = line_df[line_df['Line_No'] == j]['O'].iloc[0]
+        safety_buffer = int(line_df[line_df['Line_No'] == j]['Safety_buffer'].iloc[0])
+        t_list_start = [time for time in range(t, t + safety_buffer // period_length + 1)]
+        utilization_data.append({'v': v, 'j': j, 'w': w_start, 't_list': t_list_start})
 
+        # intermidiate stop
+        intermediate_station = line_df[line_df['Line_No'] == j]['I']
+        if pd.notna(intermediate_station).any():
+            w_intermediate = z_df[z_df['Line'] == j]['Wharf'].iloc[1]
+            t_list_intermediate = np.array([x[1] for x in cal_delta(config, j, w_intermediate)]) + t
+            utilization_data.append({'v': v, 'j': j, 'w': w_intermediate, 't_list': t_list_intermediate.tolist()})
 
-    return wharf_utilization_df
+        # terminus
+        timetoT = int(line_df[line_df['Line_No'] == j]['Time_underway_to_T'].iloc[0])
+        arrival_T = t + timetoT // period_length + 1
+        w_end = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] == arrival_T)]['Wharf'].unique().tolist()[0]
+        dw_T = int(line_df[line_df['Line_No'] == j]['dw_T'].iloc[0])
+        periods = (dw_T + safety_buffer) // period_length + 1
+        t_list_end = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] >= arrival_T) & (Zp_df['Time'] <= arrival_T + periods)]['Time'].unique().tolist()
+        utilization_data.append({'v': v, 'j': j, 'w': w_end, 't_list': t_list_end})
 
+    # df process
+    all_wharfs_utilization_df = pd.DataFrame(utilization_data, columns=['v', 'j', 'w', 't_list'])
+    wharf_df = all_wharfs_utilization_df[all_wharfs_utilization_df['w'] == wharf].explode('t_list').reset_index(drop=True)
+    wharf_df = wharf_df.rename(columns={'t_list': 't'}).sort_values('t')
+    wharf_df['t'] = wharf_df['t'].apply(lambda x: cal_time(x).strftime('%H:%M') + '-' + cal_time(x+1).strftime('%H:%M'))
+    wharf_df.rename(columns={'v': 'Vessel', 'j': 'Task', 'w': 'Wharf', 't': 'Time'}, inplace=True)
+    
+    # 更新任务描述
+    wharf_df['Task'] = wharf_df['Task'].apply(lambda x: 'Waiting' if x in B else
+                                              'Crew pause' if x in Bc else
+                                              'Charging' if x in Bplus else
+                                              f"{x}")
 
+    return wharf_df.reset_index(drop=True)
 
-cal_wharf_utilization('Bar1', y_df, Zp_df).to_csv('ILPimplementation/test_wharf_utilization.csv', index=True)
+wharfs = wharf_df['Wharf_No'].unique().tolist()
+for wharf in wharfs:
+
+    cal_wharf_utilization(wharf).to_csv(f'ILPimplementation/wharf_utilizations/wharf_{wharf}_utilization.csv', index=False)
 

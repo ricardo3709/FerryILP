@@ -1,55 +1,57 @@
-,Variable,Value,Vessel,Task,Start_Time,Start_Wharf,Occupied_time
-134425,"RR9,cp_Bar1,2",1.0,RR9,cp_Bar1,2,Bar1,"[2, 3]"
-89065,"RR11,cp_Bar1,2",1.0,RR11,cp_Bar1,2,Bar1,"[2, 3]"
-38665,"FF1,cp_Bar1,2",1.0,FF1,cp_Bar1,2,Bar1,"[2, 3]"
-63866,"FF6,cp_Bar1,3",1.0,FF6,cp_Bar1,3,Bar1,"[3, 4]"
-58826,"FF5,cp_Bar1,3",1.0,FF5,cp_Bar1,3,Bar1,"[3, 4]"
-53786,"FF4,cp_Bar1,3",1.0,FF4,cp_Bar1,3,Bar1,"[3, 4]"
-78987,"RR1,cp_Bar1,4",1.0,RR1,cp_Bar1,4,Bar1,"[4, 5]"
-53788,"FF4,cp_Bar1,5",1.0,FF4,cp_Bar1,5,Bar1,"[5, 6]"
-78989,"RR1,cp_Bar1,6",1.0,RR1,cp_Bar1,6,Bar1,"[6, 7]"
-89071,"RR11,cp_Bar1,8",1.0,RR11,cp_Bar1,8,Bar1,"[8, 9]"
-3392,"10M,cp_Bar1,9",1.0,10M,cp_Bar1,9,Bar1,"[9, 10]"
-94113,"RR12,cp_Bar1,10",1.0,RR12,cp_Bar1,10,Bar1,"[10, 11]"
-43714,"FF2,cp_Bar1,11",1.0,FF2,cp_Bar1,11,Bar1,"[11, 12]"
-134435,"RR9,cp_Bar1,12",1.0,RR9,cp_Bar1,12,Bar1,"[12, 13]"
-38676,"FF1,cp_Bar1,13",1.0,FF1,cp_Bar1,13,Bar1,"[13, 14]"
-89077,"RR11,cp_Bar1,14",1.0,RR11,cp_Bar1,14,Bar1,"[14, 15]"
-134437,"RR9,cp_Bar1,14",1.0,RR9,cp_Bar1,14,Bar1,"[14, 15]"
-38678,"FF1,cp_Bar1,15",1.0,FF1,cp_Bar1,15,Bar1,"[15, 16]"
-78999,"RR1,cp_Bar1,16",1.0,RR1,cp_Bar1,16,Bar1,"[16, 17]"
-28599,"EC4,cp_Bar1,16",1.0,EC4,cp_Bar1,16,Bar1,"[16, 17]"
-38682,"FF1,cp_Bar1,19",1.0,FF1,cp_Bar1,19,Bar1,"[19, 20]"
-89083,"RR11,cp_Bar1,20",1.0,RR11,cp_Bar1,20,Bar1,"[20, 21]"
-134443,"RR9,cp_Bar1,20",1.0,RR9,cp_Bar1,20,Bar1,"[20, 21]"
-48764,"FF3,cp_Bar1,21",1.0,FF3,cp_Bar1,21,Bar1,"[21, 22]"
-73971,"FF8,cp_Bar1,28",1.0,FF8,cp_Bar1,28,Bar1,"[28, 29]"
-89093,"RR11,cp_Bar1,30",1.0,RR11,cp_Bar1,30,Bar1,"[30, 31]"
-89095,"RR11,cp_Bar1,32",1.0,RR11,cp_Bar1,32,Bar1,"[32, 33]"
-134465,"RR9,cp_Bar1,42",1.0,RR9,cp_Bar1,42,Bar1,"[42, 43]"
-38706,"FF1,cp_Bar1,43",1.0,FF1,cp_Bar1,43,Bar1,"[43, 44]"
-73987,"FF8,cp_Bar1,44",1.0,FF8,cp_Bar1,44,Bar1,"[44, 45]"
-134467,"RR9,cp_Bar1,44",1.0,RR9,cp_Bar1,44,Bar1,"[44, 45]"
-23588,"EC3,cp_Bar1,45",1.0,EC3,cp_Bar1,45,Bar1,"[45, 46]"
-134469,"RR9,cp_Bar1,46",1.0,RR9,cp_Bar1,46,Bar1,"[46, 47]"
-23590,"EC3,cp_Bar1,47",1.0,EC3,cp_Bar1,47,Bar1,"[47, 48]"
-134471,"RR9,cp_Bar1,48",1.0,RR9,cp_Bar1,48,Bar1,"[48, 49]"
-79035,"RR1,cp_Bar1,52",1.0,RR1,cp_Bar1,52,Bar1,"[52, 53]"
-134475,"RR9,cp_Bar1,52",1.0,RR9,cp_Bar1,52,Bar1,"[52, 53]"
-79037,"RR1,cp_Bar1,54",1.0,RR1,cp_Bar1,54,Bar1,"[54, 55]"
-23598,"EC3,cp_Bar1,55",1.0,EC3,cp_Bar1,55,Bar1,"[55, 56]"
-89119,"RR11,cp_Bar1,56",1.0,RR11,cp_Bar1,56,Bar1,"[56, 57]"
-89121,"RR11,cp_Bar1,58",1.0,RR11,cp_Bar1,58,Bar1,"[58, 59]"
-74003,"FF8,cp_Bar1,60",1.0,FF8,cp_Bar1,60,Bar1,"[60, 61]"
-23604,"EC3,cp_Bar1,61",1.0,EC3,cp_Bar1,61,Bar1,"[61, 62]"
-99204,"RR2,cp_Bar1,61",1.0,RR2,cp_Bar1,61,Bar1,"[61, 62]"
-74005,"FF8,cp_Bar1,62",1.0,FF8,cp_Bar1,62,Bar1,"[62, 63]"
-89125,"RR11,cp_Bar1,62",1.0,RR11,cp_Bar1,62,Bar1,"[62, 63]"
-79045,"RR1,cp_Bar1,62",1.0,RR1,cp_Bar1,62,Bar1,"[62, 63]"
-38726,"FF1,cp_Bar1,63",1.0,FF1,cp_Bar1,63,Bar1,"[63, 64]"
-134489,"RR9,cp_Bar1,66",1.0,RR9,cp_Bar1,66,Bar1,"[66, 67]"
-3450,"10M,cp_Bar1,67",1.0,10M,cp_Bar1,67,Bar1,"[67, 68]"
-23610,"EC3,cp_Bar1,67",1.0,EC3,cp_Bar1,67,Bar1,"[67, 68]"
-38730,"FF1,cp_Bar1,67",1.0,FF1,cp_Bar1,67,Bar1,"[67, 68]"
-74013,"FF8,cp_Bar1,70",1.0,FF8,cp_Bar1,70,Bar1,"[70, 71]"
-89133,"RR11,cp_Bar1,70",1.0,RR11,cp_Bar1,70,Bar1,"[70, 71]"
+Vessel,Task,Wharf,Time
+FF1,Crew pause,Bar1,05:35-05:40
+FF1,Crew pause,Bar1,05:40-05:45
+FF5,Crew pause,Bar1,05:40-05:45
+RR6,Crew pause,Bar1,05:40-05:45
+FF5,Crew pause,Bar1,05:45-05:50
+RR6,Crew pause,Bar1,05:45-05:50
+RR6,Waiting,Bar1,05:55-06:00
+RR5,Waiting,Bar1,06:30-06:35
+EC3,Waiting,Bar1,07:10-07:15
+10M,19,Bar1,07:10-07:15
+10M,19,Bar1,07:15-07:20
+RR3,5,Bar1,07:20-07:25
+RR3,5,Bar1,07:25-07:30
+RR3,5,Bar1,07:30-07:35
+RR4,5,Bar1,07:45-07:50
+RR4,5,Bar1,07:50-07:55
+RR4,5,Bar1,07:55-08:00
+RR2,Crew pause,Bar1,08:05-08:10
+RR2,Crew pause,Bar1,08:10-08:15
+RR12,5,Bar1,08:10-08:15
+EC3,Crew pause,Bar1,08:10-08:15
+EC3,Crew pause,Bar1,08:15-08:20
+RR12,5,Bar1,08:15-08:20
+RR12,5,Bar1,08:20-08:25
+10M,19,Bar1,08:30-08:35
+10M,19,Bar1,08:35-08:40
+RR6,5,Bar1,08:35-08:40
+RR6,5,Bar1,08:40-08:45
+RR6,5,Bar1,08:45-08:50
+10M,19,Bar1,09:10-09:15
+10M,19,Bar1,09:15-09:20
+FF7,Waiting,Bar1,09:35-09:40
+RR3,Waiting,Bar1,09:45-09:50
+FF8,Crew pause,Bar1,09:45-09:50
+10M,19,Bar1,09:50-09:55
+FF8,Crew pause,Bar1,09:50-09:55
+10M,19,Bar1,09:55-10:00
+RR4,Waiting,Bar1,10:10-10:15
+RR2,Crew pause,Bar1,10:20-10:25
+RR2,Crew pause,Bar1,10:25-10:30
+RR1,Crew pause,Bar1,10:30-10:35
+24M,Waiting,Bar1,10:30-10:35
+RR1,Crew pause,Bar1,10:35-10:40
+EC1,Waiting,Bar1,10:35-10:40
+RR5,Crew pause,Bar1,10:40-10:45
+RR5,Crew pause,Bar1,10:45-10:50
+RR5,Crew pause,Bar1,10:55-11:00
+RR12,Waiting,Bar1,10:55-11:00
+RR5,Crew pause,Bar1,11:00-11:05
+RR4,Waiting,Bar1,11:05-11:10
+RR3,Waiting,Bar1,11:05-11:10
+FF6,Waiting,Bar1,11:20-11:25
+FF1,Waiting,Bar1,11:20-11:25
+EC5,Waiting,Bar1,11:20-11:25
+10M,Waiting,Bar1,11:20-11:25
+RR2,Waiting,Bar1,11:25-11:30

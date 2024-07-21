@@ -1,0 +1,16 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+FF1,Waiting,Barangaroo,Bar1,05:35,Barangaroo,Bar1,05:40
+FF1,10,Circular Quay,CQ1,06:05,Mosman,Mos1,06:32
+FF1,11,Mosman,Mos1,06:40,Circular Quay,CQ3,07:07
+FF1,Waiting,Balmain Shipyard,BSY2,07:15,Balmain Shipyard,BSY2,07:20
+FF1,Waiting,Pyrmont Bay,PB1,07:20,Pyrmont Bay,PB1,07:25
+FF1,8,Pyrmont Bay,PB1,07:30,Circular Quay,CQ3,08:02
+FF1,2,Mosman,Mos1,08:35,Circular Quay,CQ1,08:53
+FF1,3,Circular Quay,CQ1,09:00,Taronga Zoo,TZ1,09:18
+FF1,Waiting,Watsons Bay,WB1,09:25,Watsons Bay,WB1,09:30
+FF1,Waiting,Rose Bay,RB1,09:40,Rose Bay,RB1,09:45
+FF1,4,Taronga Zoo,TZ1,09:45,Circular Quay,CQ1,10:13
+FF1,Waiting,Chiswick,Chs1,10:20,Chiswick,Chs1,10:25
+FF1,Waiting,Cockatoo Island,CI1,10:25,Cockatoo Island,CI1,10:30
+FF1,Waiting,Rose Bay,RB1,10:35,Rose Bay,RB1,10:40
+FF1,4,Taronga Zoo,TZ1,10:55,Circular Quay,CQ1,11:23
