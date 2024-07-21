@@ -2,12 +2,12 @@
 
 #PBS -P RDS-FEI-FTP-RW             
 #PBS -l select=1:ncpus=8:mem=16GB
-#PBS -l walltime=02:00:00
+#PBS -l walltime=01:00:00
 #PBS -N FerryILP
 #PBS -m abe
 #PBS -M llin7797@uni.sydney.edu.au
 
-module load python/3.8.2 magma/2.5.3 pandas/2.0.3 gurobi/9.1.2
+module load python/3.12.2 magma/2.5.3 pandas/2.0.3 gurobi/9.1.2
 source /project/RDS-FEI-FTP-RW/envs/amod/bin/activate
 cd /project/RDS-FEI-FTP-RW/FerryILP
 python ILPimplementation/main.py> output.log 2> error.log
