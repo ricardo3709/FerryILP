@@ -1,0 +1,2 @@
+magma/2.5.3(41):ERROR:105: Unable to locate a modulefile for 'pandas/2.0.3'
+gurobi(6):ERROR:105: Unable to locate a modulefile for 'gurobi/11.0.1'

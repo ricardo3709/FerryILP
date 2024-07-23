@@ -1,0 +1,49 @@
+-- Job Summary -------------------------------------------------------
+Job Id: 7684523.pbsserver for user llin7797 in queue small
+Job Name: FerryILP
+Project: RDS-FEI-FTP-RW
+Exit Status: 1
+Job run as chunks (hpc002:ncpus=8:mem=16777216kb)
+Walltime requested:   00:05:00 :      Walltime used:   00:00:15
+                               :   Walltime percent:       5.0%
+-- Nodes Summary -----------------------------------------------------
+-- node hpc002 summary
+    Cpus requested:          8 :          Cpus used:       0.07
+          Cpu Time:   00:00:01 :        Cpu percent:       0.8%
+     Mem requested:     16.0GB :           Mem used:     30.7MB
+                               :        Mem percent:       0.2%
+
+-- WARNINGS ----------------------------------------------------------
+
+** Job Exit status > 0.  The job has indicated that it has failed for some
+** reason, which may be related to the analysis or application.
+** It may be worth checking the analysis results to confirm they are sensible.
+** 
+** Low Walltime utilisation.  While this may be normal, it may help to check the
+** following:
+**   Did the job parameters specify more walltime than necessary? Requesting
+**   lower walltime could help your job to start sooner.
+**   Did your analysis complete as expected or did it crash before completing?
+**   Did the application run more quickly than it should have? Is this analysis
+**   the one you intended to run?
+** 
+** Low CPU utilisation on hpc002.  While this may be normal, it may help to check
+** the following:
+**   Did the job parameters specify too many cores?  Requesting fewer cores
+**   could help your job to start sooner.
+**   Did you use MPI and was the work distributed correctly? Correcting this
+**   could make your job to run faster without needing any more cores.
+**   Did the application use fewer cores than it should have? Is this analysis
+**   the one you intended to run?
+**
+** Low Memory utilisation on hpc002. While this may be normal, it may help to check
+** the following:
+**   Did the job parameters specify too much memory? Requesting less RAM could
+**   help your job to start sooner.
+**   Did you use MPI and was the work distributed correctly? Correcting this
+**   could allow your job to run using less RAM in each chunk.
+**   Did your analysis complete as expected or did it crash before completing?
+**   Did the application use less RAM than it should have? Is this analysis the
+**   one you intended to run?
+**
+-- End of Job Summary ------------------------------------------------

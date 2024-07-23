@@ -1,0 +1,30 @@
+-- Job Summary -------------------------------------------------------
+Job Id: 7684200.pbsserver for user llin7797 in queue small
+Job Name: FerryILP
+Project: RDS-FEI-FTP-RW
+Exit Status: 1
+Job run as chunks (hpc012:ncpus=8:mem=16777216kb)
+Walltime requested:   00:10:00 :      Walltime used:   00:00:22
+                               :   Walltime percent:       3.7%
+-- Nodes Summary -----------------------------------------------------
+-- node hpc012 summary
+    Cpus requested:          8 :          Cpus used:    unknown
+          Cpu Time:    unknown :        Cpu percent:    unknown
+     Mem requested:     16.0GB :           Mem used:    unknown
+                               :        Mem percent:    unknown
+
+-- WARNINGS ----------------------------------------------------------
+
+** Job Exit status > 0.  The job has indicated that it has failed for some
+** reason, which may be related to the analysis or application.
+** It may be worth checking the analysis results to confirm they are sensible.
+** 
+** Low Walltime utilisation.  While this may be normal, it may help to check the
+** following:
+**   Did the job parameters specify more walltime than necessary? Requesting
+**   lower walltime could help your job to start sooner.
+**   Did your analysis complete as expected or did it crash before completing?
+**   Did the application run more quickly than it should have? Is this analysis
+**   the one you intended to run?
+** 
+-- End of Job Summary ------------------------------------------------
