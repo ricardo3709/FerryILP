@@ -1,30 +1,36 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-RR9,Waiting,Cockatoo Island,CI1,05:35,Cockatoo Island,CI1,05:40
-RR9,Waiting,Cockatoo Island,CI1,05:40,Cockatoo Island,CI1,05:45
-RR9,Waiting,Cockatoo Island,CI1,05:45,Cockatoo Island,CI1,05:50
-RR9,Waiting,Cockatoo Island,CI1,05:50,Cockatoo Island,CI1,05:55
-RR9,Waiting,Pyrmont Bay,PB1,06:10,Pyrmont Bay,PB1,06:15
-RR9,Charging,Pyrmont Bay,PB1,06:15,Pyrmont Bay,PB1,06:20
-RR9,Waiting,Pyrmont Bay,PB1,06:20,Pyrmont Bay,PB1,06:25
-RR9,Waiting,Pyrmont Bay,PB1,06:25,Pyrmont Bay,PB1,06:30
-RR9,Waiting,Barangaroo,Bar1,06:30,Barangaroo,Bar1,06:35
-RR9,Waiting,Barangaroo,Bar2,06:35,Barangaroo,Bar2,06:40
-RR9,Waiting,Barangaroo,Bar1,06:40,Barangaroo,Bar1,06:45
-RR9,Waiting,Barangaroo,Bar2,06:45,Barangaroo,Bar2,06:50
-RR9,Waiting,Barangaroo,Bar1,06:50,Barangaroo,Bar1,06:55
-RR9,Waiting,Pyrmont Bay,PB1,06:55,Pyrmont Bay,PB1,07:00
-RR9,Waiting,Pyrmont Bay,PB1,07:00,Pyrmont Bay,PB1,07:05
-RR9,Waiting,Pyrmont Bay,PB1,07:05,Pyrmont Bay,PB1,07:10
-RR9,Waiting,Pyrmont Bay,PB1,07:10,Pyrmont Bay,PB1,07:15
-RR9,Waiting,Pyrmont Bay,PB1,07:15,Pyrmont Bay,PB1,07:20
-RR9,Waiting,Pyrmont Bay,PB1,07:20,Pyrmont Bay,PB1,07:25
-RR9,Waiting,Pyrmont Bay,PB1,07:25,Pyrmont Bay,PB1,07:30
-RR9,Waiting,Pyrmont Bay,PB1,07:30,Pyrmont Bay,PB1,07:35
-RR9,6,Parramatta,Pm1,08:30,Circular Quay,CQ1,10:00
-RR9,Waiting,Pyrmont Bay,PB1,10:25,Pyrmont Bay,PB1,10:30
-RR9,Waiting,Pyrmont Bay,PB1,10:30,Pyrmont Bay,PB1,10:35
-RR9,Crew pause,Balmain Shipyard,BSY3,10:45,Balmain Shipyard,BSY3,10:54
-RR9,Waiting,Pyrmont Bay,PB1,11:05,Pyrmont Bay,PB1,11:10
-RR9,Crew pause,Barangaroo,Bar2,11:10,Barangaroo,Bar2,11:19
-RR9,Waiting,Pyrmont Bay,PB1,11:20,Pyrmont Bay,PB1,11:25
-RR9,Waiting,Pyrmont Bay,PB1,11:25,Pyrmont Bay,PB1,11:30
+RR9,Crew pause,Barangaroo,Bar1,05:35,Barangaroo,Bar1,05:44
+RR9,Crew pause,Barangaroo,Bar1,05:45,Barangaroo,Bar1,05:54
+RR9,Waiting,Cockatoo Island,CI1,06:10,Cockatoo Island,CI1,06:15
+RR9,Waiting,Cockatoo Island,CI1,06:15,Cockatoo Island,CI1,06:20
+RR9,Waiting,Cockatoo Island,CI1,06:20,Cockatoo Island,CI1,06:25
+RR9,Waiting,Cockatoo Island,CI1,06:25,Cockatoo Island,CI1,06:30
+RR9,Waiting,Cockatoo Island,CI1,06:30,Cockatoo Island,CI1,06:35
+RR9,16,Circular Quay,CQ1,06:50,Watsons Bay,WB1,07:20
+RR9,Waiting,Watsons Bay,WB1,07:25,Watsons Bay,WB1,07:30
+RR9,Waiting,Watsons Bay,WB1,07:30,Watsons Bay,WB1,07:35
+RR9,5,Circular Quay,CQ1,07:55,Parramatta,Pm1,09:25
+RR9,Waiting,Parramatta,Pm1,09:30,Parramatta,Pm1,09:35
+RR9,Charging,Parramatta,Pm1,09:35,Parramatta,Pm1,09:40
+RR9,Charging,Parramatta,Pm1,09:40,Parramatta,Pm1,09:45
+RR9,Charging,Parramatta,Pm1,09:45,Parramatta,Pm1,09:50
+RR9,Charging,Parramatta,Pm1,09:50,Parramatta,Pm1,09:55
+RR9,Charging,Parramatta,Pm1,09:55,Parramatta,Pm1,10:00
+RR9,Charging,Parramatta,Pm1,10:00,Parramatta,Pm1,10:05
+RR9,Charging,Parramatta,Pm1,10:05,Parramatta,Pm1,10:10
+RR9,Waiting,Parramatta,Pm1,10:10,Parramatta,Pm1,10:15
+RR9,Charging,Parramatta,Pm1,10:15,Parramatta,Pm1,10:20
+RR9,Charging,Parramatta,Pm1,10:20,Parramatta,Pm1,10:25
+RR9,Charging,Parramatta,Pm1,10:25,Parramatta,Pm1,10:30
+RR9,Charging,Parramatta,Pm1,10:30,Parramatta,Pm1,10:35
+RR9,Charging,Parramatta,Pm1,10:35,Parramatta,Pm1,10:40
+RR9,Charging,Parramatta,Pm1,10:40,Parramatta,Pm1,10:45
+RR9,Waiting,Parramatta,Pm1,10:45,Parramatta,Pm1,10:50
+RR9,Charging,Parramatta,Pm1,10:50,Parramatta,Pm1,10:55
+RR9,Charging,Parramatta,Pm1,10:55,Parramatta,Pm1,11:00
+RR9,Charging,Parramatta,Pm1,11:00,Parramatta,Pm1,11:05
+RR9,Charging,Parramatta,Pm1,11:05,Parramatta,Pm1,11:10
+RR9,Waiting,Parramatta,Pm1,11:10,Parramatta,Pm1,11:15
+RR9,Waiting,Parramatta,Pm1,11:15,Parramatta,Pm1,11:20
+RR9,Waiting,Parramatta,Pm1,11:20,Parramatta,Pm1,11:25
+RR9,Waiting,Parramatta,Pm1,11:25,Parramatta,Pm1,11:30

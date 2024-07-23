@@ -1,26 +1,56 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
 RR4,Waiting,Cabarita,Cab1,05:35,Cabarita,Cab1,05:40
-RR4,Waiting,Cabarita,Cab1,05:40,Cabarita,Cab1,05:45
+RR4,Charging,Cabarita,Cab1,05:40,Cabarita,Cab1,05:45
 RR4,Waiting,Cabarita,Cab1,05:45,Cabarita,Cab1,05:50
 RR4,Waiting,Cabarita,Cab1,05:50,Cabarita,Cab1,05:55
-RR4,Waiting,Barangaroo,Bar2,06:15,Barangaroo,Bar2,06:20
-RR4,Waiting,Barangaroo,Bar2,06:20,Barangaroo,Bar2,06:25
-RR4,Waiting,Pyrmont Bay,PB1,06:25,Pyrmont Bay,PB1,06:30
-RR4,17,Watsons Bay,WB1,06:55,Circular Quay,CQ5,07:15
-RR4,Waiting,Circular Quay,CQ5,07:25,Circular Quay,CQ5,07:30
-RR4,5,Circular Quay,CQ1,07:35,Parramatta,Pm1,09:05
-RR4,Crew pause,Barangaroo,Bar1,10:05,Barangaroo,Bar1,10:14
-RR4,Waiting,Barangaroo,Bar1,10:15,Barangaroo,Bar1,10:20
-RR4,Waiting,Barangaroo,Bar4,10:20,Barangaroo,Bar4,10:25
-RR4,Waiting,Pyrmont Bay,PB1,10:25,Pyrmont Bay,PB1,10:30
-RR4,Waiting,Pyrmont Bay,PB1,10:30,Pyrmont Bay,PB1,10:35
-RR4,Waiting,Pyrmont Bay,PB1,10:35,Pyrmont Bay,PB1,10:40
-RR4,Waiting,Pyrmont Bay,PB1,10:40,Pyrmont Bay,PB1,10:45
-RR4,Waiting,Pyrmont Bay,PB1,10:45,Pyrmont Bay,PB1,10:50
-RR4,Waiting,Barangaroo,Bar4,10:50,Barangaroo,Bar4,10:55
-RR4,Waiting,Pyrmont Bay,PB1,10:55,Pyrmont Bay,PB1,11:00
-RR4,Waiting,Barangaroo,Bar1,11:00,Barangaroo,Bar1,11:05
-RR4,Waiting,Pyrmont Bay,PB1,11:05,Pyrmont Bay,PB1,11:10
-RR4,Waiting,Barangaroo,Bar5,11:10,Barangaroo,Bar5,11:15
-RR4,Crew pause,Barangaroo,Bar4,11:15,Barangaroo,Bar4,11:24
-RR4,Waiting,Barangaroo,Bar2,11:25,Barangaroo,Bar2,11:30
+RR4,Charging,Cabarita,Cab1,05:55,Cabarita,Cab1,06:00
+RR4,Waiting,Cabarita,Cab1,06:00,Cabarita,Cab1,06:05
+RR4,Charging,Cabarita,Cab1,06:05,Cabarita,Cab1,06:10
+RR4,Waiting,Cabarita,Cab1,06:10,Cabarita,Cab1,06:15
+RR4,Waiting,Cockatoo Island,CI1,06:30,Cockatoo Island,CI1,06:35
+RR4,Waiting,Watsons Bay,WB1,07:00,Watsons Bay,WB1,07:05
+RR4,Waiting,Watsons Bay,WB1,07:05,Watsons Bay,WB1,07:10
+RR4,Waiting,Watsons Bay,WB1,07:10,Watsons Bay,WB1,07:15
+RR4,Waiting,Watsons Bay,WB1,07:15,Watsons Bay,WB1,07:20
+RR4,Charging,Watsons Bay,WB1,07:20,Watsons Bay,WB1,07:25
+RR4,Waiting,Watsons Bay,WB1,07:25,Watsons Bay,WB1,07:30
+RR4,17,Watsons Bay,WB1,07:30,Circular Quay,CQ5,07:50
+RR4,Waiting,Circular Quay,CQ5,08:00,Circular Quay,CQ5,08:05
+RR4,Charging,Circular Quay,CQ5,08:05,Circular Quay,CQ5,08:10
+RR4,Charging,Circular Quay,CQ5,08:10,Circular Quay,CQ5,08:15
+RR4,Charging,Circular Quay,CQ5,08:15,Circular Quay,CQ5,08:20
+RR4,Charging,Circular Quay,CQ5,08:20,Circular Quay,CQ5,08:25
+RR4,Charging,Circular Quay,CQ5,08:25,Circular Quay,CQ5,08:30
+RR4,Charging,Circular Quay,CQ5,08:30,Circular Quay,CQ5,08:35
+RR4,Charging,Circular Quay,CQ5,08:35,Circular Quay,CQ5,08:40
+RR4,Waiting,Circular Quay,CQ5,08:40,Circular Quay,CQ5,08:45
+RR4,Waiting,Circular Quay,CQ1,08:45,Circular Quay,CQ1,08:50
+RR4,Waiting,Circular Quay,CQ1,08:50,Circular Quay,CQ1,08:55
+RR4,Waiting,Circular Quay,CQ4,08:55,Circular Quay,CQ4,09:00
+RR4,Waiting,Cockatoo Island,CI1,09:15,Cockatoo Island,CI1,09:20
+RR4,Waiting,Cockatoo Island,CI1,09:20,Cockatoo Island,CI1,09:25
+RR4,Charging,Cockatoo Island,CI1,09:25,Cockatoo Island,CI1,09:30
+RR4,Charging,Cockatoo Island,CI1,09:30,Cockatoo Island,CI1,09:35
+RR4,Charging,Cockatoo Island,CI1,09:35,Cockatoo Island,CI1,09:40
+RR4,Charging,Cockatoo Island,CI1,09:40,Cockatoo Island,CI1,09:45
+RR4,Charging,Cockatoo Island,CI1,09:45,Cockatoo Island,CI1,09:50
+RR4,Charging,Cockatoo Island,CI1,09:50,Cockatoo Island,CI1,09:55
+RR4,Charging,Cockatoo Island,CI1,09:55,Cockatoo Island,CI1,10:00
+RR4,Charging,Cockatoo Island,CI1,10:00,Cockatoo Island,CI1,10:05
+RR4,Charging,Cockatoo Island,CI1,10:05,Cockatoo Island,CI1,10:10
+RR4,Charging,Cockatoo Island,CI1,10:10,Cockatoo Island,CI1,10:15
+RR4,Charging,Cockatoo Island,CI1,10:15,Cockatoo Island,CI1,10:20
+RR4,Charging,Cockatoo Island,CI1,10:20,Cockatoo Island,CI1,10:25
+RR4,Charging,Cockatoo Island,CI1,10:25,Cockatoo Island,CI1,10:30
+RR4,Charging,Cockatoo Island,CI1,10:30,Cockatoo Island,CI1,10:35
+RR4,Charging,Cockatoo Island,CI1,10:35,Cockatoo Island,CI1,10:40
+RR4,Charging,Cockatoo Island,CI1,10:40,Cockatoo Island,CI1,10:45
+RR4,Charging,Cockatoo Island,CI1,10:45,Cockatoo Island,CI1,10:50
+RR4,Charging,Cockatoo Island,CI1,10:50,Cockatoo Island,CI1,10:55
+RR4,Charging,Cockatoo Island,CI1,10:55,Cockatoo Island,CI1,11:00
+RR4,Charging,Cockatoo Island,CI1,11:00,Cockatoo Island,CI1,11:05
+RR4,Charging,Cockatoo Island,CI1,11:05,Cockatoo Island,CI1,11:10
+RR4,Charging,Cockatoo Island,CI1,11:10,Cockatoo Island,CI1,11:15
+RR4,Charging,Cockatoo Island,CI1,11:15,Cockatoo Island,CI1,11:20
+RR4,Waiting,Cockatoo Island,CI1,11:20,Cockatoo Island,CI1,11:25
+RR4,Waiting,Cockatoo Island,CI1,11:25,Cockatoo Island,CI1,11:30

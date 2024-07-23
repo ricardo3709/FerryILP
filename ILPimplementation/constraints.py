@@ -121,7 +121,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                 if end_station != start_station:
                     nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]) if t_prime in config.Tset] # if xi_results[(j, j_prime)] != 1
                 elif end_station == start_station: # same station can start immidiately
-                    nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)] - 1) if t_prime in config.Tset] # if xi_results[(j, j_prime)] != 1
+                    nu[(t, j, j_prime)] = []
                 else:
                     print('no!')
 

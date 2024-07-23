@@ -1,31 +1,36 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-RR2,Waiting,Cabarita,Cab1,05:45,Cabarita,Cab1,05:50
-RR2,Charging,Cabarita,Cab1,05:50,Cabarita,Cab1,05:55
-RR2,Charging,Cabarita,Cab1,05:55,Cabarita,Cab1,06:00
-RR2,Waiting,Cabarita,Cab1,06:00,Cabarita,Cab1,06:05
-RR2,Waiting,Circular Quay,CQ5,06:30,Circular Quay,CQ5,06:35
-RR2,Waiting,Circular Quay,CQ2,06:35,Circular Quay,CQ2,06:40
-RR2,6,Parramatta,Pm1,07:40,Circular Quay,CQ1,09:10
-RR2,Waiting,Circular Quay,CQ5,09:20,Circular Quay,CQ5,09:25
+RR2,Waiting,Parramatta,Pm1,05:45,Parramatta,Pm1,05:50
+RR2,Waiting,Parramatta,Pm1,05:50,Parramatta,Pm1,05:55
+RR2,Charging,Parramatta,Pm1,05:55,Parramatta,Pm1,06:00
+RR2,Waiting,Parramatta,Pm1,06:00,Parramatta,Pm1,06:05
+RR2,Waiting,Parramatta,Pm1,06:05,Parramatta,Pm1,06:10
+RR2,Waiting,Parramatta,Pm1,06:10,Parramatta,Pm1,06:15
+RR2,Waiting,Parramatta,Pm1,06:15,Parramatta,Pm1,06:20
+RR2,Charging,Parramatta,Pm1,06:20,Parramatta,Pm1,06:25
+RR2,Charging,Parramatta,Pm1,06:25,Parramatta,Pm1,06:30
+RR2,Charging,Parramatta,Pm1,06:30,Parramatta,Pm1,06:35
+RR2,Charging,Parramatta,Pm1,06:35,Parramatta,Pm1,06:40
+RR2,Charging,Parramatta,Pm1,06:40,Parramatta,Pm1,06:45
+RR2,Waiting,Parramatta,Pm1,06:45,Parramatta,Pm1,06:50
+RR2,Charging,Parramatta,Pm1,06:50,Parramatta,Pm1,06:55
+RR2,Waiting,Parramatta,Pm1,06:55,Parramatta,Pm1,07:00
+RR2,Waiting,Parramatta,Pm1,07:00,Parramatta,Pm1,07:05
+RR2,Waiting,Parramatta,Pm1,07:05,Parramatta,Pm1,07:10
+RR2,Waiting,Parramatta,Pm1,07:10,Parramatta,Pm1,07:15
+RR2,Charging,Parramatta,Pm1,07:15,Parramatta,Pm1,07:20
+RR2,Waiting,Parramatta,Pm1,07:20,Parramatta,Pm1,07:25
+RR2,Waiting,Parramatta,Pm1,07:25,Parramatta,Pm1,07:30
+RR2,6,Parramatta,Pm1,07:35,Circular Quay,CQ2,09:05
+RR2,Waiting,Circular Quay,CQ2,09:15,Circular Quay,CQ2,09:20
+RR2,Waiting,Circular Quay,CQ4,09:20,Circular Quay,CQ4,09:25
 RR2,Waiting,Circular Quay,CQ4,09:25,Circular Quay,CQ4,09:30
-RR2,Waiting,Circular Quay,CQ4,09:30,Circular Quay,CQ4,09:35
-RR2,Waiting,Circular Quay,CQ2,09:35,Circular Quay,CQ2,09:40
-RR2,Waiting,Circular Quay,CQ4,09:40,Circular Quay,CQ4,09:45
-RR2,Waiting,Circular Quay,CQ4,09:45,Circular Quay,CQ4,09:50
-RR2,Waiting,Circular Quay,CQ5,09:50,Circular Quay,CQ5,09:55
-RR2,Waiting,Circular Quay,CQ4,09:55,Circular Quay,CQ4,10:00
-RR2,Waiting,Circular Quay,CQ4,10:00,Circular Quay,CQ4,10:05
-RR2,Waiting,Circular Quay,CQ2,10:05,Circular Quay,CQ2,10:10
-RR2,Waiting,Circular Quay,CQ5,10:10,Circular Quay,CQ5,10:15
-RR2,Waiting,Circular Quay,CQ5,10:15,Circular Quay,CQ5,10:20
-RR2,Waiting,Circular Quay,CQ5,10:20,Circular Quay,CQ5,10:25
-RR2,Waiting,Circular Quay,CQ4,10:25,Circular Quay,CQ4,10:30
-RR2,Waiting,Circular Quay,CQ2,10:30,Circular Quay,CQ2,10:35
-RR2,Waiting,Circular Quay,CQ4,10:35,Circular Quay,CQ4,10:40
-RR2,Waiting,Circular Quay,CQ2,10:40,Circular Quay,CQ2,10:45
-RR2,Waiting,Circular Quay,CQ4,10:45,Circular Quay,CQ4,10:50
-RR2,Waiting,Circular Quay,CQ4,10:50,Circular Quay,CQ4,10:55
-RR2,Waiting,Barangaroo,Bar1,11:10,Barangaroo,Bar1,11:15
-RR2,Waiting,Pyrmont Bay,PB1,11:15,Pyrmont Bay,PB1,11:20
-RR2,Waiting,Pyrmont Bay,PB1,11:20,Pyrmont Bay,PB1,11:25
-RR2,Waiting,Barangaroo,Bar2,11:25,Barangaroo,Bar2,11:30
+RR2,Crew pause,Circular Quay,CQ3,09:30,Circular Quay,CQ3,09:39
+RR2,Crew pause,Circular Quay,CQ2,09:40,Circular Quay,CQ2,09:49
+RR2,Waiting,Parramatta,Pm1,10:50,Parramatta,Pm1,10:55
+RR2,Waiting,Parramatta,Pm1,10:55,Parramatta,Pm1,11:00
+RR2,Charging,Parramatta,Pm1,11:00,Parramatta,Pm1,11:05
+RR2,Charging,Parramatta,Pm1,11:05,Parramatta,Pm1,11:10
+RR2,Waiting,Parramatta,Pm1,11:10,Parramatta,Pm1,11:15
+RR2,Waiting,Parramatta,Pm1,11:15,Parramatta,Pm1,11:20
+RR2,Waiting,Parramatta,Pm1,11:20,Parramatta,Pm1,11:25
+RR2,Waiting,Parramatta,Pm1,11:25,Parramatta,Pm1,11:30

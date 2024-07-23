@@ -1,37 +1,35 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-FF4,Waiting,Rose Bay,RB1,05:40,Rose Bay,RB1,05:45
-FF4,Charging,Rose Bay,RB1,05:45,Rose Bay,RB1,05:50
-FF4,Waiting,Rose Bay,RB1,05:50,Rose Bay,RB1,05:55
-FF4,Waiting,Circular Quay,CQ1,06:10,Circular Quay,CQ1,06:15
-FF4,Waiting,Circular Quay,CQ3,06:15,Circular Quay,CQ3,06:20
-FF4,10,Circular Quay,CQ1,06:25,Mosman,Mos1,06:52
-FF4,8,Pyrmont Bay,PB1,07:25,Circular Quay,CQ5,07:57
-FF4,Waiting,Circular Quay,CQ5,08:05,Circular Quay,CQ5,08:10
-FF4,Waiting,Circular Quay,CQ4,08:10,Circular Quay,CQ4,08:15
-FF4,Waiting,Circular Quay,CQ2,08:15,Circular Quay,CQ2,08:20
-FF4,Waiting,Circular Quay,CQ4,08:20,Circular Quay,CQ4,08:25
-FF4,Waiting,Circular Quay,CQ2,08:25,Circular Quay,CQ2,08:30
-FF4,15,Cockatoo Island,CI1,08:45,Circular Quay,CQ2,09:17
-FF4,Waiting,Circular Quay,CQ2,09:25,Circular Quay,CQ2,09:30
-FF4,Waiting,Circular Quay,CQ5,09:30,Circular Quay,CQ5,09:35
-FF4,Waiting,Circular Quay,CQ4,09:35,Circular Quay,CQ4,09:40
-FF4,Waiting,Circular Quay,CQ2,09:40,Circular Quay,CQ2,09:45
-FF4,Waiting,Circular Quay,CQ4,09:45,Circular Quay,CQ4,09:50
-FF4,Waiting,Circular Quay,CQ2,09:50,Circular Quay,CQ2,09:55
-FF4,Waiting,Circular Quay,CQ5,09:55,Circular Quay,CQ5,10:00
-FF4,Waiting,Circular Quay,CQ5,10:00,Circular Quay,CQ5,10:05
-FF4,Waiting,Circular Quay,CQ5,10:05,Circular Quay,CQ5,10:10
-FF4,Waiting,Circular Quay,CQ2,10:10,Circular Quay,CQ2,10:15
-FF4,Waiting,Circular Quay,CQ2,10:15,Circular Quay,CQ2,10:20
-FF4,Waiting,Circular Quay,CQ4,10:20,Circular Quay,CQ4,10:25
-FF4,Waiting,Circular Quay,CQ4,10:25,Circular Quay,CQ4,10:30
+FF4,Crew pause,Barangaroo,Bar2,05:40,Barangaroo,Bar2,05:49
+FF4,Crew pause,Barangaroo,Bar1,05:55,Barangaroo,Bar1,06:04
+FF4,Waiting,Barangaroo,Bar2,06:05,Barangaroo,Bar2,06:10
+FF4,Crew pause,Circular Quay,CQ5,06:25,Circular Quay,CQ5,06:34
+FF4,Crew pause,Circular Quay,CQ5,06:35,Circular Quay,CQ5,06:44
+FF4,Crew pause,Circular Quay,CQ5,06:45,Circular Quay,CQ5,06:54
+FF4,10,Circular Quay,CQ1,07:00,Mosman,Mos1,07:27
+FF4,2,Mosman,Mos1,07:35,Circular Quay,CQ4,07:53
+FF4,Waiting,Circular Quay,CQ1,08:00,Circular Quay,CQ1,08:05
+FF4,12,Circular Quay,CQ1,08:10,Double Bay,DB1,08:31
+FF4,Waiting,Barangaroo,Bar2,09:00,Barangaroo,Bar2,09:05
+FF4,Waiting,Barangaroo,Bar4,09:10,Barangaroo,Bar4,09:15
+FF4,Crew pause,Barangaroo,Bar5,09:15,Barangaroo,Bar5,09:24
+FF4,Waiting,Barangaroo,Bar1,09:25,Barangaroo,Bar1,09:30
+FF4,Waiting,Barangaroo,Bar4,09:30,Barangaroo,Bar4,09:35
+FF4,Waiting,Barangaroo,Bar4,09:35,Barangaroo,Bar4,09:40
+FF4,Waiting,Barangaroo,Bar4,09:40,Barangaroo,Bar4,09:45
+FF4,Waiting,Barangaroo,Bar5,09:45,Barangaroo,Bar5,09:50
+FF4,Waiting,Circular Quay,CQ4,10:05,Circular Quay,CQ4,10:10
+FF4,Waiting,Circular Quay,CQ5,10:10,Circular Quay,CQ5,10:15
+FF4,Waiting,Circular Quay,CQ5,10:15,Circular Quay,CQ5,10:20
+FF4,Waiting,Circular Quay,CQ5,10:20,Circular Quay,CQ5,10:25
+FF4,Waiting,Circular Quay,CQ3,10:25,Circular Quay,CQ3,10:30
 FF4,Waiting,Circular Quay,CQ5,10:30,Circular Quay,CQ5,10:35
-FF4,Waiting,Circular Quay,CQ4,10:35,Circular Quay,CQ4,10:40
-FF4,Waiting,Circular Quay,CQ5,10:40,Circular Quay,CQ5,10:45
-FF4,Waiting,Circular Quay,CQ5,10:45,Circular Quay,CQ5,10:50
+FF4,Waiting,Circular Quay,CQ2,10:35,Circular Quay,CQ2,10:40
+FF4,Waiting,Circular Quay,CQ2,10:40,Circular Quay,CQ2,10:45
+FF4,Waiting,Circular Quay,CQ2,10:45,Circular Quay,CQ2,10:50
 FF4,Waiting,Circular Quay,CQ4,10:50,Circular Quay,CQ4,10:55
-FF4,Waiting,Circular Quay,CQ5,10:55,Circular Quay,CQ5,11:00
-FF4,Crew pause,Circular Quay,CQ1,11:00,Circular Quay,CQ1,11:09
-FF4,Waiting,Circular Quay,CQ1,11:10,Circular Quay,CQ1,11:15
-FF4,Crew pause,Circular Quay,CQ1,11:15,Circular Quay,CQ1,11:24
-FF4,Waiting,Circular Quay,CQ2,11:25,Circular Quay,CQ2,11:30
+FF4,Waiting,Circular Quay,CQ4,10:55,Circular Quay,CQ4,11:00
+FF4,Waiting,Circular Quay,CQ5,11:00,Circular Quay,CQ5,11:05
+FF4,Waiting,Circular Quay,CQ4,11:05,Circular Quay,CQ4,11:10
+FF4,Waiting,Circular Quay,CQ4,11:10,Circular Quay,CQ4,11:15
+FF4,Crew pause,Circular Quay,CQ2,11:15,Circular Quay,CQ2,11:24
+FF4,Waiting,Circular Quay,CQ4,11:25,Circular Quay,CQ4,11:30

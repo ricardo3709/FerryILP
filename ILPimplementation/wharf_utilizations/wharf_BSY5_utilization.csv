@@ -1,3 +1,5 @@
 Vessel,Task,Wharf,Time
-RR6,Crew pause,BSY5,06:10-06:15
-RR6,Crew pause,BSY5,06:15-06:20
+FF6,Waiting,BSY5,05:40-05:45
+EC1,Waiting,BSY5,05:45-05:50
+RR6,Waiting,BSY5,05:45-05:50
+FF6,Waiting,BSY5,11:25-11:30
