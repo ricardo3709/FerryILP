@@ -100,34 +100,34 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                                             if t_prime in config.Tset)
                     model.addConstr(follow_task >= y[v, j, t], name=f"2: follow_task_v{v}_j{j}_t{t}")
 
-    # Constraint 3                   
-    for v in tqdm(config.Vset, desc='Constraint 3'):
-        for j in config.Jset:
-            for t in config.Tset:
-                for j_prime in taskF_results[(j, t)]:
-                    for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]):
-                        if t_prime in config.Tset and xi_results[(j, j_prime)] != 1:
-                            model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1 ,name=f"3: no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
-
-    # aux_var = {}
-    # for v in config.Vset:
-    #     for j in config.Jset:
-    #         for t in config.Tset:
-    #             for j_prime in taskF_results[(j, t)]:
-    #                 for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]):
-    #                     if t_prime in config.Tset and xi_results[(j, j_prime)] != 1:
-    #                         aux_var[v, j, t, j_prime, t_prime] = model.addVar(vtype=GRB.BINARY, name=f"z_{v}_{j}_{t}_{j_prime}_{t_prime}")
-
+    # # Constraint 3                   
     # for v in tqdm(config.Vset, desc='Constraint 3'):
     #     for j in config.Jset:
     #         for t in config.Tset:
     #             for j_prime in taskF_results[(j, t)]:
     #                 for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]):
     #                     if t_prime in config.Tset and xi_results[(j, j_prime)] != 1:
-    #                         model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= aux_var[v, j, t, j_prime, t_prime] + 1, name=f"overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
-    #                         model.addConstr(aux_var[v, j, t, j_prime, t_prime] <= y[v, j, t], name=f"link1_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
-    #                         model.addConstr(aux_var[v, j, t, j_prime, t_prime] <= y[v, j_prime, t_prime], name=f"link2_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
+    #                         model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1 ,name=f"3: no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
 
+    # constraint 3, equivalent formulation
+    #  nu sets
+    
+    nu = {}
+    for t in tqdm(config.Tset, desc='Precomputing nu'):
+        for j in config.Jset:
+            for j_prime in config.Jset:
+                nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]) if t_prime in config.Tset if xi_results[(j, j_prime)] != 1]
+
+    # equivalent formulation
+    for v in tqdm(config.Vset, desc='Constraint 3 equivalent formulation'):
+        for j in config.Jset:
+            for t in config.Tset:
+                sum_y_v_jprime_tprime = gp.quicksum(y[v, j_prime, t_prime] 
+                                                    for j_prime in config.Jset 
+                                                    for t_prime in nu[(t, j, j_prime)])
+                
+                sum_nu_t_j_jprime = sum(len(nu[(t, j, j_prime)]) for j_prime in config.Jset) 
+                model.addConstr(sum_y_v_jprime_tprime <= sum_nu_t_j_jprime * (1 - y[v, j, t]),name=f"3_eq_v{v}_j{j}_t{t}")
 
     # Constraint 4
     for w in tqdm(config.Wset, desc='Constraint 4'):
