@@ -1,25 +1,51 @@
 Vessel,Task,Wharf,Time
-10M,19,Bar4,06:45-06:50
-10M,19,Bar4,06:50-06:55
-RR2,Waiting,Bar4,07:55-08:00
-RR3,Waiting,Bar4,08:10-08:15
-FF8,Waiting,Bar4,09:00-09:05
-RR2,Waiting,Bar4,09:15-09:20
-RR3,Waiting,Bar4,09:30-09:35
-EC2,Waiting,Bar4,10:05-10:10
-RR12,Crew pause,Bar4,10:40-10:45
+EC5,Waiting,Bar4,05:50-05:55
+FF2,Waiting,Bar4,05:55-06:00
+FF2,Waiting,Bar4,06:00-06:05
+RR10,Waiting,Bar4,06:05-06:10
+FF2,Waiting,Bar4,06:05-06:10
+FF7,8,Bar4,06:10-06:15
+FF8,Waiting,Bar4,06:10-06:15
+FF7,8,Bar4,06:15-06:20
+FF7,8,Bar4,06:20-06:25
+RR10,Waiting,Bar4,06:25-06:30
+FF2,Waiting,Bar4,06:25-06:30
+RR6,Waiting,Bar4,06:30-06:35
+FF8,8,Bar4,06:35-06:40
+FF8,8,Bar4,06:40-06:45
+FF8,8,Bar4,06:45-06:50
+EC3,Waiting,Bar4,06:50-06:55
+EC3,8,Bar4,07:00-07:05
+EC3,8,Bar4,07:05-07:10
+EC3,8,Bar4,07:10-07:15
+FF4,8,Bar4,07:25-07:30
+FF4,8,Bar4,07:30-07:35
+FF4,8,Bar4,07:35-07:40
+RR1,Waiting,Bar4,09:00-09:05
+FF7,Waiting,Bar4,09:20-09:25
+EC1,Waiting,Bar4,09:35-09:40
+RR3,Crew pause,Bar4,10:10-10:15
+RR3,Crew pause,Bar4,10:15-10:20
+RR4,Waiting,Bar4,10:20-10:25
 RR3,Waiting,Bar4,10:40-10:45
-RR12,Crew pause,Bar4,10:45-10:50
-RR3,Waiting,Bar4,10:45-10:50
-EC4,Crew pause,Bar4,10:50-10:55
-EC4,Crew pause,Bar4,10:55-11:00
-RR9,Waiting,Bar4,11:05-11:10
-RR5,Waiting,Bar4,11:05-11:10
-24M,Waiting,Bar4,11:05-11:10
-RR1,Waiting,Bar4,11:05-11:10
-RR5,Crew pause,Bar4,11:10-11:15
-RR2,Crew pause,Bar4,11:15-11:20
-RR5,Crew pause,Bar4,11:15-11:20
+RR1,Crew pause,Bar4,10:40-10:45
+RR1,Crew pause,Bar4,10:45-10:50
+RR4,Waiting,Bar4,10:50-10:55
+10M,19,Bar4,10:50-10:55
+EC5,Waiting,Bar4,10:55-11:00
+10M,19,Bar4,10:55-11:00
+10M,Waiting,Bar4,10:55-11:00
+10M,Waiting,Bar4,11:00-11:05
+EC5,Crew pause,Bar4,11:05-11:10
+EC5,Crew pause,Bar4,11:10-11:15
+RR10,Waiting,Bar4,11:10-11:15
+24M,Crew pause,Bar4,11:15-11:20
+RR4,Crew pause,Bar4,11:15-11:20
+FF2,Crew pause,Bar4,11:15-11:20
 FF3,Crew pause,Bar4,11:15-11:20
-RR2,Crew pause,Bar4,11:20-11:25
+RR4,Crew pause,Bar4,11:20-11:25
+24M,Crew pause,Bar4,11:20-11:25
 FF3,Crew pause,Bar4,11:20-11:25
+FF2,Crew pause,Bar4,11:20-11:25
+RR11,Waiting,Bar4,11:25-11:30
+RR5,Waiting,Bar4,11:25-11:30

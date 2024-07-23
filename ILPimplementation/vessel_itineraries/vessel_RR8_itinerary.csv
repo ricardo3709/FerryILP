@@ -1,20 +1,40 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-RR8,Waiting,Barangaroo,Bar2,05:35,Barangaroo,Bar2,05:40
-RR8,Waiting,Pyrmont Bay,PB1,05:50,Pyrmont Bay,PB1,05:55
-RR8,Waiting,Pyrmont Bay,PB1,06:05,Pyrmont Bay,PB1,06:10
-RR8,Waiting,Rose Bay,RB1,06:40,Rose Bay,RB1,06:45
-RR8,16,Circular Quay,CQ1,06:50,Watsons Bay,WB1,07:20
-RR8,Waiting,Chiswick,Chs1,07:25,Chiswick,Chs1,07:30
-RR8,Waiting,Parramatta,Pm1,08:20,Parramatta,Pm1,08:25
-RR8,6,Parramatta,Pm1,08:30,Circular Quay,CQ1,10:00
-RR8,Waiting,Balmain Shipyard,BSY1,10:10,Balmain Shipyard,BSY1,10:15
-RR8,Waiting,Parramatta,Pm1,10:20,Parramatta,Pm1,10:25
-RR8,Crew pause,Balmain Shipyard,BSY1,10:25,Balmain Shipyard,BSY1,10:34
-RR8,Waiting,Chiswick,Chs1,10:35,Chiswick,Chs1,10:40
-RR8,Waiting,Pyrmont Bay,PB1,10:50,Pyrmont Bay,PB1,10:55
+RR8,Waiting,Cockatoo Island,CI1,05:35,Cockatoo Island,CI1,05:40
+RR8,Waiting,Cockatoo Island,CI1,05:40,Cockatoo Island,CI1,05:45
+RR8,Waiting,Cockatoo Island,CI1,05:45,Cockatoo Island,CI1,05:50
+RR8,Waiting,Cockatoo Island,CI1,05:50,Cockatoo Island,CI1,05:55
+RR8,Waiting,Cockatoo Island,CI1,05:55,Cockatoo Island,CI1,06:00
+RR8,Waiting,Cockatoo Island,CI1,06:00,Cockatoo Island,CI1,06:05
+RR8,17,Watsons Bay,WB1,06:30,Circular Quay,CQ3,06:50
+RR8,Waiting,Circular Quay,CQ5,07:00,Circular Quay,CQ5,07:05
+RR8,Waiting,Circular Quay,CQ5,07:05,Circular Quay,CQ5,07:10
+RR8,Waiting,Circular Quay,CQ4,07:10,Circular Quay,CQ4,07:15
+RR8,Waiting,Circular Quay,CQ5,07:15,Circular Quay,CQ5,07:20
+RR8,Waiting,Circular Quay,CQ5,07:20,Circular Quay,CQ5,07:25
+RR8,Waiting,Circular Quay,CQ5,07:25,Circular Quay,CQ5,07:30
+RR8,Crew pause,Circular Quay,CQ1,07:30,Circular Quay,CQ1,07:39
+RR8,Waiting,Circular Quay,CQ5,07:40,Circular Quay,CQ5,07:45
+RR8,Waiting,Watsons Bay,WB1,08:05,Watsons Bay,WB1,08:10
+RR8,Waiting,Pyrmont Bay,PB1,08:35,Pyrmont Bay,PB1,08:40
+RR8,Waiting,Barangaroo,Bar1,08:40,Barangaroo,Bar1,08:45
+RR8,Waiting,Circular Quay,CQ5,09:00,Circular Quay,CQ5,09:05
+RR8,Waiting,Circular Quay,CQ5,09:05,Circular Quay,CQ5,09:10
+RR8,Waiting,Circular Quay,CQ5,09:10,Circular Quay,CQ5,09:15
+RR8,Waiting,Circular Quay,CQ5,09:15,Circular Quay,CQ5,09:20
+RR8,Waiting,Circular Quay,CQ5,09:20,Circular Quay,CQ5,09:25
+RR8,Waiting,Circular Quay,CQ1,09:25,Circular Quay,CQ1,09:30
+RR8,Waiting,Circular Quay,CQ4,09:30,Circular Quay,CQ4,09:35
+RR8,Waiting,Circular Quay,CQ2,09:35,Circular Quay,CQ2,09:40
+RR8,Waiting,Circular Quay,CQ4,09:40,Circular Quay,CQ4,09:45
+RR8,Waiting,Circular Quay,CQ4,09:45,Circular Quay,CQ4,09:50
+RR8,Waiting,Circular Quay,CQ2,09:50,Circular Quay,CQ2,09:55
+RR8,Waiting,Circular Quay,CQ5,09:55,Circular Quay,CQ5,10:00
+RR8,Waiting,Cockatoo Island,CI1,10:15,Cockatoo Island,CI1,10:20
+RR8,Waiting,Barangaroo,Bar2,10:35,Barangaroo,Bar2,10:40
+RR8,Waiting,Barangaroo,Bar2,10:40,Barangaroo,Bar2,10:45
+RR8,Waiting,Barangaroo,Bar2,10:45,Barangaroo,Bar2,10:50
+RR8,Waiting,Barangaroo,Bar2,10:50,Barangaroo,Bar2,10:55
 RR8,Waiting,Barangaroo,Bar1,10:55,Barangaroo,Bar1,11:00
-RR8,Waiting,Cockatoo Island,CI1,11:00,Cockatoo Island,CI1,11:05
-RR8,Waiting,Chiswick,Chs1,11:05,Chiswick,Chs1,11:10
-RR8,Waiting,Cockatoo Island,CI1,11:10,Cockatoo Island,CI1,11:15
-RR8,Waiting,Parramatta,Pm1,11:20,Parramatta,Pm1,11:25
-RR8,Waiting,Cockatoo Island,CI1,11:25,Cockatoo Island,CI1,11:30
+RR8,Waiting,Barangaroo,Bar2,11:00,Barangaroo,Bar2,11:05
+RR8,Waiting,Circular Quay,CQ5,11:20,Circular Quay,CQ5,11:25
+RR8,Waiting,Circular Quay,CQ5,11:25,Circular Quay,CQ5,11:30

@@ -29,6 +29,7 @@ functions = {
     'cal_phi': cal_phi,
     'cal_E': cal_E,
     'cal_q': cal_q,
+    'get_task_location': get_task_location,
     'hash_config': hash_config,
     'save_results': save_results,
     'load_results': load_results,

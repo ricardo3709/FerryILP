@@ -1,13 +1,1 @@
 Vessel,Task,Wharf,Time
-RR4,Crew pause,BSY4,05:50-05:55
-RR4,Crew pause,BSY4,05:55-06:00
-FF2,Waiting,BSY4,08:45-08:50
-FF4,Waiting,BSY4,08:50-08:55
-EC2,Waiting,BSY4,09:05-09:10
-FF8,Waiting,BSY4,09:25-09:30
-FF8,Waiting,BSY4,09:30-09:35
-RR9,Waiting,BSY4,09:55-10:00
-FF2,Waiting,BSY4,10:15-10:20
-FF7,Waiting,BSY4,11:05-11:10
-RR3,Waiting,BSY4,11:25-11:30
-RR9,Waiting,BSY4,11:25-11:30

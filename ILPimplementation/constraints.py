@@ -116,7 +116,15 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     for t in tqdm(config.Tset, desc='Precomputing nu'):
         for j in config.Jset:
             for j_prime in config.Jset:
-                nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]) if t_prime in config.Tset if xi_results[(j, j_prime)] != 1]
+                end_station = functions['get_task_location'](config, j, -1) # end 
+                start_station = functions['get_task_location'](config, j_prime, 0) # start 
+                if end_station != start_station:
+                    nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]) if t_prime in config.Tset] # if xi_results[(j, j_prime)] != 1
+                elif end_station == start_station: # same station can start immidiately
+                    nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)] - 1) if t_prime in config.Tset] # if xi_results[(j, j_prime)] != 1
+                else:
+                    print('no!')
+
 
     # equivalent formulation
     for v in tqdm(config.Vset, desc='Constraint 3 equivalent formulation'):
