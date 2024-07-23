@@ -18,7 +18,7 @@ def run_optimization(model):
     # model.setParam('SolutionLimit', 1)  # Stop after finding the first feasible solution
 
     # Optimization strategies
-    model.setParam('MIPGap', 0.25)        # Optimality gap
+    model.setParam('MIPGap', 0.99)        # Optimality gap
     model.setParam('Heuristics', 0.5)     # Heuristic emphasis (50%)
 
     model.setParam('MIPFocus', 1)  # Focus on finding feasible solutions quickly
