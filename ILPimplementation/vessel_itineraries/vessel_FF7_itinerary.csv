@@ -1,43 +1,49 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-FF7,Crew pause,Balmain Shipyard,BSY4,05:40,Balmain Shipyard,BSY4,05:49
-FF7,Crew pause,Balmain Shipyard,BSY4,05:50,Balmain Shipyard,BSY4,05:59
-FF7,Crew pause,Balmain Shipyard,BSY6,06:00,Balmain Shipyard,BSY6,06:09
-FF7,10,Circular Quay,CQ1,06:25,Mosman,Mos1,06:52
-FF7,2,Mosman,Mos1,07:00,Circular Quay,CQ5,07:18
-FF7,7,Circular Quay,CQ1,07:30,Pyrmont Bay,PB1,07:59
-FF7,Waiting,Pyrmont Bay,PB1,08:05,Pyrmont Bay,PB1,08:10
-FF7,Charging,Pyrmont Bay,PB1,08:10,Pyrmont Bay,PB1,08:15
-FF7,Charging,Pyrmont Bay,PB1,08:15,Pyrmont Bay,PB1,08:20
-FF7,Charging,Pyrmont Bay,PB1,08:20,Pyrmont Bay,PB1,08:25
-FF7,Charging,Pyrmont Bay,PB1,08:25,Pyrmont Bay,PB1,08:30
-FF7,Charging,Pyrmont Bay,PB1,08:30,Pyrmont Bay,PB1,08:35
-FF7,Charging,Pyrmont Bay,PB1,08:35,Pyrmont Bay,PB1,08:40
-FF7,Charging,Pyrmont Bay,PB1,08:40,Pyrmont Bay,PB1,08:45
-FF7,Charging,Pyrmont Bay,PB1,08:45,Pyrmont Bay,PB1,08:50
-FF7,Charging,Pyrmont Bay,PB1,08:50,Pyrmont Bay,PB1,08:55
-FF7,Charging,Pyrmont Bay,PB1,08:55,Pyrmont Bay,PB1,09:00
-FF7,Waiting,Pyrmont Bay,PB1,09:00,Pyrmont Bay,PB1,09:05
-FF7,Charging,Pyrmont Bay,PB1,09:05,Pyrmont Bay,PB1,09:10
-FF7,Waiting,Pyrmont Bay,PB1,09:10,Pyrmont Bay,PB1,09:15
-FF7,Crew pause,Circular Quay,CQ2,09:30,Circular Quay,CQ2,09:39
-FF7,Waiting,Circular Quay,CQ4,09:40,Circular Quay,CQ4,09:45
-FF7,Waiting,Circular Quay,CQ5,09:45,Circular Quay,CQ5,09:50
-FF7,Waiting,Circular Quay,CQ5,09:50,Circular Quay,CQ5,09:55
-FF7,Waiting,Circular Quay,CQ5,09:55,Circular Quay,CQ5,10:00
-FF7,Charging,Circular Quay,CQ5,10:00,Circular Quay,CQ5,10:05
-FF7,Waiting,Circular Quay,CQ5,10:05,Circular Quay,CQ5,10:10
-FF7,Waiting,Circular Quay,CQ5,10:10,Circular Quay,CQ5,10:15
-FF7,Waiting,Circular Quay,CQ5,10:15,Circular Quay,CQ5,10:20
-FF7,Waiting,Circular Quay,CQ5,10:20,Circular Quay,CQ5,10:25
-FF7,Waiting,Circular Quay,CQ1,10:25,Circular Quay,CQ1,10:30
-FF7,Waiting,Circular Quay,CQ5,10:30,Circular Quay,CQ5,10:35
-FF7,Waiting,Circular Quay,CQ2,10:35,Circular Quay,CQ2,10:40
-FF7,Waiting,Circular Quay,CQ5,10:40,Circular Quay,CQ5,10:45
-FF7,Waiting,Circular Quay,CQ1,10:45,Circular Quay,CQ1,10:50
-FF7,Waiting,Circular Quay,CQ5,10:50,Circular Quay,CQ5,10:55
-FF7,Waiting,Circular Quay,CQ5,10:55,Circular Quay,CQ5,11:00
-FF7,Waiting,Circular Quay,CQ1,11:00,Circular Quay,CQ1,11:05
-FF7,Crew pause,Circular Quay,CQ4,11:05,Circular Quay,CQ4,11:14
-FF7,Waiting,Circular Quay,CQ5,11:15,Circular Quay,CQ5,11:20
-FF7,Waiting,Circular Quay,CQ4,11:20,Circular Quay,CQ4,11:25
+FF7,Crew pause,Circular Quay,CQ5,05:30,Circular Quay,CQ5,05:39
+FF7,Waiting,Barangaroo,Bar4,05:40,Barangaroo,Bar4,05:45
+FF7,Waiting,Circular Quay,CQ1,05:45,Circular Quay,CQ1,05:50
+FF7,Waiting,Balmain Shipyard,BSY4,05:50,Balmain Shipyard,BSY4,05:55
+FF7,Waiting,Balmain Shipyard,BSY3,05:55,Balmain Shipyard,BSY3,06:00
+FF7,Waiting,Balmain Shipyard,BSY1,06:00,Balmain Shipyard,BSY1,06:05
+FF7,Waiting,Balmain Shipyard,BSY2,06:05,Balmain Shipyard,BSY2,06:10
+FF7,Waiting,Balmain Shipyard,BSY6,06:10,Balmain Shipyard,BSY6,06:15
+FF7,Waiting,Cockatoo Island,CI1,06:15,Cockatoo Island,CI1,06:20
+FF7,Waiting,Balmain Shipyard,BSY4,06:20,Balmain Shipyard,BSY4,06:25
+FF7,Waiting,Circular Quay,CQ2,06:25,Circular Quay,CQ2,06:30
+FF7,Waiting,Circular Quay,CQ1,06:30,Circular Quay,CQ1,06:35
+FF7,Waiting,Cockatoo Island,CI1,06:35,Cockatoo Island,CI1,06:40
+FF7,Waiting,Circular Quay,CQ4,06:40,Circular Quay,CQ4,06:45
+FF7,Crew pause,Circular Quay,CQ3,06:45,Circular Quay,CQ3,06:54
+FF7,Waiting,Cabarita,Cab1,06:55,Cabarita,Cab1,07:00
+FF7,1,Circular Quay,CQ1,07:00,Mosman,Mos1,07:18
+FF7,7,Circular Quay,CQ1,07:25,Pyrmont Bay,PB1,07:54
+FF7,Crew pause,Barangaroo,Bar4,08:00,Barangaroo,Bar4,08:09
+FF7,Crew pause,Barangaroo,Bar2,08:10,Barangaroo,Bar2,08:19
+FF7,Waiting,Balmain Shipyard,BSY4,08:20,Balmain Shipyard,BSY4,08:25
+FF7,Waiting,Balmain Shipyard,BSY3,08:25,Balmain Shipyard,BSY3,08:30
+FF7,Waiting,Pyrmont Bay,PB1,08:30,Pyrmont Bay,PB1,08:35
+FF7,2,Mosman,Mos1,08:35,Circular Quay,CQ4,08:53
+FF7,Waiting,Watsons Bay,WB1,09:00,Watsons Bay,WB1,09:05
+FF7,Crew pause,Balmain Shipyard,BSY5,09:05,Balmain Shipyard,BSY5,09:14
+FF7,Waiting,Circular Quay,CQ4,09:15,Circular Quay,CQ4,09:20
+FF7,Waiting,Watsons Bay,WB1,09:20,Watsons Bay,WB1,09:25
+FF7,Waiting,Pyrmont Bay,PB1,09:25,Pyrmont Bay,PB1,09:30
+FF7,3,Circular Quay,CQ1,09:30,Taronga Zoo,TZ1,09:48
+FF7,Waiting,Circular Quay,CQ3,09:55,Circular Quay,CQ3,10:00
+FF7,Waiting,Circular Quay,CQ1,10:00,Circular Quay,CQ1,10:05
+FF7,Waiting,Balmain Shipyard,BSY5,10:05,Balmain Shipyard,BSY5,10:10
+FF7,Waiting,Circular Quay,CQ3,10:10,Circular Quay,CQ3,10:15
+FF7,Waiting,Cabarita,Cab1,10:15,Cabarita,Cab1,10:20
+FF7,Waiting,Watsons Bay,WB1,10:20,Watsons Bay,WB1,10:25
+FF7,Waiting,Balmain Shipyard,BSY4,10:25,Balmain Shipyard,BSY4,10:30
+FF7,Waiting,Barangaroo,Bar2,10:30,Barangaroo,Bar2,10:35
+FF7,Waiting,Cockatoo Island,CI1,10:35,Cockatoo Island,CI1,10:40
+FF7,Waiting,Pyrmont Bay,PB1,10:40,Pyrmont Bay,PB1,10:45
+FF7,Waiting,Balmain Shipyard,BSY5,10:45,Balmain Shipyard,BSY5,10:50
+FF7,Waiting,Watsons Bay,WB1,10:50,Watsons Bay,WB1,10:55
+FF7,Waiting,Barangaroo,Bar5,10:55,Barangaroo,Bar5,11:00
+FF7,Waiting,Balmain Shipyard,BSY3,11:00,Balmain Shipyard,BSY3,11:05
+FF7,Crew pause,Circular Quay,CQ5,11:05,Circular Quay,CQ5,11:14
+FF7,Waiting,Circular Quay,CQ2,11:15,Circular Quay,CQ2,11:20
+FF7,Waiting,Barangaroo,Bar1,11:20,Barangaroo,Bar1,11:25
 FF7,Waiting,Circular Quay,CQ2,11:25,Circular Quay,CQ2,11:30

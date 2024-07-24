@@ -43,12 +43,24 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
             model.addConstr(gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]) <= 1, name=f"1f: task_overlap_v{v}_t{t}")
 
     # Constraint 1g
-    for l in tqdm(config.Lset, desc='Constraint 1g'):
-        R_l = functions['cal_Rl'](config, l)
-        A_l = R_l[-1]  # last station
-        for S in R_l[:-1]: # 29July revised, original code: for S in [station for station in R_l if station != A_l]:
-            C_lS = functions['cal_C_lS'](config, S)
-            model.addConstr(gp.quicksum(z[w, l] for w in C_lS) == 1, name=f"1g: select_one_wharf_{l}_station_{S}")
+    # for l in tqdm(config.Lset, desc='Constraint 1g'):
+    #     R_l = functions['cal_Rl'](config, l)
+    #     A_l = R_l[-1]  # last station
+    #     for S in R_l[:-1]: # 29July revised, original code: for S in [station for station in R_l if station != A_l]:
+    #         C_lS = functions['cal_C_lS'](config, S)
+    #         model.addConstr(gp.quicksum(z[w, l] for w in C_lS) == 1, name=f"1g: select_one_wharf_{l}_station_{S}")
+
+    for j in tqdm(config.Jset, desc='Constraint 1g'):
+        if j in config.Lset:
+            l = j
+            R_l = functions['cal_Rl'](config, l)
+            A_l = R_l[-1]  # last station
+            for S in R_l[:-1]: # 29July revised, original code: for S in [station for station in R_l if station != A_l]:
+                C_lS = functions['cal_C_lS'](config, S)
+                model.addConstr(gp.quicksum(z[w, l] for w in C_lS) == 1, name=f"1g: select_one_wharf_{l}_station_{S}")
+        else:
+            w = j.split('_')[-1]
+            model.addConstr(z[w, j] == 1, name=f"1g: set_upper_bound_{w}_{j}")
 
     # Constraint 1h
     for l in tqdm(config.Lset, desc='Constraint 1h'):

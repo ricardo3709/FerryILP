@@ -55,7 +55,7 @@ generate_new_files = False
 
 
 # Prefix for file names
-file_prefix = "6htest"  # You can change the prefix as needed
+file_prefix = "6htest_1"  # You can change the prefix as needed
 
 # Manage results based on the flag
 results = manage_results(config, generate_new_files, file_prefix)
@@ -91,4 +91,4 @@ run_optimization(model)
 save_relaxed_variable_results(model, x, 'ILPimplementation/output_files/relaxed_x_variable_results.csv')
 
 # Save results if optimal
-save_all_results(model, x, y, Q, z, Z, Z_prime)
+save_all_results(model, x, y, Q, z, Z, Z_prime,file_prefix)

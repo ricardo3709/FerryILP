@@ -1,33 +1,41 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-RR6,Waiting,Balmain Shipyard,BSY6,05:40,Balmain Shipyard,BSY6,05:45
-RR6,Waiting,Balmain Shipyard,BSY5,05:45,Balmain Shipyard,BSY5,05:50
+RR6,Waiting,Circular Quay,CQ4,05:30,Circular Quay,CQ4,05:35
+RR6,Waiting,Circular Quay,CQ2,05:35,Circular Quay,CQ2,05:40
+RR6,Waiting,Rose Bay,RB1,05:40,Rose Bay,RB1,05:45
+RR6,Waiting,Balmain Shipyard,BSY6,05:45,Balmain Shipyard,BSY6,05:50
+RR6,Crew pause,Balmain Shipyard,BSY4,05:50,Balmain Shipyard,BSY4,05:59
+RR6,Waiting,Barangaroo,Bar5,06:00,Barangaroo,Bar5,06:05
+RR6,Crew pause,Circular Quay,CQ1,06:05,Circular Quay,CQ1,06:14
+RR6,Waiting,Barangaroo,Bar4,06:15,Barangaroo,Bar4,06:20
+RR6,Crew pause,Barangaroo,Bar1,06:20,Barangaroo,Bar1,06:29
+RR6,Waiting,Balmain Shipyard,BSY2,06:30,Balmain Shipyard,BSY2,06:35
+RR6,Waiting,Balmain Shipyard,BSY1,06:35,Balmain Shipyard,BSY1,06:40
+RR6,Waiting,Chiswick,Chs1,06:40,Chiswick,Chs1,06:45
 RR6,Waiting,Parramatta,Pm1,06:45,Parramatta,Pm1,06:50
-RR6,Charging,Parramatta,Pm1,06:50,Parramatta,Pm1,06:55
-RR6,Waiting,Parramatta,Pm1,06:55,Parramatta,Pm1,07:00
-RR6,Waiting,Parramatta,Pm1,07:00,Parramatta,Pm1,07:05
-RR6,Waiting,Parramatta,Pm1,07:05,Parramatta,Pm1,07:10
-RR6,Waiting,Parramatta,Pm1,07:10,Parramatta,Pm1,07:15
-RR6,Charging,Parramatta,Pm1,07:15,Parramatta,Pm1,07:20
-RR6,Charging,Parramatta,Pm1,07:20,Parramatta,Pm1,07:25
-RR6,Charging,Parramatta,Pm1,07:25,Parramatta,Pm1,07:30
-RR6,Charging,Parramatta,Pm1,07:30,Parramatta,Pm1,07:35
-RR6,Charging,Parramatta,Pm1,07:35,Parramatta,Pm1,07:40
-RR6,Charging,Parramatta,Pm1,07:40,Parramatta,Pm1,07:45
-RR6,Waiting,Parramatta,Pm1,07:45,Parramatta,Pm1,07:50
-RR6,Waiting,Parramatta,Pm1,07:50,Parramatta,Pm1,07:55
-RR6,6,Parramatta,Pm1,08:00,Circular Quay,CQ4,09:30
-RR6,Waiting,Circular Quay,CQ5,09:40,Circular Quay,CQ5,09:45
-RR6,Crew pause,Balmain Shipyard,BSY1,10:00,Balmain Shipyard,BSY1,10:09
-RR6,Waiting,Barangaroo,Bar1,10:20,Barangaroo,Bar1,10:25
-RR6,Waiting,Barangaroo,Bar1,10:25,Barangaroo,Bar1,10:30
-RR6,Waiting,Barangaroo,Bar5,10:30,Barangaroo,Bar5,10:35
-RR6,Waiting,Barangaroo,Bar2,10:35,Barangaroo,Bar2,10:40
-RR6,Waiting,Barangaroo,Bar1,10:40,Barangaroo,Bar1,10:45
-RR6,Waiting,Barangaroo,Bar2,10:45,Barangaroo,Bar2,10:50
-RR6,Crew pause,Barangaroo,Bar1,10:50,Barangaroo,Bar1,10:59
-RR6,Waiting,Barangaroo,Bar5,11:00,Barangaroo,Bar5,11:05
-RR6,Waiting,Barangaroo,Bar4,11:05,Barangaroo,Bar4,11:10
-RR6,Waiting,Barangaroo,Bar1,11:10,Barangaroo,Bar1,11:15
-RR6,Waiting,Barangaroo,Bar5,11:15,Barangaroo,Bar5,11:20
-RR6,Waiting,Barangaroo,Bar1,11:20,Barangaroo,Bar1,11:25
-RR6,Waiting,Barangaroo,Bar1,11:25,Barangaroo,Bar1,11:30
+RR6,Waiting,Parramatta,Pm1,06:50,Parramatta,Pm1,06:55
+RR6,Waiting,Circular Quay,CQ2,06:55,Circular Quay,CQ2,07:00
+RR6,Waiting,Balmain Shipyard,BSY4,07:00,Balmain Shipyard,BSY4,07:05
+RR6,Waiting,Balmain Shipyard,BSY5,07:05,Balmain Shipyard,BSY5,07:10
+RR6,Waiting,Balmain Shipyard,BSY6,07:10,Balmain Shipyard,BSY6,07:15
+RR6,Waiting,Balmain Shipyard,BSY6,07:15,Balmain Shipyard,BSY6,07:20
+RR6,Waiting,Pyrmont Bay,PB1,07:20,Pyrmont Bay,PB1,07:25
+RR6,Waiting,Balmain Shipyard,BSY2,07:25,Balmain Shipyard,BSY2,07:30
+RR6,Waiting,Circular Quay,CQ2,07:30,Circular Quay,CQ2,07:35
+RR6,Waiting,Cabarita,Cab1,07:35,Cabarita,Cab1,07:40
+RR6,Waiting,Rose Bay,RB1,07:40,Rose Bay,RB1,07:45
+RR6,Waiting,Cockatoo Island,CI1,07:45,Cockatoo Island,CI1,07:50
+RR6,Waiting,Cockatoo Island,CI1,07:50,Cockatoo Island,CI1,07:55
+RR6,Waiting,Chiswick,Chs1,07:55,Chiswick,Chs1,08:00
+RR6,Waiting,Cabarita,Cab1,08:00,Cabarita,Cab1,08:05
+RR6,Waiting,Chiswick,Chs1,08:05,Chiswick,Chs1,08:10
+RR6,6,Parramatta,Pm1,08:55,Circular Quay,CQ4,10:25
+RR6,Waiting,Cabarita,Cab1,10:35,Cabarita,Cab1,10:40
+RR6,Waiting,Barangaroo,Bar4,10:40,Barangaroo,Bar4,10:45
+RR6,Crew pause,Barangaroo,Bar2,10:45,Barangaroo,Bar2,10:54
+RR6,Waiting,Balmain Shipyard,BSY3,10:55,Balmain Shipyard,BSY3,11:00
+RR6,Waiting,Balmain Shipyard,BSY3,11:00,Balmain Shipyard,BSY3,11:05
+RR6,Waiting,Circular Quay,CQ2,11:05,Circular Quay,CQ2,11:10
+RR6,Charging,Circular Quay,CQ2,11:10,Circular Quay,CQ2,11:15
+RR6,Charging,Circular Quay,CQ2,11:15,Circular Quay,CQ2,11:20
+RR6,Waiting,Circular Quay,CQ2,11:20,Circular Quay,CQ2,11:25
+RR6,Waiting,Circular Quay,CQ3,11:25,Circular Quay,CQ3,11:30

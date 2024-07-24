@@ -75,7 +75,7 @@ def save_relaxed_variable_results(model, var_dict, filename):
     else:
         print("\nModel status is not infeasible. No need to relax anything.")
 
-def save_all_results(model, x, y, Q, z, Z, Z_prime):
+def save_all_results(model, x, y, Q, z, Z, Z_prime,file_prefix):
     if model.Status == gp.GRB.OPTIMAL:
         print("\nOptimization was successful. Saving results...")
         
@@ -83,12 +83,12 @@ def save_all_results(model, x, y, Q, z, Z, Z_prime):
         os.makedirs(output_dir, exist_ok=True)
         
         # Save results
-        save_variable_results(x, os.path.join(output_dir, 'x_ld_results.csv'))
-        save_variable_results(y, os.path.join(output_dir, 'y_vjt_results.csv'))
-        save_variable_results(Q, os.path.join(output_dir, 'Q_vt_results.csv'))
-        save_variable_results(z, os.path.join(output_dir, 'z_wj_results.csv'))
-        save_variable_results(Z, os.path.join(output_dir, 'Z_lwt_results.csv'))
-        save_variable_results(Z_prime, os.path.join(output_dir, 'Z_prime_lwt_results.csv'))
+        save_variable_results(x, os.path.join(output_dir, f'{file_prefix}_x_ld_results.csv'))
+        save_variable_results(y, os.path.join(output_dir, f'{file_prefix}_y_vjt_results.csv'))
+        save_variable_results(Q, os.path.join(output_dir, f'{file_prefix}_Q_vt_results.csv'))
+        save_variable_results(z, os.path.join(output_dir, f'{file_prefix}_z_wj_results.csv'))
+        save_variable_results(Z, os.path.join(output_dir, f'{file_prefix}_Z_lwt_results.csv'))
+        save_variable_results(Z_prime, os.path.join(output_dir, f'{file_prefix}_Z_prime_lwt_results.csv'))
     else:
         print("\nOptimization did not reach optimality.")
 
