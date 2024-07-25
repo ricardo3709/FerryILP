@@ -1,49 +1,20 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-RR1,Crew pause,Balmain Shipyard,BSY4,05:30,Balmain Shipyard,BSY4,05:39
-RR1,Waiting,Balmain Shipyard,BSY1,05:40,Balmain Shipyard,BSY1,05:45
-RR1,Waiting,Rose Bay,RB1,05:45,Rose Bay,RB1,05:50
-RR1,Waiting,Barangaroo,Bar2,05:50,Barangaroo,Bar2,05:55
-RR1,Waiting,Chiswick,Chs1,05:55,Chiswick,Chs1,06:00
-RR1,Waiting,Circular Quay,CQ4,06:00,Circular Quay,CQ4,06:05
-RR1,Waiting,Balmain Shipyard,BSY1,06:05,Balmain Shipyard,BSY1,06:10
-RR1,Crew pause,Balmain Shipyard,BSY5,06:10,Balmain Shipyard,BSY5,06:19
-RR1,Waiting,Balmain Shipyard,BSY2,06:20,Balmain Shipyard,BSY2,06:25
-RR1,Waiting,Circular Quay,CQ2,06:25,Circular Quay,CQ2,06:30
+RR1,Crew pause,Circular Quay,CQ2,05:40,Circular Quay,CQ2,05:49
+RR1,Crew pause,Circular Quay,CQ5,05:55,Circular Quay,CQ5,06:04
+RR1,Waiting,Circular Quay,CQ4,06:05,Circular Quay,CQ4,06:10
+RR1,Charging,Circular Quay,CQ4,06:10,Circular Quay,CQ4,06:15
+RR1,Waiting,Circular Quay,CQ4,06:15,Circular Quay,CQ4,06:20
+RR1,Crew pause,Circular Quay,CQ5,06:20,Circular Quay,CQ5,06:29
 RR1,Crew pause,Circular Quay,CQ2,06:30,Circular Quay,CQ2,06:39
-RR1,Waiting,Circular Quay,CQ5,06:40,Circular Quay,CQ5,06:45
-RR1,Waiting,Circular Quay,CQ2,06:45,Circular Quay,CQ2,06:50
-RR1,Waiting,Circular Quay,CQ2,06:50,Circular Quay,CQ2,06:55
-RR1,Waiting,Circular Quay,CQ1,06:55,Circular Quay,CQ1,07:00
-RR1,5,Circular Quay,CQ1,07:05,Parramatta,Pm1,08:35
-RR1,Crew pause,Barangaroo,Bar4,08:40,Barangaroo,Bar4,08:49
-RR1,Waiting,Barangaroo,Bar1,08:50,Barangaroo,Bar1,08:55
-RR1,Waiting,Barangaroo,Bar2,08:55,Barangaroo,Bar2,09:00
-RR1,Waiting,Circular Quay,CQ2,09:00,Circular Quay,CQ2,09:05
-RR1,Waiting,Rose Bay,RB1,09:05,Rose Bay,RB1,09:10
-RR1,Waiting,Chiswick,Chs1,09:10,Chiswick,Chs1,09:15
-RR1,Waiting,Cockatoo Island,CI1,09:15,Cockatoo Island,CI1,09:20
-RR1,Waiting,Barangaroo,Bar1,09:20,Barangaroo,Bar1,09:25
-RR1,Waiting,Cockatoo Island,CI1,09:25,Cockatoo Island,CI1,09:30
-RR1,Waiting,Cabarita,Cab1,09:30,Cabarita,Cab1,09:35
-RR1,Waiting,Barangaroo,Bar4,09:35,Barangaroo,Bar4,09:40
-RR1,Waiting,Balmain Shipyard,BSY3,09:40,Balmain Shipyard,BSY3,09:45
-RR1,Waiting,Barangaroo,Bar5,09:45,Barangaroo,Bar5,09:50
-RR1,Waiting,Balmain Shipyard,BSY6,09:50,Balmain Shipyard,BSY6,09:55
-RR1,Waiting,Circular Quay,CQ2,09:55,Circular Quay,CQ2,10:00
-RR1,Waiting,Balmain Shipyard,BSY1,10:00,Balmain Shipyard,BSY1,10:05
-RR1,Waiting,Cockatoo Island,CI1,10:05,Cockatoo Island,CI1,10:10
-RR1,Waiting,Balmain Shipyard,BSY5,10:10,Balmain Shipyard,BSY5,10:15
-RR1,Waiting,Circular Quay,CQ2,10:15,Circular Quay,CQ2,10:20
-RR1,Waiting,Circular Quay,CQ1,10:20,Circular Quay,CQ1,10:25
-RR1,Waiting,Balmain Shipyard,BSY6,10:25,Balmain Shipyard,BSY6,10:30
-RR1,Crew pause,Balmain Shipyard,BSY4,10:30,Balmain Shipyard,BSY4,10:39
-RR1,Waiting,Balmain Shipyard,BSY2,10:40,Balmain Shipyard,BSY2,10:45
-RR1,Waiting,Balmain Shipyard,BSY1,10:45,Balmain Shipyard,BSY1,10:50
-RR1,Waiting,Balmain Shipyard,BSY4,10:50,Balmain Shipyard,BSY4,10:55
-RR1,Waiting,Circular Quay,CQ3,10:55,Circular Quay,CQ3,11:00
-RR1,Waiting,Cabarita,Cab1,11:00,Cabarita,Cab1,11:05
-RR1,Waiting,Barangaroo,Bar4,11:05,Barangaroo,Bar4,11:10
-RR1,Waiting,Cabarita,Cab1,11:10,Cabarita,Cab1,11:15
-RR1,Waiting,Barangaroo,Bar1,11:15,Barangaroo,Bar1,11:20
-RR1,Waiting,Cabarita,Cab1,11:20,Cabarita,Cab1,11:25
-RR1,Waiting,Barangaroo,Bar4,11:25,Barangaroo,Bar4,11:30
+RR1,Crew pause,Circular Quay,CQ1,06:40,Circular Quay,CQ1,06:49
+RR1,Waiting,Circular Quay,CQ1,06:50,Circular Quay,CQ1,06:55
+RR1,5,Circular Quay,CQ1,07:00,Parramatta,Pm1,08:30
+RR1,Waiting,Parramatta,Pm1,08:40,Parramatta,Pm1,08:45
+RR1,Waiting,Parramatta,Pm1,08:45,Parramatta,Pm1,08:50
+RR1,6,Parramatta,Pm1,08:55,Circular Quay,CQ3,10:25
+RR1,Crew pause,Circular Quay,CQ3,10:35,Circular Quay,CQ3,10:44
+RR1,Waiting,Circular Quay,CQ5,10:45,Circular Quay,CQ5,10:50
+RR1,Waiting,Circular Quay,CQ2,10:50,Circular Quay,CQ2,10:55
+RR1,Crew pause,Circular Quay,CQ3,10:55,Circular Quay,CQ3,11:04
+RR1,Crew pause,Circular Quay,CQ2,11:10,Circular Quay,CQ2,11:19
+RR1,Waiting,Circular Quay,CQ3,11:25,Circular Quay,CQ3,11:30

@@ -107,8 +107,8 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                     buffer = 3  # Buffer = 1 -> same functionality with rthe original expression
                     follow_task = gp.quicksum(y[v, j_prime, t_prime] 
                                             for j_prime in follow_tasks 
-                                            for t_prime in range(t + mu_results[j] + xi_results[(j, j_prime)], 
-                                                                t + mu_results[j] + xi_results[(j, j_prime)] + buffer)
+                                            for t_prime in range(t + int(mu_results[j]) + int(xi_results[(j, j_prime)]), 
+                                                                t + int(mu_results[j]) + int(xi_results[(j, j_prime)]) + buffer)
                                             if t_prime in config.Tset)
                     model.addConstr(follow_task >= y[v, j, t], name=f"2: follow_task_v{v}_j{j}_t{t}")
 
@@ -131,7 +131,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                 end_station = functions['get_task_location'](config, j, -1) # end 
                 start_station = functions['get_task_location'](config, j_prime, 0) # start 
                 if end_station != start_station:
-                    nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + mu_results[j], t + mu_results[j] + xi_results[(j, j_prime)]) if t_prime in config.Tset] # if xi_results[(j, j_prime)] != 1
+                    nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + int(mu_results[j]), t + int(mu_results[j]) + int(xi_results[(j, j_prime)])) if t_prime in config.Tset] # if xi_results[(j, j_prime)] != 1
                 elif end_station == start_station: # same station can start immidiately
                     nu[(t, j, j_prime)] = []
                 else:
