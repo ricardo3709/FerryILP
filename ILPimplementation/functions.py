@@ -438,12 +438,26 @@ def calculate_and_save_results(config, file_prefix):
         for t in config.Tset:
             E_results[(w, t)] = cal_E(config, w, t)
 
+    nu_results = {}
+    for t in tqdm(config.Tset, desc='nu_results'):
+        for j in config.Jset:
+            for j_prime in config.Jset:
+                end_station = get_task_location(config, j, -1) # end 
+                start_station = get_task_location(config, j_prime, 0) # start 
+                if end_station != start_station:
+                    nu_results[(t, j, j_prime)] = [t_prime for t_prime in range(t + int(mu_results[j]), t + int(mu_results[j]) + int(xi_results[(j, j_prime)])) if t_prime in config.Tset] # if xi_results[(j, j_prime)] != 1
+                elif end_station == start_station: # same station can start immidiately
+                    nu_results[(t, j, j_prime)] = []
+                else:
+                    print('no!')
+
     # Save results with prefix
     save_results(taskF_results, f'ILPimplementation/pkl_files/{file_prefix}_taskF_results.pkl')
     save_results(mu_results, f'ILPimplementation/pkl_files/{file_prefix}_mu_results.pkl')
     save_results(xi_results, f'ILPimplementation/pkl_files/{file_prefix}_xi_jj_results.pkl')
     save_results(phi_results, f'ILPimplementation/pkl_files/{file_prefix}_phi_results.pkl')
     save_results(E_results, f'ILPimplementation/pkl_files/{file_prefix}_E_results.pkl')
+    save_results(nu_results, f'ILPimplementation/pkl_files/{file_prefix}_nu_results.pkl')
 
     print(f'All results matrices have been generated and saved with prefix "{file_prefix}".\n')
 
@@ -453,10 +467,11 @@ def load_all_results(file_prefix):
     xi_results = load_results(f'ILPimplementation/pkl_files/{file_prefix}_xi_jj_results.pkl')
     phi_results = load_results(f'ILPimplementation/pkl_files/{file_prefix}_phi_results.pkl')
     E_results = load_results(f'ILPimplementation/pkl_files/{file_prefix}_E_results.pkl')
+    nu_results = load_results(f'ILPimplementation/pkl_files/{file_prefix}_nu_results.pkl')
 
     print(f'All results matrices have been loaded from files with prefix "{file_prefix}".\n')
     
-    return taskF_results, mu_results, xi_results, phi_results, E_results
+    return taskF_results, mu_results, xi_results, phi_results, E_results, nu_results
 
 def manage_results(config, generate_new_files, file_prefix):
     if generate_new_files:

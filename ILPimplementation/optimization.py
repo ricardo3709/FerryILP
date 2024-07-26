@@ -12,13 +12,14 @@ def run_optimization(model):
     model.setParam('InfUnbdInfo', 1)      # Output information on infeasible or unbounded models
     model.setParam('Presolve', 2)         # Presolve level
     model.setParam('ScaleFlag', 1)        # Scaling
+    model.setParam('Threads', 64)
 
     # Time limit
     # model.setParam('TimeLimit', 12000)    # Set time limit in seconds
     # model.setParam('SolutionLimit', 1)  # Stop after finding the first feasible solution
 
     # Optimization strategies
-    model.setParam('MIPGap', 0.99)        # Optimality gap
+    model.setParam('MIPGap', 0.50)        # Optimality gap
     model.setParam('Heuristics', 0.5)     # Heuristic emphasis (50%)
 
     model.setParam('MIPFocus', 1)  # Focus on finding feasible solutions quickly
