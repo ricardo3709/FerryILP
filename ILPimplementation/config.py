@@ -56,7 +56,7 @@ original_non_loading_berths = wharf_df[wharf_df['Non_loading_berths'] != 0]['Wha
 Bc = ['cp_' + wharf for wharf in original_non_loading_berths]
 
 # B, set of wharves to wait, any wharf with a charger belongs to B, and B contains wharves with original non-loading berths
-B = original_non_loading_berths.copy()
+B =  wharf_df['Wharf_No'].unique().tolist() # original_non_loading_berths.copy()
 for wharf in Bplus:
     if wharf in B:  # wharf with a charger
         B.remove(wharf)
@@ -66,6 +66,8 @@ for wharf in Bplus:
 
 # Jset = Lset + B + B+ + Bc
 Jset = [ele for ele in Lset + B + Bc + Bplus]
+
+print(Jset) 
 
 # Zset: Set of Sailing
 nl_ls = [len(headway_df[f"h{l}"].dropna().tolist()) + 1 for l in Lset]
