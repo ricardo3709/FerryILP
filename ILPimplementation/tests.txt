@@ -1,0 +1,4 @@
+0. basic version of model (constraint2 with heuristic) --> results obtained
+1. fixed B set basic version of model (constraint2 with heuristic) --> in progress
+2. fixed B set basic version of model --> in progress
+3. fixed B set basic version of model (constraint2 with heuristic) --> in progress
