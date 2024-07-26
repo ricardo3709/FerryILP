@@ -55,11 +55,13 @@ def load_and_process_data(filepath, split_columns, value_columns):
         df[column] = df[column].astype(dtype)
     return df
 
-z_df = load_and_process_data('ILPimplementation/output_files/z_wj_results.csv',['Wharf', 'Line'],{'Line': int})
-Zp_df = load_and_process_data('ILPimplementation/output_files/Z_prime_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
-Z_df = load_and_process_data('ILPimplementation/output_files/Z_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
-x_df = load_and_process_data('ILPimplementation/output_files/x_ld_results.csv',['Line', 'Time'],{'Line': int, 'Time': int})
-y_df = load_and_process_data('ILPimplementation/output_files/y_vjt_results.csv',['Vessel', 'Task', 'Start_Time'],{'Start_Time': int})
+file_prefix = "6htest"
+
+z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_z_wj_results.csv',['Wharf', 'Task'],{})
+Zp_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_prime_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
+Z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
+x_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_x_ld_results.csv',['Line', 'Time'],{'Line': int, 'Time': int})
+y_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_y_vjt_results.csv',['Vessel', 'Task', 'Start_Time'],{'Start_Time': int})
 
 
 # Determine start and end wharfs
@@ -67,8 +69,13 @@ Start_S = dict(zip(line_df['Line_No'].astype(str), line_df['O']))
 Start_S.update(dict(zip(wharf_df['Wharf_No'], wharf_df['Station'])))
 End_S = dict(zip(line_df['Line_No'].astype(str), line_df['T']))
 End_S.update(dict(zip(wharf_df['Wharf_No'], wharf_df['Station'])))
-linels = z_df['Line'].unique().tolist()     
-Start_wharf = {line: z_df[z_df['Line'] == line]['Wharf'].iloc[0] for line in z_df['Line'].unique()}
+
+linels = line_df['Line_No'].unique().tolist()
+Start_wharf = {}
+for line in linels:
+    Start_wharf[line] = z_df[z_df['Task'] == str(line)]['Wharf'].iloc[0]
+
+# {line: z_df[z_df['Task'] == line]['Wharf'].iloc[0] for line in z_df['Line'].unique()}
 
 # -------------------------------------------- Additional functions for processing --------------------------------------------
 def cal_time(period_num):
@@ -132,7 +139,7 @@ def cal_timetable(line):
             # Add sailing time, location and wharf
             times.append(sailing_time)
             locs.append(Start_S[str(line)])
-            wharfs.append(z_df[z_df['Line'] == line]['Wharf'].iloc[0])
+            wharfs.append(z_df[z_df['Task'] == str(line)]['Wharf'].iloc[0])
 
             # Intermediate Stop
             Intermediate_stop = line_df[line_df['Line_No'] == line]['I'].iloc[0]
@@ -141,7 +148,7 @@ def cal_timetable(line):
                 arrival_time_I = sailing_time + timedelta(minutes=timetoI)
                 times.append(arrival_time_I)
                 locs.append(Intermediate_stop)
-                wharfs.append(z_df[z_df['Line'] == line]['Wharf'].iloc[1])
+                wharfs.append(z_df[z_df['Task'] == str(line)]['Wharf'].iloc[1])
             
             # Terminal Stop
             timetoT = int(line_df[line_df['Line_No'] == line]['Time_underway_to_T'].iloc[0])
@@ -238,7 +245,7 @@ def cal_wharf_utilization(wharf):
         # intermidiate stop
         intermediate_station = line_df[line_df['Line_No'] == j]['I']
         if pd.notna(intermediate_station).any():
-            w_intermediate = z_df[z_df['Line'] == j]['Wharf'].iloc[1]
+            w_intermediate = z_df[z_df['Task'] == str(j)]['Wharf'].iloc[1]
             t_list_intermediate = np.array([x[1] for x in cal_delta(config, j, w_intermediate)]) + t
             utilization_data.append({'v': v, 'j': j, 'w': w_intermediate, 't_list': t_list_intermediate.tolist()})
 

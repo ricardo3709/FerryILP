@@ -1,26 +1,41 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-RR4,Waiting,Cabarita,Cab1,05:35,Cabarita,Cab1,05:40
 RR4,Waiting,Cabarita,Cab1,05:40,Cabarita,Cab1,05:45
-RR4,Waiting,Cabarita,Cab1,05:45,Cabarita,Cab1,05:50
-RR4,Waiting,Cabarita,Cab1,05:50,Cabarita,Cab1,05:55
+RR4,Waiting,Chiswick,Chs1,05:45,Chiswick,Chs1,05:50
+RR4,Waiting,Cockatoo Island,CI1,05:50,Cockatoo Island,CI1,05:55
+RR4,Crew pause,Circular Quay,CQ5,05:55,Circular Quay,CQ5,06:04
+RR4,Waiting,Circular Quay,CQ3,06:05,Circular Quay,CQ3,06:10
+RR4,Waiting,Pyrmont Bay,PB1,06:10,Pyrmont Bay,PB1,06:15
 RR4,Waiting,Barangaroo,Bar2,06:15,Barangaroo,Bar2,06:20
-RR4,Waiting,Barangaroo,Bar2,06:20,Barangaroo,Bar2,06:25
-RR4,Waiting,Pyrmont Bay,PB1,06:25,Pyrmont Bay,PB1,06:30
-RR4,17,Watsons Bay,WB1,06:55,Circular Quay,CQ5,07:15
-RR4,Waiting,Circular Quay,CQ5,07:25,Circular Quay,CQ5,07:30
-RR4,5,Circular Quay,CQ1,07:35,Parramatta,Pm1,09:05
-RR4,Crew pause,Barangaroo,Bar1,10:05,Barangaroo,Bar1,10:14
-RR4,Waiting,Barangaroo,Bar1,10:15,Barangaroo,Bar1,10:20
-RR4,Waiting,Barangaroo,Bar4,10:20,Barangaroo,Bar4,10:25
-RR4,Waiting,Pyrmont Bay,PB1,10:25,Pyrmont Bay,PB1,10:30
-RR4,Waiting,Pyrmont Bay,PB1,10:30,Pyrmont Bay,PB1,10:35
-RR4,Waiting,Pyrmont Bay,PB1,10:35,Pyrmont Bay,PB1,10:40
-RR4,Waiting,Pyrmont Bay,PB1,10:40,Pyrmont Bay,PB1,10:45
-RR4,Waiting,Pyrmont Bay,PB1,10:45,Pyrmont Bay,PB1,10:50
-RR4,Waiting,Barangaroo,Bar4,10:50,Barangaroo,Bar4,10:55
-RR4,Waiting,Pyrmont Bay,PB1,10:55,Pyrmont Bay,PB1,11:00
-RR4,Waiting,Barangaroo,Bar1,11:00,Barangaroo,Bar1,11:05
-RR4,Waiting,Pyrmont Bay,PB1,11:05,Pyrmont Bay,PB1,11:10
-RR4,Waiting,Barangaroo,Bar5,11:10,Barangaroo,Bar5,11:15
-RR4,Crew pause,Barangaroo,Bar4,11:15,Barangaroo,Bar4,11:24
-RR4,Waiting,Barangaroo,Bar2,11:25,Barangaroo,Bar2,11:30
+RR4,Waiting,Chiswick,Chs1,06:20,Chiswick,Chs1,06:25
+RR4,Charging,Chiswick,Chs1,06:25,Chiswick,Chs1,06:30
+RR4,Waiting,Chiswick,Chs1,06:30,Chiswick,Chs1,06:35
+RR4,Waiting,Circular Quay,CQ5,06:35,Circular Quay,CQ5,06:40
+RR4,Crew pause,Barangaroo,Bar1,06:40,Barangaroo,Bar1,06:49
+RR4,Waiting,Balmain Shipyard,BSY5,06:50,Balmain Shipyard,BSY5,06:55
+RR4,Waiting,Cockatoo Island,CI1,06:55,Cockatoo Island,CI1,07:00
+RR4,Waiting,Balmain Shipyard,BSY2,07:00,Balmain Shipyard,BSY2,07:05
+RR4,17,Watsons Bay,WB1,07:05,Circular Quay,CQ4,07:25
+RR4,Waiting,Rose Bay,RB1,07:35,Rose Bay,RB1,07:40
+RR4,Waiting,Circular Quay,CQ5,07:40,Circular Quay,CQ5,07:45
+RR4,Waiting,Circular Quay,CQ5,07:45,Circular Quay,CQ5,07:50
+RR4,5,Circular Quay,CQ1,07:55,Parramatta,Pm1,09:25
+RR4,Waiting,Barangaroo,Bar1,09:30,Barangaroo,Bar1,09:35
+RR4,Crew pause,Balmain Shipyard,BSY6,09:35,Balmain Shipyard,BSY6,09:44
+RR4,Crew pause,Balmain Shipyard,BSY4,09:45,Balmain Shipyard,BSY4,09:54
+RR4,Waiting,Balmain Shipyard,BSY6,09:55,Balmain Shipyard,BSY6,10:00
+RR4,Waiting,Cockatoo Island,CI1,10:00,Cockatoo Island,CI1,10:05
+RR4,Waiting,Parramatta,Pm1,10:05,Parramatta,Pm1,10:10
+RR4,Waiting,Parramatta,Pm1,10:10,Parramatta,Pm1,10:15
+RR4,Waiting,Cockatoo Island,CI1,10:15,Cockatoo Island,CI1,10:20
+RR4,Waiting,Circular Quay,CQ4,10:20,Circular Quay,CQ4,10:25
+RR4,Waiting,Watsons Bay,WB1,10:25,Watsons Bay,WB1,10:30
+RR4,Waiting,Watsons Bay,WB1,10:30,Watsons Bay,WB1,10:35
+RR4,Crew pause,Circular Quay,CQ2,10:35,Circular Quay,CQ2,10:44
+RR4,Waiting,Cockatoo Island,CI1,10:45,Cockatoo Island,CI1,10:50
+RR4,Waiting,Balmain Shipyard,BSY3,10:50,Balmain Shipyard,BSY3,10:55
+RR4,Waiting,Barangaroo,Bar4,10:55,Barangaroo,Bar4,11:00
+RR4,Waiting,Circular Quay,CQ3,11:00,Circular Quay,CQ3,11:05
+RR4,Waiting,Balmain Shipyard,BSY1,11:05,Balmain Shipyard,BSY1,11:10
+RR4,Crew pause,Barangaroo,Bar1,11:10,Barangaroo,Bar1,11:19
+RR4,Waiting,Balmain Shipyard,BSY1,11:20,Balmain Shipyard,BSY1,11:25
+RR4,Waiting,Barangaroo,Bar5,11:25,Barangaroo,Bar5,11:30

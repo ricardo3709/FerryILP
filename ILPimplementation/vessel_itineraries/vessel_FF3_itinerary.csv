@@ -1,26 +1,44 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-FF3,Waiting,Rose Bay,RB1,05:40,Rose Bay,RB1,05:45
-FF3,Waiting,Rose Bay,RB1,05:45,Rose Bay,RB1,05:50
-FF3,Waiting,Rose Bay,RB1,05:50,Rose Bay,RB1,05:55
+FF3,Crew pause,Circular Quay,CQ3,05:30,Circular Quay,CQ3,05:39
+FF3,Waiting,Barangaroo,Bar4,05:40,Barangaroo,Bar4,05:45
+FF3,Waiting,Circular Quay,CQ2,05:45,Circular Quay,CQ2,05:50
+FF3,Waiting,Barangaroo,Bar4,05:50,Barangaroo,Bar4,05:55
 FF3,Waiting,Rose Bay,RB1,05:55,Rose Bay,RB1,06:00
-FF3,Waiting,Rose Bay,RB1,06:00,Rose Bay,RB1,06:05
-FF3,Waiting,Circular Quay,CQ2,06:20,Circular Quay,CQ2,06:25
-FF3,Waiting,Circular Quay,CQ2,06:25,Circular Quay,CQ2,06:30
-FF3,Waiting,Circular Quay,CQ4,06:30,Circular Quay,CQ4,06:35
-FF3,2,Mosman,Mos1,06:55,Circular Quay,CQ5,07:13
-FF3,Waiting,Circular Quay,CQ1,07:20,Circular Quay,CQ1,07:25
-FF3,Waiting,Circular Quay,CQ2,07:25,Circular Quay,CQ2,07:30
-FF3,12,Circular Quay,CQ1,07:35,Double Bay,DB1,07:56
-FF3,13,Double Bay,DB1,08:15,Circular Quay,CQ5,08:36
-FF3,Crew pause,Circular Quay,CQ2,08:45,Circular Quay,CQ2,08:54
-FF3,Crew pause,Circular Quay,CQ1,08:55,Circular Quay,CQ1,09:04
-FF3,Waiting,Barangaroo,Bar2,09:20,Barangaroo,Bar2,09:25
-FF3,Waiting,Circular Quay,CQ5,09:40,Circular Quay,CQ5,09:45
-FF3,Waiting,Circular Quay,CQ5,09:45,Circular Quay,CQ5,09:50
-FF3,Waiting,Circular Quay,CQ2,09:50,Circular Quay,CQ2,09:55
-FF3,Waiting,Circular Quay,CQ4,09:55,Circular Quay,CQ4,10:00
-FF3,Waiting,Circular Quay,CQ4,10:00,Circular Quay,CQ4,10:05
-FF3,Waiting,Circular Quay,CQ5,10:05,Circular Quay,CQ5,10:10
-FF3,4,Taronga Zoo,TZ1,10:25,Circular Quay,CQ1,10:53
-FF3,Crew pause,Barangaroo,Bar4,11:15,Barangaroo,Bar4,11:24
-FF3,Waiting,Barangaroo,Bar1,11:25,Barangaroo,Bar1,11:30
+FF3,Crew pause,Barangaroo,Bar2,06:00,Barangaroo,Bar2,06:09
+FF3,Crew pause,Balmain Shipyard,BSY3,06:10,Balmain Shipyard,BSY3,06:19
+FF3,Waiting,Circular Quay,CQ3,06:20,Circular Quay,CQ3,06:25
+FF3,Waiting,Circular Quay,CQ3,06:25,Circular Quay,CQ3,06:30
+FF3,Waiting,Balmain Shipyard,BSY2,06:30,Balmain Shipyard,BSY2,06:35
+FF3,7,Circular Quay,CQ1,06:35,Pyrmont Bay,PB1,07:04
+FF3,11,Mosman,Mos1,07:10,Circular Quay,CQ4,07:37
+FF3,Waiting,Rose Bay,RB1,07:45,Rose Bay,RB1,07:50
+FF3,Waiting,Circular Quay,CQ5,07:50,Circular Quay,CQ5,07:55
+FF3,Waiting,Rose Bay,RB1,07:55,Rose Bay,RB1,08:00
+FF3,14,Circular Quay,CQ1,08:00,Cockatoo Island,CI1,08:34
+FF3,Waiting,Circular Quay,CQ3,08:40,Circular Quay,CQ3,08:45
+FF3,Waiting,Cabarita,Cab1,08:45,Cabarita,Cab1,08:50
+FF3,Waiting,Pyrmont Bay,PB1,08:50,Pyrmont Bay,PB1,08:55
+FF3,3,Circular Quay,CQ1,08:55,Taronga Zoo,TZ1,09:13
+FF3,Waiting,Cabarita,Cab1,09:20,Cabarita,Cab1,09:25
+FF3,Waiting,Cabarita,Cab1,09:25,Cabarita,Cab1,09:30
+FF3,Waiting,Circular Quay,CQ1,09:30,Circular Quay,CQ1,09:35
+FF3,Waiting,Rose Bay,RB1,09:35,Rose Bay,RB1,09:40
+FF3,Waiting,Circular Quay,CQ4,09:40,Circular Quay,CQ4,09:45
+FF3,Waiting,Circular Quay,CQ4,09:45,Circular Quay,CQ4,09:50
+FF3,Waiting,Circular Quay,CQ4,09:50,Circular Quay,CQ4,09:55
+FF3,Waiting,Balmain Shipyard,BSY4,09:55,Balmain Shipyard,BSY4,10:00
+FF3,Waiting,Circular Quay,CQ3,10:00,Circular Quay,CQ3,10:05
+FF3,Crew pause,Balmain Shipyard,BSY6,10:05,Balmain Shipyard,BSY6,10:14
+FF3,Waiting,Balmain Shipyard,BSY2,10:15,Balmain Shipyard,BSY2,10:20
+FF3,Crew pause,Balmain Shipyard,BSY2,10:20,Balmain Shipyard,BSY2,10:29
+FF3,Waiting,Balmain Shipyard,BSY6,10:30,Balmain Shipyard,BSY6,10:35
+FF3,Waiting,Balmain Shipyard,BSY6,10:35,Balmain Shipyard,BSY6,10:40
+FF3,Waiting,Circular Quay,CQ1,10:40,Circular Quay,CQ1,10:45
+FF3,Waiting,Circular Quay,CQ3,10:45,Circular Quay,CQ3,10:50
+FF3,Waiting,Barangaroo,Bar5,10:50,Barangaroo,Bar5,10:55
+FF3,Waiting,Cockatoo Island,CI1,10:55,Cockatoo Island,CI1,11:00
+FF3,Waiting,Circular Quay,CQ1,11:00,Circular Quay,CQ1,11:05
+FF3,Crew pause,Balmain Shipyard,BSY4,11:05,Balmain Shipyard,BSY4,11:14
+FF3,Waiting,Balmain Shipyard,BSY6,11:15,Balmain Shipyard,BSY6,11:20
+FF3,Waiting,Balmain Shipyard,BSY2,11:20,Balmain Shipyard,BSY2,11:25
+FF3,Waiting,Balmain Shipyard,BSY3,11:25,Balmain Shipyard,BSY3,11:30
