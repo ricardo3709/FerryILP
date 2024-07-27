@@ -67,8 +67,6 @@ for wharf in Bplus:
 # Jset = Lset + B + B+ + Bc
 Jset = [ele for ele in Lset + B + Bc + Bplus]
 
-print(Jset) 
-
 # Zset: Set of Sailing
 nl_ls = [len(headway_df[f"h{l}"].dropna().tolist()) + 1 for l in Lset]
 s_ls = [list(range(1, nl + 1)) for nl in nl_ls]

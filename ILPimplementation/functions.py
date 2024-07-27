@@ -127,7 +127,7 @@ def cal_mu(config, j):
             mu_j = 1
         else:
             return None
-        return mu_j
+        return int(mu_j)
     except KeyError as e:
         raise ValueError(f"Missing data for task {j}: {str(e)}")
     except Exception as e:

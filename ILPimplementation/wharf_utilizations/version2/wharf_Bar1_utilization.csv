@@ -1,0 +1,70 @@
+Vessel,Task,Wharf,Time
+EC2,Waiting,Bar1,05:35-05:40
+FF1,Waiting,Bar1,05:35-05:40
+EC4,Waiting,Bar1,05:40-05:45
+FF1,Waiting,Bar1,05:40-05:45
+FF1,Waiting,Bar1,05:45-05:50
+RR10,Crew pause,Bar1,05:55-06:00
+RR10,Crew pause,Bar1,06:00-06:05
+24M,Waiting,Bar1,06:05-06:10
+RR1,Waiting,Bar1,06:10-06:15
+EC3,Waiting,Bar1,06:10-06:15
+EC4,7,Bar1,06:25-06:30
+EC4,7,Bar1,06:30-06:35
+EC4,7,Bar1,06:35-06:40
+EC3,7,Bar1,06:50-06:55
+EC3,7,Bar1,06:55-07:00
+EC3,7,Bar1,07:00-07:05
+FF1,7,Bar1,07:15-07:20
+FF1,7,Bar1,07:20-07:25
+FF1,7,Bar1,07:25-07:30
+EC2,7,Bar1,07:40-07:45
+EC2,7,Bar1,07:45-07:50
+EC2,7,Bar1,07:50-07:55
+RR4,Crew pause,Bar1,08:20-08:25
+RR4,Crew pause,Bar1,08:25-08:30
+RR11,6,Bar1,08:45-08:50
+RR11,6,Bar1,08:50-08:55
+RR11,6,Bar1,08:55-09:00
+RR11,6,Bar1,09:00-09:05
+RR10,Waiting,Bar1,09:05-09:10
+RR11,6,Bar1,09:05-09:10
+RR7,6,Bar1,09:10-09:15
+RR7,6,Bar1,09:15-09:20
+RR7,6,Bar1,09:20-09:25
+RR8,Crew pause,Bar1,09:25-09:30
+RR7,6,Bar1,09:25-09:30
+RR8,Crew pause,Bar1,09:30-09:35
+RR7,6,Bar1,09:30-09:35
+RR2,6,Bar1,09:35-09:40
+RR8,Crew pause,Bar1,09:35-09:40
+RR8,Crew pause,Bar1,09:40-09:45
+RR2,6,Bar1,09:40-09:45
+RR2,6,Bar1,09:45-09:50
+RR8,Crew pause,Bar1,09:50-09:55
+RR2,6,Bar1,09:50-09:55
+RR8,Crew pause,Bar1,09:55-10:00
+RR2,6,Bar1,09:55-10:00
+RR9,6,Bar1,10:00-10:05
+RR8,Crew pause,Bar1,10:05-10:10
+RR9,6,Bar1,10:05-10:10
+RR8,Crew pause,Bar1,10:10-10:15
+RR9,6,Bar1,10:10-10:15
+RR9,6,Bar1,10:15-10:20
+RR8,Crew pause,Bar1,10:15-10:20
+RR8,Crew pause,Bar1,10:20-10:25
+RR9,6,Bar1,10:20-10:25
+RR8,Crew pause,Bar1,10:25-10:30
+EC4,Waiting,Bar1,10:25-10:30
+FF3,Waiting,Bar1,10:30-10:35
+RR8,Crew pause,Bar1,10:30-10:35
+RR8,Waiting,Bar1,10:35-10:40
+EC4,Waiting,Bar1,10:35-10:40
+FF8,Crew pause,Bar1,10:40-10:45
+FF8,Crew pause,Bar1,10:45-10:50
+FF1,Waiting,Bar1,10:45-10:50
+FF8,Waiting,Bar1,10:50-10:55
+FF1,Waiting,Bar1,11:00-11:05
+FF3,Crew pause,Bar1,11:05-11:10
+FF3,Crew pause,Bar1,11:10-11:15
+10M,Waiting,Bar1,11:15-11:20

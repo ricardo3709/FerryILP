@@ -132,19 +132,19 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     #             if end_station != start_station:
     #                 nu[(t, j, j_prime)] = [t_prime for t_prime in range(t + int(mu_results[j]), t + int(mu_results[j]) + int(xi_results[(j, j_prime)])) if t_prime in config.Tset] # if xi_results[(j, j_prime)] != 1
     #             elif end_station == start_station: # same station can start immidiately
-    #                 nu[(t, j, j_prime)] = []
+    #                 nu[(tvessel, j, j_prime)] = []
     #             else:
     #                 print('no!')
 
-    # # equivalent formulation
-    # for v in tqdm(config.Vset, desc='Constraint 3'):
-    #     for j in config.Jset:
-    #         for t in config.Tset:
-    #             sum_y_v_jprime_tprime = gp.quicksum(y[v, j_prime, t_prime] 
-    #                                                 for j_prime in config.Jset 
-    #                                                 for t_prime in nu_results[(t, j, j_prime)])            
-    #             sum_nu_t_j_jprime = sum(len(nu_results[(t, j, j_prime)]) for j_prime in config.Jset) 
-    #             model.addConstr(sum_y_v_jprime_tprime <= sum_nu_t_j_jprime * (1 - y[v, j, t]),name=f"3_eq_v{v}_j{j}_t{t}")
+    # equivalent formulation
+    for v in tqdm(config.Vset, desc='Constraint 3'):
+        for j in config.Jset:
+            for t in config.Tset:
+                sum_y_v_jprime_tprime = gp.quicksum(y[v, j_prime, t_prime] 
+                                                    for j_prime in config.Jset 
+                                                    for t_prime in nu_results[(t, j, j_prime)])            
+                sum_nu_t_j_jprime = sum(len(nu_results[(t, j, j_prime)]) for j_prime in config.Jset) 
+                model.addConstr(sum_y_v_jprime_tprime <= sum_nu_t_j_jprime * (1 - y[v, j, t]),name=f"3_eq_v{v}_j{j}_t{t}")
 
     # Constraint 4
     for w in tqdm(config.Wset, desc='Constraint 4'):

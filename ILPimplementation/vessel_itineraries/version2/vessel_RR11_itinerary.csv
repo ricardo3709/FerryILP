@@ -1,0 +1,26 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+RR11,Waiting,Cockatoo Island,CI1,05:35,Cockatoo Island,CI1,05:40
+RR11,Waiting,Balmain Shipyard,BSY1,05:50,Balmain Shipyard,BSY1,05:55
+RR11,Waiting,Balmain Shipyard,BSY1,05:55,Balmain Shipyard,BSY1,06:00
+RR11,Crew pause,Balmain Shipyard,BSY1,06:00,Balmain Shipyard,BSY1,06:09
+RR11,Waiting,Balmain Shipyard,BSY1,06:10,Balmain Shipyard,BSY1,06:15
+RR11,Waiting,Balmain Shipyard,BSY6,06:15,Balmain Shipyard,BSY6,06:20
+RR11,Waiting,Balmain Shipyard,BSY1,06:20,Balmain Shipyard,BSY1,06:25
+RR11,Crew pause,Balmain Shipyard,BSY1,06:25,Balmain Shipyard,BSY1,06:34
+RR11,Waiting,Rydalmere,Ryd1,07:10,Rydalmere,Ryd1,07:15
+RR11,6,Parramatta,Pm1,07:35,Circular Quay,CQ3,09:05
+RR11,Waiting,Cabarita,Cab1,09:35,Cabarita,Cab1,09:40
+RR11,Charging,Cabarita,Cab1,09:40,Cabarita,Cab1,09:45
+RR11,Charging,Cabarita,Cab1,09:45,Cabarita,Cab1,09:50
+RR11,Waiting,Cabarita,Cab1,09:50,Cabarita,Cab1,09:55
+RR11,Charging,Cabarita,Cab1,09:55,Cabarita,Cab1,10:00
+RR11,Charging,Cabarita,Cab1,10:00,Cabarita,Cab1,10:05
+RR11,Waiting,Cabarita,Cab1,10:05,Cabarita,Cab1,10:10
+RR11,Charging,Cabarita,Cab1,10:10,Cabarita,Cab1,10:15
+RR11,Charging,Cabarita,Cab1,10:15,Cabarita,Cab1,10:20
+RR11,Waiting,Cabarita,Cab1,10:20,Cabarita,Cab1,10:25
+RR11,Waiting,Cabarita,Cab1,10:25,Cabarita,Cab1,10:30
+RR11,Waiting,Cabarita,Cab1,10:30,Cabarita,Cab1,10:35
+RR11,Waiting,Rydalmere,Ryd1,10:55,Rydalmere,Ryd1,11:00
+RR11,Waiting,Rydalmere,Ryd1,11:00,Rydalmere,Ryd1,11:05
+RR11,Waiting,Parramatta,Pm1,11:25,Parramatta,Pm1,11:30

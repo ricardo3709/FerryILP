@@ -1,0 +1,15 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+RR6,Waiting,Cockatoo Island,CI1,05:40,Cockatoo Island,CI1,05:45
+RR6,Waiting,Circular Quay,CQ2,06:00,Circular Quay,CQ2,06:05
+RR6,Waiting,Circular Quay,CQ2,06:05,Circular Quay,CQ2,06:10
+RR6,Crew pause,Balmain Shipyard,BSY4,06:25,Balmain Shipyard,BSY4,06:34
+RR6,Waiting,Circular Quay,CQ5,06:50,Circular Quay,CQ5,06:55
+RR6,Waiting,Circular Quay,CQ3,06:55,Circular Quay,CQ3,07:00
+RR6,Waiting,Circular Quay,CQ4,07:00,Circular Quay,CQ4,07:05
+RR6,Waiting,Circular Quay,CQ4,07:05,Circular Quay,CQ4,07:10
+RR6,16,Circular Quay,CQ1,07:15,Watsons Bay,WB1,07:45
+RR6,5,Circular Quay,CQ1,08:15,Parramatta,Pm1,09:45
+RR6,Crew pause,Balmain Shipyard,BSY4,10:45,Balmain Shipyard,BSY4,10:54
+RR6,Waiting,Balmain Shipyard,BSY1,10:55,Balmain Shipyard,BSY1,11:00
+RR6,Waiting,Balmain Shipyard,BSY1,11:00,Balmain Shipyard,BSY1,11:05
+RR6,Waiting,Circular Quay,CQ5,11:20,Circular Quay,CQ5,11:25

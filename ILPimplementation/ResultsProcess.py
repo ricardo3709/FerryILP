@@ -55,7 +55,7 @@ def load_and_process_data(filepath, split_columns, value_columns):
         df[column] = df[column].astype(dtype)
     return df
 
-file_prefix = "6htest"
+file_prefix = "6htest_1"
 
 z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_z_wj_results.csv',['Wharf', 'Task'],{})
 Zp_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_prime_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
@@ -155,6 +155,7 @@ def cal_timetable(line):
             arrival_time_T = sailing_time + timedelta(minutes=timetoT)
             times.append(arrival_time_T)
             locs.append(End_S[str(line)])
+
             wharfs.append(Zp_df[(Zp_df['Line'] == line) & (Zp_df['Time'] == period + timetoT // period_length + 1)]['Wharf'].iloc[0])
 
         # Format times and create the DataFrame

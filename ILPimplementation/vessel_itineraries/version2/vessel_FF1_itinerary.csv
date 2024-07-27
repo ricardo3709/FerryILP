@@ -1,0 +1,24 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+FF1,Waiting,Barangaroo,Bar1,05:35,Barangaroo,Bar1,05:40
+FF1,Waiting,Barangaroo,Bar1,05:40,Barangaroo,Bar1,05:45
+FF1,Waiting,Barangaroo,Bar1,05:45,Barangaroo,Bar1,05:50
+FF1,9,Circular Quay,CQ1,06:05,Circular Quay,CQ5,06:37
+FF1,Waiting,Circular Quay,CQ1,06:40,Circular Quay,CQ1,06:45
+FF1,Waiting,Circular Quay,CQ1,06:45,Circular Quay,CQ1,06:50
+FF1,7,Circular Quay,CQ1,06:55,Pyrmont Bay,PB1,07:24
+FF1,8,Pyrmont Bay,PB1,07:35,Circular Quay,CQ4,08:07
+FF1,Waiting,Circular Quay,CQ3,08:10,Circular Quay,CQ3,08:15
+FF1,13,Double Bay,DB1,08:30,Circular Quay,CQ1,08:51
+FF1,4,Taronga Zoo,TZ1,09:10,Circular Quay,CQ3,09:38
+FF1,3,Circular Quay,CQ1,09:40,Taronga Zoo,TZ1,09:58
+FF1,Waiting,Taronga Zoo,TZ1,10:00,Taronga Zoo,TZ1,10:05
+FF1,Waiting,Taronga Zoo,TZ1,10:05,Taronga Zoo,TZ1,10:10
+FF1,Waiting,Barangaroo,Bar4,10:30,Barangaroo,Bar4,10:35
+FF1,Waiting,Barangaroo,Bar4,10:35,Barangaroo,Bar4,10:40
+FF1,Waiting,Barangaroo,Bar5,10:40,Barangaroo,Bar5,10:45
+FF1,Waiting,Barangaroo,Bar1,10:45,Barangaroo,Bar1,10:50
+FF1,Waiting,Barangaroo,Bar4,10:50,Barangaroo,Bar4,10:55
+FF1,Waiting,Barangaroo,Bar4,10:55,Barangaroo,Bar4,11:00
+FF1,Waiting,Barangaroo,Bar1,11:00,Barangaroo,Bar1,11:05
+FF1,Waiting,Circular Quay,CQ2,11:20,Circular Quay,CQ2,11:25
+FF1,Waiting,Circular Quay,CQ2,11:25,Circular Quay,CQ2,11:30

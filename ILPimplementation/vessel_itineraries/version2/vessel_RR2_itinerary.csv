@@ -1,0 +1,37 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+RR2,Waiting,Cabarita,Cab1,05:45,Cabarita,Cab1,05:50
+RR2,Waiting,Cabarita,Cab1,05:50,Cabarita,Cab1,05:55
+RR2,Waiting,Cabarita,Cab1,05:55,Cabarita,Cab1,06:00
+RR2,Charging,Cabarita,Cab1,06:00,Cabarita,Cab1,06:05
+RR2,Waiting,Cabarita,Cab1,06:05,Cabarita,Cab1,06:10
+RR2,Waiting,Cabarita,Cab1,06:15,Cabarita,Cab1,06:20
+RR2,Charging,Cabarita,Cab1,06:20,Cabarita,Cab1,06:25
+RR2,Waiting,Cabarita,Cab1,06:25,Cabarita,Cab1,06:30
+RR2,Waiting,Cabarita,Cab1,06:30,Cabarita,Cab1,06:35
+RR2,Waiting,Cabarita,Cab1,06:35,Cabarita,Cab1,06:40
+RR2,Waiting,Cabarita,Cab1,06:40,Cabarita,Cab1,06:45
+RR2,Waiting,Cabarita,Cab1,06:45,Cabarita,Cab1,06:50
+RR2,Charging,Cabarita,Cab1,06:50,Cabarita,Cab1,06:55
+RR2,Waiting,Cabarita,Cab1,06:55,Cabarita,Cab1,07:00
+RR2,Waiting,Cabarita,Cab1,07:00,Cabarita,Cab1,07:05
+RR2,Waiting,Cabarita,Cab1,07:05,Cabarita,Cab1,07:10
+RR2,Waiting,Cabarita,Cab1,07:10,Cabarita,Cab1,07:15
+RR2,Charging,Cabarita,Cab1,07:15,Cabarita,Cab1,07:20
+RR2,Charging,Cabarita,Cab1,07:20,Cabarita,Cab1,07:25
+RR2,Waiting,Cabarita,Cab1,07:25,Cabarita,Cab1,07:30
+RR2,Waiting,Cabarita,Cab1,07:30,Cabarita,Cab1,07:35
+RR2,Waiting,Cabarita,Cab1,07:35,Cabarita,Cab1,07:40
+RR2,Waiting,Cabarita,Cab1,07:40,Cabarita,Cab1,07:45
+RR2,6,Parramatta,Pm1,08:25,Circular Quay,CQ5,09:55
+RR2,Waiting,Circular Quay,CQ2,10:00,Circular Quay,CQ2,10:05
+RR2,Waiting,Circular Quay,CQ1,10:05,Circular Quay,CQ1,10:10
+RR2,Waiting,Circular Quay,CQ4,10:10,Circular Quay,CQ4,10:15
+RR2,Crew pause,Circular Quay,CQ1,10:15,Circular Quay,CQ1,10:24
+RR2,Waiting,Circular Quay,CQ2,10:25,Circular Quay,CQ2,10:30
+RR2,Waiting,Barangaroo,Bar2,10:45,Barangaroo,Bar2,10:50
+RR2,Waiting,Balmain Shipyard,BSY2,11:00,Balmain Shipyard,BSY2,11:05
+RR2,Waiting,Balmain Shipyard,BSY3,11:05,Balmain Shipyard,BSY3,11:10
+RR2,Waiting,Balmain Shipyard,BSY1,11:10,Balmain Shipyard,BSY1,11:15
+RR2,Waiting,Balmain Shipyard,BSY2,11:15,Balmain Shipyard,BSY2,11:20
+RR2,Waiting,Balmain Shipyard,BSY2,11:20,Balmain Shipyard,BSY2,11:25
+RR2,Waiting,Balmain Shipyard,BSY1,11:25,Balmain Shipyard,BSY1,11:30

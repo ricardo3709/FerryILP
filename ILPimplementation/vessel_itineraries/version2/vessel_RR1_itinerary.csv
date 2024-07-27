@@ -1,0 +1,30 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+RR1,Crew pause,Circular Quay,CQ5,05:40,Circular Quay,CQ5,05:49
+RR1,Waiting,Barangaroo,Bar4,06:05,Barangaroo,Bar4,06:10
+RR1,Waiting,Barangaroo,Bar1,06:10,Barangaroo,Bar1,06:15
+RR1,Waiting,Barangaroo,Bar5,06:15,Barangaroo,Bar5,06:20
+RR1,Waiting,Barangaroo,Bar5,06:20,Barangaroo,Bar5,06:25
+RR1,Waiting,Barangaroo,Bar5,06:25,Barangaroo,Bar5,06:30
+RR1,Waiting,Barangaroo,Bar5,06:30,Barangaroo,Bar5,06:35
+RR1,Waiting,Barangaroo,Bar4,06:35,Barangaroo,Bar4,06:40
+RR1,17,Watsons Bay,WB1,07:05,Circular Quay,CQ1,07:25
+RR1,Waiting,Circular Quay,CQ3,07:30,Circular Quay,CQ3,07:35
+RR1,17,Watsons Bay,WB1,07:55,Circular Quay,CQ1,08:15
+RR1,Waiting,Balmain Shipyard,BSY2,08:35,Balmain Shipyard,BSY2,08:40
+RR1,Waiting,Balmain Shipyard,BSY1,08:40,Balmain Shipyard,BSY1,08:45
+RR1,Waiting,Balmain Shipyard,BSY1,08:45,Balmain Shipyard,BSY1,08:50
+RR1,Waiting,Balmain Shipyard,BSY1,08:50,Balmain Shipyard,BSY1,08:55
+RR1,Waiting,Balmain Shipyard,BSY1,08:55,Balmain Shipyard,BSY1,09:00
+RR1,Waiting,Balmain Shipyard,BSY5,09:00,Balmain Shipyard,BSY5,09:05
+RR1,Crew pause,Circular Quay,CQ4,09:20,Circular Quay,CQ4,09:29
+RR1,Waiting,Circular Quay,CQ4,09:30,Circular Quay,CQ4,09:35
+RR1,Waiting,Circular Quay,CQ5,09:35,Circular Quay,CQ5,09:40
+RR1,Waiting,Circular Quay,CQ4,09:40,Circular Quay,CQ4,09:45
+RR1,Crew pause,Circular Quay,CQ4,09:45,Circular Quay,CQ4,09:54
+RR1,Waiting,Circular Quay,CQ2,09:55,Circular Quay,CQ2,10:00
+RR1,Waiting,Rose Bay,RB1,10:15,Rose Bay,RB1,10:20
+RR1,Waiting,Pyrmont Bay,PB1,10:45,Pyrmont Bay,PB1,10:50
+RR1,Waiting,Pyrmont Bay,PB1,10:50,Pyrmont Bay,PB1,10:55
+RR1,Waiting,Pyrmont Bay,PB1,10:55,Pyrmont Bay,PB1,11:00
+RR1,Waiting,Pyrmont Bay,PB1,11:00,Pyrmont Bay,PB1,11:05
+RR1,Waiting,Circular Quay,CQ5,11:20,Circular Quay,CQ5,11:25

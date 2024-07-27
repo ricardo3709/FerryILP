@@ -1,0 +1,41 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+EC1,Waiting,Balmain Shipyard,BSY6,05:40,Balmain Shipyard,BSY6,05:45
+EC1,Waiting,Circular Quay,CQ1,06:00,Circular Quay,CQ1,06:05
+EC1,8,Pyrmont Bay,PB1,06:20,Circular Quay,CQ5,06:52
+EC1,15,Cockatoo Island,CI1,07:10,Circular Quay,CQ3,07:42
+EC1,Waiting,Circular Quay,CQ1,07:45,Circular Quay,CQ1,07:50
+EC1,Waiting,Circular Quay,CQ1,07:50,Circular Quay,CQ1,07:55
+EC1,Waiting,Circular Quay,CQ5,07:55,Circular Quay,CQ5,08:00
+EC1,Waiting,Circular Quay,CQ4,08:00,Circular Quay,CQ4,08:05
+EC1,Charging,Circular Quay,CQ4,08:05,Circular Quay,CQ4,08:10
+EC1,Charging,Circular Quay,CQ4,08:10,Circular Quay,CQ4,08:15
+EC1,Charging,Circular Quay,CQ4,08:15,Circular Quay,CQ4,08:20
+EC1,Charging,Circular Quay,CQ4,08:20,Circular Quay,CQ4,08:25
+EC1,Charging,Circular Quay,CQ4,08:25,Circular Quay,CQ4,08:30
+EC1,Charging,Circular Quay,CQ4,08:30,Circular Quay,CQ4,08:35
+EC1,Charging,Circular Quay,CQ4,08:35,Circular Quay,CQ4,08:40
+EC1,Waiting,Circular Quay,CQ4,08:40,Circular Quay,CQ4,08:45
+EC1,Charging,Circular Quay,CQ4,08:45,Circular Quay,CQ4,08:50
+EC1,Waiting,Circular Quay,CQ4,08:50,Circular Quay,CQ4,08:55
+EC1,Waiting,Circular Quay,CQ3,08:55,Circular Quay,CQ3,09:00
+EC1,Waiting,Circular Quay,CQ2,09:00,Circular Quay,CQ2,09:05
+EC1,Waiting,Circular Quay,CQ5,09:05,Circular Quay,CQ5,09:10
+EC1,Charging,Circular Quay,CQ5,09:10,Circular Quay,CQ5,09:15
+EC1,Waiting,Circular Quay,CQ5,09:15,Circular Quay,CQ5,09:20
+EC1,Waiting,Circular Quay,CQ3,09:20,Circular Quay,CQ3,09:25
+EC1,Waiting,Circular Quay,CQ5,09:25,Circular Quay,CQ5,09:30
+EC1,Waiting,Circular Quay,CQ3,09:30,Circular Quay,CQ3,09:35
+EC1,Crew pause,Circular Quay,CQ4,09:35,Circular Quay,CQ4,09:44
+EC1,Waiting,Circular Quay,CQ1,09:45,Circular Quay,CQ1,09:50
+EC1,Waiting,Circular Quay,CQ1,09:50,Circular Quay,CQ1,09:55
+EC1,Waiting,Circular Quay,CQ1,09:55,Circular Quay,CQ1,10:00
+EC1,Waiting,Circular Quay,CQ4,10:00,Circular Quay,CQ4,10:05
+EC1,Crew pause,Balmain Shipyard,BSY3,10:20,Balmain Shipyard,BSY3,10:29
+EC1,Waiting,Circular Quay,CQ4,10:45,Circular Quay,CQ4,10:50
+EC1,Crew pause,Circular Quay,CQ3,10:50,Circular Quay,CQ3,10:59
+EC1,Waiting,Circular Quay,CQ2,11:00,Circular Quay,CQ2,11:05
+EC1,Waiting,Circular Quay,CQ3,11:05,Circular Quay,CQ3,11:10
+EC1,Waiting,Circular Quay,CQ1,11:10,Circular Quay,CQ1,11:15
+EC1,Waiting,Circular Quay,CQ1,11:15,Circular Quay,CQ1,11:20
+EC1,Waiting,Circular Quay,CQ3,11:20,Circular Quay,CQ3,11:25
+EC1,Waiting,Circular Quay,CQ1,11:25,Circular Quay,CQ1,11:30

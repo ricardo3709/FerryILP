@@ -1,0 +1,6 @@
+Vessel,Task,Wharf,Time
+RR1,Waiting,RB1,10:15-10:20
+RR9,Waiting,RB1,10:45-10:50
+RR9,Charging,RB1,10:50-10:55
+RR9,Charging,RB1,10:55-11:00
+RR9,Waiting,RB1,11:00-11:05

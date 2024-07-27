@@ -1,0 +1,68 @@
+Vessel,Task,Wharf,Time
+EC3,Waiting,Bar5,05:35-05:40
+24M,Crew pause,Bar5,05:35-05:40
+24M,Crew pause,Bar5,05:40-05:45
+EC2,Waiting,Bar5,05:40-05:45
+EC4,Waiting,Bar5,05:45-05:50
+EC2,Waiting,Bar5,05:45-05:50
+EC3,Waiting,Bar5,05:50-05:55
+EC3,Waiting,Bar5,05:55-06:00
+24M,Waiting,Bar5,06:00-06:05
+EC2,Waiting,Bar5,06:00-06:05
+EC3,Waiting,Bar5,06:05-06:10
+EC2,Waiting,Bar5,06:05-06:10
+RR8,Waiting,Bar5,06:10-06:15
+24M,Waiting,Bar5,06:10-06:15
+10M,Waiting,Bar5,06:15-06:20
+RR1,Waiting,Bar5,06:15-06:20
+10M,Crew pause,Bar5,06:20-06:25
+RR1,Waiting,Bar5,06:20-06:25
+10M,Crew pause,Bar5,06:25-06:30
+RR1,Waiting,Bar5,06:25-06:30
+RR1,Waiting,Bar5,06:30-06:35
+RR9,5,Bar5,07:10-07:15
+10M,19,Bar5,07:10-07:15
+10M,19,Bar5,07:15-07:20
+RR9,5,Bar5,07:15-07:20
+RR9,5,Bar5,07:20-07:25
+RR12,5,Bar5,07:35-07:40
+RR12,5,Bar5,07:40-07:45
+RR12,5,Bar5,07:45-07:50
+10M,19,Bar5,07:50-07:55
+10M,19,Bar5,07:55-08:00
+RR3,5,Bar5,08:00-08:05
+RR3,5,Bar5,08:05-08:10
+RR3,5,Bar5,08:10-08:15
+RR6,5,Bar5,08:25-08:30
+RR6,5,Bar5,08:30-08:35
+10M,19,Bar5,08:30-08:35
+RR6,5,Bar5,08:35-08:40
+10M,19,Bar5,08:35-08:40
+24M,Waiting,Bar5,09:05-09:10
+10M,19,Bar5,09:10-09:15
+10M,19,Bar5,09:15-09:20
+10M,19,Bar5,09:50-09:55
+10M,19,Bar5,09:55-10:00
+RR7,Crew pause,Bar5,10:00-10:05
+RR7,Crew pause,Bar5,10:05-10:10
+FF3,Crew pause,Bar5,10:15-10:20
+FF3,Crew pause,Bar5,10:20-10:25
+10M,19,Bar5,10:30-10:35
+EC4,Waiting,Bar5,10:30-10:35
+10M,19,Bar5,10:35-10:40
+FF3,Waiting,Bar5,10:35-10:40
+EC4,Waiting,Bar5,10:40-10:45
+FF1,Waiting,Bar5,10:40-10:45
+RR8,Waiting,Bar5,10:45-10:50
+EC4,Waiting,Bar5,10:45-10:50
+FF3,Crew pause,Bar5,10:50-10:55
+EC4,Waiting,Bar5,10:50-10:55
+FF3,Crew pause,Bar5,10:55-11:00
+10M,19,Bar5,11:10-11:15
+RR12,Waiting,Bar5,11:10-11:15
+RR12,Crew pause,Bar5,11:15-11:20
+10M,19,Bar5,11:15-11:20
+RR12,Crew pause,Bar5,11:20-11:25
+10M,Waiting,Bar5,11:20-11:25
+FF6,Waiting,Bar5,11:25-11:30
+10M,Waiting,Bar5,11:25-11:30

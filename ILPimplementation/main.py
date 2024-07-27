@@ -50,12 +50,12 @@ config = SimulationConfig(
 x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS)
 
 # Flag to decide whether to generate new files
-generate_new_files = True  
-# generate_new_files = False 
+# generate_new_files = True  
+generate_new_files = False 
 
 
 # Prefix for file names
-file_prefix = "6htest_F10"  # You can change the prefix as needed
+file_prefix = "6htest_1"  # You can change the prefix as needed
 
 # Manage results based on the flag
 results = manage_results(config, generate_new_files, file_prefix)

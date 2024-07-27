@@ -1,0 +1,27 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+EC2,Waiting,Barangaroo,Bar1,05:35,Barangaroo,Bar1,05:40
+EC2,Waiting,Barangaroo,Bar5,05:40,Barangaroo,Bar5,05:45
+EC2,Waiting,Barangaroo,Bar5,05:45,Barangaroo,Bar5,05:50
+EC2,Waiting,Barangaroo,Bar4,05:50,Barangaroo,Bar4,05:55
+EC2,Waiting,Barangaroo,Bar4,05:55,Barangaroo,Bar4,06:00
+EC2,Waiting,Barangaroo,Bar5,06:00,Barangaroo,Bar5,06:05
+EC2,Waiting,Barangaroo,Bar5,06:05,Barangaroo,Bar5,06:10
+EC2,Waiting,Barangaroo,Bar4,06:10,Barangaroo,Bar4,06:15
+EC2,Waiting,Barangaroo,Bar4,06:15,Barangaroo,Bar4,06:20
+EC2,15,Cockatoo Island,CI1,06:35,Circular Quay,CQ2,07:07
+EC2,Waiting,Circular Quay,CQ1,07:10,Circular Quay,CQ1,07:15
+EC2,7,Circular Quay,CQ1,07:20,Pyrmont Bay,PB1,07:49
+EC2,14,Circular Quay,CQ1,08:10,Cockatoo Island,CI1,08:44
+EC2,Crew pause,Circular Quay,CQ2,09:00,Circular Quay,CQ2,09:09
+EC2,Crew pause,Circular Quay,CQ2,09:10,Circular Quay,CQ2,09:19
+EC2,Crew pause,Circular Quay,CQ2,09:20,Circular Quay,CQ2,09:29
+EC2,4,Taronga Zoo,TZ1,09:45,Circular Quay,CQ5,10:13
+EC2,3,Circular Quay,CQ1,10:15,Taronga Zoo,TZ1,10:33
+EC2,Waiting,Taronga Zoo,TZ1,10:35,Taronga Zoo,TZ1,10:40
+EC2,Waiting,Circular Quay,CQ1,10:55,Circular Quay,CQ1,11:00
+EC2,Waiting,Circular Quay,CQ1,11:00,Circular Quay,CQ1,11:05
+EC2,Waiting,Circular Quay,CQ3,11:05,Circular Quay,CQ3,11:10
+EC2,Waiting,Circular Quay,CQ5,11:10,Circular Quay,CQ5,11:15
+EC2,Waiting,Circular Quay,CQ1,11:15,Circular Quay,CQ1,11:20
+EC2,Waiting,Circular Quay,CQ1,11:20,Circular Quay,CQ1,11:25
+EC2,Waiting,Circular Quay,CQ4,11:25,Circular Quay,CQ4,11:30
