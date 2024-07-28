@@ -23,8 +23,6 @@ def run_optimization(model):
     model.setParam('Heuristics', 0.5)     # Heuristic emphasis (50%)
 
     model.setParam('MIPFocus', 1)  # Focus on finding feasible solutions quickly
-    model.setParam('Crossover', 0)
-
 
     model.optimize()
 

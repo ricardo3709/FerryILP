@@ -1,12 +1,12 @@
  
-1. Basic version of the model (constraint 2 with heuristic):
+version 1. Basic version of the model (constraint 2 with heuristic):
 Results obtained on Wednesday on local terminal (approx. 12 hours)
 
-2. Fixed B set basic version of the model (constraint 2 with heuristic):
+version 2. Fixed B set basic version of the model (constraint 2 with heuristic):
 Results obtained this morning on local terminal (approx. 41 hours)
 
-3. Fixed B set basic version of the model:
+version 3. Fixed B set basic version of the model:
 Currently in queue on remote terminal
 
-4. Fixed B set basic version of the model with charging constraints:
+version 4. Fixed B set basic version of the model with charging constraints:
 Currently in queue on remote terminalv
