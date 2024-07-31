@@ -43,13 +43,6 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
             model.addConstr(gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]) <= 1, name=f"1f: task_overlap_v{v}_t{t}")
 
     # Constraint 1g
-    # for l in tqdm(config.Lset, desc='Constraint 1g'):
-    #     R_l = functions['cal_Rl'](config, l)
-    #     A_l = R_l[-1]  # last station
-    #     for S in R_l[:-1]: # 29July revised, original code: for S in [station for station in R_l if station != A_l]:
-    #         C_lS = functions['cal_C_lS'](config, S)
-    #         model.addConstr(gp.quicksum(z[w, l] for w in C_lS) == 1, name=f"1g: select_one_wharf_{l}_station_{S}")
-
     for j in tqdm(config.Jset, desc='Constraint 1g'):
         if j in config.Lset:
             l = j
@@ -121,15 +114,15 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     #                     if t_prime in config.Tset and xi_results[(j, j_prime)] != 1:
     #                         model.addConstr(y[v, j, t] + y[v, j_prime, t_prime] <= 1 ,name=f"3: no_overlap_v{v}_j{j}_t{t}_j_prime{j_prime}_t_prime{t_prime}")
 
-    # # equivalent formulation
-    # for v in tqdm(config.Vset, desc='Constraint 3'):
-    #     for j in config.Jset:
-    #         for t in config.Tset:
-    #             sum_y_v_jprime_tprime = gp.quicksum(y[v, j_prime, t_prime] 
-    #                                                 for j_prime in config.Jset 
-    #                                                 for t_prime in nu_results[(t, j, j_prime)])            
-    #             sum_nu_t_j_jprime = sum(len(nu_results[(t, j, j_prime)]) for j_prime in config.Jset) 
-    #             model.addConstr(sum_y_v_jprime_tprime <= sum_nu_t_j_jprime * (1 - y[v, j, t]),name=f"3_eq_v{v}_j{j}_t{t}")
+    # equivalent formulation
+    for v in tqdm(config.Vset, desc='Constraint 3'):
+        for j in config.Jset:
+            for t in config.Tset:
+                sum_y_v_jprime_tprime = gp.quicksum(y[v, j_prime, t_prime] 
+                                                    for j_prime in config.Jset 
+                                                    for t_prime in nu_results[(t, j, j_prime)])            
+                sum_nu_t_j_jprime = sum(len(nu_results[(t, j, j_prime)]) for j_prime in config.Jset) 
+                model.addConstr(sum_y_v_jprime_tprime <= sum_nu_t_j_jprime * (1 - y[v, j, t]),name=f"3_eq_v{v}_j{j}_t{t}")
 
     # Constraint 4
     for w in tqdm(config.Wset, desc='Constraint 4'):
@@ -138,39 +131,39 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
             sum_Z_prime = gp.quicksum(Z_prime[l, w, t] for l in config.Lset if (l, w, t) in Z_prime)
             model.addConstr(sum_yz + sum_Z_prime <= functions['cal_Cw'](config, w), name=f"4: capacity_constraint_w{w}_t{t}")
 
-    # # Constraint 5a
-    # for v in tqdm(config.Vset, desc='Constraint 5a'):
-    #     for t in config.Tset:
-    #         model.addConstr(Q[v, t] >= 0, name=f"5a: battery_non_negative_v{v}_t{t}")
+    # Constraint 5a
+    for v in tqdm(config.Vset, desc='Constraint 5a'):
+        for t in config.Tset:
+            model.addConstr(Q[v, t] >= 0, name=f"5a: battery_non_negative_v{v}_t{t}")
 
 
-    # # Constraint 5b
-    # for v in tqdm(config.Vset, desc='Constraint 5b'):
-    #     for t in config.Tset:
-    #         model.addConstr(Q[v, t] <= 1, name=f"5b: battery_max_capacity_v{v}_t{t}")
+    # Constraint 5b
+    for v in tqdm(config.Vset, desc='Constraint 5b'):
+        for t in config.Tset:
+            model.addConstr(Q[v, t] <= 1, name=f"5b: battery_max_capacity_v{v}_t{t}")
 
-    # # Constraint 5c
-    # rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in config.Vset}
-    # Qv0 = {v: vessel_df[vessel_df['Vessel code'] == v]['Qv0'].iloc[0] for v in config.Vset}
+    # Constraint 5c
+    rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in config.Vset}
+    Qv0 = {v: vessel_df[vessel_df['Vessel code'] == v]['Qv0'].iloc[0] for v in config.Vset}
 
-    # for v in tqdm(config.Vset, desc='Constraint 5c'):
-    #     for t in config.Tset:
-    #         if t == 1:
-    #             model.addConstr(
-    #                 Qv0[v]
-    #                 + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
-    #                 - rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
-    #                 >= Q[v, t],
-    #                 name=f"5c: battery_update_v{v}_t{t}"
-    #             )
-    #         else:
-    #             model.addConstr(
-    #                 Q[v, t - 1]
-    #                 + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
-    #                 - rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
-    #                 >= Q[v, t],
-    #                 name=f"5c: battery_update_v{v}_t{t}"
-    #             )
+    for v in tqdm(config.Vset, desc='Constraint 5c'):
+        for t in config.Tset:
+            if t == 1:
+                model.addConstr(
+                    Qv0[v]
+                    + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
+                    - rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
+                    >= Q[v, t],
+                    name=f"5c: battery_update_v{v}_t{t}"
+                )
+            else:
+                model.addConstr(
+                    Q[v, t - 1]
+                    + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
+                    - rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
+                    >= Q[v, t],
+                    name=f"5c: battery_update_v{v}_t{t}"
+                )
 
 
     # # Constraint 6a
