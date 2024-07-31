@@ -64,7 +64,6 @@ for wharf in Bplus:
     else:
         B.append(f'phi_{wharf}')  # input directly
 
-# Jset = Lset + B + B+ + Bc
 Jset = [ele for ele in Lset + B + Bc + Bplus]
 
 # Zset: Set of Sailing

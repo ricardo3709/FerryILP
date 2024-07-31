@@ -43,8 +43,7 @@ config = SimulationConfig(
     initial_time, period_length, Tset,
     Lset, Bc, B, Bplus, Jset, Wset, Dset, Vset, Zset,
     Dc, nc, Tc, 
-    rv_plus, pc, functions
-)
+    rv_plus, pc, functions)
 
 # Define variables
 x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS)
@@ -55,7 +54,7 @@ generate_new_files = False
 
 
 # Prefix for file names
-file_prefix = "6htest_1"  # You can change the prefix as needed
+file_prefix = "6htest"  # You can change the prefix as needed
 
 # Manage results based on the flag
 results = manage_results(config, generate_new_files, file_prefix)

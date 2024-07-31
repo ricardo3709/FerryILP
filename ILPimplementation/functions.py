@@ -20,20 +20,6 @@ def cal_Cw(config, w):
     except Exception as e:
         raise Exception(f"An unexpected error occurred: {str(e)}")
 
-# def cal_Rl(config, l):
-#     if not isinstance(l, int):
-#         raise ValueError("Line number must be an integer.")
-#     if l not in config.line_df['Line_No'].values:
-#         raise ValueError(f"Line number {l} is not found in the DataFrame.")
-#     try:
-#         route_data = config.line_df[config.line_df['Line_No'] == l][['O', 'I', 'T']].iloc[0]
-#         R_l = [station for station in route_data if station not in [None, 'None', '', ' ', pd.NA]]
-#         return R_l
-#     except IndexError:
-#         raise ValueError(f"No data available for line number {l}.")
-#     except KeyError:
-#         raise ValueError("DataFrame must include 'Line_No', 'O', 'I', 'T' columns.")
-
 def cal_Rl(config, l):
     if not isinstance(l, int):
         raise ValueError("Line number must be an integer.")
@@ -214,7 +200,7 @@ def cal_xi0(config, v, j):
         if pd.isna(travel_time): # 29July revised
             return 24*60 + 1# 29July revised 
         else: # 29July revised
-            return travel_time // config.period_length + 1 # 29July revised
+            return int(travel_time // config.period_length + 1) # 29July revised
     except Exception as e:
         raise Exception(f"An error occurred: {str(e)}")
 
@@ -238,7 +224,7 @@ def cal_delta(config, j, w):
     try:
         if isinstance(j, int) and j in config.Lset:
             line_data = config.line_df[config.line_df['Line_No'] == j]
-            safety_buffer = line_data['Safety_buffer'].iloc[0] // config.period_length + 1  # Safety buffer = O + B + OM， 29July revised
+            safety_buffer = int(line_data['Safety_buffer'].iloc[0] // config.period_length + 1)  # Safety buffer = O + B + OM， 29July revised
             R_l = cal_Rl(config, j)  # Stations visited by the line
 
             # Exclude the last station
@@ -275,8 +261,8 @@ def cal_muF(config, l):
         if not isinstance(l, int):
             raise ValueError("Line number must be an integer.")
         dw_T = config.line_df[config.line_df['Line_No'] == l]['dw_T'].iloc[0] 
-        safety_buffer = config.line_df[config.line_df['Line_No'] == l]['Safety_buffer'].iloc[0] # 29July revised
-        return (dw_T + safety_buffer) // config.period_length + 1 # 29July revised
+        safety_buffer = config.line_df[config.line_df['Line_No'] == l]['Safety_buffer'].iloc[0]
+        return int((dw_T + safety_buffer) // config.period_length + 1) 
     except Exception as e:
         raise ValueError(f"An error occurred: {str(e)}")
 
