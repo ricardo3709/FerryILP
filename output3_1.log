@@ -1,0 +1,25 @@
+All .csv files have been loaded successfully.
+
+
+Simulation Parameters:
+------------------------------------------------------
+Initial Time: 05:30:00
+Period Length: 5 minutes
+Total Operation Hours: 6 hours
+
+Minimum Number of Crew Breaks (nc): 1
+Crew Break Duration (Dc): 9 minutes
+Maximum Separation Time for Crew Breaks (Tc): 360 minutes
+
+Charging Rate (rv_plus): 15.91% per period
+Plugging/Unplugging Time (pc): 2 minutes
+------------------------------------------------------
+
+Vset, Wset, Tset, Jset, and Dset have been defined.
+
+Using license file /usr/local/gurobi/9.1.2/gurobi.lic
+Set parameter TokenServer to value gurobi.lic.sydney.edu.au
+All results matrices have been loaded from files with prefix "6htest".
+
+Results loaded successfully.
+
