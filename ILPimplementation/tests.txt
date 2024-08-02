@@ -8,7 +8,4 @@ Results obtained this morning on local terminal (approx. 41 hours)
 version 3. Fixed B set basic version of the model:
 Ended manully (72 more hours already)
 
-version 3_1. Fixed B set basic version of the model:
-in progress
-
 version 4. Fixed B set basic version of the model with charging constraints:

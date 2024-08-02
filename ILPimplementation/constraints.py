@@ -127,7 +127,6 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     #     for t in config.Tset:
     #         model.addConstr(Q[v, t] >= 0, name=f"5a: battery_non_negative_v{v}_t{t}")
 
-
     # # Constraint 5b
     # for v in tqdm(config.Vset, desc='Constraint 5b'):
     #     for t in config.Tset:
