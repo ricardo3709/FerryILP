@@ -38,6 +38,7 @@ Charging Rate (rv_plus): {rv_plus:.2%} per period
 Plugging/Unplugging Time (pc): {pc} minutes
 ------------------------------------------------------
 """)
+
 ## -------------------- Sets Defined -----------------------------------------
 
 # Lset: Set of Lines
@@ -88,5 +89,6 @@ Dset = {
          (initial_time.hour * 60 + initial_time.minute) + 15) // period_length + 1 + 1))
     for l in Lset
 }
+
 
 print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')

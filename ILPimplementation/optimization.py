@@ -14,15 +14,9 @@ def run_optimization(model):
     model.setParam('ScaleFlag', 1)        # Scaling
     model.setParam('Threads', 64)
 
-    # Time limit
-    # model.setParam('TimeLimit', 12000)    # Set time limit in seconds
-    # model.setParam('SolutionLimit', 1)  # Stop after finding the first feasible solution
-
     # Optimization strategies
     model.setParam('MIPGap', 0.90)        # Optimality gap
     model.setParam('Heuristics', 0.5)     # Heuristic emphasis (50%)
-
-    model.setParam('MIPFocus', 1)  # Focus on finding feasible solutions quickly
 
     model.optimize()
 

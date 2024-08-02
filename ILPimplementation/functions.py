@@ -133,17 +133,17 @@ def cal_q(config, v, j, t):
         R_l = cal_Rl(config, l)
         stops = R_l[1:]  # remove the origin station
         if len(stops) == 1:
-            a = int(line_data['Time_underway_to_T'].iloc()[0] // config.period_length + 1)
+            a = int(float(line_data['Time_underway_to_T'].iloc()[0])) // config.period_length + 1
             dw = int(line_data['dw_T'].iloc()[0] // config.period_length + 1) 
             if t in range(a, a+dw+1):
                 return 0
             else:
                 return -line_data['rj'].iloc()[0]
         elif len(stops) == 2:
-            a1 = int(line_data['Time_underway_to_I'].iloc()[0]) // config.period_length + 1
-            dw1 = int(line_data['dw_I'].iloc()[0]) // config.period_length + 1
-            a2 = int(line_data['Time_underway_to_T'].iloc()[0]) // config.period_length + 1
-            dw2 = int(line_data['dw_T'].iloc()[0]) // config.period_length + 1
+            a1 = int(float(line_data['Time_underway_to_I'].iloc()[0])) // config.period_length + 1
+            dw1 = int(float(line_data['dw_I'].iloc()[0])) // config.period_length + 1
+            a2 = int(float(line_data['Time_underway_to_T'].iloc()[0])) // config.period_length + 1
+            dw2 = int(float(line_data['dw_T'].iloc()[0])) // config.period_length + 1
             if t in list(range(a1, a1+dw1+1)) + list(range(a2, a2+dw2+1)):
                 return 0
             else:
