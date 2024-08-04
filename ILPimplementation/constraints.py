@@ -93,11 +93,16 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
 
     # Combined Constraint 2
     for j in tqdm(config.Jset, desc='Constraint 2'):
+        # task j end location
+        end_station = functions['get_task_location'](config, j, -1)
         for t in config.Tset:
             follow_tasks = taskF_results[(j, t)]
             if follow_tasks:
                 for v in config.Vset:
-                    buffer = 1  # Buffer = 1 -> same functionality with the original expression
+                    if end_station in ['Circular Quay','Barangaroo']:
+                        buffer = 1  # Buffer = 1 -> same functionality with the original expression
+                    else: 
+                        buffer = 2
                     follow_task = gp.quicksum(y[v, j_prime, t_prime] 
                                             for j_prime in follow_tasks 
                                             for t_prime in range(t + int(mu_results[j]) + int(xi_results[(j, j_prime)]), 

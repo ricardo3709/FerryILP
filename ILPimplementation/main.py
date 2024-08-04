@@ -54,7 +54,7 @@ generate_new_files = False
 
 
 # Prefix for file names
-file_prefix = "6htest"  # You can change the prefix as needed
+file_prefix = "6htest_simplified_B"  # You can change the prefix as needed
 
 # Manage results based on the flag
 results = manage_results(config, generate_new_files, file_prefix)
