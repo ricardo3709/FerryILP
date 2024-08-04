@@ -8,4 +8,12 @@ Results obtained this morning on local terminal (approx. 41 hours)
 version 3. Fixed B set basic version of the model:
 Ended manully (72 more hours already)
 
-version 4. Fixed B set basic version of the model with charging constraints:
+------------ After modifying the input data to be more realistic ------------
+version 3.1. Fixed B set basic version of the model:
+7716389 full B, original constraint2 
+
+version 3.2. Simple B set basic version of the model (constraint 2 with heuristic for partially stations):
+??? simple B, heuristic2 
+
+...
+version n. Fixed B set basic version of the model with charging constraints:

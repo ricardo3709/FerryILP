@@ -14,7 +14,9 @@ F7,12,Circular Quay,None,Double Bay,None,3,4,6:27,None,18,21,13,0.041818
 F7,13,Double Bay,None,Circular Quay,None,3,4.99,6:50,None,18,21,13,0.041818
 F8,14,Circular Quay,None,Cockatoo Island,None,4.99,4,6:15,None,29,34,13,0.041818
 F8,15,Cockatoo Island,None,Circular Quay,None,4,4.99,6:49,None,28,32,13,0.041818
-F9,16,Circular Quay,None,Watsons Bay,None,7,4,6:05,None,23,29.99,25,0.106364
-F9,17,Watsons Bay,None,Circular Quay,None,7,4.99,6:38,None,13,19.99,25,0.106364
-F10,18,Barangaroo,None,Blackwattle Bay,None,2,4,6:26,None,13,14.99,13,0.041818
-F10,19,Blackwattle Bay,None,Barangaroo,None,2,4,6:41,None,13,14.99,13,0.041818
+F9,16,Circular Quay,None,Watsons Bay,None,7,4,9:45,None,23,29.99,25,0.106364
+F9,17,Watsons Bay,None,Circular Quay,None,7,4.99,10:15,None,13,19.99,25,0.106364
+F9,18,Circular Quay,None,Rose Bay,None,7,4,6:05,None,13,19.99,25,0.106364
+F9,19,Rose Bay,None,Circular Quay,None,5,4.99,6:25,None,13,18,25,0.106364
+F10,20,Barangaroo,None,Blackwattle Bay,None,2,4,6:26,None,13,14.99,13,0.041818
+F10,21,Blackwattle Bay,None,Barangaroo,None,2,4,6:41,None,13,14.99,13,0.041818
