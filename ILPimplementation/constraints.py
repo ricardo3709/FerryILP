@@ -94,19 +94,19 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     # Combined Constraint 2
     for j in tqdm(config.Jset, desc='Constraint 2'):
         # task j end location
-        end_station = functions['get_task_location'](config, j, -1)
+        # end_station = functions['get_task_location'](config, j, -1)
         for t in config.Tset:
             follow_tasks = taskF_results[(j, t)]
             if follow_tasks:
                 for v in config.Vset:
-                    if end_station in ['Circular Quay','Barangaroo']:
-                        buffer = 1  # Buffer = 1 -> same functionality with the original expression
-                    else: 
-                        buffer = 2
+                    # if end_station in ['Circular Quay','Barangaroo']:
+                    #     buffer = 1  # Buffer = 1 -> same functionality with the original expression
+                    # else: 
+                    #     buffer = 2
                     follow_task = gp.quicksum(y[v, j_prime, t_prime] 
                                             for j_prime in follow_tasks 
                                             for t_prime in range(t + int(mu_results[j]) + int(xi_results[(j, j_prime)]), 
-                                                                t + int(mu_results[j]) + int(xi_results[(j, j_prime)]) + buffer)
+                                                                t + int(mu_results[j]) + int(xi_results[(j, j_prime)]) + 1)
                                             if t_prime in config.Tset)
                     model.addConstr(follow_task >= y[v, j, t], name=f"2: follow_task_v{v}_j{j}_t{t}")
 
@@ -121,11 +121,20 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                 model.addConstr(sum_y_v_jprime_tprime <= sum_nu_t_j_jprime * (1 - y[v, j, t]),name=f"3_eq_v{v}_j{j}_t{t}")
 
     # Constraint 4
+    Bar1_occupied = [14, 15, 22, 23, 24, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 52, 53, 56, 57, 60, 61, 64, 65, 68, 69]
+    CQ5_occupied = [20, 21, 22, 25, 26, 27, 26, 27, 28, 31, 32, 33, 32, 33, 34, 35, 36, 37, 37, 38, 39, 38, 39, 40, 43, 44, 45, 46, 47, 48, 49, 50, 49, 50, 51, 54, 55, 56, 58, 59, 60, 62, 63, 64, 66, 67, 68]
+
     for w in tqdm(config.Wset, desc='Constraint 4'):
         for t in config.Tset:
             sum_yz = gp.quicksum(y[v, j, t_prime] * z[w, j] for v in config.Vset for (j, t_prime) in E_results[(w, t)])
             sum_Z_prime = gp.quicksum(Z_prime[l, w, t] for l in config.Lset if (l, w, t) in Z_prime)
-            model.addConstr(sum_yz + sum_Z_prime <= functions['cal_Cw'](config, w), name=f"4: capacity_constraint_w{w}_t{t}")
+            wharf_capacity = functions['cal_Cw'](config, w)
+            # check F3 occupation
+            if w == 'CQ5': 
+                wharf_capacity -= CQ5_occupied.count(t)
+            elif w == 'Bar1':
+                wharf_capacity -= Bar1_occupied.count(t)
+            model.addConstr(sum_yz + sum_Z_prime <= wharf_capacity, name=f"4: capacity_constraint_w{w}_t{t}")
 
     # # Constraint 5a
     # for v in tqdm(config.Vset, desc='Constraint 5a'):
@@ -171,7 +180,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     # # Constraint 6b
     # for v in tqdm(config.Vset, desc='Constraint 6b'):
     #     for t in config.Tset:
-    #         if t < (config.Tset[-1] - (config.Tc // config.period_length + 1)):
+    #         if t < (config.Tset[-1] - (config.Tc // config.period_length + 1)): # use cal_time_period function 
     #             for t_prime in range(1, config.Tc // config.period_length + 1):
     #                 model.addConstr(
     #                     gp.quicksum(y[v, j, t + t_prime] for j in config.Bc) >= 1,

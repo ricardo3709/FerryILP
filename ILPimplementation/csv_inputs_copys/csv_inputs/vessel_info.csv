@@ -1,0 +1,28 @@
+﻿Vessel code,Description,F2,F3,F4,F5,F6,F7,F8,F9,F10,Replace with EV,Sv,rv,Qv0
+10M,Mini catamaran,No,No,No,No,No,No,No,No,Yes,Yes,Barangaroo,0.041818182,1
+24M,???,No,Yes,No,Yes,No,Yes,No,No,No,No,Circular Quay,0,1
+EC1,Emerald Class 1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.041818182,1
+EC2,Emerald Class 2,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.106363636,1
+EC3,Emerald Class 3,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.106363636,1
+EC4,Emerald Class 4,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.106363636,1
+EC5,Emerald Class 5,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.106363636,1
+FF1,First Fleet Class Vessel 1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.041818182,1
+FF2,First Fleet Class Vessel 2,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.041818182,1
+FF3,First Fleet Class Vessel 3,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.041818182,1
+FF4,First Fleet Class Vessel 4,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.041818182,1
+FF5,First Fleet Class Vessel 5,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.041818182,1
+FF6,First Fleet Class Vessel 6,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.041818182,1
+FF7,First Fleet Class Vessel 7,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.041818182,1
+FF8,First Fleet Class Vessel 8,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.041818182,1
+RR1,River Run 1,No,Yes,No,No,No,No,No,No,No,No,Circular Quay,0,1
+RR10,River Run 10,No,Yes,No,No,No,No,No,No,No,No,Circular Quay,0,1
+RR11,River Run 11,No,Yes,No,No,No,No,No,No,No,No,Barangaroo,0,1
+RR12,River Run 12,No,Yes,No,No,No,No,No,No,No,No,Circular Quay,0,1
+RR2,River Run 2,No,Yes,No,No,No,No,No,No,No,No,Rydalmere,0,1
+RR3,River Run 3,No,Yes,No,No,No,No,No,No,No,No,Syd Olym Pk,0,1
+RR4,River Run 4,No,Yes,No,No,No,No,No,No,No,No,Circular Quay,0,1
+RR5,River Run 5,No,Yes,No,No,No,No,No,No,No,No,Parramatta,0,1
+RR6,River Run 6,No,Yes,No,No,No,No,No,No,No,No,Syd Olym Pk,0,1
+RR7,River Run 7,No,Yes,No,No,No,No,No,No,No,No,Circular Quay,0,1
+RR8,River Run 8,No,Yes,No,No,No,No,No,No,No,No,Chiswick,0,1
+RR9,River Run 9,No,Yes,No,No,No,No,No,No,No,No,Cabarita,0,1

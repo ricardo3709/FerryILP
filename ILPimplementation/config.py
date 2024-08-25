@@ -12,7 +12,7 @@ total_operation_hours = 6  # hours
 nc = 1
 
 # Dc, Crew break duration (fixed)
-Dc = 9  # mins
+Dc = 10  # mins
 
 # Tc, Maximum separation time for crew breaks
 Tc = 6 * 60  # mins
@@ -91,6 +91,5 @@ Dset = {
          (initial_time.hour * 60 + initial_time.minute) + 15) // period_length + 1 + 1))
     for l in Lset
 }
-
 
 print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')

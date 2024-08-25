@@ -54,7 +54,7 @@ generate_new_files = False
 
 
 # Prefix for file names
-file_prefix = "6htest_simplified_B"  # You can change the prefix as needed
+file_prefix = "6htest_cyclelines"  # You can change the prefix as needed
 
 # Manage results based on the flag
 results = manage_results(config, generate_new_files, file_prefix)
@@ -89,7 +89,7 @@ psi = set_objective_functions(model, config, y, phi_results)
 run_optimization(model)
 
 # Save relaxed variable results if infeasible
-save_relaxed_variable_results(model, x, 'ILPimplementation/output_files/relaxed_x_variable_results.csv')
+# save_relaxed_variable_results(model, x, 'ILPimplementation/output_files/relaxed_x_variable_results.csv')
 
 # Save results if optimal
 save_all_results(model, x, y, Q, z, Z, Z_prime,file_prefix)

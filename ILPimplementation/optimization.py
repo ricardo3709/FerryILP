@@ -41,6 +41,7 @@ def run_optimization(model):
                 print(f"{c.ConstrName} is in the IIS.")
         model.write("model.ilp")
 
+
 def save_variable_results(var_dict, filename):
     results = {k: (var_dict[k].X if var_dict[k].X <= var_dict[k].UB and var_dict[k].X >= var_dict[k].LB else "Out of bounds") for k in var_dict.keys()}
     df = pd.DataFrame(list(results.items()), columns=['Variable', 'Value'])
