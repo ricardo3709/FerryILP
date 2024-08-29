@@ -1,6 +1,5 @@
 import gurobipy as gp
 import pandas as pd
-import multiprocessing
 import os
 
 def run_optimization(model):
