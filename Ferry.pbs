@@ -1,13 +1,8 @@
 #!/bin/bash
 
 #PBS -P RDS-FEI-FTP-RW
-<<<<<<< HEAD
 #PBS -l select=1:ncpus=32:mem=100GB
 #PBS -l walltime=100:00:00
-=======
-#PBS -l select=4:ncpus=32:mem=120GB
-#PBS -l walltime=150:00:00
->>>>>>> 77a943bb2d0a96d4019ab7e1c6e7b91ac0ee6437
 #PBS -N FerryILP
 #PBS -m abe
 #PBS -M llin7797@uni.sydney.edu.au
