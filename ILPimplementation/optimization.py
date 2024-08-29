@@ -13,8 +13,6 @@ def run_optimization(model):
     model.setParam('InfUnbdInfo', 1)      # Output information on infeasible or unbounded models
     model.setParam('Presolve', 2)         # Presolve level
     model.setParam('ScaleFlag', 1)        # Scaling
-    max_threads = multiprocessing.cpu_count()
-    model.setParam('Threads', max_threads)
 
     # Optimization strategies
     model.setParam('MIPGap', 0.90)        # Optimality gap
