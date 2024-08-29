@@ -1,0 +1,14 @@
+1, cycle lines:
+all lines information is updated, correspodning code is updated
+
+2, F10 headway:
+F10 is with a cycle time of 40, only one vessle can serve the line, but the headway is 30
+
+
+3, tested models:
+
+output_cycles1:
+Full task arrangement of 6h --> infeasible, calculating IIS now (29Aug 10:14)
+
+output_cycles2_1:
+A few task arrangement of 2h-3h/6h --> 

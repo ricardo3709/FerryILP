@@ -1,0 +1,47 @@
+Tests results
+
+Version 1: Basic Model (Constraint 2 with Heuristic)
+Status: Completed on local terminal
+Results: Obtained (24 Jul)
+Duration: Approximately 12 hours
+
+
+Version 2: Basic Model with Full B Set (Constraint 2 with Heuristic)
+Status: Completed on local terminal
+Results: Obtained (27 Jul)
+Duration: Approximately 41 hours
+
+
+Version 3: Basic Model with Full B Set
+Status: Ended manually (29 Jul)
+Duration: 72 hours (terminated prematurely)
+
+
+------------------------------------------------------------------------------------
+After Modifying Input Data for Increased Realism
+
+
+Version 3.1: Basic Model with Full B Set (Original defined constraint 2)
+run1:
+Status: Ended manually on local terminal (4 Aug 2pm)
+Duration: About 26 hours
+
+run2:
+Status: In progress on remote terminal
+Results: \
+Duration: currently running for 21 hours (4 Aug 5pm)
+Note: 7716389.pbsserver
+
+
+Version 3.2: Basic Model with Simple B Set (Constraint 2 with Heuristic for Partial Stations)
+Status: Queueing on remote terminal (4 Aug 2pm)
+Results: \
+Note: 7717628.pbsserver
+
+
+...
+
+Version 4: Basic Model with Charging Constraints
+Status: Pending details
+
+

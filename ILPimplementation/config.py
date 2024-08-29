@@ -57,8 +57,8 @@ original_non_loading_berths = wharf_df[wharf_df['Non_loading_berths'] != 0]['Wha
 Bc = ['cp_' + wharf for wharf in original_non_loading_berths]
 
 # B, set of wharves to wait, any wharf with a charger belongs to B, and B contains wharves with original non-loading berths
-# B =  wharf_df['Wharf_No'].unique().tolist() # full Bset
-B = original_non_loading_berths.copy() 
+B =  wharf_df['Wharf_No'].unique().tolist() # full Bset
+# B = original_non_loading_berths.copy() 
 
 for wharf in Bplus:
     if wharf in B:  # wharf with a charger

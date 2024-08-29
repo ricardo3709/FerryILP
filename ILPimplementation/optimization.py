@@ -1,5 +1,6 @@
 import gurobipy as gp
 import pandas as pd
+import multiprocessing
 import os
 
 def run_optimization(model):
@@ -12,11 +13,13 @@ def run_optimization(model):
     model.setParam('InfUnbdInfo', 1)      # Output information on infeasible or unbounded models
     model.setParam('Presolve', 2)         # Presolve level
     model.setParam('ScaleFlag', 1)        # Scaling
-    model.setParam('Threads', 64)
+    max_threads = multiprocessing.cpu_count()
+    model.setParam('Threads', max_threads)
 
     # Optimization strategies
     model.setParam('MIPGap', 0.90)        # Optimality gap
-    model.setParam('Heuristics', 0.5)     # Heuristic emphasis (50%)
+    model.setParam('Heuristics', 0.5)
+    model.setParam('BarHomogeneous', 1)  # To address numerical instability
 
     model.optimize()
 

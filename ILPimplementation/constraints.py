@@ -6,11 +6,11 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     functions = config.functions
     vessel_df = config.vessel_df
 
-    # Constraint 1a
+    # Constraint 1a: Each line has exactlt 1 initial departure
     for l in tqdm(config.Lset, desc='Constraint 1a'):
         model.addConstr(gp.quicksum(x[l, d] for d in config.Dset[l]) == 1, name=f"1a: departure_time_constraint_line{l}")
 
-    # Constraint 1b
+    # Constraint 1b: Exactly 1 vessel is chosen to do the 1st sailing at the chosen time
     for sailing in tqdm(config.Zset, desc='Constraint 1b'):
         l = int(sailing.split('_')[0])  # line
         s = int(sailing.split('_')[1])  # nth sailing
@@ -19,43 +19,43 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
             t = h_sd
             model.addConstr(gp.quicksum(y[v, l, t] for v in config.Vset) == x[l, d], name=f"1b: assign_vessel_l{l}_s{s}_d{d}")
 
-    # Constraint 1c
+    # Constraint 1c: Vessel cannot do task at infeasible time
     for v in tqdm(config.Vset, desc='Constraint 1c'):
         for j in config.Jset:
             H_vj = functions['cal_H'](config, v, j)
             for t in [t for t in config.Tset if t not in H_vj]:
                 y[v, j, t].ub = 0  # Set upper bound of y[v, j, t] to 0
 
-    # Constraint 1d
+    # Constraint 1d: Vessel cannot do line which is not appropariate
     for t in tqdm(config.Tset, desc='Constraint 1d'):
         for v in config.Vset:
             li_v = functions['cal_li'](config, v)
             for j in [l for l in config.Lset if l not in li_v]:
                 y[v, j, t].ub = 0  # Set upper bound of y[v, j, t] to 0
 
-    # Constraint 1e
+    # Constraint 1e: each vessel start a day at one with 1 task in correct time
     for v in tqdm(config.Vset, desc='Constraint 1e'):
         model.addConstr(gp.quicksum(y[v, j, functions['cal_xi0'](config, v, j)] for j in config.Jset if functions['cal_xi0'](config, v, j) in config.Tset) == 1, name=f"1e: assign_task_v{v}_j{j}_t{t}")
 
-    # Constraint 1f
+    # Constraint 1f: Vessel can only excute 1 task at a time
     for v in tqdm(config.Vset, desc='Constraint 1f'):
         for t in config.Tset:
             model.addConstr(gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]) <= 1, name=f"1f: task_overlap_v{v}_t{t}")
 
-    # Constraint 1g
+    # Constraint 1g: one line select one wharf for intemidiate stops
     for j in tqdm(config.Jset, desc='Constraint 1g'):
         if j in config.Lset:
             l = j
             R_l = functions['cal_Rl'](config, l)
             A_l = R_l[-1]  # last station
-            for S in R_l[:-1]: # 29July revised, original code: for S in [station for station in R_l if station != A_l]:
+            for S in R_l[:-1]:
                 C_lS = functions['cal_C_lS'](config, S)
                 model.addConstr(gp.quicksum(z[w, l] for w in C_lS) == 1, name=f"1g: select_one_wharf_{l}_station_{S}")
         else:
             w = j.split('_')[-1]
             model.addConstr(z[w, j] == 1, name=f"1g: set_upper_bound_{w}_{j}")
 
-    # Constraint 1h
+    # Constraint 1h: 
     for l in tqdm(config.Lset, desc='Constraint 1h'):
         F_l = functions['cal_F'](config, l)
         for t in config.Tset:
@@ -93,21 +93,12 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
 
     # Combined Constraint 2
     for j in tqdm(config.Jset, desc='Constraint 2'):
-        # task j end location
-        # end_station = functions['get_task_location'](config, j, -1)
         for t in config.Tset:
             follow_tasks = taskF_results[(j, t)]
             if follow_tasks:
                 for v in config.Vset:
-                    # if end_station in ['Circular Quay','Barangaroo']:
-                    #     buffer = 1  # Buffer = 1 -> same functionality with the original expression
-                    # else: 
-                    #     buffer = 2
-                    follow_task = gp.quicksum(y[v, j_prime, t_prime] 
-                                            for j_prime in follow_tasks 
-                                            for t_prime in range(t + int(mu_results[j]) + int(xi_results[(j, j_prime)]), 
-                                                                t + int(mu_results[j]) + int(xi_results[(j, j_prime)]) + 1)
-                                            if t_prime in config.Tset)
+                    follow_task = gp.quicksum(y[v, j_prime, t + int(mu_results[j]) + int(xi_results[(j, j_prime)])] 
+                                            for j_prime in follow_tasks)   
                     model.addConstr(follow_task >= y[v, j, t], name=f"2: follow_task_v{v}_j{j}_t{t}")
 
     # # Constraint 3                   
