@@ -4,7 +4,7 @@ import json
 import pickle
 from tqdm import tqdm
 
-def cal_time_period(minutes):
+def cal_duration(minutes):
     result = (minutes // 5) + (1 if minutes % 5 != 0 else 0)
     return int(result)
 
@@ -84,7 +84,7 @@ def cal_D(config, l): # set of the time a line can start its first sailing
         first_sailing_time = config.line_df[config.line_df['Line_No'] == l]['First_sailing'].iloc[0]
         delta_minutes = (first_sailing_time.hour * 60 + first_sailing_time.minute) - (config.initial_time.hour * 60 + config.initial_time.minute)
         allowed_latitude = 15
-        D_l = list(range(cal_time_period(delta_minutes - allowed_latitude), cal_time_period(delta_minutes + allowed_latitude) + 1))
+        D_l = list(range((delta_minutes - allowed_latitude)//5 + 1, (delta_minutes + allowed_latitude)//5 + 1 + 1)) # calculate time period
         return D_l
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -95,7 +95,7 @@ def cal_h(config, s, d, l): # headways
         h = config.headway_df[f'h{l}'].dropna().tolist()
         h_sd_ls = [d]  # Start the list with the initial day 'd'
         for sailing_headway in h:
-            num_time_period = cal_time_period(sailing_headway)
+            num_time_period = cal_duration(sailing_headway)
             h_sd_ls.append(h_sd_ls[-1] + num_time_period)
         if s-1 < len(h_sd_ls):
             return h_sd_ls[s-1]
@@ -110,9 +110,9 @@ def cal_mu(config, j): # calculate task duration
         if not isinstance(j, (int, str)):
             raise ValueError("Task identifier must be an integer or string.")
         if j in config.Lset:
-            mu_j = cal_time_period(config.line_df[config.line_df['Line_No'] == j]['Line_duration'].iloc()[0])
+            mu_j = cal_duration(config.line_df[config.line_df['Line_No'] == j]['Line_duration'].iloc()[0])
         elif j in config.Bc:
-            mu_j = cal_time_period(config.Dc)
+            mu_j = cal_duration(config.Dc)
         elif j in config.Bplus or j in config.B:
             mu_j = 1
         else:
@@ -139,7 +139,7 @@ def cal_q(config, v, j, t): # require update when simulating charging
         if len(stops) == 1:
             a = line_data['Time_underway_to_T'].iloc()[0]
             dw = line_data['dw_T'].iloc()[0]
-            if t in range(cal_time_period(a), cal_time_period(a+dw)+1):
+            if t in range(cal_duration(a), cal_duration(a+dw)+1):
                 return 0
             else:
                 return -line_data['rj'].iloc()[0]
@@ -148,7 +148,7 @@ def cal_q(config, v, j, t): # require update when simulating charging
             dw1 = line_data['dw_I'].iloc()[0]
             a2 = line_data['Time_underway_to_T'].iloc()[0]
             dw2 = float(line_data['dw_T'].iloc()[0])
-            if t in list(range(cal_time_period(a1), cal_time_period(a1+dw1)+1)) + list(range(cal_time_period(a2), cal_time_period(a2+dw2)+1)):
+            if t in list(range(cal_duration(a1), cal_duration(a1+dw1)+1)) + list(range(cal_duration(a2), cal_duration(a2+dw2)+1)):
                 return 0
             else:
                 return -line_data['rj'].iloc()[0]
@@ -187,7 +187,7 @@ def cal_xi(config, j1, j2): # calculate rebalancing time from task 1 to task 2
         if pd.isna(travel_time):
             return 24*60 + 1
         else:
-            return cal_time_period(travel_time)    
+            return cal_duration(travel_time)    
     except Exception as e:
         raise Exception(f"An error occurred calculating travel time from {j1} to {j2}: {str(e)}")
 
@@ -204,7 +204,7 @@ def cal_xi0(config, v, j): # calculate rebalancing time from starting point to t
         if pd.isna(travel_time):
             return 24*60 + 1
         else:
-            return cal_time_period(travel_time)
+            return cal_duration(travel_time)
     except Exception as e:
         raise Exception(f"An error occurred: {str(e)}")
 
@@ -237,9 +237,9 @@ def cal_delta(config, j, w):  # calculate the wharf occupied time for tasks (lin
             for station in stations:
                 wharves = cal_C_lS(config, station)
                 if w in wharves:
-                    a = cal_time_period(int(line_data['Time_underway_to_I'].iloc[0]))
+                    a = cal_duration(int(line_data['Time_underway_to_I'].iloc[0]))
                     dw = int(line_data['dw_I'].iloc[0])
-                    occupy_time = cal_time_period(dw + safety_buffer)
+                    occupy_time = cal_duration(dw + safety_buffer)
                     delta_j_w = [(w, time) for time in range(a, a + occupy_time)]
                     return delta_j_w
             return []
@@ -258,7 +258,7 @@ def cal_F(config, l): # Calculate the number of time periods from the start of a
         if not isinstance(l, int):
             raise ValueError("Line number must be an integer.")
         time_underway_to_T = config.line_df[config.line_df['Line_No'] == l]['Time_underway_to_T'].iloc[0]
-        return cal_time_period(time_underway_to_T)
+        return cal_duration(time_underway_to_T)
     except Exception as e:
         raise ValueError(f"An error occurred: {str(e)}")
 
@@ -269,7 +269,7 @@ def cal_muF(config, l): # Calculate the number of time periods a wharf is occupi
         dw_T = config.line_df[config.line_df['Line_No'] == l]['dw_T'].iloc[0] 
         # safety_buffer = config.line_df[config.line_df['Line_No'] == l]['Safety_buffer'].iloc[0]
         safety_buffer = 0 # 35 Aug, already included in the dwelling time 
-        return cal_time_period(dw_T + safety_buffer)
+        return cal_duration(dw_T + safety_buffer)
     except Exception as e:
         raise ValueError(f"An error occurred: {str(e)}")
 
@@ -308,7 +308,7 @@ def cal_G(config, j): # calculate the set of valid start times for task j
                 G_j.append(d)
                 current_time = d
                 for h in headways:
-                    num_time_period = cal_time_period(h)
+                    num_time_period = cal_duration(h)
                     current_time += num_time_period
                     G_j.append(current_time)
         elif j in config.Bc or j in config.B or j in config.Bplus:
@@ -330,7 +330,7 @@ def cal_H(config, v, j): # Calculate the set of feasible start times H(v,j) for 
         xi0_vj = cal_xi0(config, v, j)
         f_j = cal_f(config, j)
         G_j = cal_G(config, j)
-
+        
         H_vj = [t for t in G_j if xi0_vj <= t <= f_j]
         return H_vj
     except Exception as e:

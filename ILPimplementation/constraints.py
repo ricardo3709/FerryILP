@@ -26,12 +26,12 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
             for t in [t for t in config.Tset if t not in H_vj]:
                 y[v, j, t].ub = 0  # Set upper bound of y[v, j, t] to 0
 
-    # Constraint 1d: Vessel cannot do line which is not appropariate
-    for t in tqdm(config.Tset, desc='Constraint 1d'):
-        for v in config.Vset:
-            li_v = functions['cal_li'](config, v)
-            for j in [l for l in config.Lset if l not in li_v]:
-                y[v, j, t].ub = 0  # Set upper bound of y[v, j, t] to 0
+    # # Constraint 1d: Vessel cannot do line which is not appropariate
+    # for t in tqdm(config.Tset, desc='Constraint 1d'):
+    #     for v in config.Vset:
+    #         li_v = functions['cal_li'](config, v)
+    #         for j in [l for l in config.Lset if l not in li_v]:
+    #             y[v, j, t].ub = 0  # Set upper bound of y[v, j, t] to 0
 
     # Constraint 1e: each vessel start a day at one with 1 task in correct time
     for v in tqdm(config.Vset, desc='Constraint 1e'):
@@ -98,7 +98,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
             if follow_tasks:
                 for v in config.Vset:
                     follow_task = gp.quicksum(y[v, j_prime, t + int(mu_results[j]) + int(xi_results[(j, j_prime)])] 
-                                            for j_prime in follow_tasks)   
+                                            for j_prime in follow_tasks)
                     model.addConstr(follow_task >= y[v, j, t], name=f"2: follow_task_v{v}_j{j}_t{t}")
 
     # # Constraint 3                   

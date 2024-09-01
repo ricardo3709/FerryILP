@@ -15,7 +15,7 @@ nc = 1
 Dc = 10  # mins
 
 # Tc, Maximum separation time for crew breaks
-Tc = 6 * 60  # mins
+Tc = 4 * 60  # mins
 
 # rv+, charging rate
 rv_plus = 2100 * period_length / 60 / 1100  # kW*h/kWh --> %
@@ -71,6 +71,7 @@ Jset = [ele for ele in Lset + B + Bc + Bplus]
 
 # Zset: Set of Sailing
 nl_ls = [len(headway_df[f"h{l}"].dropna().tolist()) + 1 for l in Lset]
+
 s_ls = [list(range(1, nl + 1)) for nl in nl_ls]
 Zset = [f'{line}_{sailing}' for line in Lset for sailing in s_ls[line - 1]]
 

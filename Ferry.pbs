@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #PBS -P RDS-FEI-FTP-RW
-#PBS -l select=2:ncpus=32:mem=100GB
+#PBS -l select=4:ncpus=32:mem=100GB
 #PBS -l walltime=100:00:00
 #PBS -N FerryILP
 #PBS -m abe
@@ -10,4 +10,4 @@
 module load python/3.12.2 magma/2.5.3 pandas/2.0.3 gurobi/9.1.2
 source /project/RDS-FEI-FTP-RW/envs/amod/bin/activate
 cd /project/RDS-FEI-FTP-RW/FerryILP
-python ILPimplementation/main.py > output_cycles2_2.log 2> error_cycles2_2.log
+python ILPimplementation/main.py > output_cycles3_1.log 2> error_cycles3_1.log

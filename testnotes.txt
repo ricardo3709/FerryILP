@@ -10,5 +10,10 @@ F10 is with a cycle time of 40, only one vessle can serve the line, but the head
 output_cycles1:
 Full task arrangement of 6h --> infeasible, calculating IIS now (29Aug 10:14)
 
-output_cycles2_1:
-A few task arrangement of 2h-3h/6h --> 7750530.pbsserver
+output_cycles2_1: --> infeasible
+A few task arrangement of 2h-3h/6h
+output_cycles2_1: --> infeasible
+7750542.pbsserver
+
+
+output_cycles3_1: fixed line infos (use full cycle times) + sailing time code
