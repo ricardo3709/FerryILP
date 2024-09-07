@@ -24,4 +24,4 @@ output_cycles3_1: fixed line infos (use full cycle times) + sailing time code + 
 output_cycles3_2: fixed line infos (use full cycle times) + sailing time code + real vessel fleet size (40min headway for F10)
 7756274.pbsserver --> Infeasible
 
-output_cycles3_3: fixed line infos (use partial cycle times) + sailing time code + real vessel fleet size + 1 more vesl for F10 (30min headway for F10)
+output_cycles3_3: fixed line infos (use partial cycle times) + new vessel fleet + (30min headway for F10)
