@@ -16,8 +16,12 @@ output_cycles2_1: --> infeasible
 7750542.pbsserver
 
 
-output_cycles3_1: fixed line infos (use full cycle times) + sailing time code + many vessel 
 
-7756273.pbsserver
+1 Sep
+output_cycles3_1: fixed line infos (use full cycle times) + sailing time code + many vessel (40min headway for F10)
+7756273.pbsserver --> Last satge Unfinished, 100 hrs time is not enough
 
-output_cycles3_2: fixed line infos (use full cycle times) + sailing time code + real vessel fleet size
+output_cycles3_2: fixed line infos (use full cycle times) + sailing time code + real vessel fleet size (40min headway for F10)
+7756274.pbsserver --> Infeasible
+
+output_cycles3_3: fixed line infos (use partial cycle times) + sailing time code + real vessel fleet size + 1 more vesl for F10 (30min headway for F10)

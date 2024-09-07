@@ -1,18 +1,19 @@
-﻿Vessel code,F2,F3,F4,F5,F6,F7,F8,F9,F10,Replace with EV,Sv,rv,Qv0
-10M,No,No,No,No,No,No,No,No,Yes,Yes,Barangaroo,0.03030303,1
-24M,No,Yes,No,Yes,No,Yes,No,No,No,No,Circular Quay,0,1
-EC1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.060606061,1
-EC2,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.060606061,1
-EC3,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.060606061,1
-EC4,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.060606061,1
-EC5,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.060606061,1
-FF1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1
-FF2,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1
-FF3,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1
-FF4,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1
-FF5,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1
-FF6,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1
-FF7,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1
-FF8,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1
-RR10,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Circular Quay,0,1
-RR12,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Circular Quay,0,1
+﻿Vessel code,F2,F3,F4,F5,F6,F7,F8,F9,F10,Replace with EV,Sv,rv,Qv0,,
+vsel1,No,No,No,No,No,No,No,No,Yes,No,Barangaroo,0,1,,
+10M,No,No,No,No,No,No,No,No,Yes,Yes,Barangaroo,0.03030303,1,,
+24M,No,Yes,No,Yes,No,Yes,No,No,No,No,Circular Quay,0,1,,CQ: 10
+EC1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Circular Quay,0.060606061,1,,BS:8
+EC2,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.060606061,1,,Brg:12
+EC3,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.060606061,1,,
+EC4,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.060606061,1,,
+EC5,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Circular Quay,0.060606061,1,,
+FF1,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1,,
+FF2,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1,,
+FF3,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1,,
+FF4,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1,,
+FF5,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1,,
+FF6,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1,,
+FF7,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1,,
+FF8,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Balmain Shipyard,0.03030303,1,,
+RR10,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Circular Quay,0,1,,
+RR12,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Circular Quay,0,1,,
