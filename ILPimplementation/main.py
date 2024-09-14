@@ -65,9 +65,9 @@ x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS
 # -----------------New partial results test-------------------------
 
 # Load partial solutions for x_ld and z_wj
-partial_x_file = "ILPimplementation/output_files/version4/6htest_cyclelines_rob_sol_x_ld_results.csv"
-partial_z_file = "ILPimplementation/output_files/version4/6htest_cyclelines_rob_sol_z_wj_results.csv"
-partial_y_file = "ILPimplementation/output_files/version4/6htest_cyclelines_rob_sol_y_vjt_results.csv"
+partial_x_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_x_ld_results.csv'
+partial_z_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_z_wj_results.csv'
+partial_y_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_y_vjt_results.csv'
 
 # Load and apply the partial solutions
 partial_x = load_partial_solution(partial_x_file)
