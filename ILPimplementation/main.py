@@ -10,15 +10,17 @@ from objectives import set_objective_functions
 from optimization import run_optimization, save_all_results, save_relaxed_variable_results  # Import optimization functions
 import pandas as pd
 
-# # --- functions to load partial solutions ---
-# def load_partial_solution(file_path):
-#     partial_solution = pd.read_csv(file_path)
-#     return dict(zip(partial_solution['Variable'], partial_solution['Value']))
+# # --------------- functions to load partial solutions ---------------
+def load_partial_solution(file_path):
+    partial_solution = pd.read_csv(file_path)
+    return dict(zip(partial_solution['Variable'], partial_solution['Value']))
 
-# def set_partial_solution(var_dict, partial_solution):
-#     for var_name, value in partial_solution.items():
-#         if var_name in var_dict and value != "Out of bounds":
-#             var_dict[var_name].Start = value
+def set_partial_solution(var_dict, partial_solution):
+    for var_name, value in partial_solution.items():
+        if var_name in var_dict and value != "Out of bounds":
+            var_dict[var_name].Start = value
+
+# # --------------------------------------------------------------------
 
 # Create model
 model = gp.Model("Ferry ILP")
@@ -62,19 +64,24 @@ x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS
 
 # -----------------New partial results test-------------------------
 
-# # Load partial solutions for x_ld and z_wj
-# partial_x_file = "ILPimplementation/output_files/Rob'd solution/6htest_cyclelines_x_ld_results.csv"
-# partial_z_file = "ILPimplementation/output_files/Rob'd solution/6htest_cyclelines_z_wj_results.csv"
+# Load partial solutions for x_ld and z_wj
+partial_x_file = "ILPimplementation/output_files/Rob'd solution/6htest_cyclelines_rob_sol_x_ld_results.csv"
+partial_z_file = "ILPimplementation/output_files/Rob'd solution/6htest_cyclelines_rob_sol_z_wj_results.csv"
+partial_y_file = "ILPimplementation/output_files/Rob'd solution/6htest_cyclelines_rob_sol_y_vjt_results.csv"
 
-# # Load and apply the partial solutions
-# partial_x = load_partial_solution(partial_x_file)
-# partial_z = load_partial_solution(partial_z_file)
+# Load and apply the partial solutions
+partial_x = load_partial_solution(partial_x_file)
+partial_z = load_partial_solution(partial_z_file)
+partial_y = load_partial_solution(partial_y_file)
 
-# # Set the initial values in the Gurobi model
-# set_partial_solution(x, partial_x)
-# set_partial_solution(z, partial_z)
+# Set the initial values in the Gurobi model
+set_partial_solution(x, partial_x)
+set_partial_solution(z, partial_z)
+set_partial_solution(y, partial_y)
 
-# ------------------------------------------
+print('Successfully load partial results!!')
+
+# ---------------------------------------------------------------------
 
 # Flag to decide whether to generate new files
 # generate_new_files = True  
@@ -82,7 +89,7 @@ generate_new_files = False
 
 
 # Prefix for file names
-file_prefix = "6htest_cyclelines"  # You can change the prefix as needed
+file_prefix = "6htest_cyclelines_rob_sol"  # You can change the prefix as needed
 
 # Manage results based on the flag
 results = manage_results(config, generate_new_files, file_prefix)
