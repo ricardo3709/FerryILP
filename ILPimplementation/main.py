@@ -6,19 +6,70 @@ from functions import *
 from simulation_config import SimulationConfig  # Import the class
 from constraints import add_constraints  # Import the constraints function
 from variables import define_variables  # Import the variables function
-from objectives import set_objective_functions
+from objectives import set_objective_functionsn
 from optimization import run_optimization, save_all_results, save_relaxed_variable_results  # Import optimization functions
 import pandas as pd
+import ast
 
 # # --------------- functions to load partial solutions ---------------
 def load_partial_solution(file_path):
+    """
+    Load the partial solution and convert it into a dictionary.
+    """
     partial_solution = pd.read_csv(file_path)
-    return dict(zip(partial_solution['Variable'], partial_solution['Value']))
+    
+    # dictionary to store partial solution
+    parsed_solution = {}
+    
+    # Iterate over row
+    for index, row in partial_solution.iterrows():
+        # Parse the 'Variable' from string to tuple
+        try:
+            variable = ast.literal_eval(row['Variable'])
+            # Convert elements in the tuple to int where possible
+            if isinstance(variable, tuple):
+                variable = tuple(int(v) if isinstance(v, str) and v.isdigit() else v for v in variable)
+            else:
+                variable = (int(variable),) if isinstance(variable, str) and variable.isdigit() else (variable,)
+        except (ValueError, SyntaxError) as e:
+            # print(f"Error parsing variable: {row['Variable']} - {e}")
+            continue
+        
+        # Convert 'Value' to a number (int or float)
+        try:
+            value = float(row['Value']) if '.' in str(row['Value']) else int(row['Value'])
+        except ValueError:
+            # print(f"Error parsing value for {variable}: {row['Value']}")
+            continue
+        
+        # Store the value
+        parsed_solution[variable] = value
+    
+    return parsed_solution
 
-def set_partial_solution(var_dict, partial_solution):
+
+def set_partial_solution(var_dict, partial_solution, fix_values=False):
+    """
+    Set or fix Gurobi variables based on a partial solution.
+    """
     for var_name, value in partial_solution.items():
-        if var_name in var_dict and value != "Out of bounds":
-            var_dict[var_name].Start = value
+        #check if var exists
+        if var_name in var_dict:
+            if value != "Out of bounds":
+                if fix_values:
+                    # Fix the variable value
+                    var_dict[var_name].LB = value
+                    var_dict[var_name].UB = value
+                    # print(f"Fixed {var_name} to {value}")
+                else:
+                    # Set the starting value for the variable
+                    var_dict[var_name].Start = value
+                    # print(f"Set start value for {var_name} to {value}")
+            else:
+                print(f"Skipping {var_name} because the value is 'Out of bounds'.")
+        else:
+            print(f"{var_name} not found in var_dict.")
+
 
 # # --------------------------------------------------------------------
 
@@ -64,22 +115,20 @@ x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS
 
 # -----------------New partial results test-------------------------
 
-# Load partial solutions for x_ld and z_wj
+# Load partial solutions for x_ld, z_wj, and y_vjt
 partial_x_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_x_ld_results.csv'
 partial_z_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_z_wj_results.csv'
 partial_y_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_y_vjt_results.csv'
 
-# Load and apply the partial solutions
+# Load the partial solutions
 partial_x = load_partial_solution(partial_x_file)
 partial_z = load_partial_solution(partial_z_file)
 partial_y = load_partial_solution(partial_y_file)
 
 # Set the initial values in the Gurobi model
-set_partial_solution(x, partial_x)
-set_partial_solution(z, partial_z)
-set_partial_solution(y, partial_y)
-
-print('Successfully load partial results!!')
+set_partial_solution(x, partial_x,fix_values=False) 
+set_partial_solution(z, partial_z,fix_values=False) 
+set_partial_solution(y, partial_y,fix_values=False)
 
 # ---------------------------------------------------------------------
 

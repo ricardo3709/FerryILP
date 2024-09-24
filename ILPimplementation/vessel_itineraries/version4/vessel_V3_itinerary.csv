@@ -1,0 +1,29 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V3,Waiting,Mosman,Mos1,05:40,Mosman,Mos1,05:45
+V3,Waiting,Circular Quay,CQ3,06:00,Circular Quay,CQ3,06:05
+V3,Waiting,Circular Quay,CQ3,06:05,Circular Quay,CQ3,06:10
+V3,Waiting,Circular Quay,CQ1,06:10,Circular Quay,CQ1,06:15
+V3,Waiting,Circular Quay,CQ1,06:15,Circular Quay,CQ1,06:20
+V3,Waiting,Circular Quay,CQ5,06:20,Circular Quay,CQ5,06:25
+V3,Charging,Circular Quay,CQ5,06:25,Circular Quay,CQ5,06:30
+V3,Charging,Circular Quay,CQ5,06:30,Circular Quay,CQ5,06:35
+V3,Charging,Circular Quay,CQ5,06:35,Circular Quay,CQ5,06:40
+V3,Charging,Circular Quay,CQ5,06:40,Circular Quay,CQ5,06:45
+V3,Charging,Circular Quay,CQ5,06:45,Circular Quay,CQ5,06:50
+V3,Charging,Circular Quay,CQ5,06:50,Circular Quay,CQ5,06:55
+V3,Waiting,Circular Quay,CQ5,06:55,Circular Quay,CQ5,07:00
+V3,4,Circular Quay,CQ2,07:00,Circular Quay,CQ2,08:00
+V3,Waiting,Circular Quay,CQ3,08:00,Circular Quay,CQ3,08:05
+V3,Waiting,Barangaroo,Bar2,08:15,Barangaroo,Bar2,08:20
+V3,Charging,Barangaroo,Bar2,08:20,Barangaroo,Bar2,08:25
+V3,Waiting,Barangaroo,Bar2,08:25,Barangaroo,Bar2,08:30
+V3,Waiting,Circular Quay,CQ3,08:40,Circular Quay,CQ3,08:45
+V3,Waiting,Circular Quay,CQ1,08:45,Circular Quay,CQ1,08:50
+V3,Waiting,Circular Quay,CQ5,08:50,Circular Quay,CQ5,08:55
+V3,3,Circular Quay,CQ4,08:55,Circular Quay,CQ2,09:35
+V3,1,Circular Quay,CQ2,09:35,Circular Quay,CQ1,10:15
+V3,5,Circular Quay,CQ4,10:15,Circular Quay,CQ1,11:10
+V3,Waiting,Circular Quay,CQ2,11:10,Circular Quay,CQ2,11:15
+V3,Waiting,Circular Quay,CQ4,11:15,Circular Quay,CQ4,11:20
+V3,Charging,Circular Quay,CQ4,11:20,Circular Quay,CQ4,11:25
+V3,Waiting,Circular Quay,CQ4,11:25,Circular Quay,CQ4,11:30

@@ -1,0 +1,15 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V5,Crew pause,Balmain Shipyard,BSY1,05:40,Balmain Shipyard,BSY1,05:50
+V5,Crew pause,Barangaroo,Bar5,06:00,Barangaroo,Bar5,06:10
+V5,Crew pause,Barangaroo,Bar4,06:10,Barangaroo,Bar4,06:20
+V5,Crew pause,Barangaroo,Bar2,06:20,Barangaroo,Bar2,06:30
+V5,6,Circular Quay,CQ1,06:40,Circular Quay,CQ5,08:00
+V5,4,Circular Quay,CQ1,08:00,Circular Quay,CQ1,09:00
+V5,Crew pause,Barangaroo,Bar1,09:10,Barangaroo,Bar1,09:20
+V5,Crew pause,Barangaroo,Bar1,09:20,Barangaroo,Bar1,09:30
+V5,Crew pause,Barangaroo,Bar1,09:30,Barangaroo,Bar1,09:40
+V5,Waiting,Circular Quay,CQ3,09:50,Circular Quay,CQ3,09:55
+V5,3,Circular Quay,CQ1,09:55,Circular Quay,CQ5,10:35
+V5,1,Circular Quay,CQ1,10:35,Circular Quay,CQ1,11:15
+V5,Waiting,Circular Quay,CQ1,11:15,Circular Quay,CQ1,11:20
+V5,Crew pause,Circular Quay,CQ5,11:20,Circular Quay,CQ5,11:30

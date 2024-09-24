@@ -15,7 +15,7 @@ def run_optimization(model):
 
     # Optimization strategies
     model.setParam('NumericFocus', 3)  # Improve numerical stability
-    model.setParam('MIPGap', 0.90)  # Optimality gap, change to smaller value later
+    model.setParam('MIPGap', 0.1)  # Optimality gap, change to smaller value later
     model.setParam('Method', 2)  # Try dual simplex to avoid barrier instability
 
 
@@ -24,10 +24,17 @@ def run_optimization(model):
     print(f"Optimization completed with status: {model.Status}")
 
     # Check if a solution was found
+    objects_name = {0:"Vessel utilization", 1:"Total rebalancing time"}
     if model.SolCount > 0:
         print("Solution found!")
         # Retrieve the solution
-        solution = {v.VarName: v.X for v in model.getVars()}
+        print(f"Objective Function Value: {model.ObjVal}")
+
+        # for i in range(model.NumObj):
+        #     model.setParam('ObjNumber', i)
+            
+        #     print(f"{objects_name[i]} Value: {model.ObjNVal}")
+        # solution = {v.VarName: v.X for v in model.getVars()}
         # Further processing of the solution
     else:
         print("No solution found within the time limit.")

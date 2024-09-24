@@ -1,0 +1,37 @@
+Vessel,Task,Wharf,Time
+V17,Crew pause,CQ3,06:00-06:05
+V17,Crew pause,CQ3,06:05-06:10
+V11,Crew pause,CQ3,06:10-06:15
+V11,Crew pause,CQ3,06:15-06:20
+V19,Waiting,CQ3,06:20-06:25
+V1,Crew pause,CQ3,07:00-07:05
+V1,Crew pause,CQ3,07:05-07:10
+V1,Crew pause,CQ3,07:45-07:50
+V1,Crew pause,CQ3,07:50-07:55
+V14,Crew pause,CQ3,09:20-09:25
+V14,Crew pause,CQ3,09:25-09:30
+V6,Crew pause,CQ3,09:30-09:35
+V17,Waiting,CQ3,09:35-09:40
+V6,Crew pause,CQ3,09:35-09:40
+V15,Waiting,CQ3,09:40-09:45
+V6,Crew pause,CQ3,09:40-09:45
+V6,Crew pause,CQ3,09:45-09:50
+V5,Waiting,CQ3,09:50-09:55
+V12,Waiting,CQ3,09:55-10:00
+V6,Crew pause,CQ3,10:30-10:35
+V8,Waiting,CQ3,10:30-10:35
+V6,Crew pause,CQ3,10:35-10:40
+V18,Waiting,CQ3,10:35-10:40
+V6,Waiting,CQ3,10:40-10:45
+V6,Crew pause,CQ3,10:45-10:50
+V4,Crew pause,CQ3,10:45-10:50
+V6,Crew pause,CQ3,10:50-10:55
+V4,Crew pause,CQ3,10:50-10:55
+V11,Waiting,CQ3,11:00-11:05
+V18,Waiting,CQ3,11:00-11:05
+V3,Waiting,CQ3,11:10-11:15
+V17,Waiting,CQ3,11:10-11:15
+V4,Crew pause,CQ3,11:20-11:25
+V2,Crew pause,CQ3,11:20-11:25
+V4,Crew pause,CQ3,11:25-11:30
+V2,Crew pause,CQ3,11:25-11:30

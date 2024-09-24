@@ -55,7 +55,7 @@ def load_and_process_data(filepath, split_columns, value_columns):
         df[column] = df[column].astype(dtype)
     return df
 
-file_prefix = "6htest_1"
+file_prefix = "6htest_cyclelines_rob_sol"
 
 z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_z_wj_results.csv',['Wharf', 'Task'],{})
 Zp_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_prime_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
@@ -239,7 +239,8 @@ def cal_wharf_utilization(wharf):
         
         # origin
         w_start = line_df[line_df['Line_No'] == j]['O'].iloc[0]
-        safety_buffer = int(line_df[line_df['Line_No'] == j]['Safety_buffer'].iloc[0])
+        # safety_buffer = int(line_df[line_df['Line_No'] == j]['Safety_buffer'].iloc[0])
+        safety_buffer = 0
         t_list_start = [time for time in range(t, t + safety_buffer // period_length + 1)]
         utilization_data.append({'v': v, 'j': j, 'w': w_start, 't_list': t_list_start})
 

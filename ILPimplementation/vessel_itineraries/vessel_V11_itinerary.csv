@@ -1,0 +1,17 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V11,Waiting,Circular Quay,CQ5,05:40,Circular Quay,CQ5,05:45
+V11,Crew pause,Circular Quay,CQ5,05:45,Circular Quay,CQ5,05:55
+V11,Crew pause,Circular Quay,CQ1,05:55,Circular Quay,CQ1,06:05
+V11,Waiting,Circular Quay,CQ3,06:05,Circular Quay,CQ3,06:10
+V11,Waiting,Circular Quay,CQ4,06:10,Circular Quay,CQ4,06:15
+V11,Waiting,Circular Quay,CQ2,06:15,Circular Quay,CQ2,06:20
+V11,Crew pause,Circular Quay,CQ5,06:20,Circular Quay,CQ5,06:30
+V11,4,Circular Quay,CQ1,06:30,Circular Quay,CQ1,07:30
+V11,Waiting,Circular Quay,CQ5,07:30,Circular Quay,CQ5,07:35
+V11,3,Circular Quay,CQ1,07:35,Circular Quay,CQ1,08:15
+V11,5,Circular Quay,CQ1,08:15,Circular Quay,CQ1,09:10
+V11,1,Circular Quay,CQ1,09:10,Circular Quay,CQ3,09:50
+V11,6,Circular Quay,CQ1,09:50,Circular Quay,CQ5,11:10
+V11,Crew pause,Circular Quay,CQ5,11:10,Circular Quay,CQ5,11:20
+V11,Waiting,Circular Quay,CQ4,11:20,Circular Quay,CQ4,11:25
+V11,Waiting,Circular Quay,CQ5,11:25,Circular Quay,CQ5,11:30

@@ -71,7 +71,7 @@ def cal_li(config, v): # set of the lines a vessel can serve
         if v not in config.vessel_df['Vessel code'].values:
             raise ValueError(f"Vessel code {v} is not found in the DataFrame.")
         vessel_row = config.vessel_df[config.vessel_df['Vessel code'] == v].iloc[0]
-        routes_served = [route for route in config.vessel_df.columns[2:-1] if vessel_row[route] == 'Yes']
+        routes_served = [route for route in config.vessel_df.columns[1:-1] if vessel_row[route] == 'Yes']
         li_v = config.line_df[config.line_df['Route_No'].isin(routes_served)]['Line_No'].tolist()
         return li_v
     except KeyError:

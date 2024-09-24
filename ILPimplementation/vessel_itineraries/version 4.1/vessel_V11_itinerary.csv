@@ -1,0 +1,13 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V11,Waiting,Mosman,Mos1,05:50,Mosman,Mos1,05:55
+V11,Crew pause,Circular Quay,CQ3,06:10,Circular Quay,CQ3,06:20
+V11,Crew pause,Circular Quay,CQ5,06:20,Circular Quay,CQ5,06:30
+V11,Waiting,Barangaroo,Bar1,06:40,Barangaroo,Bar1,06:45
+V11,Crew pause,Barangaroo,Bar5,06:45,Barangaroo,Bar5,06:55
+V11,Waiting,Balmain Shipyard,BSY1,07:05,Balmain Shipyard,BSY1,07:10
+V11,3,Circular Quay,CQ1,07:25,Circular Quay,CQ1,08:05
+V11,1,Circular Quay,CQ1,08:05,Circular Quay,CQ1,08:45
+V11,5,Circular Quay,CQ1,08:45,Circular Quay,CQ2,09:40
+V11,6,Circular Quay,CQ1,09:40,Circular Quay,CQ2,11:00
+V11,Waiting,Circular Quay,CQ3,11:00,Circular Quay,CQ3,11:05
+V11,Crew pause,Balmain Shipyard,BSY3,11:20,Balmain Shipyard,BSY3,11:30

@@ -1,0 +1,25 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V18,Waiting,Mosman,Mos1,05:45,Mosman,Mos1,05:50
+V18,Waiting,Barangaroo,Bar4,06:10,Barangaroo,Bar4,06:15
+V18,Crew pause,Barangaroo,Bar5,06:15,Barangaroo,Bar5,06:25
+V18,9,Barangaroo,Bar1,06:25,Barangaroo,Bar1,07:05
+V18,Waiting,Barangaroo,Bar4,07:05,Barangaroo,Bar4,07:10
+V18,Crew pause,Barangaroo,Bar5,07:10,Barangaroo,Bar5,07:20
+V18,Waiting,Barangaroo,Bar2,07:20,Barangaroo,Bar2,07:25
+V18,9,Barangaroo,Bar1,07:25,Barangaroo,Bar1,08:05
+V18,Waiting,Barangaroo,Bar4,08:05,Barangaroo,Bar4,08:10
+V18,Crew pause,Barangaroo,Bar5,08:10,Barangaroo,Bar5,08:20
+V18,Waiting,Barangaroo,Bar2,08:20,Barangaroo,Bar2,08:25
+V18,9,Barangaroo,Bar1,08:25,Barangaroo,Bar1,09:05
+V18,Waiting,Barangaroo,Bar4,09:05,Barangaroo,Bar4,09:10
+V18,Crew pause,Barangaroo,Bar5,09:10,Barangaroo,Bar5,09:20
+V18,Waiting,Barangaroo,Bar2,09:20,Barangaroo,Bar2,09:25
+V18,9,Barangaroo,Bar1,09:25,Barangaroo,Bar1,10:05
+V18,Waiting,Barangaroo,Bar4,10:05,Barangaroo,Bar4,10:10
+V18,Waiting,Balmain Shipyard,BSY1,10:20,Balmain Shipyard,BSY1,10:25
+V18,Crew pause,Balmain Shipyard,BSY6,10:25,Balmain Shipyard,BSY6,10:35
+V18,Waiting,Barangaroo,Bar4,10:45,Barangaroo,Bar4,10:50
+V18,Waiting,Barangaroo,Bar4,10:50,Barangaroo,Bar4,10:55
+V18,Waiting,Barangaroo,Bar4,10:55,Barangaroo,Bar4,11:00
+V18,Waiting,Barangaroo,Bar4,11:00,Barangaroo,Bar4,11:05
+V18,Waiting,Taronga Zoo,TZ1,11:25,Taronga Zoo,TZ1,11:30

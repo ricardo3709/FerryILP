@@ -1,0 +1,21 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V7,Waiting,Barangaroo,Bar4,05:35,Barangaroo,Bar4,05:40
+V7,Crew pause,Barangaroo,Bar1,05:40,Barangaroo,Bar1,05:50
+V7,Crew pause,Barangaroo,Bar4,05:50,Barangaroo,Bar4,06:00
+V7,Crew pause,Barangaroo,Bar5,06:00,Barangaroo,Bar5,06:10
+V7,Waiting,Barangaroo,Bar2,06:10,Barangaroo,Bar2,06:15
+V7,Waiting,Barangaroo,Bar4,06:15,Barangaroo,Bar4,06:20
+V7,Crew pause,Barangaroo,Bar2,06:20,Barangaroo,Bar2,06:30
+V7,Crew pause,Barangaroo,Bar4,06:30,Barangaroo,Bar4,06:40
+V7,Crew pause,Circular Quay,CQ5,06:50,Circular Quay,CQ5,07:00
+V7,Waiting,Circular Quay,CQ4,07:00,Circular Quay,CQ4,07:05
+V7,3,Circular Quay,CQ1,07:05,Circular Quay,CQ3,07:45
+V7,5,Circular Quay,CQ1,07:45,Circular Quay,CQ1,08:40
+V7,1,Circular Quay,CQ1,08:40,Circular Quay,CQ5,09:20
+V7,Crew pause,Circular Quay,CQ4,09:20,Circular Quay,CQ4,09:30
+V7,4,Circular Quay,CQ1,09:30,Circular Quay,CQ4,10:30
+V7,Waiting,Circular Quay,CQ5,10:30,Circular Quay,CQ5,10:35
+V7,Waiting,Circular Quay,CQ2,10:35,Circular Quay,CQ2,10:40
+V7,1,Circular Quay,CQ1,10:40,Circular Quay,CQ2,11:20
+V7,Waiting,Circular Quay,CQ4,11:20,Circular Quay,CQ4,11:25
+V7,Waiting,Circular Quay,CQ1,11:25,Circular Quay,CQ1,11:30

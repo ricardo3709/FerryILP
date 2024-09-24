@@ -1,0 +1,10 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V12,Waiting,Circular Quay,CQ3,05:40,Circular Quay,CQ3,05:45
+V12,Waiting,Circular Quay,CQ1,05:45,Circular Quay,CQ1,05:50
+V12,Waiting,Circular Quay,CQ4,05:50,Circular Quay,CQ4,05:55
+V12,7,Circular Quay,CQ2,05:55,Circular Quay,CQ1,06:40
+V12,2,Circular Quay,CQ5,06:40,Circular Quay,CQ1,07:55
+V12,7,Circular Quay,CQ2,07:55,Circular Quay,CQ1,08:40
+V12,2,Circular Quay,CQ5,08:40,Circular Quay,CQ1,09:55
+V12,8,Circular Quay,CQ2,09:55,Circular Quay,CQ1,11:10
+V12,Waiting,Cockatoo Island,CI1,11:25,Cockatoo Island,CI1,11:30

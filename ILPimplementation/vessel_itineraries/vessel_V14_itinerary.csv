@@ -1,0 +1,27 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V14,Crew pause,Circular Quay,CQ3,05:40,Circular Quay,CQ3,05:50
+V14,Crew pause,Circular Quay,CQ2,05:50,Circular Quay,CQ2,06:00
+V14,Crew pause,Circular Quay,CQ4,06:00,Circular Quay,CQ4,06:10
+V14,Crew pause,Circular Quay,CQ1,06:10,Circular Quay,CQ1,06:20
+V14,Waiting,Circular Quay,CQ2,06:20,Circular Quay,CQ2,06:25
+V14,Crew pause,Circular Quay,CQ1,06:25,Circular Quay,CQ1,06:35
+V14,7,Circular Quay,CQ1,06:35,Circular Quay,CQ4,07:20
+V14,2,Circular Quay,CQ1,07:20,Circular Quay,CQ2,08:35
+V14,7,Circular Quay,CQ1,08:35,Circular Quay,CQ4,09:20
+V14,Waiting,Circular Quay,CQ3,09:20,Circular Quay,CQ3,09:25
+V14,Waiting,Circular Quay,CQ5,09:25,Circular Quay,CQ5,09:30
+V14,Waiting,Circular Quay,CQ2,09:30,Circular Quay,CQ2,09:35
+V14,Crew pause,Circular Quay,CQ2,09:35,Circular Quay,CQ2,09:45
+V14,Crew pause,Circular Quay,CQ2,09:45,Circular Quay,CQ2,09:55
+V14,Crew pause,Circular Quay,CQ2,09:55,Circular Quay,CQ2,10:05
+V14,Waiting,Circular Quay,CQ3,10:05,Circular Quay,CQ3,10:10
+V14,Waiting,Circular Quay,CQ2,10:10,Circular Quay,CQ2,10:15
+V14,Crew pause,Circular Quay,CQ1,10:15,Circular Quay,CQ1,10:25
+V14,Waiting,Balmain Shipyard,BSY3,10:40,Balmain Shipyard,BSY3,10:45
+V14,Waiting,Balmain Shipyard,BSY4,10:45,Balmain Shipyard,BSY4,10:50
+V14,Waiting,Balmain Shipyard,BSY2,10:50,Balmain Shipyard,BSY2,10:55
+V14,Waiting,Balmain Shipyard,BSY1,10:55,Balmain Shipyard,BSY1,11:00
+V14,Crew pause,Balmain Shipyard,BSY5,11:00,Balmain Shipyard,BSY5,11:10
+V14,Crew pause,Balmain Shipyard,BSY3,11:10,Balmain Shipyard,BSY3,11:20
+V14,Waiting,Balmain Shipyard,BSY2,11:20,Balmain Shipyard,BSY2,11:25
+V14,Waiting,Balmain Shipyard,BSY1,11:25,Balmain Shipyard,BSY1,11:30
