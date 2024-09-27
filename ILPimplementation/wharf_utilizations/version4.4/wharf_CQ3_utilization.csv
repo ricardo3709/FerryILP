@@ -1,0 +1,34 @@
+Vessel,Task,Wharf,Time
+V17,Waiting,CQ3,05:50-05:55
+V16,Waiting,CQ3,06:10-06:15
+V16,Waiting,CQ3,06:15-06:20
+V7,Waiting,CQ3,06:30-06:35
+V13,F9 - Rose Bay,CQ3,06:35-06:40
+V3,Crew pause,CQ3,06:55-07:00
+V3,Crew pause,CQ3,07:00-07:05
+V9,F5 - Neutral Bay,CQ3,07:30-07:35
+V3,Waiting,CQ3,07:55-08:00
+V8,Waiting,CQ3,08:10-08:15
+V4,Waiting,CQ3,08:15-08:20
+V6,Waiting,CQ3,08:50-08:55
+V14,Waiting,CQ3,09:00-09:05
+V9,Waiting,CQ3,09:05-09:10
+V4,Waiting,CQ3,09:20-09:25
+V7,Waiting,CQ3,09:30-09:35
+V6,Waiting,CQ3,09:40-09:45
+V13,Waiting,CQ3,09:55-10:00
+V3,Waiting,CQ3,10:00-10:05
+V4,Waiting,CQ3,10:10-10:15
+V9,Waiting,CQ3,10:30-10:35
+V5,Waiting,CQ3,10:35-10:40
+V17,Crew pause,CQ3,10:40-10:45
+V16,Waiting,CQ3,10:45-10:50
+V17,Crew pause,CQ3,10:45-10:50
+V6,Crew pause,CQ3,10:55-11:00
+V11,Waiting,CQ3,10:55-11:00
+V6,Crew pause,CQ3,11:00-11:05
+V9,F2 - Taronga Zoo,CQ3,11:05-11:10
+V1,Waiting,CQ3,11:05-11:10
+V2,Waiting,CQ3,11:20-11:25
+V3,Waiting,CQ3,11:20-11:25
+V15,Waiting,CQ3,11:25-11:30

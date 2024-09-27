@@ -37,3 +37,18 @@ version 4 and 4.1 results:
 4: fix values
 4.1: set as starting values
 
+
+version 4.2 results: optimised gap 0.1
+
+
+version 4.3 with charging constraints gap 0.3..?
+
+
+version 4.4 with charging constrains + crew pause: gap 0.5..?
+
+version 4.5 with charging constrains + crew pause: gap 0.1
+
+
+Next steps: 
+1. weighted solution + charging at CQ is a decision (and thus charging is a constraint). 
+2. Present results in neater ways.

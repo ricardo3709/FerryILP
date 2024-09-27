@@ -127,15 +127,40 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                 wharf_capacity -= Bar1_occupied.count(t)
             model.addConstr(sum_yz + sum_Z_prime <= wharf_capacity, name=f"4: capacity_constraint_w{w}_t{t}")
 
-    # # Constraint 5a
-    # for v in tqdm(config.Vset, desc='Constraint 5a'):
-    #     for t in config.Tset:
-    #         model.addConstr(Q[v, t] >= 0, name=f"5a: battery_non_negative_v{v}_t{t}")
 
-    # # Constraint 5b
-    # for v in tqdm(config.Vset, desc='Constraint 5b'):
-    #     for t in config.Tset:
-    #         model.addConstr(Q[v, t] <= 1, name=f"5b: battery_max_capacity_v{v}_t{t}")
+    # # CHARGING REQUIREMENT
+
+    # Constraint 5a
+    for v in tqdm(config.Vset, desc='Constraint 5a'):
+        for t in config.Tset:
+            model.addConstr(Q[v, t] >= 0.5, name=f"5a: battery_non_negative_v{v}_t{t}")
+
+    # Constraint 5b
+    for v in tqdm(config.Vset, desc='Constraint 5b'):
+        for t in config.Tset:
+            model.addConstr(Q[v, t] <= 1, name=f"5b: battery_max_capacity_v{v}_t{t}")
+
+
+    # CHARGING DECISION VARIABLE:
+
+    # Constraint 5c
+    rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in config.Vset}
+    Qv0 = {v: vessel_df[vessel_df['Vessel code'] == v]['Qv0'].iloc[0] for v in config.Vset}
+
+    for v in tqdm(config.Vset, desc='Constraint 5c'):
+        for t in config.Tset:
+            if t == 1:
+                model.addConstr(Qv0[v]
+                                + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
+                                + rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
+                                >= Q[v, t],
+                                name=f"5c: battery_update_v{v}_t{t}")
+            else:
+                model.addConstr(Q[v, t - 1]
+                                + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
+                                + rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
+                                >= Q[v, t],
+                                name=f"5c: battery_update_v{v}_t{t}")
 
     # # Constraint 5c
     # rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in config.Vset}
@@ -160,23 +185,24 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     #                 name=f"5c: battery_update_v{v}_t{t}"
     #             )
 
+    # CREW PAUSE:
 
-    # # Constraint 6a
-    # for v in tqdm(config.Vset, desc='Constraint 6a'):
-    #     model.addConstr(
-    #         gp.quicksum(y[v, j, t] for j in config.Bc for t in config.Tset) >= config.nc,
-    #         name=f"6a: min_crew_pauses_{v}"
-    #     )
+    # Constraint 6a
+    for v in tqdm(config.Vset, desc='Constraint 6a'):
+        model.addConstr(
+            gp.quicksum(y[v, j, t] for j in config.Bc for t in config.Tset) >= config.nc,
+            name=f"6a: min_crew_pauses_{v}"
+        )
 
-    # # Constraint 6b
-    # for v in tqdm(config.Vset, desc='Constraint 6b'):
-    #     for t in config.Tset:
-    #         if t < (config.Tset[-1] - (config.Tc // config.period_length + 1)): # use cal_time_period function 
-    #             for t_prime in range(1, config.Tc // config.period_length + 1):
-    #                 model.addConstr(
-    #                     gp.quicksum(y[v, j, t + t_prime] for j in config.Bc) >= 1,
-    #                     name=f"6b: max_distance_pauses_v{v}_t{t}_t_prime{t_prime}"
-    #                 )
+    # Constraint 6b
+    for v in tqdm(config.Vset, desc='Constraint 6b'):
+        for t in config.Tset:
+            if t < (config.Tset[-1] - (config.Tc // config.period_length + 1)): # use cal_time_period function 
+                for t_prime in range(1, config.Tc // config.period_length + 1):
+                    model.addConstr(
+                        gp.quicksum(y[v, j, t + t_prime] for j in config.Bc) >= 1,
+                        name=f"6b: max_distance_pauses_v{v}_t{t}_t_prime{t_prime}"
+                    )
 
     print('All constraintrs are ready.\n')
 

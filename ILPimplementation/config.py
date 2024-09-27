@@ -15,10 +15,10 @@ nc = 1
 Dc = 10  # mins
 
 # Tc, Maximum separation time for crew breaks
-Tc = 4 * 60  # mins
+Tc = 6 * 60  # mins
 
 # rv+, charging rate
-rv_plus = 2100 * period_length / 60 / 1100  # kW*h/kWh --> %
+rv_plus = 0.159 #2100 * period_length / 60 / 1100  # kW*h/kWh --> %
 
 # pc, Plugging/Unplugging time
 pc = 2  # mins
@@ -58,6 +58,7 @@ Bc = ['cp_' + wharf for wharf in original_non_loading_berths]
 
 # B, set of wharves to wait, any wharf with a charger belongs to B, and B contains wharves with original non-loading berths
 B =  wharf_df['Wharf_No'].unique().tolist() # full Bset
+
 # B = original_non_loading_berths.copy() 
 
 for wharf in Bplus:
@@ -66,6 +67,9 @@ for wharf in Bplus:
         B.append(f'phi_{wharf}')  # mark as phi(w)
     else:
         B.append(f'phi_{wharf}')  # input directly
+
+# print(Bplus)
+# print(B)
 
 Jset = [ele for ele in Lset + B + Bc + Bplus]
 
@@ -92,5 +96,7 @@ Dset = {
          (initial_time.hour * 60 + initial_time.minute) + 15) // period_length + 1 + 1))
     for l in Lset
 }
+
+
 
 print('Vset, Wset, Tset, Jset, and Dset have been defined.\n')

@@ -1,0 +1,11 @@
+Vessel,Task,Wharf,Time
+V5,Waiting,BSY4,06:35-06:40
+V14,Crew pause,BSY4,10:10-10:15
+V14,Crew pause,BSY4,10:15-10:20
+V9,Waiting,BSY4,10:20-10:25
+V9,Crew pause,BSY4,10:50-10:55
+V9,Crew pause,BSY4,10:55-11:00
+V15,Crew pause,BSY4,10:55-11:00
+V15,Crew pause,BSY4,11:00-11:05
+V11,Waiting,BSY4,11:10-11:15
+V11,Waiting,BSY4,11:25-11:30

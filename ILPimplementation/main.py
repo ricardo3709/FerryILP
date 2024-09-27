@@ -6,7 +6,7 @@ from functions import *
 from simulation_config import SimulationConfig  # Import the class
 from constraints import add_constraints  # Import the constraints function
 from variables import define_variables  # Import the variables function
-from objectives import set_objective_functionsn
+from objectives import set_objective_functions
 from optimization import run_optimization, save_all_results, save_relaxed_variable_results  # Import optimization functions
 import pandas as pd
 import ast

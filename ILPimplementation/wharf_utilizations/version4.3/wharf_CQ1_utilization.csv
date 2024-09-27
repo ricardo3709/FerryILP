@@ -1,0 +1,45 @@
+Vessel,Task,Wharf,Time
+V18,Waiting,CQ1,05:35-05:40
+V15,Waiting,CQ1,05:40-05:45
+V17,Waiting,CQ1,05:40-05:45
+V15,Waiting,CQ1,05:50-05:55
+V1,Crew pause,CQ1,05:55-06:00
+V1,Crew pause,CQ1,06:00-06:05
+V12,Crew pause,CQ1,06:05-06:10
+V1,Crew pause,CQ1,06:10-06:15
+V12,Crew pause,CQ1,06:10-06:15
+V1,Crew pause,CQ1,06:15-06:20
+V11,F5 - Neutral Bay,CQ1,06:15-06:20
+V1,Waiting,CQ1,06:20-06:25
+V7,Waiting,CQ1,06:35-06:40
+V4,Waiting,CQ1,06:40-06:45
+V9,Waiting,CQ1,06:55-07:00
+V6,Waiting,CQ1,07:00-07:05
+V11,Waiting,CQ1,07:45-07:50
+V6,Waiting,CQ1,08:00-08:05
+V6,Waiting,CQ1,08:10-08:15
+V11,F2 - Taronga Zoo,CQ1,08:25-08:30
+V2,Waiting,CQ1,08:35-08:40
+V9,Waiting,CQ1,09:00-09:05
+V7,Waiting,CQ1,09:05-09:10
+V4,Waiting,CQ1,09:30-09:35
+V4,Waiting,CQ1,09:35-09:40
+V14,Waiting,CQ1,09:35-09:40
+V15,Waiting,CQ1,09:55-10:00
+V16,Waiting,CQ1,09:55-10:00
+V12,F4 - Pyrmont Bay,CQ1,10:15-10:20
+V11,F6 - Mosman,CQ1,10:25-10:30
+V10,Waiting,CQ1,10:30-10:35
+V7,Waiting,CQ1,10:35-10:40
+V17,F4 - Pyrmont Bay,CQ1,10:45-10:50
+V6,F2 - Taronga Zoo,CQ1,10:55-11:00
+V18,Crew pause,CQ1,10:55-11:00
+V18,Crew pause,CQ1,11:00-11:05
+V3,Waiting,CQ1,11:05-11:10
+V8,Waiting,CQ1,11:05-11:10
+V10,Crew pause,CQ1,11:10-11:15
+V10,Crew pause,CQ1,11:15-11:20
+V8,Crew pause,CQ1,11:20-11:25
+V18,Crew pause,CQ1,11:20-11:25
+V8,Crew pause,CQ1,11:25-11:30
+V18,Crew pause,CQ1,11:25-11:30

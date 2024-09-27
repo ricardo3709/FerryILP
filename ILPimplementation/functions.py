@@ -126,11 +126,14 @@ def cal_mu(config, j): # calculate task duration
 def cal_q(config, v, j, t): # require update when simulating charging 
     if j in config.Bplus:
         return config.rv_plus
-    elif j in config.B:
-        epsilon = 1 - config.pc / config.period_length
-        return epsilon * config.rv_plus
-    elif j in config.B:
-        return 0
+    
+    elif j in config.B :
+        if 'phi_' in j: # fisr/ last period of charging
+            epsilon = 1 - config.pc / config.period_length
+            return epsilon * config.rv_plus
+        else:   # waiting   
+            return 0
+    
     elif j in config.Lset:
         l = j
         line_data = config.line_df[config.line_df['Line_No'] == l]
@@ -142,7 +145,7 @@ def cal_q(config, v, j, t): # require update when simulating charging
             if t in range(cal_duration(a), cal_duration(a+dw)+1):
                 return 0
             else:
-                return -line_data['rj'].iloc()[0]
+                return line_data['rj'].iloc()[0]
         elif len(stops) == 2:
             a1 = line_data['Time_underway_to_I'].iloc()[0]
             dw1 = line_data['dw_I'].iloc()[0]
@@ -151,9 +154,10 @@ def cal_q(config, v, j, t): # require update when simulating charging
             if t in list(range(cal_duration(a1), cal_duration(a1+dw1)+1)) + list(range(cal_duration(a2), cal_duration(a2+dw2)+1)):
                 return 0
             else:
-                return -line_data['rj'].iloc()[0]
+                return line_data['rj'].iloc()[0]
     else:
         return 0  # the vessel is rebalancing, rv will be captured by the constraint
+    
 
 def get_task_location(config, j, type):
     try:

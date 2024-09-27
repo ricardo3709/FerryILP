@@ -1,0 +1,22 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V16,Waiting,Circular Quay,CQ1,05:40,Circular Quay,CQ1,05:45
+V16,Waiting,Circular Quay,CQ4,05:45,Circular Quay,CQ4,05:50
+V16,Waiting,Circular Quay,CQ1,05:50,Circular Quay,CQ1,05:55
+V16,Crew pause,Circular Quay,CQ5,05:55,Circular Quay,CQ5,06:05
+V16,Waiting,Circular Quay,CQ2,06:05,Circular Quay,CQ2,06:10
+V16,Waiting,Circular Quay,CQ3,06:10,Circular Quay,CQ3,06:15
+V16,Waiting,Circular Quay,CQ3,06:15,Circular Quay,CQ3,06:20
+V16,Waiting,Circular Quay,CQ2,06:20,Circular Quay,CQ2,06:25
+V16,Crew pause,Circular Quay,CQ1,06:25,Circular Quay,CQ1,06:35
+V16,F9 - Rose Bay,Circular Quay,CQ1,06:35,Circular Quay,CQ2,07:12
+V16,F4 - Pyrmont Bay,Circular Quay,CQ1,07:20,Circular Quay,CQ2,08:27
+V16,F9 - Rose Bay,Circular Quay,CQ1,08:35,Circular Quay,CQ1,09:12
+V16,Waiting,Circular Quay,CQ2,09:20,Circular Quay,CQ2,09:25
+V16,Waiting,Circular Quay,CQ2,09:25,Circular Quay,CQ2,09:30
+V16,F9 - Watsons Bay,Circular Quay,CQ1,09:30,Circular Quay,CQ1,10:32
+V16,Waiting,Circular Quay,CQ3,10:45,Circular Quay,CQ3,10:50
+V16,Waiting,Circular Quay,CQ1,10:50,Circular Quay,CQ1,10:55
+V16,Waiting,Balmain Shipyard,BSY6,11:10,Balmain Shipyard,BSY6,11:15
+V16,Waiting,Balmain Shipyard,BSY5,11:15,Balmain Shipyard,BSY5,11:20
+V16,Waiting,Balmain Shipyard,BSY2,11:20,Balmain Shipyard,BSY2,11:25
+V16,Waiting,Balmain Shipyard,BSY3,11:25,Balmain Shipyard,BSY3,11:30

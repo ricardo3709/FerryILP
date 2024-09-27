@@ -37,6 +37,7 @@ config = SimulationConfig(
 
 # --------------------------------- Load results file --------------------------------------------
 
+
 def load_and_process_data(filepath, split_columns, value_columns):
     """
     Load data, remove unwanted characters, filter rows, split columns, and convert types.
@@ -72,14 +73,24 @@ End_S.update(dict(zip(wharf_df['Wharf_No'], wharf_df['Station'])))
 
 linels = line_df['Line_No'].unique().tolist()
 Start_wharf = {}
+
 for line in linels:
     Start_wharf[line] = z_df[z_df['Task'] == str(line)]['Wharf'].iloc[0]
 
 # {line: z_df[z_df['Task'] == line]['Wharf'].iloc[0] for line in z_df['Line'].unique()}
 
+line_to_route_dict = {
+    '1': 'F2 - Taronga Zoo',
+    '2': 'F4 - Pyrmont Bay',
+    '3': 'F5 - Neutral Bay',
+    '4': 'F6 - Mosman',
+    '5': 'F7 - Double Bay',
+    '6': 'F8 - Cockatoo Island',
+    '7': 'F9 - Rose Bay',
+    '8': 'F9 - Watsons Bay',
+    '9': 'F11 - Blackwattle Bay'}
 # -------------------------------------------- Additional functions for processing --------------------------------------------
 def cal_time(period_num):
-
     # Convert initial_time to a datetime object with today's date
     initial_datetime = datetime.combine(datetime.today(), initial_time)
     
@@ -89,6 +100,9 @@ def cal_time(period_num):
 
     return new_time
 
+def cal_duration(minutes):
+    result = (minutes // 5) + (1 if minutes % 5 != 0 else 0)
+    return int(result)
 
 def start_wharf(task):
     if task.isdigit():
@@ -100,7 +114,7 @@ def end_wharf(row):
     if row['Task'].isdigit():
         line = int(row['Task'])
         timetoT = int(line_df[line_df['Line_No'] == line]['Time_underway_to_T'].iloc()[0])
-        end_time = row['Start_Time'] + timetoT // period_length + 1
+        end_time = row['Start_Time'] + cal_duration(timetoT)
         matching_rows = Zp_df[(Zp_df['Line'] == line) & (Zp_df['Time'] == end_time)]
         if not matching_rows.empty:
             wharf = matching_rows['Wharf'].iloc()[0]
@@ -115,7 +129,6 @@ def end_time(row):
         return (cal_time(row['Start_Time']) + timedelta(minutes=5)).strftime('%H:%M')
     else:
         return (cal_time(row['Start_Time']) + timedelta(minutes=Dc)).strftime('%H:%M')
-
 
 
 # -------------------------------------------- Generate Timetable --------------------------------------------
@@ -156,7 +169,17 @@ def cal_timetable(line):
             times.append(arrival_time_T)
             locs.append(End_S[str(line)])
 
-            wharfs.append(Zp_df[(Zp_df['Line'] == line) & (Zp_df['Time'] == period + timetoT // period_length + 1)]['Wharf'].iloc[0])
+            filtered_df = Zp_df[(Zp_df['Line'] == line) & (Zp_df['Time'] == period + cal_duration(timetoT))]
+
+            # Check if filtered_df is not empty before accessing .iloc[0]
+            if not filtered_df.empty:
+                wharfs.append(filtered_df['Wharf'].iloc[0])
+            else:
+                print(f"No matching data found for line {line} and time {period + cal_duration(timetoT)}")
+                # Handle the case when no match is found, e.g., append a placeholder or skip
+                wharfs.append('No Wharf Found')  # or any other placeholder
+
+            # wharfs.append(Zp_df[(Zp_df['Line'] == line) & (Zp_df['Time'] == period + timetoT // period_length + 1)]['Wharf'].iloc[0])
 
         # Format times and create the DataFrame
         formatted_times = [time.strftime('%H:%M') for time in times]
@@ -188,9 +211,9 @@ def cal_itinerary(vessel):
 
     # Update Task based on specific keywords or conditions
     vessel_itinerary_df['Task'] = vessel_itinerary_df['Task'].apply(lambda x: 'Waiting' if x in B else
-                                                                                'Crew pause' if x in Bc else
-                                                                                'Charging' if x in Bplus else
-                                                                                f"{x}")
+                                                                              'Crew pause' if x in Bc else
+                                                                              'Charging' if x in Bplus else
+                                                                              f"{x}")
 
     # Initial transformations for Start_Wharf and End_Wharf 
     vessel_itinerary_df['Start_Wharf'] = vessel_itinerary_df['Start_Wharf'].apply(start_wharf)
@@ -208,6 +231,9 @@ def cal_itinerary(vessel):
     itinerary = vessel_itinerary_df[vessel_itinerary_df['Vessel'] == vessel].sort_values('Start_Time')
     itinerary['Start_Time'] = itinerary['Start_Time'].apply(lambda x: cal_time(x).strftime('%H:%M'))
     itinerary.reset_index(inplace=True, drop=True)
+
+    itinerary['Task'] = itinerary['Task'].replace(line_to_route_dict)
+
     return itinerary
 
 
@@ -241,7 +267,7 @@ def cal_wharf_utilization(wharf):
         w_start = line_df[line_df['Line_No'] == j]['O'].iloc[0]
         # safety_buffer = int(line_df[line_df['Line_No'] == j]['Safety_buffer'].iloc[0])
         safety_buffer = 0
-        t_list_start = [time for time in range(t, t + safety_buffer // period_length + 1)]
+        t_list_start = [time for time in range(t, t + cal_duration(safety_buffer))]
         utilization_data.append({'v': v, 'j': j, 'w': w_start, 't_list': t_list_start})
 
         # intermidiate stop
@@ -253,10 +279,21 @@ def cal_wharf_utilization(wharf):
 
         # terminus
         timetoT = int(line_df[line_df['Line_No'] == j]['Time_underway_to_T'].iloc[0])
-        arrival_T = t + timetoT // period_length + 1
-        w_end = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] == arrival_T)]['Wharf'].unique().tolist()[0]
+        arrival_T = t + cal_duration(timetoT)
+
+        filtered_wharfs = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] == arrival_T)]['Wharf'].unique().tolist()
+
+        # Check if the list is not empty before accessing the first element
+        if filtered_wharfs:
+            w_end = filtered_wharfs[0]
+        else:
+            print(f"No matching wharf found for line {j} at time {arrival_T}")
+            w_end = None  # Or set a default value or take another appropriate action
+
+        # w_end = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] == arrival_T)]['Wharf'].unique().tolist()[0]
+
         dw_T = int(line_df[line_df['Line_No'] == j]['dw_T'].iloc[0])
-        periods = (dw_T + safety_buffer) // period_length + 1
+        periods = cal_duration(dw_T + safety_buffer)
         t_list_end = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] >= arrival_T) & (Zp_df['Time'] <= arrival_T + periods)]['Time'].unique().tolist()
         utilization_data.append({'v': v, 'j': j, 'w': w_end, 't_list': t_list_end})
 
@@ -273,10 +310,13 @@ def cal_wharf_utilization(wharf):
                                               'Charging' if x in Bplus else
                                               f"{x}")
 
-    return wharf_df.reset_index(drop=True)
+    wharf_df.reset_index(drop=True)
+    wharf_df['Task'] = wharf_df['Task'].replace(line_to_route_dict)
+    
+    return wharf_df
 
 wharfs = wharf_df['Wharf_No'].unique().tolist()
-for wharf in wharfs:
 
+for wharf in wharfs:
     cal_wharf_utilization(wharf).to_csv(f'ILPimplementation/wharf_utilizations/wharf_{wharf}_utilization.csv', index=False)
 
