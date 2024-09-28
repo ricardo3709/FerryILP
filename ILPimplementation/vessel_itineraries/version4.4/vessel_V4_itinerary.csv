@@ -1,23 +1,24 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-V4,Waiting,Balmain Shipyard,BSY1,05:40,Balmain Shipyard,BSY1,05:45
-V4,Crew pause,Balmain Shipyard,BSY3,05:45,Balmain Shipyard,BSY3,05:55
-V4,Waiting,Circular Quay,CQ4,06:10,Circular Quay,CQ4,06:15
-V4,Charging,Circular Quay,CQ4,06:15,Circular Quay,CQ4,06:20
-V4,Charging,Circular Quay,CQ4,06:20,Circular Quay,CQ4,06:25
-V4,Charging,Circular Quay,CQ4,06:25,Circular Quay,CQ4,06:30
+V4,Waiting,Mosman,Mos1,05:40,Mosman,Mos1,05:45
+V4,Waiting,Mosman,Mos1,05:45,Mosman,Mos1,05:50
+V4,Waiting,Mosman,Mos1,05:50,Mosman,Mos1,05:55
+V4,Waiting,Mosman,Mos1,05:55,Mosman,Mos1,06:00
+V4,Waiting,Circular Quay,CQ2,06:15,Circular Quay,CQ2,06:20
+V4,Crew pause,Circular Quay,CQ2,06:20,Circular Quay,CQ2,06:30
 V4,Waiting,Circular Quay,CQ4,06:30,Circular Quay,CQ4,06:35
-V4,F7 - Double Bay,Circular Quay,CQ1,06:35,Circular Quay,CQ4,07:23
-V4,Waiting,Circular Quay,CQ1,07:30,Circular Quay,CQ1,07:35
-V4,F2 - Taronga Zoo,Circular Quay,CQ1,07:35,Circular Quay,CQ4,08:06
-V4,Waiting,Circular Quay,CQ3,08:15,Circular Quay,CQ3,08:20
-V4,F6 - Mosman,Circular Quay,CQ1,08:20,Circular Quay,CQ2,09:12
-V4,Waiting,Circular Quay,CQ3,09:20,Circular Quay,CQ3,09:25
-V4,Waiting,Circular Quay,CQ2,09:25,Circular Quay,CQ2,09:30
-V4,F5 - Neutral Bay,Circular Quay,CQ1,09:30,Circular Quay,CQ1,10:02
-V4,Waiting,Circular Quay,CQ3,10:10,Circular Quay,CQ3,10:15
-V4,Waiting,Barangaroo,Bar2,10:25,Barangaroo,Bar2,10:30
-V4,Charging,Barangaroo,Bar2,10:30,Barangaroo,Bar2,10:35
-V4,Waiting,Barangaroo,Bar2,10:35,Barangaroo,Bar2,10:40
-V4,Crew pause,Barangaroo,Bar2,10:40,Barangaroo,Bar2,10:50
-V4,Waiting,Balmain Shipyard,BSY6,11:00,Balmain Shipyard,BSY6,11:05
-V4,Waiting,Rose Bay,RB1,11:25,Rose Bay,RB1,11:30
+V4,Waiting,Circular Quay,CQ1,06:35,Circular Quay,CQ1,06:40
+V4,Waiting,Circular Quay,CQ1,06:40,Circular Quay,CQ1,06:45
+V4,Waiting,Circular Quay,CQ3,06:45,Circular Quay,CQ3,06:50
+V4,F5 - Neutral Bay,Circular Quay,CQ1,06:50,Circular Quay,CQ1,07:22
+V4,Waiting,Circular Quay,CQ4,07:30,Circular Quay,CQ4,07:35
+V4,F8 - Cockatoo Island,Circular Quay,CQ1,07:35,Circular Quay,CQ1,08:46
+V4,Waiting,Circular Quay,CQ2,08:55,Circular Quay,CQ2,09:00
+V4,Waiting,Circular Quay,CQ3,09:00,Circular Quay,CQ3,09:05
+V4,F8 - Cockatoo Island,Circular Quay,CQ1,09:05,Circular Quay,CQ5,10:16
+V4,Crew pause,Balmain Shipyard,BSY2,10:40,Balmain Shipyard,BSY2,10:50
+V4,Waiting,Balmain Shipyard,BSY6,10:50,Balmain Shipyard,BSY6,10:55
+V4,Crew pause,Balmain Shipyard,BSY6,10:55,Balmain Shipyard,BSY6,11:05
+V4,Waiting,Balmain Shipyard,BSY6,11:05,Balmain Shipyard,BSY6,11:10
+V4,Crew pause,Balmain Shipyard,BSY1,11:10,Balmain Shipyard,BSY1,11:20
+V4,Waiting,Balmain Shipyard,BSY5,11:20,Balmain Shipyard,BSY5,11:25
+V4,Waiting,Balmain Shipyard,BSY3,11:25,Balmain Shipyard,BSY3,11:30

@@ -10,12 +10,12 @@ def run_optimization(model):
     # Basic settings
     model.setParam('OutputFlag', 1)       # Enable output logs
     model.setParam('InfUnbdInfo', 1)      # Output information on infeasible or unbounded models
-    model.setParam('Presolve', 0.1)  
+    model.setParam('Presolve', 1)  
     model.setParam('ScaleFlag', 0)  
 
     # Optimization strategies
     model.setParam('NumericFocus', 3)  # Improve numerical stability
-    model.setParam('MIPGap', 1)  # Optimality gap, change to smaller value later
+    model.setParam('MIPGap', 0.2)  # Optimality gap, change to smaller value later
     model.setParam('Method', 2)  # Try dual simplex to avoid barrier instability
 
 

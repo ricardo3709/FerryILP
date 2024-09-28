@@ -1,25 +1,18 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-V17,Crew pause,Circular Quay,CQ1,05:40,Circular Quay,CQ1,05:50
-V17,Waiting,Circular Quay,CQ3,05:50,Circular Quay,CQ3,05:55
-V17,Waiting,Circular Quay,CQ4,05:55,Circular Quay,CQ4,06:00
-V17,Waiting,Circular Quay,CQ5,06:00,Circular Quay,CQ5,06:05
-V17,Waiting,Circular Quay,CQ5,06:05,Circular Quay,CQ5,06:10
-V17,Charging,Circular Quay,CQ5,06:10,Circular Quay,CQ5,06:15
+V17,Waiting,Circular Quay,CQ1,05:40,Circular Quay,CQ1,05:45
+V17,Waiting,Circular Quay,CQ3,05:45,Circular Quay,CQ3,05:50
+V17,Crew pause,Circular Quay,CQ1,05:50,Circular Quay,CQ1,06:00
+V17,Waiting,Circular Quay,CQ2,06:00,Circular Quay,CQ2,06:05
+V17,Crew pause,Circular Quay,CQ2,06:05,Circular Quay,CQ2,06:15
 V17,Waiting,Circular Quay,CQ5,06:15,Circular Quay,CQ5,06:20
-V17,F4 - Pyrmont Bay,Circular Quay,CQ1,06:20,Circular Quay,CQ2,07:27
-V17,F9 - Rose Bay,Circular Quay,CQ1,07:35,Circular Quay,CQ5,08:12
+V17,F4 - Pyrmont Bay,Circular Quay,CQ1,06:20,Circular Quay,CQ1,07:27
+V17,F9 - Rose Bay,Circular Quay,CQ1,07:35,Circular Quay,CQ1,08:12
 V17,F4 - Pyrmont Bay,Circular Quay,CQ1,08:20,Circular Quay,CQ1,09:27
-V17,Waiting,Barangaroo,Bar2,09:45,Barangaroo,Bar2,09:50
-V17,Charging,Barangaroo,Bar2,09:50,Barangaroo,Bar2,09:55
-V17,Charging,Barangaroo,Bar2,09:55,Barangaroo,Bar2,10:00
-V17,Charging,Barangaroo,Bar2,10:00,Barangaroo,Bar2,10:05
-V17,Charging,Barangaroo,Bar2,10:05,Barangaroo,Bar2,10:10
-V17,Charging,Barangaroo,Bar2,10:10,Barangaroo,Bar2,10:15
-V17,Waiting,Barangaroo,Bar2,10:15,Barangaroo,Bar2,10:20
-V17,Waiting,Barangaroo,Bar5,10:20,Barangaroo,Bar5,10:25
-V17,Waiting,Circular Quay,CQ1,10:35,Circular Quay,CQ1,10:40
-V17,Crew pause,Circular Quay,CQ3,10:40,Circular Quay,CQ3,10:50
-V17,Waiting,Barangaroo,Bar2,11:00,Barangaroo,Bar2,11:05
-V17,Waiting,Balmain Shipyard,BSY3,11:15,Balmain Shipyard,BSY3,11:20
-V17,Waiting,Balmain Shipyard,BSY5,11:20,Balmain Shipyard,BSY5,11:25
-V17,Waiting,Balmain Shipyard,BSY3,11:25,Balmain Shipyard,BSY3,11:30
+V17,Waiting,Circular Quay,CQ2,09:35,Circular Quay,CQ2,09:40
+V17,F4 - Pyrmont Bay,Circular Quay,CQ1,09:40,Circular Quay,CQ3,10:47
+V17,Waiting,Circular Quay,CQ3,10:55,Circular Quay,CQ3,11:00
+V17,Waiting,Circular Quay,CQ3,11:00,Circular Quay,CQ3,11:05
+V17,Crew pause,Circular Quay,CQ5,11:05,Circular Quay,CQ5,11:15
+V17,Waiting,Circular Quay,CQ2,11:15,Circular Quay,CQ2,11:20
+V17,Waiting,Circular Quay,CQ3,11:20,Circular Quay,CQ3,11:25
+V17,Waiting,Circular Quay,CQ4,11:25,Circular Quay,CQ4,11:30

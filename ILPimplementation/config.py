@@ -68,7 +68,7 @@ for wharf in Bplus:
     else:
         B.append(f'phi_{wharf}')  # input directly
 
-# print(Bplus)
+print(Bplus)
 # print(B)
 
 Jset = [ele for ele in Lset + B + Bc + Bplus]

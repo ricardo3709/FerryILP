@@ -1,12 +1,29 @@
 Vessel,Task,Wharf,Time
-V2,Waiting,Bar4,05:35-05:40
-V5,Crew pause,Bar4,05:35-05:40
-V5,Crew pause,Bar4,05:40-05:45
-V3,Crew pause,Bar4,05:45-05:50
-V3,Crew pause,Bar4,05:50-05:55
-V19,Waiting,Bar4,06:10-06:15
-V18,Waiting,Bar4,08:45-08:50
-V19,Waiting,Bar4,09:05-09:10
+V5,Waiting,Bar4,05:35-05:40
+V6,Waiting,Bar4,05:35-05:40
+V8,Crew pause,Bar4,05:40-05:45
+V10,Crew pause,Bar4,05:40-05:45
+V8,Crew pause,Bar4,05:45-05:50
+V10,Crew pause,Bar4,05:45-05:50
+V19,Crew pause,Bar4,06:15-06:20
+V19,Crew pause,Bar4,06:20-06:25
+V19,Waiting,Bar4,07:20-07:25
+V19,Waiting,Bar4,08:20-08:25
+V18,Crew pause,Bar4,08:40-08:45
+V18,Crew pause,Bar4,08:45-08:50
+V19,Waiting,Bar4,09:10-09:15
 V19,Waiting,Bar4,10:15-10:20
-V18,Waiting,Bar4,11:25-11:30
-V14,Waiting,Bar4,11:25-11:30
+V18,Crew pause,Bar4,10:15-10:20
+V18,Crew pause,Bar4,10:20-10:25
+V5,Crew pause,Bar4,10:55-11:00
+V5,Crew pause,Bar4,11:00-11:05
+V19,Waiting,Bar4,11:00-11:05
+V13,Crew pause,Bar4,11:05-11:10
+V14,Waiting,Bar4,11:05-11:10
+V13,Crew pause,Bar4,11:10-11:15
+V19,Waiting,Bar4,11:10-11:15
+V19,Crew pause,Bar4,11:15-11:20
+V2,Waiting,Bar4,11:15-11:20
+V13,Waiting,Bar4,11:20-11:25
+V19,Crew pause,Bar4,11:20-11:25
+V13,Waiting,Bar4,11:25-11:30
