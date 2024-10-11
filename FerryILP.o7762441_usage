@@ -1,0 +1,68 @@
+-- Job Summary -------------------------------------------------------
+Job Id: 7762441.pbsserver for user llin7797 in queue large
+Job Name: FerryILP
+Project: RDS-FEI-FTP-RW
+Exit Status: 271
+Job run as chunks (hpc081:ncpus=32:mem=104857600kb)+(hpc107:ncpus=32:mem=104857600kb)+(hpc110:ncpus=32:mem=104857600kb)+(hpc113:ncpus=32:mem=104857600kb)
+Walltime requested:  168:00:00 :      Walltime used:   00:51:06
+                               :   Walltime percent:       0.5%
+-- Nodes Summary -----------------------------------------------------
+-- node hpc081 summary
+    Cpus requested:         32 :          Cpus used:       2.14
+          Cpu Time:   01:49:32 :        Cpu percent:       6.7%
+     Mem requested:    100.0GB :           Mem used:      4.0GB
+                               :        Mem percent:       4.0%
+
+-- node hpc107 summary
+    Cpus requested:         32 :          Cpus used:    unknown
+          Cpu Time:    unknown :        Cpu percent:    unknown
+     Mem requested:    100.0GB :           Mem used:    unknown
+                               :        Mem percent:    unknown
+
+-- node hpc110 summary
+    Cpus requested:         32 :          Cpus used:    unknown
+          Cpu Time:    unknown :        Cpu percent:    unknown
+     Mem requested:    100.0GB :           Mem used:    unknown
+                               :        Mem percent:    unknown
+
+-- node hpc113 summary
+    Cpus requested:         32 :          Cpus used:    unknown
+          Cpu Time:    unknown :        Cpu percent:    unknown
+     Mem requested:    100.0GB :           Mem used:    unknown
+                               :        Mem percent:    unknown
+
+-- WARNINGS ----------------------------------------------------------
+
+** Job Exit status > 256.  This indicates that the job was killed for some
+** reason, please check the following:
+**   Did the job run out of time or memory?
+**   Was the job killed for some other reason?
+** 
+** Low Walltime utilisation.  While this may be normal, it may help to check the
+** following:
+**   Did the job parameters specify more walltime than necessary? Requesting
+**   lower walltime could help your job to start sooner.
+**   Did your analysis complete as expected or did it crash before completing?
+**   Did the application run more quickly than it should have? Is this analysis
+**   the one you intended to run?
+** 
+** Low CPU utilisation on hpc081.  While this may be normal, it may help to check
+** the following:
+**   Did the job parameters specify too many cores?  Requesting fewer cores
+**   could help your job to start sooner.
+**   Did you use MPI and was the work distributed correctly? Correcting this
+**   could make your job to run faster without needing any more cores.
+**   Did the application use fewer cores than it should have? Is this analysis
+**   the one you intended to run?
+**
+** Low Memory utilisation on hpc081. While this may be normal, it may help to check
+** the following:
+**   Did the job parameters specify too much memory? Requesting less RAM could
+**   help your job to start sooner.
+**   Did you use MPI and was the work distributed correctly? Correcting this
+**   could allow your job to run using less RAM in each chunk.
+**   Did your analysis complete as expected or did it crash before completing?
+**   Did the application use less RAM than it should have? Is this analysis the
+**   one you intended to run?
+**
+-- End of Job Summary ------------------------------------------------
