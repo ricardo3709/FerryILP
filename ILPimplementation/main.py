@@ -116,9 +116,9 @@ x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS
 # -----------------New partial results test-------------------------
 
 # Load partial solutions for x_ld, z_wj, and y_vjt
-partial_x_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_x_ld_results.csv'
-partial_z_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_z_wj_results.csv'
-partial_y_file = 'ILPimplementation/Output_files/version4/6htest_cyclelines_rob_sol_y_vjt_results.csv'
+partial_x_file = 'ILPimplementation/output_files/version5.1/6htest_new_cyclelines_x_ld_results.csv'
+partial_z_file = 'ILPimplementation/output_files/version5.1/6htest_new_cyclelines_z_wj_results.csv'
+partial_y_file = 'ILPimplementation/output_files/version5.1/6htest_new_cyclelines_y_vjt_results.csv'
 
 # Load the partial solutions
 partial_x = load_partial_solution(partial_x_file)
@@ -126,7 +126,7 @@ partial_z = load_partial_solution(partial_z_file)
 partial_y = load_partial_solution(partial_y_file)
 
 # Set the initial values in the Gurobi model
-set_partial_solution(x, partial_x,fix_values=False) 
+set_partial_solution(x, partial_x,fix_values=False)
 set_partial_solution(z, partial_z,fix_values=False) 
 set_partial_solution(y, partial_y,fix_values=False)
 
@@ -138,7 +138,7 @@ generate_new_files = False
 
 
 # Prefix for file names
-file_prefix = "6htest_cyclelines_rob_sol"  # You can change the prefix as needed
+# file_prefix = config.file_prefix # "6htest_new_cyclelines"  # You can change the prefix as needed
 
 # Manage results based on the flag
 results = manage_results(config, generate_new_files, file_prefix)

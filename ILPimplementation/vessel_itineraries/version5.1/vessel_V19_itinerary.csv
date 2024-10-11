@@ -1,0 +1,21 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V19,Waiting,Pyrmont Bay,PB1,05:30,Pyrmont Bay,PB1,05:35
+V19,Waiting,Pyrmont Bay,PB1,05:35,Pyrmont Bay,PB1,05:40
+V19,Waiting,Barangaroo,Bar2,05:45,Barangaroo,Bar2,05:50
+V19,Charging,Barangaroo,Bar2,05:50,Barangaroo,Bar2,05:55
+V19,Charging,Barangaroo,Bar2,05:55,Barangaroo,Bar2,06:00
+V19,Charging,Barangaroo,Bar2,06:00,Barangaroo,Bar2,06:05
+V19,Charging,Barangaroo,Bar2,06:05,Barangaroo,Bar2,06:10
+V19,Charging,Barangaroo,Bar2,06:10,Barangaroo,Bar2,06:15
+V19,Waiting,Barangaroo,Bar2,06:15,Barangaroo,Bar2,06:20
+V19,F11 - Blackwattle Bay,Barangaroo,Bar1,06:20,Barangaroo,Bar4,07:16
+V19,F11 - Blackwattle Bay,Barangaroo,Bar1,07:20,Barangaroo,Bar4,08:16
+V19,F11 - Blackwattle Bay,Barangaroo,Bar1,08:20,Barangaroo,Bar5,09:16
+V19,F11 - Blackwattle Bay,Barangaroo,Bar1,09:20,Barangaroo,Bar2,10:16
+V19,Waiting,Barangaroo,Bar2,10:20,Barangaroo,Bar2,10:25
+V19,Waiting,Circular Quay,CQ5,10:35,Circular Quay,CQ5,10:40
+V19,Waiting,Circular Quay,CQ2,10:40,Circular Quay,CQ2,10:45
+V19,Waiting,Circular Quay,CQ2,10:45,Circular Quay,CQ2,10:50
+V19,Waiting,Circular Quay,CQ5,10:50,Circular Quay,CQ5,10:55
+V19,Waiting,Circular Quay,CQ2,10:55,Circular Quay,CQ2,11:00
+V19,Crew pause,Circular Quay,CQ3,11:00,Circular Quay,CQ3,11:30

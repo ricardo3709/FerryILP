@@ -3,6 +3,8 @@ from data_load import *
 
 ## -------------------- Input Parameters Values --------------------------
 
+file_prefix = "6htest_new_cyclelines"
+
 # Simulation time parameters
 initial_time = time(5,30)
 period_length = 5  # mins
@@ -12,7 +14,7 @@ total_operation_hours = 6  # hours
 nc = 1
 
 # Dc, Crew break duration (fixed)
-Dc = 10  # mins
+Dc = 30  # mins
 
 # Tc, Maximum separation time for crew breaks
 Tc = 6 * 60  # mins
@@ -21,7 +23,7 @@ Tc = 6 * 60  # mins
 rv_plus = 0.159 #2100 * period_length / 60 / 1100  # kW*h/kWh --> %
 
 # pc, Plugging/Unplugging time
-pc = 2  # mins
+pc = 1  # mins # reivsed by 11 Oct after checking the originla data for charging
 
 print(f"""
 Simulation Parameters:
@@ -68,16 +70,15 @@ for wharf in Bplus:
     else:
         B.append(f'phi_{wharf}')  # input directly
 
-print(Bplus)
-# print(B)
+
 
 Jset = [ele for ele in Lset + B + Bc + Bplus]
 
-# Zset: Set of Sailing
+# Zset: Set of Sailing linedf和headway df顺序要对的上
 nl_ls = [len(headway_df[f"h{l}"].dropna().tolist()) + 1 for l in Lset]
-
 s_ls = [list(range(1, nl + 1)) for nl in nl_ls]
 Zset = [f'{line}_{sailing}' for line in Lset for sailing in s_ls[line - 1]]
+
 
 # Vset: Set of Vessels
 Vset = vessel_df['Vessel code'].unique().tolist()

@@ -1,0 +1,28 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V12,Waiting,Circular Quay,CQ3,05:40,Circular Quay,CQ3,05:45
+V12,Waiting,Circular Quay,CQ5,05:45,Circular Quay,CQ5,05:50
+V12,Charging,Circular Quay,CQ5,05:50,Circular Quay,CQ5,05:55
+V12,Charging,Circular Quay,CQ5,05:55,Circular Quay,CQ5,06:00
+V12,Charging,Circular Quay,CQ5,06:00,Circular Quay,CQ5,06:05
+V12,Charging,Circular Quay,CQ5,06:05,Circular Quay,CQ5,06:10
+V12,Charging,Circular Quay,CQ5,06:10,Circular Quay,CQ5,06:15
+V12,Waiting,Circular Quay,CQ5,06:15,Circular Quay,CQ5,06:20
+V12,Waiting,Circular Quay,CQ2,06:20,Circular Quay,CQ2,06:25
+V12,Charging,Circular Quay,CQ2,06:25,Circular Quay,CQ2,06:30
+V12,Waiting,Circular Quay,CQ2,06:30,Circular Quay,CQ2,06:35
+V12,F9 - Rose Bay,Circular Quay,CQ1,06:35,Circular Quay,CQ2,07:16
+V12,F4 - Pyrmont Bay,Circular Quay,CQ1,07:20,Circular Quay,CQ1,08:28
+V12,Waiting,Circular Quay,CQ4,08:30,Circular Quay,CQ4,08:35
+V12,F9 - Rose Bay,Circular Quay,CQ1,08:35,Circular Quay,CQ3,09:16
+V12,Waiting,Circular Quay,CQ3,09:20,Circular Quay,CQ3,09:25
+V12,Waiting,Circular Quay,CQ2,09:25,Circular Quay,CQ2,09:30
+V12,Waiting,Circular Quay,CQ4,09:30,Circular Quay,CQ4,09:35
+V12,Crew pause,Barangaroo,Bar5,09:45,Barangaroo,Bar5,10:15
+V12,Waiting,Barangaroo,Bar1,10:15,Barangaroo,Bar1,10:20
+V12,Crew pause,Barangaroo,Bar5,10:20,Barangaroo,Bar5,10:50
+V12,Waiting,Circular Quay,CQ5,11:00,Circular Quay,CQ5,11:05
+V12,Charging,Circular Quay,CQ5,11:05,Circular Quay,CQ5,11:10
+V12,Charging,Circular Quay,CQ5,11:10,Circular Quay,CQ5,11:15
+V12,Charging,Circular Quay,CQ5,11:15,Circular Quay,CQ5,11:20
+V12,Charging,Circular Quay,CQ5,11:20,Circular Quay,CQ5,11:25
+V12,Waiting,Circular Quay,CQ5,11:25,Circular Quay,CQ5,11:30

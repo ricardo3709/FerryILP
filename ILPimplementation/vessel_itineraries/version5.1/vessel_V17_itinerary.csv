@@ -1,0 +1,14 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V17,Waiting,Cockatoo Island,CI1,05:35,Cockatoo Island,CI1,05:40
+V17,Waiting,Circular Quay,CQ5,05:55,Circular Quay,CQ5,06:00
+V17,F4 - Pyrmont Bay,Circular Quay,CQ1,06:00,Circular Quay,CQ1,07:08
+V17,Waiting,Circular Quay,CQ5,07:10,Circular Quay,CQ5,07:15
+V17,F9 - Rose Bay,Circular Quay,CQ1,07:15,Circular Quay,CQ1,07:56
+V17,F4 - Pyrmont Bay,Circular Quay,CQ1,08:00,Circular Quay,CQ1,09:08
+V17,F4 - Pyrmont Bay,Circular Quay,CQ1,09:10,Circular Quay,CQ3,10:18
+V17,Waiting,Circular Quay,CQ2,10:20,Circular Quay,CQ2,10:25
+V17,Crew pause,Circular Quay,CQ4,10:25,Circular Quay,CQ4,10:55
+V17,Waiting,Circular Quay,CQ1,10:55,Circular Quay,CQ1,11:00
+V17,Waiting,Circular Quay,CQ4,11:00,Circular Quay,CQ4,11:05
+V17,Waiting,Barangaroo,Bar2,11:15,Barangaroo,Bar2,11:20
+V17,Waiting,Pyrmont Bay,PB1,11:25,Pyrmont Bay,PB1,11:30

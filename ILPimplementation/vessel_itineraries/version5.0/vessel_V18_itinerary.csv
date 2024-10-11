@@ -1,0 +1,16 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V18,Waiting,Circular Quay,CQ2,05:35,Circular Quay,CQ2,05:40
+V18,Waiting,Barangaroo,Bar2,05:50,Barangaroo,Bar2,05:55
+V18,Crew pause,Barangaroo,Bar1,05:55,Barangaroo,Bar1,06:25
+V18,F11 - Blackwattle Bay,Barangaroo,Bar1,06:25,Barangaroo,Bar1,07:21
+V18,F11 - Blackwattle Bay,Barangaroo,Bar1,07:25,Barangaroo,Bar1,08:21
+V18,F11 - Blackwattle Bay,Barangaroo,Bar1,08:25,Barangaroo,Bar1,09:21
+V18,F11 - Blackwattle Bay,Barangaroo,Bar1,09:25,Barangaroo,Bar1,10:21
+V18,Waiting,Barangaroo,Bar5,10:25,Barangaroo,Bar5,10:30
+V18,Crew pause,Barangaroo,Bar5,10:30,Barangaroo,Bar5,11:00
+V18,Waiting,Barangaroo,Bar1,11:00,Barangaroo,Bar1,11:05
+V18,Charging,Barangaroo,Bar1,11:05,Barangaroo,Bar1,11:10
+V18,Waiting,Barangaroo,Bar1,11:10,Barangaroo,Bar1,11:15
+V18,Charging,Barangaroo,Bar1,11:15,Barangaroo,Bar1,11:20
+V18,Waiting,Barangaroo,Bar1,11:20,Barangaroo,Bar1,11:25
+V18,Waiting,Barangaroo,Bar5,11:25,Barangaroo,Bar5,11:30

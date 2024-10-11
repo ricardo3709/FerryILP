@@ -56,7 +56,8 @@ def load_and_process_data(filepath, split_columns, value_columns):
         df[column] = df[column].astype(dtype)
     return df
 
-file_prefix = "6htest_cyclelines_rob_sol"
+# file_prefix = "6htest_cyclelines_"
+# file_prefix = config.file_prefix # "6htest_new_cyclelines"
 
 z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_z_wj_results.csv',['Wharf', 'Task'],{})
 Zp_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_prime_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
@@ -80,15 +81,17 @@ for line in linels:
 # {line: z_df[z_df['Task'] == line]['Wharf'].iloc[0] for line in z_df['Line'].unique()}
 
 line_to_route_dict = {
-    '1': 'F2 - Taronga Zoo',
+    '1': 'F2 - Taronga Zoo (off peak)',
     '2': 'F4 - Pyrmont Bay',
     '3': 'F5 - Neutral Bay',
-    '4': 'F6 - Mosman',
+    '4': 'F6 - Mosman (off peak)',
     '5': 'F7 - Double Bay',
     '6': 'F8 - Cockatoo Island',
     '7': 'F9 - Rose Bay',
     '8': 'F9 - Watsons Bay',
-    '9': 'F11 - Blackwattle Bay'}
+    '9': 'F11 - Blackwattle Bay',
+    '10': 'F2 - Zoo/Mosman (Peak)',
+    '11': 'F6 - Mosman (peak)'}
 # -------------------------------------------- Additional functions for processing --------------------------------------------
 def cal_time(period_num):
     # Convert initial_time to a datetime object with today's date
@@ -301,7 +304,9 @@ def cal_wharf_utilization(wharf):
     all_wharfs_utilization_df = pd.DataFrame(utilization_data, columns=['v', 'j', 'w', 't_list'])
     wharf_df = all_wharfs_utilization_df[all_wharfs_utilization_df['w'] == wharf].explode('t_list').reset_index(drop=True)
     wharf_df = wharf_df.rename(columns={'t_list': 't'}).sort_values('t')
+    wharf_df['t'] = wharf_df['t'].fillna(0) # newly add causing problem?
     wharf_df['t'] = wharf_df['t'].apply(lambda x: cal_time(x).strftime('%H:%M') + '-' + cal_time(x+1).strftime('%H:%M'))
+
     wharf_df.rename(columns={'v': 'Vessel', 'j': 'Task', 'w': 'Wharf', 't': 'Time'}, inplace=True)
     
     # 更新任务描述

@@ -1,0 +1,10 @@
+﻿Route_No,,Line_No,pre_Line_No,O,I,T,dw_I,dw_T,First_sailing,Time_underway_to_I,Time_underway_to_T,Line_duration,rj
+F2,Taronga Zoo only (0ff peak),1,1,Circular Quay,Taronga Zoo,Circular Quay,10,4,6:35,14,36,40,-0.004409091
+F4,Pyrmont Bay,2,3,Circular Quay,Pyrmont Bay,Circular Quay,10,3,6:00,28,65,68,-0.016002674
+F5,Neutral Bay,3,4,Circular Quay,Neutral Bay,Circular Quay,0,3,5:55,14,27,30,-0.034909091
+F6,Mosman (off peak),4,6,Circular Quay,Mosman,Circular Quay,10,3,6:00,21,51,54,-0.012188552
+F7,Double Bay,5,7,Circular Quay,Double Bay,Circular Quay,10,3,6:15,19,47,50,-0.011890909
+F8,Cockatoo Is,6,8,Circular Quay,Cockatoo Island,Circular Quay,10,3,6:10,30,69,72,-0.018876263
+F9,Rose Bay (peak),7,9,Circular Quay,Rose Bay,Circular Quay,10,4,5:55,14,37,41,-0.027572062
+F9,Watsons Bay (off peak),8,10,Circular Quay,Watsons Bay,Circular Quay,10,4,9:25,25,58,62,-0.039105572
+F10,Blackwattle Bay ,9,11,Barangaroo,Blackwattle Bay,Barangaroo,10,3,6:26,22,53,56,-0.014172078

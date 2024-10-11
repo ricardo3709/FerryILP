@@ -1,0 +1,23 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V12,Waiting,Circular Quay,CQ3,05:40,Circular Quay,CQ3,05:45
+V12,Waiting,Circular Quay,CQ1,05:45,Circular Quay,CQ1,05:50
+V12,Waiting,Circular Quay,CQ1,05:50,Circular Quay,CQ1,05:55
+V12,F9 - Rose Bay,Circular Quay,CQ1,05:55,Circular Quay,CQ1,06:32
+V12,Waiting,Circular Quay,CQ3,06:35,Circular Quay,CQ3,06:40
+V12,F4 - Pyrmont Bay,Circular Quay,CQ1,06:40,Circular Quay,CQ2,07:47
+V12,Waiting,Circular Quay,CQ4,07:50,Circular Quay,CQ4,07:55
+V12,F9 - Rose Bay,Circular Quay,CQ1,07:55,Circular Quay,CQ3,08:32
+V12,Waiting,Circular Quay,CQ4,08:35,Circular Quay,CQ4,08:40
+V12,F4 - Pyrmont Bay,Circular Quay,CQ1,08:40,Circular Quay,CQ1,09:47
+V12,Waiting,Circular Quay,CQ5,09:50,Circular Quay,CQ5,09:55
+V12,Waiting,Circular Quay,CQ2,09:55,Circular Quay,CQ2,10:00
+V12,Crew pause,Circular Quay,CQ4,10:00,Circular Quay,CQ4,10:30
+V12,Waiting,Circular Quay,CQ2,10:30,Circular Quay,CQ2,10:35
+V12,Waiting,Double Bay,DB1,10:50,Double Bay,DB1,10:55
+V12,Waiting,Double Bay,DB1,10:55,Double Bay,DB1,11:00
+V12,Waiting,Double Bay,DB1,11:00,Double Bay,DB1,11:05
+V12,Waiting,Double Bay,DB1,11:05,Double Bay,DB1,11:10
+V12,Waiting,Double Bay,DB1,11:10,Double Bay,DB1,11:15
+V12,Waiting,Double Bay,DB1,11:15,Double Bay,DB1,11:20
+V12,Waiting,Double Bay,DB1,11:20,Double Bay,DB1,11:25
+V12,Waiting,Double Bay,DB1,11:25,Double Bay,DB1,11:30

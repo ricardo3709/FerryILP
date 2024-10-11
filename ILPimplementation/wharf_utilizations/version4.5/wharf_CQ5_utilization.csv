@@ -1,0 +1,50 @@
+Vessel,Task,Wharf,Time
+V15,Waiting,CQ5,05:40-05:45
+V2,Waiting,CQ5,05:50-05:55
+V8,Waiting,CQ5,05:50-05:55
+V4,Waiting,CQ5,05:55-06:00
+V4,Waiting,CQ5,06:00-06:05
+V5,Crew pause,CQ5,06:05-06:10
+V2,Waiting,CQ5,06:05-06:10
+V13,Waiting,CQ5,06:10-06:15
+V5,Crew pause,CQ5,06:10-06:15
+V5,Crew pause,CQ5,06:15-06:20
+V9,Waiting,CQ5,06:15-06:20
+V9,Waiting,CQ5,06:20-06:25
+V5,Crew pause,CQ5,06:20-06:25
+V10,Waiting,CQ5,06:25-06:30
+V5,Crew pause,CQ5,06:25-06:30
+V5,Crew pause,CQ5,06:30-06:35
+V3,Waiting,CQ5,06:55-07:00
+V1,Waiting,CQ5,07:05-07:10
+V14,F9 - Rose Bay,CQ5,07:15-07:20
+V4,Waiting,CQ5,07:25-07:30
+V5,Waiting,CQ5,07:55-08:00
+V16,Waiting,CQ5,07:55-08:00
+V6,Waiting,CQ5,08:25-08:30
+V15,Waiting,CQ5,08:50-08:55
+V7,Waiting,CQ5,08:55-09:00
+V10,Waiting,CQ5,09:05-09:10
+V17,F4 - Pyrmont Bay,CQ5,09:25-09:30
+V12,Waiting,CQ5,09:50-09:55
+V9,Waiting,CQ5,09:55-10:00
+V3,Waiting,CQ5,10:10-10:15
+V1,Waiting,CQ5,10:10-10:15
+V13,Waiting,CQ5,10:20-10:25
+V10,Waiting,CQ5,10:25-10:30
+V5,Waiting,CQ5,10:30-10:35
+V16,F9 - Watsons Bay,CQ5,10:30-10:35
+V16,Waiting,CQ5,10:35-10:40
+V2,Waiting,CQ5,10:40-10:45
+V2,Charging,CQ5,10:45-10:50
+V2,Waiting,CQ5,10:50-10:55
+V14,Waiting,CQ5,10:50-10:55
+V9,Waiting,CQ5,11:00-11:05
+V11,Waiting,CQ5,11:05-11:10
+V3,Waiting,CQ5,11:10-11:15
+V4,Waiting,CQ5,11:10-11:15
+V5,Waiting,CQ5,11:15-11:20
+V5,Waiting,CQ5,11:20-11:25
+V3,Waiting,CQ5,11:20-11:25
+V4,Waiting,CQ5,11:25-11:30
+V9,Waiting,CQ5,11:25-11:30
