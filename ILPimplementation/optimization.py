@@ -15,7 +15,7 @@ def run_optimization(model):
 
     # Optimization strategies
     model.setParam('NumericFocus', 3)  # Improve numerical stability
-    model.setParam('MIPGap', 0.2)  # Optimality gap, change to smaller value later
+    model.setParam('MIPGap', 1)  # Optimality gap, change to smaller value later
     model.setParam('Method', 2)  # Try dual simplex to avoid barrier instability
 
     model.optimize()
@@ -78,7 +78,7 @@ def save_relaxed_variable_results(model, var_dict, filename):
     else:
         print("\nModel status is not infeasible. No need to relax anything.")
 
-def save_all_results(model, x, y, Q, z, Z, Z_prime,file_prefix):
+def save_all_results(model, x, y, Q, z, Z, Z_prime,file_prefix,version):
     if model.Status == gp.GRB.OPTIMAL:
         print("\nOptimization was successful. Saving results...")
         
@@ -86,12 +86,12 @@ def save_all_results(model, x, y, Q, z, Z, Z_prime,file_prefix):
         os.makedirs(output_dir, exist_ok=True)
         
         # Save results
-        save_variable_results(x, os.path.join(output_dir, f'{file_prefix}_x_ld_results.csv'))
-        save_variable_results(y, os.path.join(output_dir, f'{file_prefix}_y_vjt_results.csv'))
-        save_variable_results(Q, os.path.join(output_dir, f'{file_prefix}_Q_vt_results.csv'))
-        save_variable_results(z, os.path.join(output_dir, f'{file_prefix}_z_wj_results.csv'))
-        save_variable_results(Z, os.path.join(output_dir, f'{file_prefix}_Z_lwt_results.csv'))
-        save_variable_results(Z_prime, os.path.join(output_dir, f'{file_prefix}_Z_prime_lwt_results.csv'))
+        save_variable_results(x, os.path.join(output_dir, f'{file_prefix}_x_ld_results_{version}.csv'))
+        save_variable_results(y, os.path.join(output_dir, f'{file_prefix}_y_vjt_results_{version}.csv'))
+        save_variable_results(Q, os.path.join(output_dir, f'{file_prefix}_Q_vt_results_{version}.csv'))
+        save_variable_results(z, os.path.join(output_dir, f'{file_prefix}_z_wj_results_{version}.csv'))
+        save_variable_results(Z, os.path.join(output_dir, f'{file_prefix}_Z_lwt_results_{version}.csv'))
+        save_variable_results(Z_prime, os.path.join(output_dir, f'{file_prefix}_Z_prime_lwt_results_{version}.csv'))
     else:
         print("\nOptimization did not reach optimality.")
 

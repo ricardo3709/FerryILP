@@ -85,7 +85,11 @@ Version 5.2.1:
     - 70% rebalancing focus + 30% fleetsize focus
     - gap 0.2
 
-
+Version 5.2.2: 
+    - Fixed cycles data
+    - 30 min crew pause
+    - 50% rebalancing focus + 50% fleetsize focus
+    - gap 0.2
 
 Next steps: 
     4. Longer hours 
