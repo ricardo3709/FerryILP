@@ -66,6 +66,8 @@ Vesion 5.1: (set this as the initial solution from now and then, directly run ab
     ## Objects records:
     Vessel utilization Value: 19.0
     Total rebalancing time Value: 168.0
+Vessel utilization Value: 19.0
+Total rebalancing time Value: 162.0
 
 Version 5.2: 
     - Fixed cycles data
@@ -73,6 +75,15 @@ Version 5.2:
     - 90% rebalancing focus + 10% fleetsize focus
     - gap 0.2
 
+    (local terminal: 41 h --> gap 59.1%)
+    (remote terminal: 26h --> Gap 55.6%)
+    (remote terminal: 100h --> Gap 55.3%)
+
+Version 5.2.1: 
+    - Fixed cycles data
+    - 30 min crew pause
+    - 70% rebalancing focus + 30% fleetsize focus
+    - gap 0.2
 
 
 

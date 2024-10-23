@@ -28,7 +28,7 @@ def run_optimization(model):
     if model.SolCount > 0:
         print("Solution found!")
         # Retrieve the solution
-        print(f"Objective Function Value: {model.ObjVal}") ## single obj function
+        print(f"Objective Function Value: {model.ObjVal}") ## single obj function 
 
         # # Check obj seperately
         # for i in range(model.NumObj): 
