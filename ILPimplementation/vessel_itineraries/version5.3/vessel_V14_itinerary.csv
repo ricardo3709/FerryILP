@@ -1,0 +1,14 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V14,Crew pause,Circular Quay,CQ5,05:40,Circular Quay,CQ5,06:10
+V14,Waiting,Circular Quay,CQ2,06:10,Circular Quay,CQ2,06:15
+V14,Waiting,Circular Quay,CQ2,06:15,Circular Quay,CQ2,06:20
+V14,F4 - Pyrmont Bay,Circular Quay,CQ1,06:20,Circular Quay,CQ1,07:28
+V14,Waiting,Circular Quay,CQ4,07:30,Circular Quay,CQ4,07:35
+V14,F9 - Rose Bay,Circular Quay,CQ1,07:35,Circular Quay,CQ3,08:16
+V14,F4 - Pyrmont Bay,Circular Quay,CQ1,08:20,Circular Quay,CQ1,09:28
+V14,Waiting,Circular Quay,CQ4,09:30,Circular Quay,CQ4,09:35
+V14,Waiting,Circular Quay,CQ4,09:35,Circular Quay,CQ4,09:40
+V14,F4 - Pyrmont Bay,Circular Quay,CQ1,09:40,Circular Quay,CQ3,10:48
+V14,Crew pause,Circular Quay,CQ4,10:50,Circular Quay,CQ4,11:20
+V14,Waiting,Circular Quay,CQ5,11:20,Circular Quay,CQ5,11:25
+V14,Waiting,Circular Quay,CQ2,11:25,Circular Quay,CQ2,11:30

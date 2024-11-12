@@ -69,34 +69,48 @@ Vesion 5.1: (set this as the initial solution from now and then, directly run ab
 Vessel utilization Value: 19.0
 Total rebalancing time Value: 162.0
 
-Version 5.2: 
+Version 5.2: ---------------------------------------------------------------------------
     - Fixed cycles data
     - 30 min crew pause
     - 90% rebalancing focus + 10% fleetsize focus
     - gap 0.2
 
-    (local terminal: 41 h --> gap 59.1%)
+    (local terminal: 41h --> gap 59.1%)
     (remote terminal: 26h --> Gap 55.6%)
     (remote terminal: 100h --> Gap 55.3%)
 
-Version 5.2.1: 
+Version 5.2.1: 7827535.pbsserver (cant have gap below 50%)
     - Fixed cycles data
     - 30 min crew pause
     - 70% rebalancing focus + 30% fleetsize focus
     - gap 0.2
 
-Version 5.2.2: 
+Version 5.2.2: 7827636.pbsserver (cant have gap below 50%)
     - Fixed cycles data
     - 30 min crew pause
     - 50% rebalancing focus + 50% fleetsize focus
     - gap 0.2
 
-Next steps: 
-    4. Longer hours 
-    7. fix visulisation rebalancing box
-    1. reweighted objectives (almost)
-    2. more resonable crew pause (?)
+Version 5.2.3: local (Obtained)
+    - Fixed cycles data
+    - 30 min crew pause
+    - 90% rebalancing focus + 10% fleetsize focus
+    - gap < 0.6
 
-    3. check rebalancing error (Done)
-    5. fix peak and off peak issue (Done)
-    6. fix initial solution input (Done)
+Version 5.3: ---------------------------------------------------------------------------
+    - Fixed cycles data
+    - 30 min crew pause
+    - 50% rebalancing focus + 50% fleetsize focus
+    - gap < 0.5
+
+gap 48.2% 1068s (Obtained)
+Objective Function Value: 0.7236842105262862
+Vessel Utilization Value: 18.0
+Rebalancing Time Value: 84.0
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Next steps: 
+    1. Longer hours 
+    2. out F3 occupied the Wharf on the visulisation.

@@ -1,0 +1,85 @@
+Vessel,Task,Wharf,Time
+V17,Waiting,CQ4,05:40-05:45
+V15,Crew pause,CQ4,05:40-05:45
+V16,Waiting,CQ4,05:45-05:50
+V15,Crew pause,CQ4,05:45-05:50
+V15,Crew pause,CQ4,05:50-05:55
+V5,Waiting,CQ4,05:50-05:55
+V17,Waiting,CQ4,05:55-06:00
+V15,Crew pause,CQ4,05:55-06:00
+V15,Crew pause,CQ4,06:00-06:05
+V10,Crew pause,CQ4,06:05-06:10
+V15,Crew pause,CQ4,06:05-06:10
+V10,Crew pause,CQ4,06:10-06:15
+V10,Crew pause,CQ4,06:15-06:20
+V2,F5 - Neutral Bay,CQ4,06:20-06:25
+V10,Crew pause,CQ4,06:20-06:25
+V10,Crew pause,CQ4,06:25-06:30
+V12,Waiting,CQ4,06:25-06:30
+V10,Crew pause,CQ4,06:30-06:35
+V16,F9 - Rose Bay,CQ4,06:35-06:40
+V1,Waiting,CQ4,06:45-06:50
+V4,Waiting,CQ4,06:45-06:50
+V7,Waiting,CQ4,06:50-06:55
+V13,F9 - Rose Bay,CQ4,06:55-07:00
+V17,Waiting,CQ4,07:10-07:15
+V6,F7 - Double Bay,CQ4,07:15-07:20
+V9,F6 - Mosman (peak),CQ4,07:15-07:20
+V15,F9 - Rose Bay,CQ4,07:35-07:40
+V8,Waiting,CQ4,07:40-07:45
+V4,F7 - Double Bay,CQ4,07:45-07:50
+V5,F2 - Zoo/Mosman (Peak),CQ4,07:45-07:50
+V13,Waiting,CQ4,08:10-08:15
+V10,F2 - Zoo/Mosman (Peak),CQ4,08:15-08:20
+V11,Waiting,CQ4,08:20-08:25
+V7,Crew pause,CQ4,08:25-08:30
+V7,Crew pause,CQ4,08:30-08:35
+V7,Crew pause,CQ4,08:35-08:40
+V7,Crew pause,CQ4,08:40-08:45
+V7,Crew pause,CQ4,08:45-08:50
+V9,Waiting,CQ4,08:45-08:50
+V7,Crew pause,CQ4,08:50-08:55
+V13,F9 - Rose Bay,CQ4,08:55-09:00
+V13,Waiting,CQ4,09:00-09:05
+V17,F4 - Pyrmont Bay,CQ4,09:05-09:10
+V11,Waiting,CQ4,09:15-09:20
+V13,Waiting,CQ4,09:15-09:20
+V12,Waiting,CQ4,09:20-09:25
+V12,Waiting,CQ4,09:25-09:30
+V10,F8 - Cockatoo Island,CQ4,09:30-09:35
+V7,Waiting,CQ4,09:30-09:35
+V14,Waiting,CQ4,09:35-09:40
+V10,Crew pause,CQ4,09:35-09:40
+V10,Crew pause,CQ4,09:40-09:45
+V16,F4 - Pyrmont Bay,CQ4,09:45-09:50
+V10,Crew pause,CQ4,09:45-09:50
+V16,Waiting,CQ4,09:50-09:55
+V10,Crew pause,CQ4,09:50-09:55
+V16,Waiting,CQ4,09:55-10:00
+V10,Crew pause,CQ4,09:55-10:00
+V16,Charging,CQ4,10:00-10:05
+V10,Crew pause,CQ4,10:00-10:05
+V16,Waiting,CQ4,10:05-10:10
+V7,Waiting,CQ4,10:15-10:20
+V7,F2 - Taronga Zoo (off peak),CQ4,10:15-10:20
+V8,Waiting,CQ4,10:20-10:25
+V6,Crew pause,CQ4,10:25-10:30
+V6,Crew pause,CQ4,10:30-10:35
+V6,Crew pause,CQ4,10:35-10:40
+V6,Crew pause,CQ4,10:40-10:45
+V5,F6 - Mosman (off peak),CQ4,10:45-10:50
+V6,Crew pause,CQ4,10:45-10:50
+V6,Crew pause,CQ4,10:50-10:55
+V15,F9 - Watsons Bay,CQ4,10:55-11:00
+V9,F8 - Cockatoo Island,CQ4,11:00-11:05
+V15,Waiting,CQ4,11:00-11:05
+V13,Waiting,CQ4,11:05-11:10
+V15,Charging,CQ4,11:05-11:10
+V13,Waiting,CQ4,11:10-11:15
+V15,Waiting,CQ4,11:10-11:15
+V4,Waiting,CQ4,11:15-11:20
+V13,Charging,CQ4,11:15-11:20
+V15,Waiting,CQ4,11:20-11:25
+V13,Waiting,CQ4,11:20-11:25
+V5,Waiting,CQ4,11:25-11:30
+V17,Waiting,CQ4,11:25-11:30

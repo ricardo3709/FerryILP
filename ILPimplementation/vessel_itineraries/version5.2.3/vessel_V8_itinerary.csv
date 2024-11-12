@@ -1,0 +1,15 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V8,Waiting,Barangaroo,Bar5,05:35,Barangaroo,Bar5,05:40
+V8,Crew pause,Barangaroo,Bar2,05:40,Barangaroo,Bar2,06:10
+V8,F8 - Cockatoo Island,Circular Quay,CQ1,06:20,Circular Quay,CQ3,07:32
+V8,Waiting,Circular Quay,CQ2,07:35,Circular Quay,CQ2,07:40
+V8,Waiting,Circular Quay,CQ4,07:40,Circular Quay,CQ4,07:45
+V8,Waiting,Circular Quay,CQ3,07:45,Circular Quay,CQ3,07:50
+V8,Waiting,Circular Quay,CQ5,07:50,Circular Quay,CQ5,07:55
+V8,Crew pause,Circular Quay,CQ1,07:55,Circular Quay,CQ1,08:25
+V8,F6 - Mosman (peak),Circular Quay,CQ1,08:25,Circular Quay,CQ5,09:16
+V8,F6 - Mosman (off peak),Circular Quay,CQ1,09:20,Circular Quay,CQ2,10:14
+V8,Waiting,Circular Quay,CQ2,10:15,Circular Quay,CQ2,10:20
+V8,Waiting,Circular Quay,CQ4,10:20,Circular Quay,CQ4,10:25
+V8,F7 - Double Bay,Circular Quay,CQ1,10:25,Circular Quay,CQ1,11:15
+V8,Waiting,Barangaroo,Bar4,11:25,Barangaroo,Bar4,11:30

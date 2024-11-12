@@ -15,7 +15,7 @@ def run_optimization(model):
 
     # Optimization strategies
     model.setParam('NumericFocus', 3)  # Improve numerical stability
-    model.setParam('MIPGap', 1)  # Optimality gap, change to smaller value later
+    model.setParam('MIPGap', 0.5)  # Optimality gap, change to smaller value later !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     model.setParam('Method', 2)  # Try dual simplex to avoid barrier instability
 
     model.optimize()
@@ -27,18 +27,21 @@ def run_optimization(model):
 
     if model.SolCount > 0:
         print("Solution found!")
-        # Retrieve the solution
-        print(f"Objective Function Value: {model.ObjVal}") ## single obj function 
+        # Retrieve and print the overall objective value
+        print(f"Objective Function Value: {model.ObjVal}")
 
-        # # Check obj seperately
-        # for i in range(model.NumObj): 
-        #     model.setParam('ObjNumber', i)
-        #     print(f"{objects_name[i]} Value: {model.ObjNVal}")
-        # solution = {v.VarName: v.X for v in model.getVars()}
+        # Retrieve and print individual objective components
+        vessel_utilization_value = model._vessel_utilization.getValue()
+        rebalancing_time_value = model._rebalancing_time.getValue()
 
-        # Further processing of the solution
+        print(f"Vessel Utilization Value: {vessel_utilization_value}")
+        print(f"Rebalancing Time Value: {rebalancing_time_value}")
+
+        # Further processing if needed
+        solution = {v.VarName: v.X for v in model.getVars()}
     else:
         print("No solution found within the time limit.")
+
 
     # Calculate IIS if model is infeasible
     if model.Status == gp.GRB.INFEASIBLE:

@@ -1,0 +1,53 @@
+Vessel,Task,Wharf,Time
+V13,Crew pause,CQ5,05:40-05:45
+V11,Waiting,CQ5,05:40-05:45
+V12,Waiting,CQ5,05:45-05:50
+V13,Crew pause,CQ5,05:45-05:50
+V13,Crew pause,CQ5,05:50-05:55
+V16,Waiting,CQ5,05:50-05:55
+V13,Crew pause,CQ5,05:55-06:00
+V13,Crew pause,CQ5,06:00-06:05
+V13,Crew pause,CQ5,06:05-06:10
+V15,Waiting,CQ5,06:10-06:15
+V2,Waiting,CQ5,06:20-06:25
+V12,Waiting,CQ5,06:30-06:35
+V10,Waiting,CQ5,06:35-06:40
+V10,Waiting,CQ5,06:40-06:45
+V10,Waiting,CQ5,06:45-06:50
+V7,F6 - Mosman (peak),CQ5,06:45-06:50
+V11,Waiting,CQ5,06:50-06:55
+V4,Waiting,CQ5,06:50-06:55
+V2,F2 - Zoo/Mosman (Peak),CQ5,07:15-07:20
+V10,Waiting,CQ5,07:20-07:25
+V10,F5 - Neutral Bay,CQ5,07:20-07:25
+V4,Waiting,CQ5,07:45-07:50
+V8,Waiting,CQ5,07:50-07:55
+V9,F5 - Neutral Bay,CQ5,07:50-07:55
+V17,F9 - Rose Bay,CQ5,07:55-08:00
+V1,F8 - Cockatoo Island,CQ5,08:00-08:05
+V2,F7 - Double Bay,CQ5,08:15-08:20
+V9,F7 - Double Bay,CQ5,08:45-08:50
+V15,Waiting,CQ5,08:50-08:55
+V13,Waiting,CQ5,09:10-09:15
+V8,F6 - Mosman (peak),CQ5,09:15-09:20
+V13,Waiting,CQ5,09:20-09:25
+V14,F4 - Pyrmont Bay,CQ5,09:25-09:30
+V15,Waiting,CQ5,09:40-09:45
+V9,Waiting,CQ5,09:45-09:50
+V2,F7 - Double Bay,CQ5,09:45-09:50
+V12,Crew pause,CQ5,10:15-10:20
+V12,Crew pause,CQ5,10:20-10:25
+V12,Crew pause,CQ5,10:25-10:30
+V12,Crew pause,CQ5,10:30-10:35
+V12,Crew pause,CQ5,10:35-10:40
+V12,Crew pause,CQ5,10:40-10:45
+V10,F2 - Taronga Zoo (off peak),CQ5,10:45-10:50
+V17,Waiting,CQ5,10:50-10:55
+V2,Waiting,CQ5,11:00-11:05
+V2,Charging,CQ5,11:05-11:10
+V2,Charging,CQ5,11:10-11:15
+V9,Waiting,CQ5,11:10-11:15
+V4,F2 - Taronga Zoo (off peak),CQ5,11:15-11:20
+V2,Waiting,CQ5,11:15-11:20
+V2,Waiting,CQ5,11:20-11:25
+V2,Waiting,CQ5,11:25-11:30

@@ -129,7 +129,6 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
 
 
     # # CHARGING REQUIREMENT
-
     # Constraint 5a
     for v in tqdm(config.Vset, desc='Constraint 5a'):
         for t in config.Tset:
@@ -139,9 +138,6 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     for v in tqdm(config.Vset, desc='Constraint 5b'):
         for t in config.Tset:
             model.addConstr(Q[v, t] <= 1, name=f"5b: battery_max_capacity_v{v}_t{t}")
-
-
-    # CHARGING DECISION VARIABLE:
 
     # Constraint 5c
     rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in config.Vset}
@@ -162,31 +158,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                                 >= Q[v, t],
                                 name=f"5c: battery_update_v{v}_t{t}")
 
-    # # Constraint 5c
-    # rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in config.Vset}
-    # Qv0 = {v: vessel_df[vessel_df['Vessel code'] == v]['Qv0'].iloc[0] for v in config.Vset}
-
-    # for v in tqdm(config.Vset, desc='Constraint 5c'):
-    #     for t in config.Tset:
-    #         if t == 1:
-    #             model.addConstr(
-    #                 Qv0[v]
-    #                 + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
-    #                 - rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
-    #                 >= Q[v, t],
-    #                 name=f"5c: battery_update_v{v}_t{t}"
-    #             )
-    #         else:
-    #             model.addConstr(
-    #                 Q[v, t - 1]
-    #                 + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
-    #                 - rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
-    #                 >= Q[v, t],
-    #                 name=f"5c: battery_update_v{v}_t{t}"
-    #             )
-
-    # CREW PAUSE:
-
+    # # CREW PAUSE:
     # Constraint 6a
     for v in tqdm(config.Vset, desc='Constraint 6a'):
         model.addConstr(

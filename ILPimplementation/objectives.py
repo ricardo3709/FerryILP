@@ -28,5 +28,8 @@ def set_objective_functions(model, config, y, phi_results):
 
     model.setObjective(weighted_objective, GRB.MINIMIZE)
 
+    model._vessel_utilization = vessel_utilization
+    model._rebalancing_time = rebalancing_time
+
     
     return psi
