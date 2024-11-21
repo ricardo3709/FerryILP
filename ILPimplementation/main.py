@@ -115,9 +115,11 @@ x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS
 # -----------------New partial results test-------------------------
 
 # Load partial solutions for x_ld, z_wj, and y_vjt
-partial_x_file = 'ILPimplementation/output_files/version5.1/6htest_new_cyclelines_x_ld_results.csv'
-partial_z_file = 'ILPimplementation/output_files/version5.1/6htest_new_cyclelines_z_wj_results.csv'
-partial_y_file = 'ILPimplementation/output_files/version5.1/6htest_new_cyclelines_y_vjt_results.csv'
+# 5.1
+starting_version = 'version5.1'
+partial_x_file = f'ILPimplementation/output_files/{starting_version}/6htest_new_cyclelines_x_ld_results.csv'
+partial_z_file = f'ILPimplementation/output_files/{starting_version}/6htest_new_cyclelines_z_wj_results.csv'
+partial_y_file = f'ILPimplementation/output_files/{starting_version}/6htest_new_cyclelines_y_vjt_results.csv'
 
 # Load the partial solutions
 partial_x = load_partial_solution(partial_x_file)
@@ -125,9 +127,10 @@ partial_z = load_partial_solution(partial_z_file)
 partial_y = load_partial_solution(partial_y_file)
 
 # Set the initial values in the Gurobi model
-set_partial_solution(x, partial_x,fix_values=False)
-set_partial_solution(z, partial_z,fix_values=False) 
-set_partial_solution(y, partial_y,fix_values=False)
+fix = False
+set_partial_solution(x, partial_x,fix_values=fix) 
+set_partial_solution(z, partial_z,fix_values=fix) 
+set_partial_solution(y, partial_y,fix_values=fix)
 
 # ---------------------------------------------------------------------
 
@@ -171,4 +174,4 @@ run_optimization(model)
 # save_relaxed_variable_results(model, x, 'ILPimplementation/output_files/relaxed_x_variable_results.csv')
 
 # Save results if optimal
-save_all_results(model, x, y, Q, z, Z, Z_prime, file_prefix,'5.2.2')
+save_all_results(model, x, y, Q, z, Z, Z_prime, file_prefix,'version 5.6 remote test:')

@@ -1,0 +1,26 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V3,Waiting,Balmain Shipyard,BSY2,05:40,Balmain Shipyard,BSY2,05:45
+V3,Crew pause,Balmain Shipyard,BSY3,05:45,Balmain Shipyard,BSY3,06:15
+V3,Crew pause,Balmain Shipyard,BSY4,06:15,Balmain Shipyard,BSY4,06:45
+V3,Waiting,Balmain Shipyard,BSY6,06:45,Balmain Shipyard,BSY6,06:50
+V3,Waiting,Balmain Shipyard,BSY6,06:50,Balmain Shipyard,BSY6,06:55
+V3,Waiting,Balmain Shipyard,BSY2,06:55,Balmain Shipyard,BSY2,07:00
+V3,Crew pause,Balmain Shipyard,BSY1,07:00,Balmain Shipyard,BSY1,07:30
+V3,Waiting,Balmain Shipyard,BSY6,07:30,Balmain Shipyard,BSY6,07:35
+V3,Waiting,Balmain Shipyard,BSY2,07:35,Balmain Shipyard,BSY2,07:40
+V3,Waiting,Balmain Shipyard,BSY1,07:40,Balmain Shipyard,BSY1,07:45
+V3,Crew pause,Balmain Shipyard,BSY1,07:45,Balmain Shipyard,BSY1,08:15
+V3,Crew pause,Balmain Shipyard,BSY3,08:15,Balmain Shipyard,BSY3,08:45
+V3,Waiting,Balmain Shipyard,BSY1,08:45,Balmain Shipyard,BSY1,08:50
+V3,Waiting,Balmain Shipyard,BSY6,08:50,Balmain Shipyard,BSY6,08:55
+V3,Crew pause,Balmain Shipyard,BSY2,08:55,Balmain Shipyard,BSY2,09:25
+V3,Waiting,Balmain Shipyard,BSY4,09:25,Balmain Shipyard,BSY4,09:30
+V3,Waiting,Balmain Shipyard,BSY1,09:30,Balmain Shipyard,BSY1,09:35
+V3,Waiting,Balmain Shipyard,BSY5,09:35,Balmain Shipyard,BSY5,09:40
+V3,Crew pause,Balmain Shipyard,BSY1,09:40,Balmain Shipyard,BSY1,10:10
+V3,Crew pause,Balmain Shipyard,BSY2,10:10,Balmain Shipyard,BSY2,10:40
+V3,Crew pause,Balmain Shipyard,BSY1,10:40,Balmain Shipyard,BSY1,11:10
+V3,Waiting,Balmain Shipyard,BSY4,11:10,Balmain Shipyard,BSY4,11:15
+V3,Waiting,Balmain Shipyard,BSY6,11:15,Balmain Shipyard,BSY6,11:20
+V3,Waiting,Balmain Shipyard,BSY4,11:20,Balmain Shipyard,BSY4,11:25
+V3,Waiting,Balmain Shipyard,BSY1,11:25,Balmain Shipyard,BSY1,11:30

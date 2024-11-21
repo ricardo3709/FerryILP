@@ -1,33 +1,10 @@
 \ Model Ferry ILP_copy
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Minimize
- 
+  0 y_V1_4_7
 Subject To
- 6b__max_distance_pauses_vV18_t8_t_prime60: y_V18_cp_CQ1_68
-   + y_V18_cp_CQ2_68 + y_V18_cp_CQ3_68 + y_V18_cp_CQ4_68 + y_V18_cp_CQ5_68
-   + y_V18_cp_Bar1_68 + y_V18_cp_Bar2_68 + y_V18_cp_Bar4_68
-   + y_V18_cp_Bar5_68 + y_V18_cp_BSY1_68 + y_V18_cp_BSY2_68
-   + y_V18_cp_BSY3_68 + y_V18_cp_BSY4_68 + y_V18_cp_BSY5_68
-   + y_V18_cp_BSY6_68 >= 1
 Bounds
- y_V18_cp_CQ1_68 = 0
- y_V18_cp_CQ2_68 = 0
- y_V18_cp_CQ3_68 = 0
- y_V18_cp_CQ4_68 = 0
- y_V18_cp_CQ5_68 = 0
- y_V18_cp_Bar1_68 = 0
- y_V18_cp_Bar2_68 = 0
- y_V18_cp_Bar4_68 = 0
- y_V18_cp_Bar5_68 = 0
- y_V18_cp_BSY1_68 = 0
- y_V18_cp_BSY2_68 = 0
- y_V18_cp_BSY3_68 = 0
- y_V18_cp_BSY4_68 = 0
- y_V18_cp_BSY5_68 = 0
- y_V18_cp_BSY6_68 = 0
+ 1 <= y_V1_4_7 <= 0
 Binaries
- y_V18_cp_CQ1_68 y_V18_cp_CQ2_68 y_V18_cp_CQ3_68 y_V18_cp_CQ4_68
- y_V18_cp_CQ5_68 y_V18_cp_Bar1_68 y_V18_cp_Bar2_68 y_V18_cp_Bar4_68
- y_V18_cp_Bar5_68 y_V18_cp_BSY1_68 y_V18_cp_BSY2_68 y_V18_cp_BSY3_68
- y_V18_cp_BSY4_68 y_V18_cp_BSY5_68 y_V18_cp_BSY6_68
+ y_V1_4_7
 End
