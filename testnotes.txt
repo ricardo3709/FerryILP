@@ -4,9 +4,7 @@ all lines information is updated, correspodning code is updated
 2, F10 headway:
 F10 is with a cycle time of 40, only one vessle can serve the line, but the headway is 30
 
-
 3, tested models:
-
 output_cycles1:
 Full task arrangement of 6h --> infeasible, calculating IIS now (29Aug 10:14)
 
@@ -48,14 +46,12 @@ version 4.4 with charging constrains + crew pause: gap 0.2 (Obtained)
 
 version 4.5: Test for revising problem with the blank in visulisation
 
-# ----------------------------- 11 OCT Updates -----------------------------
-
+# ----------------------------- 11 OCT Updates --------------------------------------
 Version 5.0:（2587s around 45mins）
     - new cycles data (without considering peak/off peak differences since the 6 hours is not too long)
     - 30 min crew pause
     - 50% rebalancing focus + 50% fleetsize focus
     - gap 0.5 test workability
-
 
 Vesion 5.1: (set this as the initial solution from now and then, directly run about 86s)
     - Fixed cycles data (with considering peak/off lines)
@@ -66,49 +62,59 @@ Vesion 5.1: (set this as the initial solution from now and then, directly run ab
     ## Objects records:
     Vessel utilization Value: 19.0
     Total rebalancing time Value: 168.0
-Vessel utilization Value: 19.0
-Total rebalancing time Value: 162.0
 
-Version 5.2: ---------------------------------------------------------------------------
-    - Fixed cycles data
-    - 30 min crew pause
+Version 5.2: (based on 5.1)---------------------------------------------------------------------------
     - 90% rebalancing focus + 10% fleetsize focus
-    - gap 0.2
-
+    - gap 0.2 
     (local terminal: 41h --> gap 59.1%)
     (remote terminal: 26h --> Gap 55.6%)
     (remote terminal: 100h --> Gap 55.3%)
 
 Version 5.2.1: 7827535.pbsserver (cant have gap below 50%)
-    - Fixed cycles data
-    - 30 min crew pause
     - 70% rebalancing focus + 30% fleetsize focus
     - gap 0.2
 
 Version 5.2.2: 7827636.pbsserver (cant have gap below 50%)
-    - Fixed cycles data
-    - 30 min crew pause
     - 50% rebalancing focus + 50% fleetsize focus
     - gap 0.2
 
-Version 5.2.3: local (Obtained)
+Version 5.2.3: local(Obtained)
     - Fixed cycles data
     - 30 min crew pause
     - 90% rebalancing focus + 10% fleetsize focus
     - gap < 0.6
 
-Version 5.3: ---------------------------------------------------------------------------
-    - Fixed cycles data
-    - 30 min crew pause
+Version 5.3: (based on 5.1)---------------------------------------------------------------------------
+    - 90% rebalancing focus + 10% fleetsize focus
+    - time limit: 20 min
+
+    Gap: 60.4912%
+    Vessel Utilization Value: 19.0
+    Rebalancing Time Value: 73.0
+    Best objective value within time limit: 0.4910714285713853
+
+Version 5.4: (based on 5.1)---------------------------------------------------------------------------
     - 50% rebalancing focus + 50% fleetsize focus
-    - gap < 0.5
+    - Time limit: 20 min
 
-gap 48.2% 1068s (Obtained)
-Objective Function Value: 0.7236842105262862
-Vessel Utilization Value: 18.0
-Rebalancing Time Value: 84.0
+    Gap: 48.2%
+    Vessel Utilization Value: 18.0
+    Rebalancing Time Value: 84.0
+    Best objective value within time limit: 0.7236842105262862
+
+Version 5.5: (based on 5.4)---------------------------------------------------------------------------
+    - 10% rebalancing focus + 90% fleetsize focus
+    - Time limit: 20 min
+
+    Gap: 38.1%
+    Vessel Utilization Value: 18.0
+    Rebalancing Time Value: 75.0
+    Best objective value within time limit: 0.8972744360902274
 
 
+5.6
+    - 10% rebalancing focus + 90% fleetsize focus
+    - Time limit: 1 day
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Next steps: 

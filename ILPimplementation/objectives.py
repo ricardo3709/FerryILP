@@ -20,7 +20,7 @@ def set_objective_functions(model, config, y, phi_results):
     # Objective Function 9: Minimizing Rebalancing Time
     rebalancing_time = gp.quicksum(1 - gp.quicksum(y[v, j, t_prime] for j in Jset for t_prime in phi_results[(j, t)]) for v in Vset for t in Tset)
     
-    weighted_objective = 0.5*vessel_utilization/19 + 0.5*rebalancing_time/168
+    weighted_objective = 0.9*vessel_utilization/19 + 0.1*rebalancing_time/168
 
     # # Set multi-objective optimization
     # model.setObjectiveN(vessel_utilization, index=0, priority=1, name="Minimize Vessel Utilization")
