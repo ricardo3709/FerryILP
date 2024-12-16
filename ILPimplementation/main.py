@@ -14,7 +14,9 @@ import sys
 # # -----------------------------------------------------------------------------------------------------------------
 
 # Redirect stdout and stderr to a file
-current_version = input("Enter the name(version) of the output file (e.g., versionX.X): ").strip()
+# current_version = input("Enter the name(version) of the output file (e.g., versionX.X): ").strip()
+current_version = 'version7'
+
 
 # Create model
 model = gp.Model("Ferry ILP")
@@ -62,7 +64,8 @@ x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS
 # prefix = "6htest_v6" #<<----------- CHECK HERE  <<-----------
 prefix = '6htest_new_cyclelines_v6'
 # prefix = '6htest_cyclelines_rob_sol'
-starting_version = input("Enter the starting version files of this run (e.g., versionX.X): ").strip()
+# starting_version = input("Enter the starting version files of this run (e.g., versionX.X): ").strip()
+starting_version = 'version6.0'
 
 files = {'x': f'ILPimplementation/output_files/{starting_version}/{prefix}_x_ld_results.csv',
          'z': f'ILPimplementation/output_files/{starting_version}/{prefix}_z_wj_results.csv',
