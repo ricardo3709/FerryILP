@@ -4,6 +4,9 @@ from datetime import datetime, timedelta, time
 from config import *
 from functions import *
 from simulation_config import SimulationConfig  # Import the class
+import os
+
+version = input("Please enter the version name (e.g., versionXXX): ").strip()
 
 
 # Initialize the configuration
@@ -33,8 +36,6 @@ config = SimulationConfig(
     Dc, nc, Tc, 
     rv_plus, pc, functions)
 
-
-
 # --------------------------------- Load results file --------------------------------------------
 
 
@@ -56,15 +57,13 @@ def load_and_process_data(filepath, split_columns, value_columns):
         df[column] = df[column].astype(dtype)
     return df
 
-# file_prefix = "6htest_cyclelines_"
-# file_prefix = config.file_prefix # "6htest_new_cyclelines"
+
 
 z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_z_wj_results.csv',['Wharf', 'Task'],{})
 Zp_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_prime_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
 Z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
 x_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_x_ld_results.csv',['Line', 'Time'],{'Line': int, 'Time': int})
 y_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_y_vjt_results.csv',['Vessel', 'Task', 'Start_Time'],{'Start_Time': int})
-
 
 # Determine start and end wharfs
 Start_S = dict(zip(line_df['Line_No'].astype(str), line_df['O']))
@@ -197,8 +196,18 @@ def cal_timetable(line):
         print('Line not exist or unsolved.')
         return None
 
+# for line in lines:
+#     cal_timetable(line).to_csv(f'ILPimplementation/timetables/line_{line}_timetable.csv', index=False)
+
+versioned_folder = os.path.join('ILPimplementation', 'timetables', version) #
+os.makedirs(versioned_folder, exist_ok=True)#
+
+# Iterate over vessels and save the itinerary files in the versioned folder
 for line in lines:
-    cal_timetable(line).to_csv(f'ILPimplementation/timetables/line_{line}_timetable.csv', index=False)
+    file_path = os.path.join(versioned_folder, f'line_{line}_timetable.csv')
+    cal_timetable(line).to_csv(file_path, index=False)
+
+print(f"Timetable files have been saved in the folder: {versioned_folder}")
 
 
 # -------------------------------------------- Generate vessel itinerary --------------------------------------------
@@ -212,9 +221,16 @@ def cal_itinerary(vessel):
     vessel_itinerary_df['Start_Station'] = vessel_itinerary_df['Start_Wharf'].apply(lambda x: Start_S.get(x, 'Unknown Station'))
     vessel_itinerary_df['End_Station'] = vessel_itinerary_df['Start_Wharf'].apply(lambda x: End_S.get(x, 'Unknown Station'))
 
-    # Update Task based on specific keywords or conditions
-    vessel_itinerary_df['Task'] = vessel_itinerary_df['Task'].apply(lambda x: 'Waiting' if x in B else
-                                                                              'Crew pause' if x in Bc else
+    # # Update Task based on specific keywords or conditions
+    # vessel_itinerary_df['Task'] = vessel_itinerary_df['Task'].apply(lambda x: 'Waiting' if x in B else
+    #                                                                           'Crew Break' if x in Bc else
+    #                                                                           'Charging' if x in Bplus else
+    #                                                                           f"{x}")
+
+
+    vessel_itinerary_df['Task'] = vessel_itinerary_df['Task'].apply(lambda x: 'Waiting' if x in B and not x.startswith('phi_') else
+                                                                              'Charging' if x in B and x.startswith('phi_') else
+                                                                              'Crew Break' if x in Bc else
                                                                               'Charging' if x in Bplus else
                                                                               f"{x}")
 
@@ -241,87 +257,176 @@ def cal_itinerary(vessel):
 
 
 vessels = vessel_df['Vessel code'].unique().tolist()
+
+# for vessel in vessels:
+#     cal_itinerary(vessel).to_csv(f'ILPimplementation/vessel_itineraries/vessel_{vessel}_itinerary.csv', index=False)
+
+# Create the versioned directory if it doesn't exist
+versioned_folder = os.path.join('ILPimplementation', 'vessel_itineraries', version)
+os.makedirs(versioned_folder, exist_ok=True)
+
+# Iterate over vessels and save the itinerary files in the versioned folder
 for vessel in vessels:
-    cal_itinerary(vessel).to_csv(f'ILPimplementation/vessel_itineraries/vessel_{vessel}_itinerary.csv', index=False)
+    file_path = os.path.join(versioned_folder, f'vessel_{vessel}_itinerary.csv')
+    cal_itinerary(vessel).to_csv(file_path, index=False)
+
+print(f"Vessel files have been saved in the folder: {versioned_folder}")
 
 # -------------------------------------------- Generate wharf utilization --------------------------------------------
-
 def cal_wharf_utilization(wharf):
     # non line task
     non_line_tasks = y_df[~y_df['Task'].str.match(r'^\d+$')]
-    utilization_data = []
+    data = []
 
     for _, row in non_line_tasks.iterrows():
         v = row['Vessel']
         j = row['Task']
         w = row['Task'].split('_')[-1]
-        t = row['Start_Time']
-        t_list = np.array([x[1] for x in cal_delta(config, j, w)]) + t
-        utilization_data.append({'v': v, 'j': j,'w': w, 't_list': t_list.tolist()})
+        t = row['Start_Time'] # "12:00"
+        
+        start = cal_time(t)
+        if j in Bc: # crew break
+            end = start + timedelta(minutes=Dc)
+        elif j in Bplus or j in B: # charging
+            end = start + timedelta(minutes=5)
+        else:
+            print(f'{v},{j},{w},{t}: Error')
+
+            # Add data for origin
+        data.append({
+            "Vessel": v,
+            "Task": j,
+            "Wharf": w,
+            "Time": f"{start.strftime('%H:%M')}-{end.strftime('%H:%M')}"
+        })
 
     # line task
     line_tasks = y_df[y_df['Task'].str.match(r'^\d+$')]
     for _, row in line_tasks.iterrows():
-        v = row['Vessel']
-        j = int(row['Task'])
-        t = row['Start_Time']
-        
-        # origin
-        w_start = line_df[line_df['Line_No'] == j]['O'].iloc[0]
-        # safety_buffer = int(line_df[line_df['Line_No'] == j]['Safety_buffer'].iloc[0])
-        safety_buffer = 0
-        t_list_start = [time for time in range(t, t + cal_duration(safety_buffer))]
-        utilization_data.append({'v': v, 'j': j, 'w': w_start, 't_list': t_list_start})
+        v = row['Vessel']  # Vessel name
+        j = int(row['Task'])  # Task number (Line_No)
+        t = row['Start_Time']  # Start time (assuming it's in a compatible format)
 
-        # intermidiate stop
+        # Origin
+        # w_start = line_df[line_df['Line_No'] == j]['O'].iloc[0]
+        w_start = z_df[z_df['Task'] == str(j)]['Wharf'].iloc[0]
+        dwell_O = int(line_df[line_df['Line_No'] == j]['dw_O'].iloc[0])
+
+        start_O = cal_time(t)
+        end_O = start_O + timedelta(minutes=dwell_O)
+
+        # Add data for origin
+        data.append({
+            "Vessel": v,
+            "Task": j,
+            "Wharf": w_start,
+            "Time": f"{start_O.strftime('%H:%M')}-{end_O.strftime('%H:%M')}"
+        })
+
+        # Intermediate Stop
         intermediate_station = line_df[line_df['Line_No'] == j]['I']
         if pd.notna(intermediate_station).any():
-            w_intermediate = z_df[z_df['Task'] == str(j)]['Wharf'].iloc[1]
-            t_list_intermediate = np.array([x[1] for x in cal_delta(config, j, w_intermediate)]) + t
-            utilization_data.append({'v': v, 'j': j, 'w': w_intermediate, 't_list': t_list_intermediate.tolist()})
+            w_intermediate = z_df[z_df['Task'] == str(j)]['Wharf'].iloc[1]  # Wharf
+            time_to_I = int(line_df[line_df['Line_No'] == j]['Time_underway_to_I'].iloc[0])
+            dwell_I = int(line_df[line_df['Line_No'] == j]['dw_I'].iloc[0])
 
-        # terminus
-        timetoT = int(line_df[line_df['Line_No'] == j]['Time_underway_to_T'].iloc[0])
-        arrival_T = t + cal_duration(timetoT)
+            start_I = start_O + timedelta(minutes=time_to_I)
+            end_I = start_I + timedelta(minutes=dwell_I)
 
-        filtered_wharfs = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] == arrival_T)]['Wharf'].unique().tolist()
+            data.append({
+                "Vessel": v,
+                "Task": j,
+                "Wharf": w_intermediate,
+                "Time": f"{start_I.strftime('%H:%M')}-{end_I.strftime('%H:%M')}"
+            })
 
-        # Check if the list is not empty before accessing the first element
+        # Terminus
+        time_to_T = int(line_df[line_df['Line_No'] == j]['Time_underway_to_T'].iloc[0])
+        dwell_T = int(line_df[line_df['Line_No'] == j]['dw_T'].iloc[0])
+
+        start_T = start_O + timedelta(minutes=time_to_T)
+        end_T = start_T + timedelta(minutes=dwell_T)
+
+        filtered_wharfs = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] == t + cal_duration(time_to_T))]['Wharf'].unique().tolist()
         if filtered_wharfs:
             w_end = filtered_wharfs[0]
         else:
-            print(f"No matching wharf found for line {j} at time {arrival_T}")
-            w_end = None  # Or set a default value or take another appropriate action
+            print(f"No matching wharf found for line {j} at time {t + cal_duration(time_to_T)}")
+            w_end = None  # Handle missing value appropriately
 
-        # w_end = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] == arrival_T)]['Wharf'].unique().tolist()[0]
+        data.append({
+            "Vessel": v,
+            "Task": j,
+            "Wharf": w_end,
+            "Time": f"{start_T.strftime('%H:%M')}-{end_T.strftime('%H:%M')}"
+        })
 
-        dw_T = int(line_df[line_df['Line_No'] == j]['dw_T'].iloc[0])
-        periods = cal_duration(dw_T + safety_buffer)
-        t_list_end = Zp_df[(Zp_df['Line'] == j) & (Zp_df['Time'] >= arrival_T) & (Zp_df['Time'] <= arrival_T + periods)]['Time'].unique().tolist()
-        utilization_data.append({'v': v, 'j': j, 'w': w_end, 't_list': t_list_end})
+    all_wharf_df = pd.DataFrame(data)
 
-    # df process
-    all_wharfs_utilization_df = pd.DataFrame(utilization_data, columns=['v', 'j', 'w', 't_list'])
-    wharf_df = all_wharfs_utilization_df[all_wharfs_utilization_df['w'] == wharf].explode('t_list').reset_index(drop=True)
-    wharf_df = wharf_df.rename(columns={'t_list': 't'}).sort_values('t')
-    wharf_df['t'] = wharf_df['t'].fillna(0) # newly add causing problem?
-    wharf_df['t'] = wharf_df['t'].apply(lambda x: cal_time(x).strftime('%H:%M') + '-' + cal_time(x+1).strftime('%H:%M'))
+    wharf_df = all_wharf_df[all_wharf_df['Wharf'] == wharf].copy()
 
-    wharf_df.rename(columns={'v': 'Vessel', 'j': 'Task', 'w': 'Wharf', 't': 'Time'}, inplace=True)
-    
     # 更新任务描述
-    wharf_df['Task'] = wharf_df['Task'].apply(lambda x: 'Waiting' if x in B else
-                                              'Crew pause' if x in Bc else
-                                              'Charging' if x in Bplus else
-                                              f"{x}")
+    # wharf_df['Task'] = wharf_df['Task'].apply(lambda x: 'Waiting' if x in B else
+    #                                                     'Crew Break' if x in Bc else
+    #                                                     'Charging' if x in Bplus else
+    #                                                     f"{x}")
+
+    wharf_df['Task'] = wharf_df['Task'].apply(lambda x: 'Waiting' if x in B and not x.startswith('phi_') else
+                                                        'Charging' if x in B and x.startswith('phi_') else
+                                                        'Crew Break' if x in Bc else
+                                                        'Charging' if x in Bplus else
+                                                        f"{x}")
+
+
 
     wharf_df.reset_index(drop=True)
     wharf_df['Task'] = wharf_df['Task'].replace(line_to_route_dict)
-    
+    wharf_df = wharf_df.sort_values('Time')
     return wharf_df
+
 
 wharfs = wharf_df['Wharf_No'].unique().tolist()
 
-for wharf in wharfs:
-    cal_wharf_utilization(wharf).to_csv(f'ILPimplementation/wharf_utilizations/wharf_{wharf}_utilization.csv', index=False)
+# Create the versioned directory if it doesn't exist
+versioned_folder = os.path.join('ILPimplementation', 'wharf_utilizations', version)
+os.makedirs(versioned_folder, exist_ok=True)
 
+# Iterate over vessels and save the itinerary files in the versioned folder
+for wharf in wharfs:
+    file_path = os.path.join(versioned_folder, f'wharf_{wharf}_utilization.csv')
+    cal_wharf_utilization(wharf).to_csv(file_path, index=False)
+
+print(f"Wharf files have been saved in the folder: {versioned_folder}")
+
+# for wharf in wharfs:
+#     cal_wharf_utilization(wharf).to_csv(f'ILPimplementation/wharf_utilizations/wharf_{wharf}_utilization.csv', index=False)
+
+
+# -------------------------------------------- Generate battery change --------------------------------------------
+
+# NEW: process data for Q
+split_columns = ['Vessel', 'Time']
+value_columns = {'Vessel': str, 'Time': int}
+q_df = pd.read_csv(f'ILPimplementation/output_files/{file_prefix}_Q_vt_results.csv')
+q_df['Variable'] = q_df['Variable'].str.replace(r"[()' ]", "", regex=True)
+q_df[split_columns] = q_df['Variable'].str.split(',', expand=True)
+for column, dtype in value_columns.items():
+    q_df[column] = q_df[column].astype(dtype)
+
+q_df = q_df[['Vessel', 'Time', 'Value']]
+q_df['Time'] = q_df['Time'].apply(lambda x: cal_time(x).strftime('%H:%M'))
+
+def cal_battery_change(vessel):
+    Qv = q_df[q_df['Vessel'] == vessel]
+    return  Qv
+
+# Create the versioned directory if it doesn't exist
+versioned_folder = os.path.join('ILPimplementation', 'battery_change', version)
+os.makedirs(versioned_folder, exist_ok=True)
+
+# Iterate over vessels and save the itinerary files in the versioned folder
+for vessel in vessels:
+    file_path = os.path.join(versioned_folder, f'vessel_{vessel}_battery.csv')
+    cal_battery_change(vessel).to_csv(file_path, index=False)
+
+print(f"Battery files have been saved in the folder: {versioned_folder}")

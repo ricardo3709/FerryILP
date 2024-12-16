@@ -1,0 +1,20 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V7,Waiting,Barangaroo,Bar2,05:35,Barangaroo,Bar2,05:40
+V7,Waiting,Barangaroo,Bar1,05:40,Barangaroo,Bar1,05:45
+V7,Waiting,Barangaroo,Bar4,05:45,Barangaroo,Bar4,05:50
+V7,Waiting,Barangaroo,Bar4,05:50,Barangaroo,Bar4,05:55
+V7,Waiting,Circular Quay,CQ3,06:05,Circular Quay,CQ3,06:10
+V7,F6 - Mosman (peak),Circular Quay,CQ2,06:10,Circular Quay,CQ5,07:01
+V7,Waiting,Circular Quay,CQ5,07:05,Circular Quay,CQ5,07:10
+V7,F6 - Mosman (peak),Circular Quay,CQ2,07:10,Circular Quay,CQ5,08:01
+V7,Waiting,Circular Quay,CQ2,08:05,Circular Quay,CQ2,08:10
+V7,F6 - Mosman (peak),Circular Quay,CQ2,08:10,Circular Quay,CQ2,09:01
+V7,Waiting,Circular Quay,CQ2,09:05,Circular Quay,CQ2,09:10
+V7,Waiting,Circular Quay,CQ5,09:10,Circular Quay,CQ5,09:15
+V7,F5 - Neutral Bay,Circular Quay,CQ5,09:15,Circular Quay,CQ4,09:45
+V7,Waiting,Circular Quay,CQ3,09:45,Circular Quay,CQ3,09:50
+V7,Waiting,Circular Quay,CQ5,09:50,Circular Quay,CQ5,09:55
+V7,F6 - Mosman (off peak),Circular Quay,CQ4,09:55,Circular Quay,CQ2,10:49
+V7,Waiting,Circular Quay,CQ5,10:50,Circular Quay,CQ5,10:55
+V7,Waiting,Circular Quay,CQ4,10:55,Circular Quay,CQ4,11:00
+V7,Crew Break,Circular Quay,CQ1,11:00,Circular Quay,CQ1,11:30

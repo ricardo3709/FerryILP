@@ -1,0 +1,69 @@
+Vessel,Task,Wharf,Time
+V11,Waiting,CQ4,05:40-05:45
+V17,Waiting,CQ4,05:45-05:50
+V14,Waiting,CQ4,05:45-05:50
+V9,Waiting,CQ4,05:50-05:55
+V17,Waiting,CQ4,05:50-05:55
+V14,Crew Break,CQ4,05:55-06:25
+V4,F8 - Cockatoo Island,CQ4,06:00-06:01
+V11,F5 - Neutral Bay,CQ4,06:12-06:15
+V5,Waiting,CQ4,06:25-06:30
+V14,Waiting,CQ4,06:25-06:30
+V9,F8 - Cockatoo Island,CQ4,06:30-06:31
+V6,Crew Break,CQ4,06:30-07:00
+V8,Waiting,CQ4,06:45-06:50
+V11,Waiting,CQ4,06:50-06:55
+V6,F8 - Cockatoo Island,CQ4,07:00-07:01
+V4,F8 - Cockatoo Island,CQ4,07:09-07:12
+V5,F5 - Neutral Bay,CQ4,07:12-07:15
+V5,Waiting,CQ4,07:15-07:20
+V5,Waiting,CQ4,07:20-07:25
+V2,F8 - Cockatoo Island,CQ4,07:30-07:31
+V13,Waiting,CQ4,07:30-07:35
+V11,F7 - Double Bay,CQ4,07:42-07:45
+V16,F4 - Pyrmont Bay,CQ4,07:45-07:48
+V11,Waiting,CQ4,07:50-07:55
+V16,Waiting,CQ4,07:50-07:55
+V1,Crew Break,CQ4,07:55-08:25
+V11,F8 - Cockatoo Island,CQ4,08:00-08:01
+V5,F2 - Zoo/Mosman (Peak),CQ4,08:14-08:17
+V5,F8 - Cockatoo Island,CQ4,08:30-08:31
+V6,F5 - Neutral Bay,CQ4,08:42-08:45
+V4,Waiting,CQ4,08:45-08:50
+V15,F9 - Rose Bay,CQ4,08:52-08:56
+V6,F6 - Mosman (off peak),CQ4,08:55-08:56
+V4,F8 - Cockatoo Island,CQ4,09:00-09:01
+V12,Waiting,CQ4,09:10-09:15
+V1,F7 - Double Bay,CQ4,09:12-09:15
+V12,Waiting,CQ4,09:15-09:20
+V3,Waiting,CQ4,09:20-09:25
+V8,F6 - Mosman (off peak),CQ4,09:25-09:26
+V13,F4 - Pyrmont Bay,CQ4,09:25-09:28
+V3,F8 - Cockatoo Island,CQ4,09:30-09:31
+V7,F5 - Neutral Bay,CQ4,09:42-09:45
+V6,F6 - Mosman (off peak),CQ4,09:46-09:49
+V9,Waiting,CQ4,09:50-09:55
+V7,F6 - Mosman (off peak),CQ4,09:55-09:56
+V11,Waiting,CQ4,10:00-10:05
+V16,Waiting,CQ4,10:05-10:10
+V15,F4 - Pyrmont Bay,CQ4,10:15-10:18
+V10,Waiting,CQ4,10:15-10:20
+V10,Waiting,CQ4,10:20-10:25
+V11,Waiting,CQ4,10:20-10:25
+V10,Waiting,CQ4,10:30-10:35
+V12,Waiting,CQ4,10:35-10:40
+V5,Crew Break,CQ4,10:35-11:05
+V15,Waiting,CQ4,10:40-10:45
+V3,Waiting,CQ4,10:45-10:50
+V15,Waiting,CQ4,10:50-10:55
+V7,Waiting,CQ4,10:55-11:00
+V6,Waiting,CQ4,11:00-11:05
+V6,Charging,CQ4,11:05-11:10
+V5,Waiting,CQ4,11:05-11:10
+V6,Waiting,CQ4,11:10-11:15
+V14,Waiting,CQ4,11:15-11:20
+V6,Waiting,CQ4,11:15-11:20
+V8,Waiting,CQ4,11:20-11:25
+V14,Waiting,CQ4,11:20-11:25
+V10,Waiting,CQ4,11:25-11:30
+V12,Waiting,CQ4,11:25-11:30

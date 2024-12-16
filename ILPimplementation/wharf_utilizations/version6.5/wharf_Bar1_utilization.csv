@@ -1,0 +1,22 @@
+Vessel,Task,Wharf,Time
+V9,Charging,Bar1,05:35-05:40
+V2,Charging,Bar1,05:35-05:40
+V8,Charging,Bar1,05:40-05:45
+V3,Charging,Bar1,05:40-05:45
+V5,Charging,Bar1,05:45-05:50
+V3,Crew Break,Bar1,05:45-06:15
+V2,Charging,Bar1,05:50-05:55
+V2,Charging,Bar1,06:00-06:05
+V7,Charging,Bar1,06:05-06:10
+V18,Charging,Bar1,06:20-06:25
+V19,Charging,Bar1,06:50-06:55
+V18,F11 - Blackwattle Bay,Bar1,07:18-07:21
+V18,F11 - Blackwattle Bay,Bar1,08:18-08:21
+V19,F11 - Blackwattle Bay,Bar1,08:48-08:51
+V18,F11 - Blackwattle Bay,Bar1,09:18-09:21
+V9,Charging,Bar1,10:45-10:50
+V9,Charging,Bar1,10:50-10:55
+V9,Charging,Bar1,10:55-11:00
+V13,Charging,Bar1,10:55-11:00
+V13,Crew Break,Bar1,11:00-11:30
+V11,Charging,Bar1,11:25-11:30

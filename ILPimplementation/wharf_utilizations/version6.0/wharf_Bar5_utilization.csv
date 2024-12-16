@@ -1,0 +1,24 @@
+Vessel,Task,Wharf,Time
+V2,Waiting,Bar5,05:35-05:40
+V12,Crew Break,Bar5,05:35-06:05
+V2,Waiting,Bar5,05:40-05:45
+V15,Waiting,Bar5,05:55-06:00
+V15,Waiting,Bar5,06:05-06:10
+V6,Waiting,Bar5,06:05-06:10
+V12,Waiting,Bar5,06:10-06:15
+V19,Waiting,Bar5,06:45-06:50
+V3,Waiting,Bar5,08:00-08:05
+V3,Waiting,Bar5,08:05-08:10
+V1,Waiting,Bar5,08:10-08:15
+V3,Waiting,Bar5,08:25-08:30
+V4,Waiting,Bar5,08:35-08:40
+V15,Waiting,Bar5,09:45-09:50
+V17,Waiting,Bar5,10:10-10:15
+V17,Waiting,Bar5,10:15-10:20
+V10,Waiting,Bar5,10:25-10:30
+V8,Waiting,Bar5,10:30-10:35
+V8,Waiting,Bar5,10:35-10:40
+V15,Waiting,Bar5,10:35-10:40
+V8,Waiting,Bar5,10:45-10:50
+V18,Waiting,Bar5,11:20-11:25
+V18,Waiting,Bar5,11:25-11:30

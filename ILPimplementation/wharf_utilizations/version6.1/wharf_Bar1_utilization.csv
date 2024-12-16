@@ -1,0 +1,38 @@
+Vessel,Task,Wharf,Time
+V7,Waiting,Bar1,05:35-05:40
+V3,Waiting,Bar1,05:35-05:40
+V7,Charging,Bar1,05:40-05:45
+V10,Waiting,Bar1,05:40-05:45
+V7,Charging,Bar1,05:45-05:50
+V2,Waiting,Bar1,05:45-05:50
+V7,Waiting,Bar1,05:50-05:55
+V6,Waiting,Bar1,05:50-05:55
+V2,Waiting,Bar1,05:55-06:00
+V6,Charging,Bar1,05:55-06:00
+V10,Waiting,Bar1,06:00-06:05
+V6,Waiting,Bar1,06:00-06:05
+V10,Waiting,Bar1,06:05-06:10
+V1,Waiting,Bar1,06:05-06:10
+V10,Waiting,Bar1,06:10-06:15
+V6,Waiting,Bar1,06:10-06:15
+V19,Waiting,Bar1,06:35-06:40
+V19,Waiting,Bar1,06:55-07:00
+V3,Waiting,Bar1,07:25-07:30
+V3,Waiting,Bar1,07:35-07:40
+V3,Waiting,Bar1,07:45-07:50
+V19,F11 - Blackwattle Bay,Bar1,07:53-07:56
+V3,Waiting,Bar1,08:20-08:25
+V4,Waiting,Bar1,08:25-08:30
+V19,F11 - Blackwattle Bay,Bar1,08:53-08:56
+V19,F11 - Blackwattle Bay,Bar1,09:53-09:56
+V10,Crew Break,Bar1,09:55-10:25
+V19,Waiting,Bar1,10:00-10:05
+V11,Waiting,Bar1,10:15-10:20
+V19,Crew Break,Bar1,10:20-10:50
+V18,Waiting,Bar1,10:35-10:40
+V18,Waiting,Bar1,10:50-10:55
+V19,Waiting,Bar1,10:55-11:00
+V11,Waiting,Bar1,11:00-11:05
+V5,Crew Break,Bar1,11:00-11:30
+V11,Waiting,Bar1,11:15-11:20
+V1,Waiting,Bar1,11:25-11:30

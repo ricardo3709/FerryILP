@@ -128,7 +128,7 @@ def cal_q(config, v, j, t): # require update when simulating charging
         return config.rv_plus
     
     elif j in config.B :
-        if 'phi_' in j: # fisr/ last period of charging
+        if 'phi_' in j: # fisr/last period of charging
             epsilon = 1 - config.pc / config.period_length
             return epsilon * config.rv_plus
         else:   # waiting   
@@ -137,24 +137,27 @@ def cal_q(config, v, j, t): # require update when simulating charging
     elif j in config.Lset:
         l = j
         line_data = config.line_df[config.line_df['Line_No'] == l]
-        R_l = cal_Rl(config, l)
-        stops = R_l[1:]  # remove the origin station
-        if len(stops) == 1:
-            a = line_data['Time_underway_to_T'].iloc()[0]
-            dw = line_data['dw_T'].iloc()[0]
-            if t in range(cal_duration(a), cal_duration(a+dw)+1):
-                return 0
-            else:
-                return line_data['rj'].iloc()[0]
-        elif len(stops) == 2:
-            a1 = line_data['Time_underway_to_I'].iloc()[0]
-            dw1 = line_data['dw_I'].iloc()[0]
-            a2 = line_data['Time_underway_to_T'].iloc()[0]
-            dw2 = float(line_data['dw_T'].iloc()[0])
-            if t in list(range(cal_duration(a1), cal_duration(a1+dw1)+1)) + list(range(cal_duration(a2), cal_duration(a2+dw2)+1)):
-                return 0
-            else:
-                return line_data['rj'].iloc()[0]
+
+        # R_l = cal_Rl(config, l)
+        # stops = R_l[1:]  # remove the origin station
+        # if len(stops) == 1:
+        #     a = line_data['Time_underway_to_T'].iloc()[0]
+        #     dw = line_data['dw_T'].iloc()[0]
+        #     if t in range(cal_duration(a), cal_duration(a+dw)+1):
+        #         return 0
+        #     else:
+        #         return line_data['rj'].iloc()[0]
+        # elif len(stops) == 2:
+        #     a1 = line_data['Time_underway_to_I'].iloc()[0]
+        #     dw1 = line_data['dw_I'].iloc()[0]
+        #     a2 = line_data['Time_underway_to_T'].iloc()[0]
+        #     dw2 = float(line_data['dw_T'].iloc()[0])
+        #     if t in list(range(cal_duration(a1), cal_duration(a1+dw1))) + list(range(cal_duration(a2), cal_duration(a2+dw2))):
+        #         return 0
+        #     else:
+        #         return line_data['rj'].iloc()[0]
+            
+        return line_data['rj'].iloc()[0]
     else:
         return 0  # the vessel is rebalancing, rv will be captured by the constraint
     
@@ -195,7 +198,6 @@ def cal_xi(config, j1, j2): # calculate rebalancing time from task 1 to task 2
     except Exception as e:
         raise Exception(f"An error occurred calculating travel time from {j1} to {j2}: {str(e)}")
 
-
 def cal_xi0(config, v, j): # calculate rebalancing time from starting point to the first task
     try:
         S_v = cal_Sv(config, v)
@@ -232,21 +234,36 @@ def cal_delta(config, j, w):  # calculate the wharf occupied time for tasks (lin
     try:
         if isinstance(j, int) and j in config.Lset:
             line_data = config.line_df[config.line_df['Line_No'] == j]
-            # safety_buffer = int(line_data['Safety_buffer'].iloc[0])
-            safety_buffer = 0 # 25Aug: already included in the dwelling time
+            safety_buffer = 5 # this is for the safty margin in minues
             R_l = cal_Rl(config, j)  # Stations visited by the line
 
-            # Exclude the last station
-            stations = R_l[1:-1]
-            for station in stations:
-                wharves = cal_C_lS(config, station)
-                if w in wharves:
-                    a = cal_duration(int(line_data['Time_underway_to_I'].iloc[0]))
-                    dw = int(line_data['dw_I'].iloc[0])
-                    occupy_time = cal_duration(dw + safety_buffer)
-                    delta_j_w = [(w, time) for time in range(a, a + occupy_time)]
-                    return delta_j_w
-            return []
+            # # Exclude the last station
+            # stations = R_l[1:-1]
+            # for station in stations:
+            #     wharves = cal_C_lS(config, station)
+            #     if w in wharves:
+            #         a = cal_duration(int(line_data['Time_underway_to_I'].iloc[0]))
+            #         dw = int(line_data['dw_I'].iloc[0])
+            #         occupy_time = cal_duration(dw + safety_buffer)
+            #         delta_j_w = [(w, time) for time in range(a, a + occupy_time)]
+            #         return delta_j_w
+            # return []
+
+            origin = R_l[0]
+            intm = R_l[1]
+            if w in cal_C_lS(config, origin):
+                a = 0
+                dw = int(line_data['dw_O'].iloc[0])
+            elif w in cal_C_lS(config, intm):
+                a = cal_duration(int(line_data['Time_underway_to_I'].iloc[0]))
+                dw = int(line_data['dw_I'].iloc[0])
+            else:
+                return []
+            
+            occupy_time = cal_duration(dw + safety_buffer)
+            delta_j_w = [(w, time) for time in range(a, a + occupy_time)] #a - safety_buffer, a + dw + safety_buffer
+            return delta_j_w  
+        
         elif isinstance(j, str) and (j in config.Bc or j in config.B or j in config.Bplus):
             if w != j.split('_')[-1]:
                 raise ValueError(f"Task {j} should occupy its own wharf {j.split('_')[-1]}, not {w}.")
@@ -272,7 +289,7 @@ def cal_muF(config, l): # Calculate the number of time periods a wharf is occupi
             raise ValueError("Line number must be an integer.")
         dw_T = config.line_df[config.line_df['Line_No'] == l]['dw_T'].iloc[0] 
         # safety_buffer = config.line_df[config.line_df['Line_No'] == l]['Safety_buffer'].iloc[0]
-        safety_buffer = 0 # 35 Aug, already included in the dwelling time 
+        safety_buffer = 5 # operational margin in min
         return cal_duration(dw_T + safety_buffer)
     except Exception as e:
         raise ValueError(f"An error occurred: {str(e)}")
@@ -472,3 +489,64 @@ def manage_results(config, generate_new_files, file_prefix):
         return load_all_results(file_prefix)
     else:
         return load_all_results(file_prefix)
+    
+
+
+# # --------------- functions to load partial solutions ---------------
+import ast
+def load_partial_solution(file_path):
+    """
+    Load the partial solution and convert it into a dictionary.
+    """
+    partial_solution = pd.read_csv(file_path)
+    
+    # dictionary to store partial solution
+    parsed_solution = {}
+    
+    # Iterate over row
+    for index, row in partial_solution.iterrows():
+        # Parse the 'Variable' from string to tuple
+        try:
+            variable = ast.literal_eval(row['Variable'])
+            # Convert elements in the tuple to int where possible
+            if isinstance(variable, tuple):
+                variable = tuple(int(v) if isinstance(v, str) and v.isdigit() else v for v in variable)
+            else:
+                variable = (int(variable),) if isinstance(variable, str) and variable.isdigit() else (variable,)
+        except (ValueError, SyntaxError) as e:
+            # print(f"Error parsing variable: {row['Variable']} - {e}")
+            continue
+        
+        # Convert 'Value' to a number (int or float)
+        try:
+            value = float(row['Value']) if '.' in str(row['Value']) else int(row['Value'])
+        except ValueError:
+            # print(f"Error parsing value for {variable}: {row['Value']}")
+            continue
+        
+        # Store the value
+        parsed_solution[variable] = value
+    
+    return parsed_solution
+
+def set_partial_solution(var_dict, partial_solution, fix_values=False):
+    """
+    Set or fix Gurobi variables based on a partial solution.
+    """
+    for var_name, value in partial_solution.items():
+        #check if var exists
+        if var_name in var_dict:
+            if value != "Out of bounds":
+                if fix_values:
+                    # Fix the variable value
+                    var_dict[var_name].LB = value
+                    var_dict[var_name].UB = value
+                    # print(f"Fixed {var_name} to {value}")
+                else:
+                    # Set the starting value for the variable
+                    var_dict[var_name].Start = value
+                    # print(f"Set start value for {var_name} to {value}")
+            else:
+                print(f"Skipping {var_name} because the value is 'Out of bounds'.")
+        else:
+            print(f"{var_name} not found in var_dict.")
