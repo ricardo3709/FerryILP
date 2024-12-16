@@ -1,0 +1,63 @@
+Vessel,Task,Wharf,Time
+V12,Waiting,CQ1,05:40-05:45
+V16,Crew Break,CQ1,05:40-06:10
+V12,Waiting,CQ1,05:45-05:50
+V13,Waiting,CQ1,05:50-05:55
+V15,F9 - Rose Bay,CQ1,05:55-05:56
+V5,Waiting,CQ1,06:05-06:10
+V5,Waiting,CQ1,06:10-06:15
+V14,F9 - Rose Bay,CQ1,06:15-06:16
+V1,Waiting,CQ1,06:20-06:25
+V5,Waiting,CQ1,06:25-06:30
+V6,Crew Break,CQ1,06:25-06:55
+V5,Waiting,CQ1,06:30-06:35
+V17,F9 - Rose Bay,CQ1,06:35-06:36
+V15,Waiting,CQ1,06:45-06:50
+V14,F9 - Rose Bay,CQ1,06:52-06:56
+V15,F9 - Rose Bay,CQ1,06:55-06:56
+V7,Waiting,CQ1,07:00-07:05
+V3,F8 - Cockatoo Island,CQ1,07:09-07:12
+V4,Waiting,CQ1,07:10-07:15
+V12,F9 - Rose Bay,CQ1,07:15-07:16
+V4,Waiting,CQ1,07:15-07:20
+V10,F6 - Mosman (peak),CQ1,07:28-07:31
+V15,F9 - Rose Bay,CQ1,07:32-07:36
+V13,F9 - Rose Bay,CQ1,07:35-07:36
+V1,F5 - Neutral Bay,CQ1,07:42-07:45
+V11,Waiting,CQ1,07:45-07:50
+V16,F9 - Rose Bay,CQ1,07:55-07:56
+V1,Waiting,CQ1,07:55-08:00
+V7,Waiting,CQ1,08:05-08:10
+V6,F8 - Cockatoo Island,CQ1,08:09-08:12
+V14,F9 - Rose Bay,CQ1,08:15-08:16
+V9,F2 - Taronga Zoo (off peak),CQ1,08:15-08:17
+V5,Waiting,CQ1,08:25-08:30
+V10,F6 - Mosman (peak),CQ1,08:28-08:31
+V17,F9 - Rose Bay,CQ1,08:35-08:36
+V10,Waiting,CQ1,08:35-08:40
+V2,F2 - Taronga Zoo (off peak),CQ1,08:45-08:47
+V15,F9 - Rose Bay,CQ1,08:55-08:56
+V11,F8 - Cockatoo Island,CQ1,09:09-09:12
+V11,F2 - Taronga Zoo (off peak),CQ1,09:15-09:17
+V8,Waiting,CQ1,09:15-09:20
+V8,Waiting,CQ1,09:20-09:25
+V12,Waiting,CQ1,09:25-09:30
+V10,F6 - Mosman (peak),CQ1,09:28-09:31
+V12,Waiting,CQ1,09:30-09:35
+V5,F8 - Cockatoo Island,CQ1,09:39-09:42
+V1,Waiting,CQ1,09:40-09:45
+V5,F2 - Taronga Zoo (off peak),CQ1,09:45-09:47
+V9,Waiting,CQ1,09:45-09:50
+V11,Waiting,CQ1,09:55-10:00
+V4,F8 - Cockatoo Island,CQ1,10:09-10:12
+V2,F2 - Taronga Zoo (off peak),CQ1,10:15-10:17
+V4,Waiting,CQ1,10:15-10:20
+V4,Crew Break,CQ1,10:20-10:50
+V5,Waiting,CQ1,10:25-10:30
+V5,Waiting,CQ1,10:30-10:35
+V7,F8 - Cockatoo Island,CQ1,10:39-10:42
+V7,F2 - Taronga Zoo (off peak),CQ1,10:45-10:47
+V15,Crew Break,CQ1,10:50-11:20
+V3,Waiting,CQ1,10:55-11:00
+V4,Crew Break,CQ1,11:00-11:30
+V9,Waiting,CQ1,11:25-11:30

@@ -10,4 +10,4 @@
 module load python/3.12.2 magma/2.5.3 pandas/2.0.3 gurobi/9.1.2
 source /project/RDS-FEI-FTP-RW/envs/amod/bin/activate
 cd /project/RDS-FEI-FTP-RW/FerryILP
-python ILPimplementation/main.py > output_version5.6.log 2> error_version5.6.log
+python ILPimplementation/main.py > output_version7.log 2> error_version7.log

@@ -112,9 +112,90 @@ Version 5.5: (based on 5.4)-----------------------------------------------------
     Best objective value within time limit: 0.8972744360902274
 
 
-5.6
+Version 6: with operational margin ---------------------------------------------------------------------------
+    - possible solotion only
+    
+5882.30 s
+Vessel Utilization Value: 19.0
+Rebalancing Time Value: 175.0
+
+
+
+Version 6.1: (based on 6.0)---------------------------------------------------------------------------
+    - 90% rebalancing focus + 10% fleetsize focus
+    - Time limit: 30 min
+
+    Gap: 70.9%
+    Vessel Utilization Value: 19.0
+    Rebalancing Time Value: 86.0
+    Best objective value within time limit: 0.46071428571424455
+
+    Version 6.1.1: (based on 6.1)--------------------------
+        - 90% rebalancing focus + 10% fleetsize focus
+        - Time limit: 60 min
+
+        Gap: 64.3%
+        Vessel Utilization Value: 19.0
+        Rebalancing Time Value: 70.0
+        Best objective value within time limit: 0.3749999999999627
+
+
+
+Version 6.2: (based on 6.0)---------------------------------------------------------------------------
     - 10% rebalancing focus + 90% fleetsize focus
-    - Time limit: 1 day
+    - Time limit: 60 min
+
+    Gap: 66.7%
+    Vessel Utilization Value: 19.0
+    Rebalancing Time Value: 75.0
+
+    Optimization stopped due to time limit.
+    A feasible solution was found within the time limit.
+    Best objective value within time limit: 0.04464285714285765
+
+
+
+Version 6.3: (based on 6.0)---------------------------------------------------------------------------
+    - add sum task objectives (try to solve the issue with waiting tasks)
+    - multi objectives solver
+
+    gap: 44.4%
+    Vessel Utilization Value: 18.0
+    Rebalancing Time Value: 170.0
+    model.tasks: 314.0  #
+
+6.3.1:
+
+Gap: 14.5%
+Vessel Utilization Value: 18.0
+Rebalancing Time Value: 150.0
+Total Number of tasks: 292.0
+
+6.3.2
+Vessel Utilization Value: 18.0
+Rebalancing Time Value: 83.0
+Total Number of tasks: 259.0
+
+6.4
+Gap: 23%
+Vessel Utilization Value: 18.0
+Rebalancing Time Value: 80.0
+Total Number of tasks: 310.0
+Total panalise of tasks: 13.0
+
+Best objective value within time limit: 0.7380952380952159
+
+6.4.2
+Vessel Utilization Value: 18.0
+Rebalancing Time Value: 78.0
+Total Number of tasks: 300.0
+Total panalise of tasks: 11.0
+
+Best objective value within time limit: 0.5178571428571193
+
+
+6.5:
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Next steps: 

@@ -1,0 +1,20 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V14,Waiting,Circular Quay,CQ3,05:40,Circular Quay,CQ3,05:45
+V14,Charging,Circular Quay,CQ4,05:45,Circular Quay,CQ4,05:50
+V14,Charging,Circular Quay,CQ5,05:50,Circular Quay,CQ5,05:55
+V14,Crew Break,Circular Quay,CQ3,05:55,Circular Quay,CQ3,06:25
+V14,Crew Break,Circular Quay,CQ3,06:25,Circular Quay,CQ3,06:55
+V14,F9 - Rose Bay,Circular Quay,CQ4,06:55,Circular Quay,CQ2,07:36
+V14,F4 - Pyrmont Bay,Circular Quay,CQ1,07:40,Circular Quay,CQ3,08:48
+V14,Charging,Circular Quay,CQ4,08:50,Circular Quay,CQ4,08:55
+V14,F9 - Rose Bay,Circular Quay,CQ4,08:55,Circular Quay,CQ3,09:36
+V14,Waiting,Circular Quay,CQ3,09:40,Circular Quay,CQ3,09:45
+V14,Charging,Circular Quay,CQ4,09:45,Circular Quay,CQ4,09:50
+V14,Charging,Circular Quay,CQ5,09:50,Circular Quay,CQ5,09:55
+V14,Charging,Circular Quay,CQ2,09:55,Circular Quay,CQ2,10:00
+V14,Charging,Circular Quay,CQ4,10:00,Circular Quay,CQ4,10:05
+V14,F9 - Watsons Bay,Circular Quay,CQ2,10:05,Circular Quay,CQ3,11:07
+V14,Charging,Circular Quay,CQ4,11:10,Circular Quay,CQ4,11:15
+V14,Charging,Circular Quay,CQ2,11:15,Circular Quay,CQ2,11:20
+V14,Charging,Circular Quay,CQ5,11:20,Circular Quay,CQ5,11:25
+V14,Waiting,Circular Quay,CQ1,11:25,Circular Quay,CQ1,11:30

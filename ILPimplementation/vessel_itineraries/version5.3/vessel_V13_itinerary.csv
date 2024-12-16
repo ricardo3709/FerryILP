@@ -1,17 +1,20 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-V13,Waiting,Circular Quay,CQ1,05:40,Circular Quay,CQ1,05:45
-V13,Crew pause,Circular Quay,CQ4,05:45,Circular Quay,CQ4,06:15
-V13,F9 - Rose Bay,Circular Quay,CQ1,06:15,Circular Quay,CQ1,06:56
-V13,F4 - Pyrmont Bay,Circular Quay,CQ1,07:00,Circular Quay,CQ1,08:08
+V13,Crew Break,Circular Quay,CQ5,05:40,Circular Quay,CQ5,06:10
+V13,Waiting,Circular Quay,CQ4,06:10,Circular Quay,CQ4,06:15
+V13,F9 - Rose Bay,Circular Quay,CQ1,06:15,Circular Quay,CQ4,06:56
+V13,F4 - Pyrmont Bay,Circular Quay,CQ1,07:00,Circular Quay,CQ3,08:08
 V13,Waiting,Circular Quay,CQ4,08:10,Circular Quay,CQ4,08:15
-V13,F9 - Rose Bay,Circular Quay,CQ1,08:15,Circular Quay,CQ3,08:56
-V13,Waiting,Circular Quay,CQ4,09:00,Circular Quay,CQ4,09:05
-V13,Waiting,Circular Quay,CQ2,09:05,Circular Quay,CQ2,09:10
-V13,Charging,Circular Quay,CQ2,09:10,Circular Quay,CQ2,09:15
-V13,Waiting,Circular Quay,CQ2,09:15,Circular Quay,CQ2,09:20
+V13,F9 - Rose Bay,Circular Quay,CQ1,08:15,Circular Quay,CQ4,08:56
+V13,Waiting,Circular Quay,CQ2,09:00,Circular Quay,CQ2,09:05
+V13,Waiting,Circular Quay,CQ1,09:05,Circular Quay,CQ1,09:10
+V13,Waiting,Circular Quay,CQ1,09:10,Circular Quay,CQ1,09:15
+V13,Waiting,Circular Quay,CQ1,09:15,Circular Quay,CQ1,09:20
 V13,Waiting,Circular Quay,CQ5,09:20,Circular Quay,CQ5,09:25
-V13,F9 - Watsons Bay,Circular Quay,CQ1,09:25,Circular Quay,CQ4,10:27
-V13,Waiting,Balmain Shipyard,BSY3,10:45,Balmain Shipyard,BSY3,10:50
-V13,Waiting,Balmain Shipyard,BSY5,10:50,Balmain Shipyard,BSY5,10:55
-V13,Crew pause,Balmain Shipyard,BSY4,10:55,Balmain Shipyard,BSY4,11:25
-V13,Waiting,Balmain Shipyard,BSY6,11:25,Balmain Shipyard,BSY6,11:30
+V13,F9 - Watsons Bay,Circular Quay,CQ1,09:25,Circular Quay,CQ1,10:27
+V13,Crew Break,Circular Quay,CQ1,10:30,Circular Quay,CQ1,11:00
+V13,Waiting,Circular Quay,CQ1,11:00,Circular Quay,CQ1,11:05
+V13,Waiting,Circular Quay,CQ5,11:05,Circular Quay,CQ5,11:10
+V13,Waiting,Circular Quay,CQ4,11:10,Circular Quay,CQ4,11:15
+V13,Charging,Circular Quay,CQ4,11:15,Circular Quay,CQ4,11:20
+V13,Waiting,Circular Quay,CQ4,11:20,Circular Quay,CQ4,11:25
+V13,Waiting,Circular Quay,CQ1,11:25,Circular Quay,CQ1,11:30

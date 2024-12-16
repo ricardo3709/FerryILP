@@ -1,38 +1,51 @@
 Vessel,Task,Wharf,Time
-V8,Crew pause,Bar5,05:35-05:40
-V5,Waiting,Bar5,05:35-05:40
-V8,Crew pause,Bar5,05:40-05:45
-V8,Crew pause,Bar5,05:45-05:50
-V15,Crew pause,Bar5,05:45-05:50
-V15,Crew pause,Bar5,05:50-05:55
-V8,Crew pause,Bar5,05:50-05:55
-V8,Crew pause,Bar5,05:55-06:00
-V15,Crew pause,Bar5,05:55-06:00
-V8,Crew pause,Bar5,06:00-06:05
-V15,Crew pause,Bar5,06:00-06:05
-V15,Crew pause,Bar5,06:05-06:10
-V15,Crew pause,Bar5,06:10-06:15
-V19,Waiting,Bar5,06:15-06:20
-V15,Waiting,Bar5,06:20-06:25
-V19,Waiting,Bar5,06:20-06:25
-V19,Waiting,Bar5,06:25-06:30
-V3,Waiting,Bar5,06:50-06:55
-V18,Waiting,Bar5,10:05-10:10
-V12,Waiting,Bar5,10:10-10:15
-V19,F11 - Blackwattle Bay,Bar5,10:25-10:30
-V17,Waiting,Bar5,10:45-10:50
-V8,Crew pause,Bar5,10:45-10:50
-V8,Crew pause,Bar5,10:50-10:55
-V12,Crew pause,Bar5,10:55-11:00
-V8,Crew pause,Bar5,10:55-11:00
-V12,Crew pause,Bar5,11:00-11:05
-V8,Crew pause,Bar5,11:00-11:05
-V12,Crew pause,Bar5,11:05-11:10
-V8,Crew pause,Bar5,11:05-11:10
-V8,Crew pause,Bar5,11:10-11:15
-V12,Crew pause,Bar5,11:10-11:15
-V12,Crew pause,Bar5,11:15-11:20
-V8,Waiting,Bar5,11:15-11:20
-V12,Crew pause,Bar5,11:20-11:25
-V8,Waiting,Bar5,11:20-11:25
-V11,Waiting,Bar5,11:25-11:30
+V8,Waiting,Bar5,05:35-05:40
+V4,Waiting,Bar5,05:35-05:40
+V1,Waiting,Bar5,05:40-05:45
+V18,Crew Break,Bar5,05:45-05:50
+V18,Crew Break,Bar5,05:50-05:55
+V18,Crew Break,Bar5,05:55-06:00
+V18,Crew Break,Bar5,06:00-06:05
+V18,Crew Break,Bar5,06:05-06:10
+V18,Crew Break,Bar5,06:10-06:15
+V18,Waiting,Bar5,06:15-06:20
+V18,Waiting,Bar5,06:20-06:25
+V19,Waiting,Bar5,06:45-06:50
+V18,F11 - Blackwattle Bay,Bar5,08:20-08:25
+V10,Waiting,Bar5,09:30-09:35
+V10,Waiting,Bar5,09:40-09:45
+V10,Crew Break,Bar5,09:50-09:55
+V10,Crew Break,Bar5,09:55-10:00
+V19,Waiting,Bar5,09:55-10:00
+V10,Crew Break,Bar5,10:00-10:05
+V10,Crew Break,Bar5,10:05-10:10
+V19,Crew Break,Bar5,10:10-10:15
+V10,Crew Break,Bar5,10:10-10:15
+V10,Crew Break,Bar5,10:15-10:20
+V19,Crew Break,Bar5,10:15-10:20
+V19,Crew Break,Bar5,10:20-10:25
+V19,Crew Break,Bar5,10:25-10:30
+V7,Crew Break,Bar5,10:25-10:30
+V19,Crew Break,Bar5,10:30-10:35
+V7,Crew Break,Bar5,10:30-10:35
+V19,Crew Break,Bar5,10:35-10:40
+V7,Crew Break,Bar5,10:35-10:40
+V7,Crew Break,Bar5,10:40-10:45
+V18,Waiting,Bar5,10:40-10:45
+V7,Crew Break,Bar5,10:45-10:50
+V19,Crew Break,Bar5,10:45-10:50
+V7,Crew Break,Bar5,10:50-10:55
+V19,Crew Break,Bar5,10:50-10:55
+V19,Crew Break,Bar5,10:55-11:00
+V7,Crew Break,Bar5,10:55-11:00
+V7,Crew Break,Bar5,11:00-11:05
+V19,Crew Break,Bar5,11:00-11:05
+V7,Crew Break,Bar5,11:05-11:10
+V19,Crew Break,Bar5,11:05-11:10
+V7,Crew Break,Bar5,11:10-11:15
+V19,Crew Break,Bar5,11:10-11:15
+V7,Crew Break,Bar5,11:15-11:20
+V7,Crew Break,Bar5,11:20-11:25
+V19,Waiting,Bar5,11:20-11:25
+V9,Waiting,Bar5,11:25-11:30
+V18,Waiting,Bar5,11:25-11:30

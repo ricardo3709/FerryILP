@@ -1,21 +1,22 @@
 Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
-V19,Waiting,Pyrmont Bay,PB1,05:30,Pyrmont Bay,PB1,05:35
-V19,Crew pause,Barangaroo,Bar2,05:40,Barangaroo,Bar2,06:10
-V19,Waiting,Barangaroo,Bar1,06:10,Barangaroo,Bar1,06:15
-V19,Waiting,Barangaroo,Bar5,06:15,Barangaroo,Bar5,06:20
-V19,Waiting,Barangaroo,Bar5,06:20,Barangaroo,Bar5,06:25
-V19,Waiting,Barangaroo,Bar5,06:25,Barangaroo,Bar5,06:30
-V19,F11 - Blackwattle Bay,Barangaroo,Bar1,06:30,Barangaroo,Bar4,07:26
-V19,F11 - Blackwattle Bay,Barangaroo,Bar1,07:30,Barangaroo,Bar1,08:26
-V19,F11 - Blackwattle Bay,Barangaroo,Bar1,08:30,Barangaroo,Bar1,09:26
-V19,F11 - Blackwattle Bay,Barangaroo,Bar1,09:30,Barangaroo,Bar5,10:26
-V19,Waiting,Barangaroo,Bar1,10:30,Barangaroo,Bar1,10:35
-V19,Waiting,Circular Quay,CQ4,10:45,Circular Quay,CQ4,10:50
-V19,Waiting,Circular Quay,CQ3,10:50,Circular Quay,CQ3,10:55
-V19,Waiting,Circular Quay,CQ3,10:55,Circular Quay,CQ3,11:00
-V19,Waiting,Circular Quay,CQ1,11:00,Circular Quay,CQ1,11:05
-V19,Waiting,Circular Quay,CQ3,11:05,Circular Quay,CQ3,11:10
-V19,Waiting,Circular Quay,CQ1,11:10,Circular Quay,CQ1,11:15
-V19,Waiting,Circular Quay,CQ1,11:15,Circular Quay,CQ1,11:20
-V19,Waiting,Circular Quay,CQ3,11:20,Circular Quay,CQ3,11:25
-V19,Waiting,Circular Quay,CQ1,11:25,Circular Quay,CQ1,11:30
+V19,Crew Break,Balmain Shipyard,BSY6,05:35,Balmain Shipyard,BSY6,06:05
+V19,Waiting,Barangaroo,Bar2,06:15,Barangaroo,Bar2,06:20
+V19,Waiting,Barangaroo,Bar4,06:20,Barangaroo,Bar4,06:25
+V19,Waiting,Barangaroo,Bar1,06:25,Barangaroo,Bar1,06:30
+V19,Waiting,Barangaroo,Bar2,06:30,Barangaroo,Bar2,06:35
+V19,Waiting,Barangaroo,Bar2,06:35,Barangaroo,Bar2,06:40
+V19,Waiting,Barangaroo,Bar4,06:40,Barangaroo,Bar4,06:45
+V19,Waiting,Barangaroo,Bar5,06:45,Barangaroo,Bar5,06:50
+V19,Waiting,Barangaroo,Bar1,06:50,Barangaroo,Bar1,06:55
+V19,F11 - Blackwattle Bay,Barangaroo,Bar1,06:55,Barangaroo,Bar1,07:51
+V19,F11 - Blackwattle Bay,Barangaroo,Bar1,07:55,Barangaroo,Bar4,08:51
+V19,F11 - Blackwattle Bay,Barangaroo,Bar1,08:55,Barangaroo,Bar1,09:51
+V19,Waiting,Barangaroo,Bar5,09:55,Barangaroo,Bar5,10:00
+V19,Waiting,Barangaroo,Bar2,10:00,Barangaroo,Bar2,10:05
+V19,Waiting,Barangaroo,Bar4,10:05,Barangaroo,Bar4,10:10
+V19,Crew Break,Barangaroo,Bar5,10:10,Barangaroo,Bar5,10:40
+V19,Waiting,Barangaroo,Bar1,10:40,Barangaroo,Bar1,10:45
+V19,Crew Break,Barangaroo,Bar5,10:45,Barangaroo,Bar5,11:15
+V19,Waiting,Barangaroo,Bar1,11:15,Barangaroo,Bar1,11:20
+V19,Waiting,Barangaroo,Bar5,11:20,Barangaroo,Bar5,11:25
+V19,Waiting,Barangaroo,Bar1,11:25,Barangaroo,Bar1,11:30

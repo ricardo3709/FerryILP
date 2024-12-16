@@ -1,0 +1,49 @@
+Vessel,Task,Wharf,Time
+V19,Waiting,CQ1,05:40-05:45
+V12,Crew Break,CQ1,05:40-06:10
+V16,Crew Break,CQ1,05:45-06:15
+V15,Waiting,CQ1,06:15-06:20
+V11,F8 - Cockatoo Island,CQ1,06:20-06:21
+V5,F5 - Neutral Bay,CQ1,06:42-06:45
+V5,Waiting,CQ1,06:45-06:50
+V7,F8 - Cockatoo Island,CQ1,06:50-06:51
+V14,F9 - Rose Bay,CQ1,06:52-06:56
+V12,F9 - Rose Bay,CQ1,07:12-07:16
+V3,F6 - Mosman (peak),CQ1,07:13-07:16
+V6,F8 - Cockatoo Island,CQ1,07:20-07:21
+V9,F7 - Double Bay,CQ1,07:22-07:25
+V16,F9 - Rose Bay,CQ1,07:32-07:36
+V2,F2 - Zoo/Mosman (Peak),CQ1,07:34-07:37
+V1,F5 - Neutral Bay,CQ1,07:42-07:45
+V4,F6 - Mosman (peak),CQ1,07:43-07:46
+V4,F8 - Cockatoo Island,CQ1,07:50-07:51
+V13,F9 - Rose Bay,CQ1,07:52-07:56
+V2,F5 - Neutral Bay,CQ1,08:12-08:15
+V3,F6 - Mosman (peak),CQ1,08:13-08:16
+V3,F8 - Cockatoo Island,CQ1,08:20-08:21
+V6,F8 - Cockatoo Island,CQ1,08:29-08:32
+V8,F6 - Mosman (peak),CQ1,08:43-08:46
+V16,F4 - Pyrmont Bay,CQ1,08:45-08:48
+V8,F8 - Cockatoo Island,CQ1,08:50-08:51
+V1,F6 - Mosman (off peak),CQ1,08:55-08:56
+V13,F4 - Pyrmont Bay,CQ1,09:05-09:08
+V6,F5 - Neutral Bay,CQ1,09:12-09:15
+V6,F8 - Cockatoo Island,CQ1,09:20-09:21
+V11,Waiting,CQ1,09:20-09:25
+V5,F6 - Mosman (off peak),CQ1,09:25-09:26
+V2,Waiting,CQ1,09:30-09:35
+V3,Waiting,CQ1,09:40-09:45
+V9,F5 - Neutral Bay,CQ1,09:42-09:45
+V1,F8 - Cockatoo Island,CQ1,09:50-09:51
+V4,F6 - Mosman (off peak),CQ1,09:55-09:56
+V17,Crew Break,CQ1,10:05-10:35
+V9,Waiting,CQ1,10:10-10:15
+V5,F6 - Mosman (off peak),CQ1,10:16-10:19
+V13,Waiting,CQ1,10:25-10:30
+V8,F7 - Double Bay,CQ1,10:52-10:55
+V16,F9 - Watsons Bay,CQ1,11:03-11:07
+V17,Waiting,CQ1,11:15-11:20
+V4,Waiting,CQ1,11:20-11:25
+V16,Waiting,CQ1,11:20-11:25
+V16,Waiting,CQ1,11:25-11:30
+V17,Waiting,CQ1,11:25-11:30

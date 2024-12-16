@@ -1,8 +1,16 @@
 Vessel,Task,Wharf,Time
-V13,Waiting,BSY3,10:45-10:50
-V18,Crew pause,BSY3,10:50-10:55
-V18,Crew pause,BSY3,10:55-11:00
-V18,Crew pause,BSY3,11:00-11:05
-V18,Crew pause,BSY3,11:05-11:10
-V18,Crew pause,BSY3,11:10-11:15
-V18,Crew pause,BSY3,11:15-11:20
+V10,Waiting,BSY3,05:50-05:55
+V3,Crew Break,BSY3,06:05-06:10
+V3,Crew Break,BSY3,06:10-06:15
+V3,Crew Break,BSY3,06:15-06:20
+V3,Crew Break,BSY3,06:20-06:25
+V3,Crew Break,BSY3,06:25-06:30
+V3,Crew Break,BSY3,06:30-06:35
+V2,Waiting,BSY3,10:40-10:45
+V11,Crew Break,BSY3,11:00-11:05
+V11,Crew Break,BSY3,11:05-11:10
+V11,Crew Break,BSY3,11:10-11:15
+V11,Crew Break,BSY3,11:15-11:20
+V11,Crew Break,BSY3,11:20-11:25
+V1,Waiting,BSY3,11:25-11:30
+V11,Crew Break,BSY3,11:25-11:30

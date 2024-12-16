@@ -1,0 +1,25 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V9,Charging,Barangaroo,Bar1,05:35,Barangaroo,Bar1,05:40
+V9,Waiting,Barangaroo,Bar5,05:40,Barangaroo,Bar5,05:45
+V9,Crew Break,Barangaroo,Bar5,05:45,Barangaroo,Bar5,06:15
+V9,Charging,Circular Quay,CQ2,06:25,Circular Quay,CQ2,06:30
+V9,Charging,Circular Quay,CQ4,06:30,Circular Quay,CQ4,06:35
+V9,F7 - Double Bay,Circular Quay,CQ4,06:35,Circular Quay,CQ3,07:25
+V9,Charging,Circular Quay,CQ5,07:25,Circular Quay,CQ5,07:30
+V9,Waiting,Circular Quay,CQ1,07:30,Circular Quay,CQ1,07:35
+V9,Crew Break,Circular Quay,CQ3,07:35,Circular Quay,CQ3,08:05
+V9,Waiting,Circular Quay,CQ3,08:05,Circular Quay,CQ3,08:10
+V9,Waiting,Circular Quay,CQ1,08:10,Circular Quay,CQ1,08:15
+V9,F2 - Taronga Zoo (off peak),Circular Quay,CQ3,08:15,Circular Quay,CQ4,08:55
+V9,Waiting,Circular Quay,CQ3,08:55,Circular Quay,CQ3,09:00
+V9,Charging,Circular Quay,CQ2,09:00,Circular Quay,CQ2,09:05
+V9,Charging,Circular Quay,CQ2,09:05,Circular Quay,CQ2,09:10
+V9,Charging,Circular Quay,CQ2,09:10,Circular Quay,CQ2,09:15
+V9,F5 - Neutral Bay,Circular Quay,CQ2,09:15,Circular Quay,CQ4,09:45
+V9,F2 - Taronga Zoo (off peak),Circular Quay,CQ3,09:45,Circular Quay,CQ4,10:25
+V9,Charging,Circular Quay,CQ2,10:25,Circular Quay,CQ2,10:30
+V9,Charging,Barangaroo,Bar2,10:40,Barangaroo,Bar2,10:45
+V9,Charging,Barangaroo,Bar1,10:45,Barangaroo,Bar1,10:50
+V9,Charging,Barangaroo,Bar1,10:50,Barangaroo,Bar1,10:55
+V9,Charging,Barangaroo,Bar1,10:55,Barangaroo,Bar1,11:00
+V9,Crew Break,Barangaroo,Bar5,11:00,Barangaroo,Bar5,11:30

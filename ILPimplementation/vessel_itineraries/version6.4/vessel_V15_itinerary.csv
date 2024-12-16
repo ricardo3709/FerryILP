@@ -1,0 +1,20 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V15,Charging,Circular Quay,CQ5,05:40,Circular Quay,CQ5,05:45
+V15,Charging,Circular Quay,CQ5,05:45,Circular Quay,CQ5,05:50
+V15,Charging,Circular Quay,CQ4,05:50,Circular Quay,CQ4,05:55
+V15,Charging,Circular Quay,CQ2,05:55,Circular Quay,CQ2,06:00
+V15,Charging,Circular Quay,CQ5,06:00,Circular Quay,CQ5,06:05
+V15,Charging,Circular Quay,CQ2,06:05,Circular Quay,CQ2,06:10
+V15,Charging,Circular Quay,CQ5,06:10,Circular Quay,CQ5,06:15
+V15,F9 - Rose Bay,Circular Quay,CQ3,06:15,Circular Quay,CQ5,06:56
+V15,F4 - Pyrmont Bay,Circular Quay,CQ4,07:00,Circular Quay,CQ2,08:08
+V15,Waiting,Circular Quay,CQ3,08:10,Circular Quay,CQ3,08:15
+V15,F9 - Rose Bay,Circular Quay,CQ3,08:15,Circular Quay,CQ3,08:56
+V15,Crew Break,Barangaroo,Bar5,09:10,Barangaroo,Bar5,09:40
+V15,Waiting,Barangaroo,Bar5,09:40,Barangaroo,Bar5,09:45
+V15,Charging,Barangaroo,Bar2,09:45,Barangaroo,Bar2,09:50
+V15,Waiting,Barangaroo,Bar4,09:50,Barangaroo,Bar4,09:55
+V15,Charging,Barangaroo,Bar1,09:55,Barangaroo,Bar1,10:00
+V15,Crew Break,Barangaroo,Bar5,10:00,Barangaroo,Bar5,10:30
+V15,Crew Break,Barangaroo,Bar1,10:30,Barangaroo,Bar1,11:00
+V15,Crew Break,Barangaroo,Bar4,11:00,Barangaroo,Bar4,11:30

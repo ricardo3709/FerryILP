@@ -1,0 +1,31 @@
+Vessel,Task,Wharf,Time
+V6,Charging,CQ5,06:00-06:05
+V10,Charging,CQ5,06:10-06:15
+V16,Charging,CQ5,06:15-06:20
+V2,Crew Break,CQ5,06:15-06:45
+V1,Charging,CQ5,06:40-06:45
+V4,Charging,CQ5,06:50-06:55
+V5,Charging,CQ5,06:50-06:55
+V5,Charging,CQ5,06:55-07:00
+V5,Charging,CQ5,07:10-07:15
+V11,F8 - Cockatoo Island,CQ5,07:29-07:32
+V8,F7 - Double Bay,CQ5,07:52-07:55
+V11,F7 - Double Bay,CQ5,08:22-08:25
+V16,Charging,CQ5,08:50-08:55
+V9,F2 - Taronga Zoo (off peak),CQ5,08:51-08:55
+V9,Charging,CQ5,08:55-09:00
+V4,Charging,CQ5,09:05-09:10
+V11,F6 - Mosman (peak),CQ5,09:13-09:16
+V12,Charging,CQ5,09:20-09:25
+V2,Charging,CQ5,09:25-09:30
+V11,Charging,CQ5,09:40-09:45
+V9,Charging,CQ5,09:45-09:50
+V1,F6 - Mosman (off peak),CQ5,09:46-09:49
+V9,Charging,CQ5,09:50-09:55
+V9,Charging,CQ5,09:55-10:00
+V11,F2 - Taronga Zoo (off peak),CQ5,10:21-10:25
+V2,Charging,CQ5,10:30-10:35
+V6,Charging,CQ5,10:35-10:40
+V14,Charging,CQ5,10:40-10:45
+V17,Charging,CQ5,11:00-11:05
+V18,Charging,CQ5,11:20-11:25

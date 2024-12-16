@@ -1,0 +1,28 @@
+Vessel,Task,Wharf,Time
+V7,Waiting,Bar2,05:35-05:40
+V2,Crew Break,Bar2,05:35-06:05
+V1,Waiting,Bar2,05:40-05:45
+V4,Waiting,Bar2,05:45-05:50
+V1,Waiting,Bar2,05:55-06:00
+V19,Waiting,Bar2,06:00-06:05
+V2,Waiting,Bar2,06:05-06:10
+V19,Crew Break,Bar2,06:05-06:35
+V18,Waiting,Bar2,06:50-06:55
+V18,Charging,Bar2,06:55-07:00
+V18,Waiting,Bar2,07:00-07:05
+V19,F11 - Blackwattle Bay,Bar2,07:28-07:31
+V19,F11 - Blackwattle Bay,Bar2,08:28-08:31
+V18,F11 - Blackwattle Bay,Bar2,08:58-09:01
+V1,Crew Break,Bar2,09:45-10:15
+V18,Waiting,Bar2,10:10-10:15
+V1,Waiting,Bar2,10:15-10:20
+V18,Waiting,Bar2,10:20-10:25
+V1,Crew Break,Bar2,10:20-10:50
+V18,Charging,Bar2,10:25-10:30
+V18,Waiting,Bar2,10:30-10:35
+V11,Waiting,Bar2,10:50-10:55
+V19,Crew Break,Bar2,10:50-11:20
+V17,Crew Break,Bar2,10:55-11:25
+V19,Waiting,Bar2,11:20-11:25
+V9,Waiting,Bar2,11:25-11:30
+V18,Waiting,Bar2,11:25-11:30

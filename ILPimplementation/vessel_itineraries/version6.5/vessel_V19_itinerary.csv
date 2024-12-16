@@ -1,0 +1,14 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V19,Waiting,Pyrmont Bay,PB1,05:30,Pyrmont Bay,PB1,05:35
+V19,Waiting,Barangaroo,Bar5,05:40,Barangaroo,Bar5,05:45
+V19,Waiting,Barangaroo,Bar4,05:45,Barangaroo,Bar4,05:50
+V19,Crew Break,Barangaroo,Bar5,05:50,Barangaroo,Bar5,06:20
+V19,Crew Break,Barangaroo,Bar5,06:20,Barangaroo,Bar5,06:50
+V19,Charging,Barangaroo,Bar1,06:50,Barangaroo,Bar1,06:55
+V19,F11 - Blackwattle Bay,Barangaroo,Bar2,06:55,Barangaroo,Bar5,07:51
+V19,F11 - Blackwattle Bay,Barangaroo,Bar2,07:55,Barangaroo,Bar1,08:51
+V19,F11 - Blackwattle Bay,Barangaroo,Bar2,08:55,Barangaroo,Bar5,09:51
+V19,Crew Break,Barangaroo,Bar4,09:55,Barangaroo,Bar4,10:25
+V19,Charging,Barangaroo,Bar2,10:25,Barangaroo,Bar2,10:30
+V19,Crew Break,Barangaroo,Bar5,10:30,Barangaroo,Bar5,11:00
+V19,Crew Break,Barangaroo,Bar4,11:00,Barangaroo,Bar4,11:30

@@ -15,11 +15,11 @@ def run_optimization(model):
 
     # Optimization strategies
     model.setParam('NumericFocus', 3)    # Improve numerical stability
-    # model.setParam('MIPGap', 0.3)  # Optimality gap, change to smaller value later !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    model.setParam('MIPGap', 1) 
     model.setParam('Method', 2)          # Try dual simplex to avoid barrier instability
     # Set a time limit (in seconds)
-    TimeLimit = 24*60*60
-    model.setParam('TimeLimit', TimeLimit)
+    # TimeLimit = 0.5*60*60
+    # model.setParam('TimeLimit', TimeLimit)
 
     model.optimize()
 
@@ -30,16 +30,12 @@ def run_optimization(model):
 
     if model.SolCount > 0:  # CHANGED: Handle partial solutions as well
         print("Solution found or partially solved!")
-        # Retrieve and print the best overall objective value found
-        print(f"Best Objective Function Value (so far): {model.ObjVal}")  # CHANGED: Output the best result found
-
         # Retrieve and print individual objective components if available
         try:  # CHANGED: Added error handling for components
-            vessel_utilization_value = model._vessel_utilization.getValue()
-            rebalancing_time_value = model._rebalancing_time.getValue()
-
-            print(f"Vessel Utilization Value: {vessel_utilization_value}")
-            print(f"Rebalancing Time Value: {rebalancing_time_value}")
+            print(f"Vessel Utilization Value: {model._vessel_utilization.getValue()}")
+            print(f"Rebalancing Time Value: {model._rebalancing_time.getValue()}")
+            # print(f'Total panalise of tasks: {model._total_panelise.getValue()}') 
+            
         except AttributeError:
             print("Objective components are not accessible or not defined in the model.")
 
@@ -54,7 +50,7 @@ def run_optimization(model):
 
     # CHANGED: Handle cases where optimization is interrupted due to the time limit
     if model.Status == gp.GRB.TIME_LIMIT:
-        print("\nOptimization stopped due to time limit.")
+        # print("\nOptimization stopped due to time limit.")
         if model.SolCount > 0:
             print("A feasible solution was found within the time limit.")
             print(f"Best objective value within time limit: {model.ObjVal}")

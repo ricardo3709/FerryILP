@@ -1,0 +1,57 @@
+Vessel,Task,Wharf,Time
+V14,Waiting,CQ1,05:40-05:45
+V13,Crew Break,CQ1,05:45-06:15
+V12,Waiting,CQ1,05:55-06:00
+V12,F4 - Pyrmont Bay,CQ1,06:00-06:01
+V17,Crew Break,CQ1,06:10-06:40
+V13,Waiting,CQ1,06:15-06:20
+V13,F4 - Pyrmont Bay,CQ1,06:20-06:21
+V5,Waiting,CQ1,06:30-06:35
+V16,F4 - Pyrmont Bay,CQ1,06:40-06:41
+V17,Waiting,CQ1,06:50-06:55
+V15,F4 - Pyrmont Bay,CQ1,07:00-07:01
+V2,F2 - Zoo/Mosman (Peak),CQ1,07:14-07:17
+V4,Waiting,CQ1,07:15-07:20
+V14,F4 - Pyrmont Bay,CQ1,07:20-07:21
+V10,F6 - Mosman (peak),CQ1,07:28-07:31
+V17,F9 - Rose Bay,CQ1,07:32-07:36
+V10,Waiting,CQ1,07:35-07:40
+V17,F4 - Pyrmont Bay,CQ1,07:40-07:41
+V1,F5 - Neutral Bay,CQ1,07:42-07:45
+V12,F9 - Rose Bay,CQ1,07:52-07:56
+V12,F4 - Pyrmont Bay,CQ1,08:00-08:01
+V15,Waiting,CQ1,08:10-08:15
+V13,F9 - Rose Bay,CQ1,08:12-08:16
+V9,F2 - Taronga Zoo (off peak),CQ1,08:15-08:17
+V13,F4 - Pyrmont Bay,CQ1,08:20-08:21
+V10,F6 - Mosman (peak),CQ1,08:28-08:31
+V14,Waiting,CQ1,08:30-08:35
+V2,F8 - Cockatoo Island,CQ1,08:39-08:42
+V16,F4 - Pyrmont Bay,CQ1,08:40-08:41
+V2,F2 - Taronga Zoo (off peak),CQ1,08:45-08:47
+V9,F2 - Taronga Zoo (off peak),CQ1,08:51-08:55
+V15,F4 - Pyrmont Bay,CQ1,09:10-09:11
+V11,F2 - Taronga Zoo (off peak),CQ1,09:15-09:17
+V2,F2 - Taronga Zoo (off peak),CQ1,09:21-09:25
+V10,F6 - Mosman (peak),CQ1,09:28-09:31
+V14,Waiting,CQ1,09:30-09:35
+V14,Waiting,CQ1,09:35-09:40
+V5,F8 - Cockatoo Island,CQ1,09:39-09:42
+V14,F4 - Pyrmont Bay,CQ1,09:40-09:41
+V5,F2 - Taronga Zoo (off peak),CQ1,09:45-09:47
+V16,Waiting,CQ1,09:50-09:55
+V16,Waiting,CQ1,09:55-10:00
+V11,Waiting,CQ1,09:55-10:00
+V4,F8 - Cockatoo Island,CQ1,10:09-10:12
+V16,Waiting,CQ1,10:10-10:15
+V6,F2 - Taronga Zoo (off peak),CQ1,10:15-10:17
+V16,Crew Break,CQ1,10:15-10:45
+V12,Waiting,CQ1,10:25-10:30
+V15,Waiting,CQ1,10:35-10:40
+V10,F2 - Taronga Zoo (off peak),CQ1,10:45-10:47
+V12,Waiting,CQ1,10:45-10:50
+V3,Waiting,CQ1,10:50-10:55
+V6,Waiting,CQ1,10:55-11:00
+V12,Crew Break,CQ1,10:55-11:25
+V7,Crew Break,CQ1,11:00-11:30
+V3,Waiting,CQ1,11:25-11:30

@@ -61,8 +61,8 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
         for t in config.Tset:
             if t > F_l:
                 A_l = functions['cal_Rl'](config, l)[-1]  # last station
-                C_lS = functions['cal_C_lS'](config, A_l)  # available wharves at last station
-                model.addConstr(gp.quicksum(Z[l, w, t] for w in C_lS) == gp.quicksum(y[v, l, t - F_l] for v in config.Vset), name=f"1h: last_wharf_use_{l}_t{t}")
+                C_lS = functions['cal_C_lS'](config, A_l)  # available wharves at last station  # changed below "+1" 
+                model.addConstr(gp.quicksum(Z[l, w, t] for w in C_lS) == gp.quicksum(y[v, l, t - F_l + 1] for v in config.Vset), name=f"1h: last_wharf_use_{l}_t{t}")
 
     # Constraint 1i
     for l in tqdm(config.Lset, desc='Constraint 1i'):
