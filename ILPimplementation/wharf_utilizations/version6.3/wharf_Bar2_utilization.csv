@@ -1,43 +1,38 @@
 Vessel,Task,Wharf,Time
-V4,Charging,Bar2,05:35-05:40
-V6,Charging,Bar2,05:35-05:40
-V4,Charging,Bar2,05:40-05:45
-V3,Crew Break,Bar2,05:40-06:10
+V10,Charging,Bar2,05:35-05:40
+V3,Charging,Bar2,05:35-05:40
+V6,Charging,Bar2,05:40-05:45
+V9,Charging,Bar2,05:45-05:50
 V6,Charging,Bar2,05:45-05:50
-V2,Charging,Bar2,05:55-06:00
-V2,Charging,Bar2,06:00-06:05
-V7,Charging,Bar2,06:10-06:15
-V9,Charging,Bar2,06:20-06:25
-V18,Charging,Bar2,06:20-06:25
-V7,Charging,Bar2,06:25-06:30
-V18,F11 - Blackwattle Bay,Bar2,06:30-06:31
-V7,Charging,Bar2,06:35-06:40
-V19,Charging,Bar2,06:40-06:45
-V19,Charging,Bar2,06:55-07:00
-V19,F11 - Blackwattle Bay,Bar2,07:00-07:01
-V6,Charging,Bar2,07:05-07:10
-V10,Charging,Bar2,07:10-07:15
-V18,F11 - Blackwattle Bay,Bar2,07:23-07:26
-V18,F11 - Blackwattle Bay,Bar2,07:30-07:31
-V10,Charging,Bar2,07:30-07:35
-V9,Charging,Bar2,07:45-07:50
-V19,F11 - Blackwattle Bay,Bar2,07:53-07:56
-V19,F11 - Blackwattle Bay,Bar2,08:00-08:01
-V10,Charging,Bar2,08:05-08:10
-V18,F11 - Blackwattle Bay,Bar2,08:23-08:26
-V18,F11 - Blackwattle Bay,Bar2,08:30-08:31
-V19,F11 - Blackwattle Bay,Bar2,08:53-08:56
-V19,F11 - Blackwattle Bay,Bar2,09:00-09:01
-V10,Crew Break,Bar2,09:15-09:45
-V18,F11 - Blackwattle Bay,Bar2,09:23-09:26
-V18,F11 - Blackwattle Bay,Bar2,09:30-09:31
-V15,Charging,Bar2,09:50-09:55
-V19,F11 - Blackwattle Bay,Bar2,09:53-09:56
-V15,Charging,Bar2,09:55-10:00
-V15,Charging,Bar2,10:05-10:10
-V18,F11 - Blackwattle Bay,Bar2,10:23-10:26
-V3,Charging,Bar2,10:25-10:30
-V18,Charging,Bar2,10:30-10:35
-V7,Charging,Bar2,10:35-10:40
-V18,Charging,Bar2,11:05-11:10
-V19,Charging,Bar2,11:25-11:30
+V2,Charging,Bar2,05:50-05:55
+V6,Crew Break,Bar2,05:50-06:20
+V4,Charging,Bar2,05:55-06:00
+V7,Charging,Bar2,06:00-06:05
+V7,Charging,Bar2,06:05-06:10
+V14,Charging,Bar2,06:10-06:15
+V19,Charging,Bar2,06:15-06:20
+V18,F11 - Blackwattle Bay,Bar2,06:20-06:21
+V19,F11 - Blackwattle Bay,Bar2,06:50-06:51
+V8,Charging,Bar2,07:00-07:05
+V18,F11 - Blackwattle Bay,Bar2,07:13-07:16
+V18,F11 - Blackwattle Bay,Bar2,07:20-07:21
+V19,F11 - Blackwattle Bay,Bar2,07:43-07:46
+V19,F11 - Blackwattle Bay,Bar2,07:50-07:51
+V18,F11 - Blackwattle Bay,Bar2,08:20-08:21
+V8,Charging,Bar2,08:25-08:30
+V8,Charging,Bar2,08:35-08:40
+V19,F11 - Blackwattle Bay,Bar2,08:43-08:46
+V8,Charging,Bar2,08:45-08:50
+V19,F11 - Blackwattle Bay,Bar2,08:50-08:51
+V9,Charging,Bar2,09:10-09:15
+V18,F11 - Blackwattle Bay,Bar2,09:20-09:21
+V9,Charging,Bar2,09:20-09:25
+V5,Charging,Bar2,09:35-09:40
+V11,Charging,Bar2,09:45-09:50
+V17,Charging,Bar2,10:15-10:20
+V7,Charging,Bar2,10:40-10:45
+V9,Charging,Bar2,10:55-11:00
+V5,Charging,Bar2,11:05-11:10
+V18,Charging,Bar2,11:20-11:25
+V17,Charging,Bar2,11:25-11:30
+V2,Charging,Bar2,11:25-11:30

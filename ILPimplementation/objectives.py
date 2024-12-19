@@ -23,39 +23,29 @@ def set_objective_functions(model, config, y, phi_results):
                                    for v in Vset for t in Tset )
     
     # --------------------------------------------------     penalise of the tasks  -------------------------------------------------------------------------------
-    # p_t = {t: model.addVar(vtype=GRB.CONTINUOUS, name=f"p_{t}") for t in Tset}
+    p_t = {t: model.addVar(vtype=GRB.CONTINUOUS, name=f"p_{t}") for t in Tset}
 
-    # # for t in Tset[:-1]:
-    # #     model.addConstr(p_t[t] >= gp.quicksum(y[v, j, t] * y[v, j, t + 1]for v in Vset for j in B + Bplus),name=f"penalty_{t}" )
     # for t in Tset[:-1]:
-    #     model.addConstr(p_t[t] >= gp.quicksum(y[v, j, t] * y[v, j_p, t + 1]for v in Vset for j in B + Bplus for j_p in B + Bplus if j_p != j),name=f"penalty_{t}")
+    #     model.addConstr(p_t[t] >= gp.quicksum(y[v, j, t] * y[v, j, t + 1]for v in Vset for j in B + Bplus),name=f"penalty_{t}" )
+    for t in Tset[:-1]:
+        model.addConstr(p_t[t] >= gp.quicksum(y[v, j, t] * y[v, j_p, t + 1]for v in Vset for j in B + Bplus for j_p in B + Bplus if j_p != j),name=f"penalty_{t}")
 
-    # # # New constraints
-    # # for t in Tset[:-1]: 
-    # #     for v in Vset:
-    # #         for j in B + Bplus:
-    # #             for j_p in B + Bplus:
-    # #                 if j_p == 'phi_'+ j or j_p == j:
-    # #                     continue  
-    # #                 # Add penalty
-    # #                 model.addConstr(p_t[t] >= 0.5 * y[v, j, t] * y[v, j_p, t + 1],name=f"penalty_{v}_{j}_{j_p}_{t}")
-
-    # total_panelise = gp.quicksum(p_t[t] for t in Tset)
-    # rebalancing_time += total_panelise
+    total_panelise = gp.quicksum(p_t[t] for t in Tset)
+    rebalancing_time += total_panelise
 
     # ---------------------------------------------------------Weighted Equation-------------------------------------------------------------------------------------
     alpha = 0.1  # % focus on fleet size
 
     # Combined Weighted Objective
     weighted_objective = (alpha * (19 - vessel_utilization) / 1 +  # Fleet size
-                            (1 - alpha) * rebalancing_time / 168) # rebalancing time
+                            (1 - alpha) * rebalancing_time / 256) # rebalancing time: 168
 
     model.setObjective(weighted_objective, GRB.MINIMIZE)
 
     # ------------------------------------------Store objectives for later analysis----------------------------------------------------------------------------------
     model._vessel_utilization = vessel_utilization
     model._rebalancing_time = rebalancing_time
-    # model._total_panelise = total_panelise
+    model._total_panelise = total_panelise
 
 
     return psi

@@ -1,56 +1,74 @@
 Vessel,Task,Wharf,Time
-V19,Charging,CQ4,05:35-05:40
 V17,Charging,CQ4,05:50-05:55
-V13,F4 - Pyrmont Bay,CQ4,06:00-06:01
-V6,F7 - Double Bay,CQ4,06:05-06:06
-V1,Crew Break,CQ4,06:10-06:40
-V11,Charging,CQ4,06:15-06:20
-V15,F4 - Pyrmont Bay,CQ4,06:20-06:21
-V9,F7 - Double Bay,CQ4,06:35-06:36
-V17,F4 - Pyrmont Bay,CQ4,06:40-06:41
-V2,F2 - Zoo/Mosman (Peak),CQ4,06:45-06:46
-V6,F7 - Double Bay,CQ4,06:52-06:55
-V14,F4 - Pyrmont Bay,CQ4,07:00-07:01
-V8,Charging,CQ4,07:00-07:05
-V8,F7 - Double Bay,CQ4,07:05-07:06
-V13,Charging,CQ4,07:10-07:15
-V5,F2 - Zoo/Mosman (Peak),CQ4,07:15-07:16
-V12,F4 - Pyrmont Bay,CQ4,07:20-07:21
-V11,F7 - Double Bay,CQ4,07:35-07:36
-V16,F4 - Pyrmont Bay,CQ4,07:40-07:41
-V1,F2 - Zoo/Mosman (Peak),CQ4,07:45-07:46
-V7,F8 - Cockatoo Island,CQ4,07:59-08:02
-V13,F4 - Pyrmont Bay,CQ4,08:00-08:01
-V7,F7 - Double Bay,CQ4,08:05-08:06
-V14,Charging,CQ4,08:10-08:15
-V15,F4 - Pyrmont Bay,CQ4,08:20-08:21
-V1,F2 - Zoo/Mosman (Peak),CQ4,08:34-08:37
-V5,F7 - Double Bay,CQ4,08:35-08:36
-V17,F4 - Pyrmont Bay,CQ4,08:40-08:41
-V7,F7 - Double Bay,CQ4,08:52-08:55
-V14,F9 - Rose Bay,CQ4,08:52-08:56
-V7,Charging,CQ4,09:00-09:05
-V7,F7 - Double Bay,CQ4,09:05-09:06
-V13,F4 - Pyrmont Bay,CQ4,09:10-09:11
-V15,F4 - Pyrmont Bay,CQ4,09:25-09:28
-V3,F8 - Cockatoo Island,CQ4,09:29-09:32
-V11,Charging,CQ4,09:30-09:35
-V2,F7 - Double Bay,CQ4,09:35-09:36
-V12,Charging,CQ4,09:35-09:40
-V12,F4 - Pyrmont Bay,CQ4,09:40-09:41
-V17,Charging,CQ4,09:50-09:55
-V16,Charging,CQ4,09:50-09:55
-V16,Charging,CQ4,09:55-10:00
-V17,Charging,CQ4,09:55-10:00
-V9,Charging,CQ4,10:00-10:05
-V8,F7 - Double Bay,CQ4,10:05-10:06
-V9,Charging,CQ4,10:05-10:10
-V13,F4 - Pyrmont Bay,CQ4,10:15-10:18
-V2,Charging,CQ4,10:25-10:30
-V11,Charging,CQ4,10:25-10:30
-V13,Charging,CQ4,10:30-10:35
-V2,Crew Break,CQ4,10:35-11:05
-V4,Crew Break,CQ4,10:50-11:20
-V17,Charging,CQ4,11:20-11:25
-V3,Charging,CQ4,11:25-11:30
-V18,Charging,CQ4,11:25-11:30
+V15,Charging,CQ4,05:50-05:55
+V12,Charging,CQ4,05:55-06:00
+V10,Charging,CQ4,05:55-06:00
+V12,F4 - Pyrmont Bay,CQ4,06:00-06:01
+V8,Charging,CQ4,06:00-06:05
+V16,Charging,CQ4,06:10-06:15
+V13,Charging,CQ4,06:10-06:15
+V13,F4 - Pyrmont Bay,CQ4,06:20-06:21
+V15,Charging,CQ4,06:25-06:30
+V15,Charging,CQ4,06:30-06:35
+V17,F9 - Rose Bay,CQ4,06:32-06:36
+V14,Charging,CQ4,06:35-06:40
+V14,F4 - Pyrmont Bay,CQ4,06:40-06:41
+V9,Charging,CQ4,06:40-06:45
+V7,Charging,CQ4,06:45-06:50
+V17,Charging,CQ4,06:50-06:55
+V16,F9 - Rose Bay,CQ4,06:52-06:56
+V16,F4 - Pyrmont Bay,CQ4,07:00-07:01
+V11,F7 - Double Bay,CQ4,07:02-07:05
+V11,Charging,CQ4,07:10-07:15
+V15,F9 - Rose Bay,CQ4,07:12-07:16
+V6,F2 - Zoo/Mosman (Peak),CQ4,07:19-07:22
+V15,F4 - Pyrmont Bay,CQ4,07:20-07:21
+V2,Charging,CQ4,07:30-07:35
+V17,F9 - Rose Bay,CQ4,07:32-07:36
+V2,Charging,CQ4,07:35-07:40
+V17,F4 - Pyrmont Bay,CQ4,07:40-07:41
+V2,Charging,CQ4,07:40-07:45
+V7,F2 - Zoo/Mosman (Peak),CQ4,07:49-07:52
+V1,Charging,CQ4,07:55-08:00
+V7,Charging,CQ4,07:55-08:00
+V12,F4 - Pyrmont Bay,CQ4,08:00-08:01
+V16,F4 - Pyrmont Bay,CQ4,08:05-08:08
+V16,Charging,CQ4,08:10-08:15
+V13,F9 - Rose Bay,CQ4,08:12-08:16
+V13,F4 - Pyrmont Bay,CQ4,08:20-08:21
+V15,F4 - Pyrmont Bay,CQ4,08:25-08:28
+V2,F7 - Double Bay,CQ4,08:32-08:35
+V14,F9 - Rose Bay,CQ4,08:32-08:36
+V14,F4 - Pyrmont Bay,CQ4,08:40-08:41
+V17,F4 - Pyrmont Bay,CQ4,08:45-08:48
+V17,Charging,CQ4,08:50-08:55
+V9,F8 - Cockatoo Island,CQ4,08:54-08:57
+V7,F5 - Neutral Bay,CQ4,08:57-09:00
+V16,Charging,CQ4,09:00-09:05
+V16,F4 - Pyrmont Bay,CQ4,09:10-09:11
+V6,F2 - Taronga Zoo (off peak),CQ4,09:11-09:15
+V15,Charging,CQ4,09:20-09:25
+V1,F5 - Neutral Bay,CQ4,09:27-09:30
+V17,F9 - Rose Bay,CQ4,09:32-09:36
+V12,F9 - Watsons Bay,CQ4,09:35-09:37
+V15,F4 - Pyrmont Bay,CQ4,09:40-09:41
+V13,Charging,CQ4,09:50-09:55
+V4,F6 - Mosman (off peak),CQ4,09:56-09:59
+V6,F7 - Double Bay,CQ4,10:02-10:05
+V13,F9 - Watsons Bay,CQ4,10:05-10:07
+V7,F8 - Cockatoo Island,CQ4,10:24-10:27
+V10,Charging,CQ4,10:30-10:35
+V3,F7 - Double Bay,CQ4,10:32-10:35
+V2,Charging,CQ4,10:35-10:40
+V12,Charging,CQ4,10:40-10:45
+V6,F2 - Taronga Zoo (off peak),CQ4,10:41-10:45
+V6,Charging,CQ4,10:50-10:55
+V6,Charging,CQ4,10:55-11:00
+V6,Charging,CQ4,11:00-11:05
+V11,F7 - Double Bay,CQ4,11:02-11:05
+V6,Charging,CQ4,11:05-11:10
+V13,Charging,CQ4,11:10-11:15
+V6,Charging,CQ4,11:15-11:20
+V13,Charging,CQ4,11:20-11:25
+V11,Charging,CQ4,11:25-11:30
+V13,Charging,CQ4,11:25-11:30

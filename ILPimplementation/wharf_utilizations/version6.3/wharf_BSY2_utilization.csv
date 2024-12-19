@@ -1,10 +1,5 @@
 Vessel,Task,Wharf,Time
-V15,Waiting,BSY2,05:50-05:55
-V8,Waiting,BSY2,06:15-06:20
-V8,Waiting,BSY2,06:20-06:25
-V10,Waiting,BSY2,07:45-07:50
-V10,Waiting,BSY2,08:30-08:35
-V15,Crew Break,BSY2,10:30-11:00
-V19,Crew Break,BSY2,10:45-11:15
-V10,Waiting,BSY2,11:25-11:30
-V13,Waiting,BSY2,11:25-11:30
+V19,Crew Break,BSY2,10:30-11:00
+V5,Waiting,BSY2,10:50-10:55
+V19,Crew Break,BSY2,11:00-11:30
+V15,Waiting,BSY2,11:15-11:20

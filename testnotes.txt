@@ -156,45 +156,35 @@ Version 6.2: (based on 6.0)-----------------------------------------------------
 
 
 Version 6.3: (based on 6.0)---------------------------------------------------------------------------
-    - add sum task objectives (try to solve the issue with waiting tasks)
-    - multi objectives solver
+    - add new varibale and constraint (to solve the issue with waiting tasks)
+    - cycle discharging rate is fixed
 
-    gap: 44.4%
-    Vessel Utilization Value: 18.0
-    Rebalancing Time Value: 170.0
-    model.tasks: 314.0  #
+    Vessel Utilization Value: 19.0
+    Rebalancing Time Value: 256.0
+    Total panalise of tasks: 88.0
 
-6.3.1:
+    6.3.0 (further optimise) # 2 hours test
+        - alpha = 0.1
 
-Gap: 14.5%
-Vessel Utilization Value: 18.0
-Rebalancing Time Value: 150.0
-Total Number of tasks: 292.0
-
-6.3.2
-Vessel Utilization Value: 18.0
-Rebalancing Time Value: 83.0
-Total Number of tasks: 259.0
-
-6.4
-Gap: 23%
-Vessel Utilization Value: 18.0
-Rebalancing Time Value: 80.0
-Total Number of tasks: 310.0
-Total panalise of tasks: 13.0
-
-Best objective value within time limit: 0.7380952380952159
-
-6.4.2
-Vessel Utilization Value: 18.0
-Rebalancing Time Value: 78.0
-Total Number of tasks: 300.0
-Total panalise of tasks: 11.0
-
-Best objective value within time limit: 0.5178571428571193
+        Vessel Utilization Value: 19.0
+        Rebalancing Time Value: 162.0
+        Total panalise of tasks: 23.0
+        Best objective value within time limit: 0.569531250000022
 
 
-6.5:
+    version 6.3.1
+    - alphe = 0.1
+
+
+
+    version 6.3.2
+    - alpha = 0.5
+
+
+    version 6.3.3
+    - alpha = 0.9
+
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------

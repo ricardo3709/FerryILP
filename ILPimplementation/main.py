@@ -15,8 +15,8 @@ import sys
 
 # Redirect stdout and stderr to a file
 # current_version = input("Enter the name(version) of the output file (e.g., versionX.X): ").strip()
-current_version = 'version7'
 
+current_version = 'version6.3.1 alpha = 0.1'
 
 # Create model
 model = gp.Model("Ferry ILP")
@@ -61,11 +61,11 @@ config = SimulationConfig(
 x, y, Q, z, Z, Z_prime = define_variables(model, config, cal_C, cal_Rl, cal_C_lS)
 
 # ------------------------------------------ Starting Points ---------------------------------------------------------
-# prefix = "6htest_v6" #<<----------- CHECK HERE  <<-----------
-prefix = '6htest_new_cyclelines_v6'
+prefix = "6htest_v6" #<<----------- CHECK HERE  <<-----------
+# prefix = '6htest_new_cyclelines_v6'
 # prefix = '6htest_cyclelines_rob_sol'
 # starting_version = input("Enter the starting version files of this run (e.g., versionX.X): ").strip()
-starting_version = 'version6.0'
+starting_version = 'version6.3'
 
 files = {'x': f'ILPimplementation/output_files/{starting_version}/{prefix}_x_ld_results.csv',
          'z': f'ILPimplementation/output_files/{starting_version}/{prefix}_z_wj_results.csv',
@@ -82,8 +82,10 @@ for var, partial in zip([x, z, y, Q], partial_solutions.values()):
 # Flag to decide whether to generate new files
 generate_new_files = False  #<<----------- CHECK HERE  <<-----------
 
+pkl_file_prefix = "6htest_v6" 
+
 # Manage results based on the flag
-results = manage_results(config, generate_new_files, file_prefix)
+results = manage_results(config, generate_new_files, pkl_file_prefix)
 
 if results:
     taskF_results, mu_results, xi_results, phi_results, E_results, nu_results = results
@@ -93,7 +95,7 @@ else:
     # File identifiers
     file_ids = ["taskF", "mu", "xi_jj", "phi", "E", "nu"]
     # Dynamically load results
-    results = {f"{file_id}_results": pickle.load(open(f'ILPimplementation/pkl_files/{file_prefix}_{file_id}_results.pkl', 'rb')) for file_id in file_ids}
+    results = {f"{file_id}_results": pickle.load(open(f'ILPimplementation/pkl_files/{pkl_file_prefix}_{file_id}_results.pkl', 'rb')) for file_id in file_ids}
     # Assign to local variables
     taskF_results, mu_results, xi_results, phi_results, E_results, nu_results = (results[f"{file_id}_results"] for file_id in file_ids)
 
@@ -113,5 +115,5 @@ run_optimization(model)
 # -------------------------------------------Save results if optimal ------------------------------------------------
 print(f'\nCurent version is {current_version}, and the model results is based on the {starting_version} files')
 
-save_all_results(model, x, y, Q, z, Z, Z_prime, file_prefix,'')
+save_all_results(model, x, y, Q, z, Z, Z_prime, current_version,'')
 

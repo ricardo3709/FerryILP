@@ -91,6 +91,12 @@ line_to_route_dict = {
     '9': 'F11 - Blackwattle Bay',
     '10': 'F2 - Zoo/Mosman (Peak)',
     '11': 'F6 - Mosman (peak)'}
+
+Lset = [str(l) for l in line_df['Line_No'].unique().tolist()]
+# Lset = [str(l) for l in Lset]
+Vset = vessel_df['Vessel code'].unique().tolist()
+rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in Vset}
+
 # -------------------------------------------- Additional functions for processing --------------------------------------------
 def cal_time(period_num):
     # Convert initial_time to a datetime object with today's date
@@ -132,7 +138,31 @@ def end_time(row):
     else:
         return (cal_time(row['Start_Time']) + timedelta(minutes=Dc)).strftime('%H:%M')
 
+Lset = line_df['Line_No'].unique().tolist()
+Lset = [str(l) for l in Lset]
+Vset = vessel_df['Vessel code'].unique().tolist()
+rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in Vset}
 
+def cal_d_q(j):
+    if j in Bc: # crew pause
+        return 0  # returen change and time period
+
+    elif j in Bplus: # Charging
+        return rv_plus
+    
+    elif j in B :
+        if 'phi_' in j: # fisr/last period of charging
+            epsilon = 1 - pc / period_length
+            return epsilon * rv_plus
+        else:   # waiting   
+            return 0
+        
+    elif j in Lset: # line task
+        return line_df[line_df['Line_No'] == int(j)]['rj'].iloc()[0]
+    
+    else: # rebalancing
+        return None
+        # return rv[v] 
 # -------------------------------------------- Generate Timetable --------------------------------------------
 lines = line_df['Line_No'].unique().tolist()
 solved_lines = x_df['Line'].unique().tolist()
@@ -258,9 +288,6 @@ def cal_itinerary(vessel):
 
 vessels = vessel_df['Vessel code'].unique().tolist()
 
-# for vessel in vessels:
-#     cal_itinerary(vessel).to_csv(f'ILPimplementation/vessel_itineraries/vessel_{vessel}_itinerary.csv', index=False)
-
 # Create the versioned directory if it doesn't exist
 versioned_folder = os.path.join('ILPimplementation', 'vessel_itineraries', version)
 os.makedirs(versioned_folder, exist_ok=True)
@@ -365,12 +392,6 @@ def cal_wharf_utilization(wharf):
 
     wharf_df = all_wharf_df[all_wharf_df['Wharf'] == wharf].copy()
 
-    # 更新任务描述
-    # wharf_df['Task'] = wharf_df['Task'].apply(lambda x: 'Waiting' if x in B else
-    #                                                     'Crew Break' if x in Bc else
-    #                                                     'Charging' if x in Bplus else
-    #                                                     f"{x}")
-
     wharf_df['Task'] = wharf_df['Task'].apply(lambda x: 'Waiting' if x in B and not x.startswith('phi_') else
                                                         'Charging' if x in B and x.startswith('phi_') else
                                                         'Crew Break' if x in Bc else
@@ -398,27 +419,68 @@ for wharf in wharfs:
 
 print(f"Wharf files have been saved in the folder: {versioned_folder}")
 
-# for wharf in wharfs:
-#     cal_wharf_utilization(wharf).to_csv(f'ILPimplementation/wharf_utilizations/wharf_{wharf}_utilization.csv', index=False)
-
 
 # -------------------------------------------- Generate battery change --------------------------------------------
 
-# NEW: process data for Q
-split_columns = ['Vessel', 'Time']
-value_columns = {'Vessel': str, 'Time': int}
-q_df = pd.read_csv(f'ILPimplementation/output_files/{file_prefix}_Q_vt_results.csv')
-q_df['Variable'] = q_df['Variable'].str.replace(r"[()' ]", "", regex=True)
-q_df[split_columns] = q_df['Variable'].str.split(',', expand=True)
-for column, dtype in value_columns.items():
-    q_df[column] = q_df[column].astype(dtype)
-
-q_df = q_df[['Vessel', 'Time', 'Value']]
-q_df['Time'] = q_df['Time'].apply(lambda x: cal_time(x).strftime('%H:%M'))
-
 def cal_battery_change(vessel):
-    Qv = q_df[q_df['Vessel'] == vessel]
-    return  Qv
+    vesseldf = y_df[y_df['Vessel'] == vessel][['Vessel','Task','Start_Time']].copy()
+    vesseldf.sort_values(by='Start_Time') 
+
+    vesseldf['Battery_Change'] = vesseldf.apply(lambda row: cal_d_q(row['Task']), axis=1)
+    filled_times = pd.DataFrame({'Start_Time': list(range(1, 73))})
+    vesseldf = filled_times.merge(vesseldf, on='Start_Time', how='left')
+    vesseldf
+
+    # Handle the condition where Task is in Bc
+    for idx in vesseldf.index:
+        if vesseldf.loc[idx, 'Task'] in Bc: # 
+            # Set Battery_Change to 0 for the next 6 time periods (if within bounds)
+            vesseldf.loc[idx:idx + cal_duration(Dc) -1, 'Battery_Change'] = 0
+            vesseldf.loc[idx:idx + cal_duration(Dc) -1, 'Task'] = vesseldf.loc[idx, 'Task'] + ' cont.'
+
+            # vesseldf.loc[idx:idx + cal_duration(Dc), 'Task'] = vesseldf.loc[idx, 'Task']
+
+    for idx in vesseldf.index:
+        if vesseldf.loc[idx, 'Task'] in Lset:
+            time = cal_duration(line_df[line_df['Line_No'] == int(vesseldf.loc[idx, 'Task'])]['Line_duration'].iloc[0])
+            battery_value = line_df[line_df['Line_No'] == int(vesseldf.loc[idx, 'Task'])]['rj'].iloc[0]
+            vesseldf.loc[idx:idx + time - 1, 'Battery_Change'] = battery_value
+            vesseldf.loc[idx:idx + time - 1, 'Task'] = vesseldf.loc[idx, 'Task'] + ' cont.'
+
+
+    vesseldf['Task'] = vesseldf['Task'].fillna("Rebalancing")
+    vesseldf['Vessel'] = vesseldf['Vessel'].fillna(vessel)
+    vesseldf['Battery_Change'] = vesseldf['Battery_Change'].fillna(rv[vessel])
+    vesseldf
+
+    # Initialize battery level column
+    vesseldf['Battery_Level'] = 0  # Assuming battery starts at 0
+
+    # Set initial battery level
+    initial_battery_level = 1
+    max_battery_level = 1.0
+
+    # Calculate battery levels with constraints
+    current_battery_level = initial_battery_level
+
+    for idx in vesseldf.index:
+        # Update battery level based on the previous level and the current change
+        current_battery_level += vesseldf.loc[idx, 'Battery_Change']
+        
+        # Apply constraints
+        if current_battery_level > max_battery_level:
+            current_battery_level = max_battery_level
+
+        # Save the calculated battery level
+        vesseldf.loc[idx, 'Battery_Level'] = current_battery_level
+
+    initial_row = pd.DataFrame({'Vessel': [vessel],'Start_Time': [0],'Task': [None],'Battery_Change': [0],'Battery_Level': [1]})
+    vesseldf = pd.concat([initial_row, vesseldf], ignore_index=True)
+
+    vesseldf['Time'] = vesseldf['Start_Time'].apply(lambda x: cal_time(x+1).strftime('%H:%M'))
+
+    return vesseldf[['Task','Time','Battery_Level']]
+
 
 # Create the versioned directory if it doesn't exist
 versioned_folder = os.path.join('ILPimplementation', 'battery_change', version)

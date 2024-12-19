@@ -1,4 +1,6 @@
 Vessel,Task,Wharf,Time
-V19,Crew Break,BSY4,06:00-06:30
-V5,Crew Break,BSY4,10:40-11:10
-V6,Crew Break,BSY4,11:00-11:30
+V8,Crew Break,BSY4,06:20-06:50
+V14,Waiting,BSY4,10:25-10:30
+V14,Waiting,BSY4,10:30-10:35
+V12,Crew Break,BSY4,11:00-11:30
+V5,Waiting,BSY4,11:25-11:30
