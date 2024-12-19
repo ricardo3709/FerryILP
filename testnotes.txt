@@ -172,10 +172,8 @@ Version 6.3: (based on 6.0)-----------------------------------------------------
         Best objective value within time limit: 0.569531250000022
 
 
-    version 6.3.1
+    version 6.3.1 - 7919327.pbsserver
     - alphe = 0.1
-
-
 
     version 6.3.2
     - alpha = 0.5

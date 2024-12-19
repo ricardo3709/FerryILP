@@ -3,7 +3,6 @@ from data_load import *
 
 ## -------------------- Input Parameters Values --------------------------
 
-
 # Simulation time parameters
 initial_time = time(5,30)
 period_length = 5  # mins

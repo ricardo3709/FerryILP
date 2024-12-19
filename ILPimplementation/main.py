@@ -15,8 +15,7 @@ import sys
 
 # Redirect stdout and stderr to a file
 # current_version = input("Enter the name(version) of the output file (e.g., versionX.X): ").strip()
-
-current_version = 'version6.3.1 alpha = 0.1'
+current_version = 'version6.3.2 alpha = 0.5'
 
 # Create model
 model = gp.Model("Ferry ILP")
@@ -83,7 +82,6 @@ for var, partial in zip([x, z, y, Q], partial_solutions.values()):
 generate_new_files = False  #<<----------- CHECK HERE  <<-----------
 
 pkl_file_prefix = "6htest_v6" 
-
 # Manage results based on the flag
 results = manage_results(config, generate_new_files, pkl_file_prefix)
 
