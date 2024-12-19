@@ -15,7 +15,7 @@ import sys
 
 # Redirect stdout and stderr to a file
 # current_version = input("Enter the name(version) of the output file (e.g., versionX.X): ").strip()
-current_version = 'version6.3.2 alpha = 0.5'
+current_version = 'version6.3.3 alpha = 0.9'
 
 # Create model
 model = gp.Model("Ferry ILP")

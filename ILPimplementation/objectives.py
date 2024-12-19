@@ -34,7 +34,7 @@ def set_objective_functions(model, config, y, phi_results):
     rebalancing_time += total_panelise
 
     # ---------------------------------------------------------Weighted Equation-------------------------------------------------------------------------------------
-    alpha = 0.5  # % focus on fleet size
+    alpha = 0.9  # % focus on fleet size
 
     # Combined Weighted Objective
     weighted_objective = (alpha * (19 - vessel_utilization) / 1 +  # Fleet size
