@@ -15,11 +15,11 @@ def run_optimization(model):
 
     # Optimization strategies
     model.setParam('NumericFocus', 3)    # Improve numerical stability
-    model.setParam('MIPGap', 1) 
+    model.setParam('MIPGap', 0.2) 
     model.setParam('Method', 2)          # Try dual simplex to avoid barrier instability
     # Set a time limit (in seconds)
-    # TimeLimit = 0.5*60*60
-    # model.setParam('TimeLimit', TimeLimit)
+    TimeLimit = 5*24*60*60 # 5 days
+    model.setParam('TimeLimit', TimeLimit)
 
     model.optimize()
 
@@ -34,7 +34,7 @@ def run_optimization(model):
         try:  # CHANGED: Added error handling for components
             print(f"Vessel Utilization Value: {model._vessel_utilization.getValue()}")
             print(f"Rebalancing Time Value: {model._rebalancing_time.getValue()}")
-            # print(f'Total panalise of tasks: {model._total_panelise.getValue()}') 
+            print(f'Total panalise of tasks: {model._total_panelise.getValue()}') 
             
         except AttributeError:
             print("Objective components are not accessible or not defined in the model.")

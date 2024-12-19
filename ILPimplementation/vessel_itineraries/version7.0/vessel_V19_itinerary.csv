@@ -1,0 +1,11 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V19,Crew Break,Balmain Shipyard,BSY1,05:35,Balmain Shipyard,BSY1,06:05
+V19,Charging,Barangaroo,Bar2,06:15,Barangaroo,Bar2,06:20
+V19,Crew Break,Barangaroo,Bar1,06:20,Barangaroo,Bar1,06:50
+V19,F11 - Blackwattle Bay,Barangaroo,Bar2,06:50,Barangaroo,Bar2,07:46
+V19,F11 - Blackwattle Bay,Barangaroo,Bar2,07:50,Barangaroo,Bar2,08:46
+V19,F11 - Blackwattle Bay,Barangaroo,Bar2,08:50,Barangaroo,Bar1,09:46
+V19,Waiting,Balmain Shipyard,BSY6,10:00,Balmain Shipyard,BSY6,10:05
+V19,Charging,Barangaroo,Bar1,10:15,Barangaroo,Bar1,10:20
+V19,Crew Break,Balmain Shipyard,BSY2,10:30,Balmain Shipyard,BSY2,11:00
+V19,Crew Break,Balmain Shipyard,BSY2,11:00,Balmain Shipyard,BSY2,11:30
