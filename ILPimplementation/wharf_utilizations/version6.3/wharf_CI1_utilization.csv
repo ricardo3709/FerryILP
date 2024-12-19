@@ -1,11 +1,10 @@
 Vessel,Task,Wharf,Time
-V15,Waiting,CI1,05:35-05:40
-V16,Waiting,CI1,06:35-06:40
-V11,F8 - Cockatoo Island,CI1,06:50-07:00
-V7,F8 - Cockatoo Island,CI1,07:20-07:30
-V6,F8 - Cockatoo Island,CI1,07:50-08:00
-V4,F8 - Cockatoo Island,CI1,08:20-08:30
-V3,F8 - Cockatoo Island,CI1,08:50-09:00
-V8,F8 - Cockatoo Island,CI1,09:20-09:30
-V6,F8 - Cockatoo Island,CI1,09:50-10:00
-V1,F8 - Cockatoo Island,CI1,10:20-10:30
+V1,Waiting,CI1,05:55-06:00
+V2,F8 - Cockatoo Island,CI1,06:45-06:55
+V4,F8 - Cockatoo Island,CI1,07:15-07:25
+V11,F8 - Cockatoo Island,CI1,07:45-07:55
+V9,F8 - Cockatoo Island,CI1,08:15-08:25
+V10,F8 - Cockatoo Island,CI1,08:45-08:55
+V2,F8 - Cockatoo Island,CI1,09:15-09:25
+V7,F8 - Cockatoo Island,CI1,09:45-09:55
+V8,F8 - Cockatoo Island,CI1,10:15-10:25

@@ -1,14 +1,13 @@
 Vessel,Task,Wharf,Time
-V7,Waiting,Mos1,05:40-05:45
-V4,F6 - Mosman (peak),Mos1,06:12-06:22
-V3,F6 - Mosman (peak),Mos1,06:42-06:52
-V2,F2 - Zoo/Mosman (Peak),Mos1,07:01-07:11
-V4,F6 - Mosman (peak),Mos1,07:12-07:22
-V5,F2 - Zoo/Mosman (Peak),Mos1,07:31-07:41
-V3,F6 - Mosman (peak),Mos1,07:42-07:52
-V1,F2 - Zoo/Mosman (Peak),Mos1,08:01-08:11
-V8,F6 - Mosman (peak),Mos1,08:12-08:22
-V11,F6 - Mosman (peak),Mos1,08:42-08:52
-V1,F6 - Mosman (off peak),Mos1,09:16-09:26
-V5,F6 - Mosman (off peak),Mos1,09:46-09:56
-V4,F6 - Mosman (off peak),Mos1,10:16-10:26
+V10,F6 - Mosman (peak),Mos1,06:17-06:27
+V6,F2 - Zoo/Mosman (Peak),Mos1,06:46-06:56
+V5,F6 - Mosman (peak),Mos1,06:47-06:57
+V7,F2 - Zoo/Mosman (Peak),Mos1,07:16-07:26
+V1,F6 - Mosman (peak),Mos1,07:17-07:27
+V5,F2 - Zoo/Mosman (Peak),Mos1,07:46-07:56
+V6,F6 - Mosman (peak),Mos1,07:47-07:57
+V1,F6 - Mosman (peak),Mos1,08:17-08:27
+V5,F6 - Mosman (peak),Mos1,08:47-08:57
+V4,F6 - Mosman (off peak),Mos1,09:26-09:36
+V10,F6 - Mosman (off peak),Mos1,09:56-10:06
+V4,F6 - Mosman (off peak),Mos1,10:26-10:36
