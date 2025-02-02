@@ -175,17 +175,22 @@ Version 6.3: (based on 6.0)-----------------------------------------------------
     version 6.3.1 - 7919327.pbsserver
     - alphe = 0.1
 
+    Gap: 
+
     version 6.3.2 - 7919329.pbsserver
     - alpha = 0.5
 
 
-    version 6.3.3
+
+    version 6.3.3 - 7919361.pbsserver
     - alpha = 0.9
-
-
-
+    
+    Gap: 66.6667%
+    Vessel Utilization Value: 19.0
+    Rebalancing Time Value: 78.0
+    Total panalise of tasks: 0.0
+    Best objective value within time limit: 0.03046875000000071
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Next steps: 
-    1. Longer hours 
-    2. out F3 occupied the Wharf on the visulisation.
+    1. Longer hours (prepare input files)
