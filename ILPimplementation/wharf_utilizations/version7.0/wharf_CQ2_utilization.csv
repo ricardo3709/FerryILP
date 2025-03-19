@@ -1,0 +1,48 @@
+Vessel,Task,Wharf,Time
+V10,F6 - Mosman (peak),CQ2,06:00-06:01
+V2,Charging,CQ2,06:10-06:15
+V18,Charging,CQ2,06:20-06:25
+V3,F6 - Mosman (peak),CQ2,06:30-06:31
+V10,F6 - Mosman (peak),CQ2,06:48-06:51
+V10,Charging,CQ2,06:55-07:00
+V10,F6 - Mosman (peak),CQ2,07:00-07:01
+V5,F2 - Zoo/Mosman (Peak),CQ2,07:19-07:22
+V5,Charging,CQ2,07:25-07:30
+V5,F6 - Mosman (peak),CQ2,07:30-07:31
+V9,F7 - Double Bay,CQ2,07:32-07:35
+V1,F2 - Zoo/Mosman (Peak),CQ2,07:49-07:52
+V1,Charging,CQ2,07:55-08:00
+V1,F6 - Mosman (peak),CQ2,08:00-08:01
+V16,F4 - Pyrmont Bay,CQ2,08:05-08:08
+V16,Charging,CQ2,08:10-08:15
+V5,F6 - Mosman (peak),CQ2,08:18-08:21
+V11,F8 - Cockatoo Island,CQ2,08:24-08:27
+V5,Charging,CQ2,08:25-08:30
+V5,F6 - Mosman (peak),CQ2,08:30-08:31
+V11,Charging,CQ2,08:30-08:35
+V11,Charging,CQ2,08:35-08:40
+V11,Charging,CQ2,08:40-08:45
+V2,F2 - Taronga Zoo (off peak),CQ2,08:41-08:45
+V7,F5 - Neutral Bay,CQ2,08:57-09:00
+V12,F4 - Pyrmont Bay,CQ2,09:05-09:08
+V12,Charging,CQ2,09:10-09:15
+V3,F2 - Taronga Zoo (off peak),CQ2,09:11-09:15
+V12,Charging,CQ2,09:15-09:20
+V12,Charging,CQ2,09:20-09:25
+V13,F4 - Pyrmont Bay,CQ2,09:25-09:28
+V12,Charging,CQ2,09:25-09:30
+V13,Charging,CQ2,09:30-09:35
+V12,Charging,CQ2,09:30-09:35
+V12,F9 - Watsons Bay,CQ2,09:35-09:37
+V13,Charging,CQ2,09:35-09:40
+V13,Charging,CQ2,09:40-09:45
+V13,Charging,CQ2,09:45-09:50
+V13,Charging,CQ2,09:50-09:55
+V13,Charging,CQ2,09:55-10:00
+V13,Charging,CQ2,10:00-10:05
+V13,F9 - Watsons Bay,CQ2,10:05-10:07
+V16,F4 - Pyrmont Bay,CQ2,10:15-10:18
+V16,Charging,CQ2,10:20-10:25
+V5,F5 - Neutral Bay,CQ2,10:27-10:30
+V8,F8 - Cockatoo Island,CQ2,10:54-10:57
+V8,Crew Break,CQ2,11:00-11:30

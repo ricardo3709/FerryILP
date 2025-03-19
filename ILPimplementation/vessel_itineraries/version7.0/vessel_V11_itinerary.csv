@@ -1,0 +1,16 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V11,Charging,Circular Quay,CQ4,05:40,Circular Quay,CQ4,05:45
+V11,Charging,Circular Quay,CQ4,05:45,Circular Quay,CQ4,05:50
+V11,Charging,Barangaroo,Bar1,06:00,Barangaroo,Bar1,06:05
+V11,Charging,Circular Quay,CQEXTRA1,06:15,Circular Quay,CQEXTRA1,06:20
+V11,Crew Break,Barangaroo,Bar2,06:30,Barangaroo,Bar2,07:00
+V11,Charging,Barangaroo,Bar2,07:00,Barangaroo,Bar2,07:05
+V11,F8 - Cockatoo Island,Circular Quay,CQ5,07:15,Circular Quay,CQ2,08:27
+V11,Charging,Circular Quay,CQ2,08:30,Circular Quay,CQ2,08:35
+V11,Charging,Circular Quay,CQ2,08:35,Circular Quay,CQ2,08:40
+V11,Charging,Circular Quay,CQ2,08:40,Circular Quay,CQ2,08:45
+V11,F7 - Double Bay,Circular Quay,CQEXTRA2,08:45,Circular Quay,CQEXTRA2,09:35
+V11,F2 - Taronga Zoo (off peak),Circular Quay,CQEXTRA2,09:35,Circular Quay,CQEXTRA2,10:15
+V11,F7 - Double Bay,Circular Quay,CQEXTRA2,10:15,Circular Quay,CQEXTRA2,11:05
+V11,Waiting,Balmain Shipyard,BSY4,11:20,Balmain Shipyard,BSY4,11:25
+V11,Waiting,Balmain Shipyard,BSY4,11:25,Balmain Shipyard,BSY4,11:30

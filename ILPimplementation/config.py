@@ -1,45 +1,78 @@
 from datetime import time
 from data_load import *
 
-## -------------------- Input Parameters Values --------------------------
+#=================================== Parameters ==================================
+# Versioning & File Names 
+current_version = 'version7.1'
 
-# Simulation time parameters
-initial_time = time(5,30)
-period_length = 5  # mins
+# Starting files
+starting_version = 'version7.0'
+prefix = "v7"
+
+# Solver Settings 
+Gap = 0.2  # Optimality gap tolerance
+TimeLimit =  240#20 * 60 * 60  # in seconds
+alpha = 0  # % of the objectives that focus on fleet size
+
+# pkl files
+generate_new_files = False
+pkl_file_prefix = 'v7'
+
+# File Paths  
+# in the order of [x, y, Q, z, Z, Z_prime]
+files = {'x': f'ILPimplementation/output_files/{starting_version}/{prefix}_x_ld_results.csv',
+         'y': f'ILPimplementation/output_files/{starting_version}/{prefix}_y_vjt_results.csv',
+         'Q': f'ILPimplementation/output_files/{starting_version}/{prefix}_Q_vt_results.csv',
+        'z': f'ILPimplementation/output_files/{starting_version}/{prefix}_z_wj_results.csv',
+         'Z': f'ILPimplementation/output_files/{starting_version}/{prefix}_Z_lwt_results.csv',
+         'Z_prime': f'ILPimplementation/output_files/{starting_version}/{prefix}_Z_prime_lwt_results.csv'}
+
+# Simulation Time Parameters 
+initial_time = time(5, 30)
+period_length = 5  # minutes
 total_operation_hours = 6  # hours
 
-# nc, Minimum num of crew breaks
-nc = 1
+# Crew Break Parameters 
+nc = 1  # Minimum number of crew breaks
+Dc = 30  # Crew break duration (minutes)
+Tc = 6 * 60  # Maximum separation time for crew breaks (minutes)
 
-# Dc, Crew break duration (fixed)
-Dc = 30  # mins
+# Charging Parameters 
+rv_plus = 0.16  # Charging rate (as percentage per period)
+pc = 1  # Plugging/Unplugging time (minutes)
 
-# Tc, Maximum separation time for crew breaks
-Tc = 6 * 60  # mins
-
-# rv+, charging rate
-rv_plus = 0.16 #2100 * period_length / 60 / 1100  # kW*h/kWh --> %
-
-# pc, Plugging/Unplugging time
-pc = 1  # mins # reivsed by 11 Oct after checking the originla data for charging
-
+# Print Simulation Configuration 
 print(f"""
-Simulation Parameters:
-------------------------------------------------------
-Initial Time: {initial_time}
-Period Length: {period_length} minutes
-Total Operation Hours: {total_operation_hours} hours
+====================================================================
+Ferry ILP Simulation Configuration
+====================================================================
+Time Settings:
+   - Initial Time: {initial_time}
+   - Period Length: {period_length} minutes
+   - Total Operation Hours: {total_operation_hours} hours
 
-Minimum Number of Crew Breaks (nc): {nc}
-Crew Break Duration (Dc): {Dc} minutes
-Maximum Separation Time for Crew Breaks (Tc): {Tc} minutes
+Crew Break Parameters:
+   - Minimum Number of Crew Breaks (nc): {nc}
+   - Crew Break Duration (Dc): {Dc} minutes
+   - Max Separation Time for Breaks (Tc): {Tc} minutes
 
-Charging Rate (rv_plus): {rv_plus:.2%} per period
-Plugging/Unplugging Time (pc): {pc} minutes
-------------------------------------------------------
+Charging Parameters:
+   - Charging Rate (rv_plus): {rv_plus:.2%} per period
+   - Plugging/Unplugging Time (pc): {pc} minutes
+
+Data Handling:
+   - Generate New Files: {generate_new_files}
+   - Output File Prefix: {pkl_file_prefix}
+
+Versioning:
+   - Current Version: {current_version}
+   - Based on: {starting_version}
+
+====================================================================
 """)
 
-## -------------------- Sets Defined -----------------------------------------
+
+# -------------------- Sets Defined -----------------------------------------
 
 # Lset: Set of Lines
 Lset = line_df['Line_No'].unique().tolist()
@@ -83,8 +116,7 @@ Vset = vessel_df['Vessel code'].unique().tolist()
 Wset = wharf_df['Wharf_No'].unique().tolist()
 
 # Dset: Set of possible first sailing time
-Dset = {
-    l: list(range(
+Dset = {l: list(range(
         ((line_df[line_df['Line_No'] == l]['First_sailing'].iloc[0].hour * 60 +
           line_df[line_df['Line_No'] == l]['First_sailing'].iloc[0].minute) -
          (initial_time.hour * 60 + initial_time.minute) - 15) // period_length + 1,

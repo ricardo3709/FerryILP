@@ -2,7 +2,7 @@ import gurobipy as gp
 from tqdm import tqdm
 from gurobipy import GRB
 
-def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_results, mu_results, taskF_results, xi_results, nu_results):
+def add_constraints(model, config, x, y, Q, z, Z, Z_prime, u, phi_results, E_results, mu_results, taskF_results, xi_results, nu_results):
     functions = config.functions
     vessel_df = config.vessel_df
 
@@ -112,6 +112,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                 model.addConstr(sum_y_v_jprime_tprime <= sum_nu_t_j_jprime * (1 - y[v, j, t]),name=f"3_eq_v{v}_j{j}_t{t}")
 
     # Constraint 4
+    # time period that the F3 occupies the wharves    
     Bar1_occupied = [14, 15, 22, 23, 24, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 52, 53, 56, 57, 60, 61, 64, 65, 68, 69]
     CQ5_occupied = [20, 21, 22, 25, 26, 27, 26, 27, 28, 31, 32, 33, 32, 33, 34, 35, 36, 37, 37, 38, 39, 38, 39, 40, 43, 44, 45, 46, 47, 48, 49, 50, 49, 50, 51, 54, 55, 56, 58, 59, 60, 62, 63, 64, 66, 67, 68]
 
@@ -163,8 +164,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
     for v in tqdm(config.Vset, desc='Constraint 6a'):
         model.addConstr(
             gp.quicksum(y[v, j, t] for j in config.Bc for t in config.Tset) >= config.nc,
-            name=f"6a: min_crew_pauses_{v}"
-        )
+            name=f"6a: min_crew_pauses_{v}")
 
     # Constraint 6b
     for v in tqdm(config.Vset, desc='Constraint 6b'):
@@ -173,8 +173,15 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, phi_results, E_result
                 for t_prime in range(1, config.Tc // config.period_length + 1):
                     model.addConstr(
                         gp.quicksum(y[v, j, t + t_prime] for j in config.Bc) >= 1,
-                        name=f"6b: max_distance_pauses_v{v}_t{t}_t_prime{t_prime}"
-                    )
+                        name=f"6b: max_distance_pauses_v{v}_t{t}_t_prime{t_prime}")
+
+
+    # new constraints for new variable records vessel location
+    for v in tqdm(config.Vset, desc='vessel location'):  
+        for t in config.Tset:
+            for w in config.Wset:
+                model.addConstr(u[v, w, t] == gp.quicksum(Z_prime[l, w, t] * y[v, l, t - mu_results[l] + 1] for l in config.Lset if (l, w, t) in Z_prime and (v, l, t - mu_results[l] + 1) in y) + gp.quicksum(y[v, j, t_prime] * z[w, j] for (j, t_prime) in E_results[(w, t)] if (v, j, t_prime) in y and (w, j) in z))
+
 
     print('All constraintrs are ready.\n')
 

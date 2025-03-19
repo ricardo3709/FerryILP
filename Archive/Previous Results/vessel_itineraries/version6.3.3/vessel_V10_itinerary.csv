@@ -1,0 +1,18 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V10,Waiting,Barangaroo,Bar4,05:35,Barangaroo,Bar4,05:40
+V10,Waiting,Barangaroo,Bar4,05:40,Barangaroo,Bar4,05:45
+V10,Waiting,Barangaroo,Bar4,05:45,Barangaroo,Bar4,05:50
+V10,Waiting,Barangaroo,Bar4,05:50,Barangaroo,Bar4,05:55
+V10,Crew Break,Circular Quay,CQ3,06:05,Circular Quay,CQ3,06:35
+V10,Charging,Circular Quay,CQ4,06:35,Circular Quay,CQ4,06:40
+V10,F8 - Cockatoo Island,Circular Quay,CQ2,06:40,Circular Quay,CQ3,07:52
+V10,Charging,Circular Quay,CQ2,07:55,Circular Quay,CQ2,08:00
+V10,Charging,Circular Quay,CQ2,08:00,Circular Quay,CQ2,08:05
+V10,Charging,Circular Quay,CQ2,08:05,Circular Quay,CQ2,08:10
+V10,F8 - Cockatoo Island,Circular Quay,CQ2,08:10,Circular Quay,CQ3,09:22
+V10,Waiting,Circular Quay,CQ3,09:25,Circular Quay,CQ3,09:30
+V10,Waiting,Circular Quay,CQ3,09:30,Circular Quay,CQ3,09:35
+V10,Waiting,Circular Quay,CQ3,09:35,Circular Quay,CQ3,09:40
+V10,F8 - Cockatoo Island,Circular Quay,CQ2,09:40,Circular Quay,CQ5,10:52
+V10,Crew Break,Circular Quay,CQ3,10:55,Circular Quay,CQ3,11:25
+V10,Waiting,Circular Quay,CQ3,11:25,Circular Quay,CQ3,11:30

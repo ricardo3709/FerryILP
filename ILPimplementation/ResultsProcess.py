@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
-from datetime import datetime, timedelta, time
+from datetime import datetime, timedelta
 from config import *
 from functions import *
 from simulation_config import SimulationConfig  # Import the class
 import os
 
-version = input("Please enter the version name (e.g., versionXXX): ").strip()
+version = input("Please enter the version name (e.g., versionXXX): ").strip()  # used to create new folder then store the new files
 
 
 # Initialize the configuration
@@ -38,7 +38,6 @@ config = SimulationConfig(
 
 # --------------------------------- Load results file --------------------------------------------
 
-
 def load_and_process_data(filepath, split_columns, value_columns):
     """
     Load data, remove unwanted characters, filter rows, split columns, and convert types.
@@ -57,13 +56,11 @@ def load_and_process_data(filepath, split_columns, value_columns):
         df[column] = df[column].astype(dtype)
     return df
 
-
-
-z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_z_wj_results.csv',['Wharf', 'Task'],{})
-Zp_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_prime_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
-Z_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_Z_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
-x_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_x_ld_results.csv',['Line', 'Time'],{'Line': int, 'Time': int})
-y_df = load_and_process_data(f'ILPimplementation/output_files/{file_prefix}_y_vjt_results.csv',['Vessel', 'Task', 'Start_Time'],{'Start_Time': int})
+z_df = load_and_process_data(f'ILPimplementation/output_files/{pkl_file_prefix}_z_wj_results.csv',['Wharf', 'Task'],{})
+Zp_df = load_and_process_data(f'ILPimplementation/output_files/{pkl_file_prefix}_Z_prime_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
+Z_df = load_and_process_data(f'ILPimplementation/output_files/{pkl_file_prefix}_Z_lwt_results.csv',['Line', 'Wharf', 'Time'],{'Line': int, 'Time': int})
+x_df = load_and_process_data(f'ILPimplementation/output_files/{pkl_file_prefix}_x_ld_results.csv',['Line', 'Time'],{'Line': int, 'Time': int})
+y_df = load_and_process_data(f'ILPimplementation/output_files/{pkl_file_prefix}_y_vjt_results.csv',['Vessel', 'Task', 'Start_Time'],{'Start_Time': int})
 
 # Determine start and end wharfs
 Start_S = dict(zip(line_df['Line_No'].astype(str), line_df['O']))
@@ -252,12 +249,6 @@ def cal_itinerary(vessel):
     vessel_itinerary_df['End_Station'] = vessel_itinerary_df['Start_Wharf'].apply(lambda x: End_S.get(x, 'Unknown Station'))
 
     # # Update Task based on specific keywords or conditions
-    # vessel_itinerary_df['Task'] = vessel_itinerary_df['Task'].apply(lambda x: 'Waiting' if x in B else
-    #                                                                           'Crew Break' if x in Bc else
-    #                                                                           'Charging' if x in Bplus else
-    #                                                                           f"{x}")
-
-
     vessel_itinerary_df['Task'] = vessel_itinerary_df['Task'].apply(lambda x: 'Waiting' if x in B and not x.startswith('phi_') else
                                                                               'Charging' if x in B and x.startswith('phi_') else
                                                                               'Crew Break' if x in Bc else

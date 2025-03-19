@@ -2,24 +2,26 @@ import gurobipy as gp
 import pandas as pd
 import os
 
-def run_optimization(model):
+def run_optimization(model, Gap, TimeLimit):
     print(f"Starting optimization with {model.NumVars} variables and {model.NumConstrs} constraints.\n")
 
     # Modify model parameters
 
     # Basic settings
-    model.setParam('OutputFlag', 1)       # Enable output logs
-    model.setParam('InfUnbdInfo', 1)     # Output information on infeasible or unbounded models
-    model.setParam('Presolve', 1)  
-    model.setParam('ScaleFlag', 0)  
+    model.setParam('OutputFlag', 1) # Enable output logs
+    model.setParam('InfUnbdInfo', 1) # Output information on infeasible or unbounded models
 
-    # Optimization strategies
-    model.setParam('NumericFocus', 3)    # Improve numerical stability
-    model.setParam('MIPGap', 0.2) 
-    model.setParam('Method', 2)          # Try dual simplex to avoid barrier instability
-    # Set a time limit (in seconds)
-    TimeLimit = 5*24*60*60 # 5 days
-    model.setParam('TimeLimit', TimeLimit)
+    # Presolve and numerical stability settings
+    model.setParam('Presolve', 1) # Enable presolve to simplify the model
+    model.setParam('ScaleFlag', 0) # Disable automatic model scaling, which might help avoid numerical issues
+    model.setParam('NumericFocus', 3) # Increase numerical stability at the cost of performance (range: 0-3, higher = more stable)
+
+    # Optimization method selection
+    model.setParam('Method', 2) # Use the dual simplex method, more stable
+
+   # Gap and time limit
+    model.setParam('MIPGap', Gap)
+    model.setParam('TimeLimit', TimeLimit) 
 
     model.optimize()
 
@@ -28,13 +30,13 @@ def run_optimization(model):
     # Check if a solution was found or partial solution exists
     objects_name = {0: "Vessel utilization", 1: "Total rebalancing time"}
 
-    if model.SolCount > 0:  # CHANGED: Handle partial solutions as well
+    if model.SolCount > 0:  # Handle partial solutions as well
         print("Solution found or partially solved!")
         # Retrieve and print individual objective components if available
-        try:  # CHANGED: Added error handling for components
+        try:
             print(f"Vessel Utilization Value: {model._vessel_utilization.getValue()}")
             print(f"Rebalancing Time Value: {model._rebalancing_time.getValue()}")
-            print(f'Total panalise of tasks: {model._total_panelise.getValue()}') 
+            print(f'Total penalise of tasks: {model._total_panelise.getValue()}') 
             
         except AttributeError:
             print("Objective components are not accessible or not defined in the model.")
@@ -46,7 +48,7 @@ def run_optimization(model):
         #     print(f"{var_name}: {value}")
 
     else:
-        print("No feasible solution found within the time limit.")  # CHANGED
+        print("No feasible solution found within the time limit.")
 
     # CHANGED: Handle cases where optimization is interrupted due to the time limit
     if model.Status == gp.GRB.TIME_LIMIT:
@@ -74,31 +76,10 @@ def save_variable_results(var_dict, filename):
     df.to_csv(filename, index=False)
     print(f"Results saved to {filename} with {len(results)} entries.")
 
-def save_relaxed_variable_results(model, var_dict, filename):
-    # Check if the model is infeasible
-    if model.Status == gp.GRB.INFEASIBLE:
-        print("Model is infeasible. Attempting to compute a feasibility relaxation.")
-        # Compute a feasibility relaxation of the model
-        model.feasRelaxS(0, False, False, True)
-        model.optimize()
 
-        if model.Status == gp.GRB.OPTIMAL:
-            results = {
-                k: (var_dict[k].X if var_dict[k].X <= var_dict[k].UB and var_dict[k].X >= var_dict[k].LB else "Out of bounds")
-                for k in var_dict.keys()
-            }
-            df = pd.DataFrame(list(results.items()), columns=['Variable', 'Value'])
-            df.to_csv(filename, index=False)
-            print(f"Feasibility relaxation results saved to {filename} with {len(results)} entries.")
-        else:
-            print("Unable to find a feasible relaxed solution.")
-    else:
-        print("\nModel status is not infeasible. No need to relax anything.")
-
-def save_all_results(model, x, y, Q, z, Z, Z_prime, file_prefix, version):
-    if model.Status == gp.GRB.OPTIMAL or model.SolCount > 0:  # CHANGED: Allow saving even if not optimal
-        print(f"\n {version}")  # CHANGED
-        print("\nOptimization was successful or partially solved. Saving results...")  # CHANGED
+def save_all_results(model, x, y, Q, z, Z, Z_prime,u, file_prefix):
+    if model.Status == gp.GRB.OPTIMAL or model.SolCount > 0:  # Allow saving files even if not optimal
+        print("\nOptimization was successful or partially solved. Saving results...")
         
         output_dir = 'ILPimplementation/output_files'
         os.makedirs(output_dir, exist_ok=True)
@@ -110,5 +91,6 @@ def save_all_results(model, x, y, Q, z, Z, Z_prime, file_prefix, version):
         save_variable_results(z, os.path.join(output_dir, f'{file_prefix}_z_wj_results.csv'))
         save_variable_results(Z, os.path.join(output_dir, f'{file_prefix}_Z_lwt_results.csv'))
         save_variable_results(Z_prime, os.path.join(output_dir, f'{file_prefix}_Z_prime_lwt_results.csv'))
+        save_variable_results(u, os.path.join(output_dir, f'{file_prefix}_u_vwt_results.csv'))
     else:
-        print("\nOptimization did not reach optimality or find a feasible solution.")  # CHANGED
+        print("\nOptimization did not reach optimality or find a feasible solution.")

@@ -39,14 +39,14 @@ def cal_Rl(config, l): # calculate line stops
         raise ValueError("DataFrame must include 'Line_No', 'O', 'I', 'T' columns.")
 
 
-
 def cal_C_lS(config, S): # set of the wharves in station S that can be used
     if not isinstance(S, str):
         raise ValueError("Station name must be a string.")
     if S not in config.wharf_df['Station'].values:
         raise ValueError(f"Station {S} is not found in the DataFrame.")
     try:
-        C_lS = config.wharf_df[config.wharf_df['Station'] == S]['Wharf_No'].unique().tolist()
+        C_lS = config.wharf_df[(config.wharf_df['Station'] == S) & (config.wharf_df['Loading_berths'] > 0)]['Wharf_No'].unique().tolist()
+        # C_lS = config.wharf_df[config.wharf_df['Station'] == S]['Wharf_No'].unique().tolist()
         return C_lS
     except KeyError:
         raise ValueError("DataFrame must include 'Station' and 'Wharf_No' columns.")
@@ -136,8 +136,11 @@ def cal_q(config, v, j, t): # require update when simulating charging
     
     elif j in config.Lset:
         l = j
+        # The line data contains the average discharging rate over the entire cycle time.
         line_data = config.line_df[config.line_df['Line_No'] == l]
 
+        # To simplify the discharging rate, the code below is not used. They are defined for the one-direction lines.
+        
         # R_l = cal_Rl(config, l)
         # stops = R_l[1:]  # remove the origin station
         # if len(stops) == 1:
@@ -161,7 +164,7 @@ def cal_q(config, v, j, t): # require update when simulating charging
     else:
         return 0  # the vessel is rebalancing, rv will be captured by the constraint
     
-
+## New function help with the xi(j1,j2) and xi0(v,j) functions
 def get_task_location(config, j, type):
     try:
         if type not in [0, -1]:
@@ -236,19 +239,6 @@ def cal_delta(config, j, w):  # calculate the wharf occupied time for tasks (lin
             line_data = config.line_df[config.line_df['Line_No'] == j]
             safety_buffer = 5 # this is for the safty margin in minues
             R_l = cal_Rl(config, j)  # Stations visited by the line
-
-            # # Exclude the last station
-            # stations = R_l[1:-1]
-            # for station in stations:
-            #     wharves = cal_C_lS(config, station)
-            #     if w in wharves:
-            #         a = cal_duration(int(line_data['Time_underway_to_I'].iloc[0]))
-            #         dw = int(line_data['dw_I'].iloc[0])
-            #         occupy_time = cal_duration(dw + safety_buffer)
-            #         delta_j_w = [(w, time) for time in range(a, a + occupy_time)]
-            #         return delta_j_w
-            # return []
-
             origin = R_l[0]
             intm = R_l[1]
             if w in cal_C_lS(config, origin):
@@ -288,7 +278,6 @@ def cal_muF(config, l): # Calculate the number of time periods a wharf is occupi
         if not isinstance(l, int):
             raise ValueError("Line number must be an integer.")
         dw_T = config.line_df[config.line_df['Line_No'] == l]['dw_T'].iloc[0] 
-        # safety_buffer = config.line_df[config.line_df['Line_No'] == l]['Safety_buffer'].iloc[0]
         safety_buffer = 5 # operational margin in min
         return cal_duration(dw_T + safety_buffer)
     except Exception as e:
@@ -489,8 +478,6 @@ def manage_results(config, generate_new_files, file_prefix):
         return load_all_results(file_prefix)
     else:
         return load_all_results(file_prefix)
-    
-
 
 # # --------------- functions to load partial solutions ---------------
 import ast

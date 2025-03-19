@@ -1,0 +1,72 @@
+Vessel,Task,Wharf,Time
+V16,Charging,CQ4,05:40-05:45
+V13,Charging,CQ4,05:40-05:45
+V16,Charging,CQ4,05:45-05:50
+V13,Charging,CQ4,05:45-05:50
+V16,Charging,CQ4,05:50-05:55
+V2,Charging,CQ4,06:00-06:05
+V8,Charging,CQ4,06:00-06:05
+V2,Charging,CQ4,06:05-06:10
+V10,Crew Break,CQ4,06:05-06:35
+V7,Charging,CQ4,06:10-06:15
+V7,Charging,CQ4,06:15-06:20
+V3,F7 - Double Bay,CQ4,06:25-06:26
+V8,Charging,CQ4,06:35-06:40
+V8,Charging,CQ4,06:40-06:45
+V8,Charging,CQ4,06:45-06:50
+V8,Charging,CQ4,06:50-06:55
+V8,F7 - Double Bay,CQ4,06:55-06:56
+V12,Charging,CQ4,07:10-07:15
+V11,F2 - Zoo/Mosman (Peak),CQ4,07:14-07:17
+V11,F7 - Double Bay,CQ4,07:25-07:26
+V13,Charging,CQ4,07:30-07:35
+V5,Charging,CQ4,07:35-07:40
+V5,Charging,CQ4,07:40-07:45
+V8,F7 - Double Bay,CQ4,07:42-07:45
+V5,Charging,CQ4,07:45-07:50
+V5,Charging,CQ4,07:50-07:55
+V12,F9 - Rose Bay,CQ4,07:52-07:56
+V5,F7 - Double Bay,CQ4,07:55-07:56
+V15,F4 - Pyrmont Bay,CQ4,08:05-08:08
+V7,Charging,CQ4,08:05-08:10
+V6,F2 - Taronga Zoo (off peak),CQ4,08:10-08:12
+V15,Charging,CQ4,08:10-08:15
+V11,Charging,CQ4,08:15-08:20
+V11,Charging,CQ4,08:20-08:25
+V8,F7 - Double Bay,CQ4,08:25-08:26
+V16,Charging,CQ4,08:30-08:35
+V4,Charging,CQ4,08:35-08:40
+V7,F2 - Taronga Zoo (off peak),CQ4,08:40-08:42
+V17,F4 - Pyrmont Bay,CQ4,08:45-08:48
+V6,Charging,CQ4,08:50-08:55
+V6,F7 - Double Bay,CQ4,08:55-08:56
+V15,Charging,CQ4,09:00-09:05
+V15,Charging,CQ4,09:05-09:10
+V1,F2 - Taronga Zoo (off peak),CQ4,09:10-09:12
+V2,Crew Break,CQ4,09:10-09:40
+V8,F7 - Double Bay,CQ4,09:25-09:26
+V9,F2 - Taronga Zoo (off peak),CQ4,09:40-09:42
+V2,Charging,CQ4,09:40-09:45
+V2,Charging,CQ4,09:45-09:50
+V1,Charging,CQ4,09:50-09:55
+V1,F7 - Double Bay,CQ4,09:55-09:56
+V11,F8 - Cockatoo Island,CQ4,09:59-10:02
+V3,F2 - Taronga Zoo (off peak),CQ4,10:10-10:12
+V8,F7 - Double Bay,CQ4,10:12-10:15
+V9,Charging,CQ4,10:20-10:25
+V9,F7 - Double Bay,CQ4,10:25-10:26
+V14,Crew Break,CQ4,10:25-10:55
+V5,F2 - Taronga Zoo (off peak),CQ4,10:40-10:42
+V17,F9 - Watsons Bay,CQ4,10:53-10:57
+V11,F6 - Mosman (off peak),CQ4,10:56-10:59
+V11,Charging,CQ4,11:00-11:05
+V11,Charging,CQ4,11:05-11:10
+V2,Charging,CQ4,11:05-11:10
+V11,Charging,CQ4,11:10-11:15
+V2,Charging,CQ4,11:10-11:15
+V11,Charging,CQ4,11:15-11:20
+V2,Charging,CQ4,11:15-11:20
+V2,Charging,CQ4,11:20-11:25
+V11,Charging,CQ4,11:20-11:25
+V2,Charging,CQ4,11:25-11:30
+V11,Charging,CQ4,11:25-11:30

@@ -1,0 +1,61 @@
+Vessel,Task,Wharf,Time
+V11,Charging,CQ4,05:40-05:45
+V11,Charging,CQ4,05:45-05:50
+V1,Charging,CQ4,05:50-05:55
+V13,Crew Break,CQ4,05:50-06:20
+V12,Charging,CQ4,05:55-06:00
+V12,F4 - Pyrmont Bay,CQ4,06:00-06:01
+V13,F4 - Pyrmont Bay,CQ4,06:20-06:21
+V14,Charging,CQ4,06:35-06:40
+V14,F4 - Pyrmont Bay,CQ4,06:40-06:41
+V16,F9 - Rose Bay,CQ4,06:52-06:56
+V16,F4 - Pyrmont Bay,CQ4,07:00-07:01
+V12,F4 - Pyrmont Bay,CQ4,07:05-07:08
+V15,F9 - Rose Bay,CQ4,07:12-07:16
+V15,F4 - Pyrmont Bay,CQ4,07:20-07:21
+V13,F4 - Pyrmont Bay,CQ4,07:25-07:28
+V13,Charging,CQ4,07:30-07:35
+V17,F9 - Rose Bay,CQ4,07:32-07:36
+V9,Charging,CQ4,07:35-07:40
+V17,F4 - Pyrmont Bay,CQ4,07:40-07:41
+V9,Charging,CQ4,07:40-07:45
+V10,F6 - Mosman (peak),CQ4,07:48-07:51
+V12,F9 - Rose Bay,CQ4,07:52-07:56
+V10,Charging,CQ4,07:55-08:00
+V12,F4 - Pyrmont Bay,CQ4,08:00-08:01
+V10,Charging,CQ4,08:00-08:05
+V10,Charging,CQ4,08:05-08:10
+V10,Charging,CQ4,08:10-08:15
+V13,F9 - Rose Bay,CQ4,08:12-08:16
+V13,F4 - Pyrmont Bay,CQ4,08:20-08:21
+V15,F4 - Pyrmont Bay,CQ4,08:25-08:28
+V8,F7 - Double Bay,CQ4,08:32-08:35
+V14,F9 - Rose Bay,CQ4,08:32-08:36
+V14,F4 - Pyrmont Bay,CQ4,08:40-08:41
+V17,F4 - Pyrmont Bay,CQ4,08:45-08:48
+V17,Charging,CQ4,08:50-08:55
+V16,F9 - Rose Bay,CQ4,08:52-08:56
+V16,Charging,CQ4,09:00-09:05
+V4,F7 - Double Bay,CQ4,09:02-09:05
+V16,Charging,CQ4,09:05-09:10
+V16,F4 - Pyrmont Bay,CQ4,09:10-09:11
+V15,F9 - Rose Bay,CQ4,09:12-09:16
+V15,Charging,CQ4,09:20-09:25
+V15,Charging,CQ4,09:25-09:30
+V15,Charging,CQ4,09:30-09:35
+V17,F9 - Rose Bay,CQ4,09:32-09:36
+V15,Charging,CQ4,09:35-09:40
+V15,F4 - Pyrmont Bay,CQ4,09:40-09:41
+V17,Charging,CQ4,09:40-09:45
+V17,Charging,CQ4,09:45-09:50
+V1,F5 - Neutral Bay,CQ4,09:57-10:00
+V1,Charging,CQ4,10:00-10:05
+V1,Charging,CQ4,10:05-10:10
+V19,Charging,CQ4,10:30-10:35
+V3,F7 - Double Bay,CQ4,10:32-10:35
+V19,Charging,CQ4,10:35-10:40
+V9,Charging,CQ4,10:40-10:45
+V19,Crew Break,CQ4,10:40-11:10
+V9,Charging,CQ4,10:45-10:50
+V13,F9 - Watsons Bay,CQ4,11:03-11:07
+V13,Charging,CQ4,11:10-11:15

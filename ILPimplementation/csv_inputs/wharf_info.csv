@@ -1,7 +1,7 @@
 ﻿Station,Abbrev_Name,Wharf_No,Loading_berths,Non_loading_berths,Crew_pause
-Circular Quay,CQ,CQ1,1,1,Yes
+Circular Quay,CQ,CQEXTRA1,1,1,Yes
 Circular Quay,CQ,CQ2,1,1,Yes
-Circular Quay,CQ,CQ3,1,1,Yes
+Circular Quay,CQ,CQEXTRA2,1,1,Yes
 Circular Quay,CQ,CQ4,1,1,Yes
 Circular Quay,CQ,CQ5,1,1,Yes
 Cockatoo Island,CI,CI1,2,0,No

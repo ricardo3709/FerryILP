@@ -1,0 +1,14 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V14,Waiting,Cockatoo Island,CI1,05:35,Cockatoo Island,CI1,05:40
+V14,Crew Break,Balmain Shipyard,BSY5,05:50,Balmain Shipyard,BSY5,06:20
+V14,Charging,Circular Quay,CQ4,06:35,Circular Quay,CQ4,06:40
+V14,F4 - Pyrmont Bay,Circular Quay,CQ4,06:40,Circular Quay,CQEXTRA2,07:48
+V14,Charging,Circular Quay,CQEXTRA2,07:50,Circular Quay,CQEXTRA2,07:55
+V14,F9 - Rose Bay,Circular Quay,CQEXTRA2,07:55,Circular Quay,CQ4,08:36
+V14,F4 - Pyrmont Bay,Circular Quay,CQ4,08:40,Circular Quay,CQEXTRA1,09:48
+V14,Charging,Circular Quay,CQEXTRA1,09:50,Circular Quay,CQEXTRA1,09:55
+V14,Charging,Barangaroo,Bar2,10:05,Barangaroo,Bar2,10:10
+V14,Charging,Barangaroo,Bar2,10:10,Barangaroo,Bar2,10:15
+V14,Crew Break,Balmain Shipyard,BSY2,10:25,Balmain Shipyard,BSY2,10:55
+V14,Charging,Circular Quay,CQ5,11:10,Circular Quay,CQ5,11:15
+V14,Charging,Barangaroo,Bar1,11:25,Barangaroo,Bar1,11:30

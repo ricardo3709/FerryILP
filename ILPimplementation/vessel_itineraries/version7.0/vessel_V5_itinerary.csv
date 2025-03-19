@@ -1,0 +1,17 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V5,Waiting,Barangaroo,Bar4,05:35,Barangaroo,Bar4,05:40
+V5,Charging,Circular Quay,CQEXTRA1,05:50,Circular Quay,CQEXTRA1,05:55
+V5,Charging,Circular Quay,CQEXTRA1,05:55,Circular Quay,CQEXTRA1,06:00
+V5,F5 - Neutral Bay,Circular Quay,CQEXTRA1,06:00,Circular Quay,CQEXTRA2,06:30
+V5,F2 - Zoo/Mosman (Peak),Circular Quay,CQEXTRA2,06:30,Circular Quay,CQ2,07:22
+V5,Charging,Circular Quay,CQ2,07:25,Circular Quay,CQ2,07:30
+V5,F6 - Mosman (peak),Circular Quay,CQ2,07:30,Circular Quay,CQ2,08:21
+V5,Charging,Circular Quay,CQ2,08:25,Circular Quay,CQ2,08:30
+V5,F6 - Mosman (peak),Circular Quay,CQ2,08:30,Circular Quay,CQEXTRA2,09:21
+V5,Charging,Circular Quay,CQEXTRA2,09:25,Circular Quay,CQEXTRA2,09:30
+V5,Charging,Barangaroo,Bar2,09:40,Barangaroo,Bar2,09:45
+V5,Charging,Barangaroo,Bar2,09:45,Barangaroo,Bar2,09:50
+V5,F5 - Neutral Bay,Circular Quay,CQEXTRA1,10:00,Circular Quay,CQ2,10:30
+V5,Charging,Barangaroo,Bar2,10:40,Barangaroo,Bar2,10:45
+V5,Waiting,Balmain Shipyard,BSY1,10:55,Balmain Shipyard,BSY1,11:00
+V5,Crew Break,Balmain Shipyard,BSY1,11:00,Balmain Shipyard,BSY1,11:30

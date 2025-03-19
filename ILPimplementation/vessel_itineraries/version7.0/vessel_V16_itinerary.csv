@@ -1,0 +1,15 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V16,Charging,Circular Quay,CQEXTRA2,05:40,Circular Quay,CQEXTRA2,05:45
+V16,Waiting,Barangaroo,Bar4,05:55,Barangaroo,Bar4,06:00
+V16,Charging,Circular Quay,CQEXTRA2,06:10,Circular Quay,CQEXTRA2,06:15
+V16,F9 - Rose Bay,Circular Quay,CQEXTRA2,06:15,Circular Quay,CQ4,06:56
+V16,F4 - Pyrmont Bay,Circular Quay,CQ4,07:00,Circular Quay,CQ2,08:08
+V16,Charging,Circular Quay,CQ2,08:10,Circular Quay,CQ2,08:15
+V16,F9 - Rose Bay,Circular Quay,CQEXTRA2,08:15,Circular Quay,CQ4,08:56
+V16,Charging,Circular Quay,CQ4,09:00,Circular Quay,CQ4,09:05
+V16,Charging,Circular Quay,CQ4,09:05,Circular Quay,CQ4,09:10
+V16,F4 - Pyrmont Bay,Circular Quay,CQ4,09:10,Circular Quay,CQ2,10:18
+V16,Charging,Circular Quay,CQ2,10:20,Circular Quay,CQ2,10:25
+V16,Waiting,Balmain Shipyard,BSY1,10:40,Balmain Shipyard,BSY1,10:45
+V16,Waiting,Barangaroo,Bar4,10:55,Barangaroo,Bar4,11:00
+V16,Crew Break,Barangaroo,Bar4,11:00,Barangaroo,Bar4,11:30

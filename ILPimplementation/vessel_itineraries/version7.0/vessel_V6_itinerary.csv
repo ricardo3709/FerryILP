@@ -1,0 +1,19 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V6,Charging,Barangaroo,Bar1,05:35,Barangaroo,Bar1,05:40
+V6,Waiting,Pyrmont Bay,PB1,05:45,Pyrmont Bay,PB1,05:50
+V6,Waiting,Pyrmont Bay,PB1,05:50,Pyrmont Bay,PB1,05:55
+V6,Waiting,Pyrmont Bay,PB1,05:55,Pyrmont Bay,PB1,06:00
+V6,Charging,Circular Quay,CQEXTRA1,06:15,Circular Quay,CQEXTRA1,06:20
+V6,Charging,Circular Quay,CQEXTRA1,06:20,Circular Quay,CQEXTRA1,06:25
+V6,Charging,Circular Quay,CQEXTRA1,06:25,Circular Quay,CQEXTRA1,06:30
+V6,F5 - Neutral Bay,Circular Quay,CQEXTRA1,06:30,Circular Quay,CQEXTRA1,07:00
+V6,F5 - Neutral Bay,Circular Quay,CQEXTRA1,07:00,Circular Quay,CQEXTRA2,07:30
+V6,F2 - Zoo/Mosman (Peak),Circular Quay,CQEXTRA2,07:30,Circular Quay,CQEXTRA1,08:22
+V6,Charging,Circular Quay,CQEXTRA1,08:25,Circular Quay,CQEXTRA1,08:30
+V6,Charging,Barangaroo,Bar1,08:40,Barangaroo,Bar1,08:45
+V6,Charging,Barangaroo,Bar1,08:45,Barangaroo,Bar1,08:50
+V6,Charging,Barangaroo,Bar1,08:50,Barangaroo,Bar1,08:55
+V6,F6 - Mosman (off peak),Circular Quay,CQEXTRA1,09:05,Circular Quay,CQEXTRA2,09:59
+V6,Charging,Circular Quay,CQEXTRA2,10:00,Circular Quay,CQEXTRA2,10:05
+V6,F2 - Taronga Zoo (off peak),Circular Quay,CQEXTRA2,10:05,Circular Quay,CQEXTRA1,10:45
+V6,Crew Break,Balmain Shipyard,BSY3,11:00,Balmain Shipyard,BSY3,11:30

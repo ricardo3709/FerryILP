@@ -1,0 +1,62 @@
+Vessel,Task,Wharf,Time
+V16,Waiting,CQ1,05:40-05:45
+V16,Waiting,CQ1,05:45-05:50
+V16,Waiting,CQ1,05:50-05:55
+V14,Crew Break,CQ1,05:55-06:25
+V3,F5 - Neutral Bay,CQ1,06:22-06:25
+V3,F7 - Double Bay,CQ1,06:25-06:26
+V17,F9 - Rose Bay,CQ1,06:32-06:36
+V8,F6 - Mosman (peak),CQ1,06:38-06:41
+V6,Waiting,CQ1,06:45-06:50
+V6,Waiting,CQ1,06:50-06:55
+V6,F7 - Double Bay,CQ1,06:55-06:56
+V1,Waiting,CQ1,06:55-07:00
+V1,Waiting,CQ1,07:00-07:05
+V1,Waiting,CQ1,07:05-07:10
+V3,F7 - Double Bay,CQ1,07:12-07:15
+V11,F8 - Cockatoo Island,CQ1,07:19-07:22
+V5,F5 - Neutral Bay,CQ1,07:22-07:25
+V5,F7 - Double Bay,CQ1,07:25-07:26
+V17,F9 - Rose Bay,CQ1,07:32-07:36
+V9,Waiting,CQ1,07:35-07:40
+V9,Waiting,CQ1,07:40-07:45
+V14,F4 - Pyrmont Bay,CQ1,07:45-07:48
+V9,Crew Break,CQ1,07:45-08:15
+V3,F7 - Double Bay,CQ1,07:55-07:56
+V1,Waiting,CQ1,08:05-08:10
+V1,Waiting,CQ1,08:10-08:15
+V5,F2 - Taronga Zoo (off peak),CQ1,08:15-08:17
+V1,Waiting,CQ1,08:15-08:20
+V1,Waiting,CQ1,08:20-08:25
+V1,F7 - Double Bay,CQ1,08:25-08:26
+V8,Waiting,CQ1,08:25-08:30
+V8,Waiting,CQ1,08:30-08:35
+V8,Waiting,CQ1,08:35-08:40
+V7,F6 - Mosman (peak),CQ1,08:38-08:41
+V3,F7 - Double Bay,CQ1,08:42-08:45
+V3,F2 - Taronga Zoo (off peak),CQ1,08:45-08:47
+V15,F9 - Rose Bay,CQ1,08:52-08:56
+V2,F7 - Double Bay,CQ1,08:55-08:56
+V16,F9 - Rose Bay,CQ1,09:12-09:16
+V6,F2 - Taronga Zoo (off peak),CQ1,09:15-09:17
+V5,F7 - Double Bay,CQ1,09:25-09:26
+V13,F4 - Pyrmont Bay,CQ1,09:25-09:28
+V1,F2 - Taronga Zoo (off peak),CQ1,09:45-09:47
+V14,F4 - Pyrmont Bay,CQ1,09:45-09:48
+V6,F2 - Taronga Zoo (off peak),CQ1,09:51-09:55
+V9,F7 - Double Bay,CQ1,09:55-09:56
+V6,F2 - Taronga Zoo (off peak),CQ1,10:15-10:17
+V7,Waiting,CQ1,10:15-10:20
+V2,F7 - Double Bay,CQ1,10:25-10:26
+V11,Waiting,CQ1,10:25-10:30
+V11,Waiting,CQ1,10:30-10:35
+V11,Waiting,CQ1,10:35-10:40
+V8,Waiting,CQ1,10:40-10:45
+V4,F6 - Mosman (off peak),CQ1,10:41-10:44
+V9,F2 - Taronga Zoo (off peak),CQ1,10:45-10:47
+V4,Crew Break,CQ1,10:50-11:20
+V2,F7 - Double Bay,CQ1,11:12-11:15
+V4,Waiting,CQ1,11:20-11:25
+V7,Waiting,CQ1,11:20-11:25
+V4,Waiting,CQ1,11:25-11:30
+V7,Waiting,CQ1,11:25-11:30

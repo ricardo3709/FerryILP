@@ -1,0 +1,44 @@
+
+This txt file outlines the development progress of the program through multiple versions detailing key changes and improvements at each stage. 
+The complete version log, including detailed modifications and results, is available in the archive folder 'version_log_copy.txt'.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Verison1,2,3:
+    - Initial testing, no feasible results
+
+Version4:
+    - Originally based Rob's mannully solution
+
+Version5:
+    - New cycles data with considering peak/off lines
+    - 30 min crew pause
+    - weighted rebalancing + fleetsize objective
+    
+version6:
+    - with operational margin (run about 5882.30 s)
+    - new varibale and constraints (jump penalty)
+    - cycle discharging rate is fixed to be average ones
+
+Version 7:
+    - test of 6 + 6 berths --> infeasible.
+    - keep with 5 wharf configuration but with more clear names.
+    - Updated more strict jump penalty 
+
+
+Current Solution in Folder (version7.0) (Could be used as the starting version for later tests)
+    Vessel Utilization Value: 19.0
+    Rebalancing Time Value: 242.0
+    Total panalise of tasks: 13.0
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Next steps:
+1.  Optimise Number of Jumps
+    - Focus on minimising the number of jumps in the objective function.
+    - Include fleet size with a small epsilon multiplier to avoid unnecessary extra ferries.
+    - Confirm if the minimum number of jumps is 22 (verify from the table).
+
+2. Apply Constraint & Re-Optimise
+    - Set a constraint: Number of jumps ≤ ??(TBD).
+    - Return to the previous approach: Minimise the weighted objectives, alpha * fleet + (1-alpha) *rebalancing.
+    - Assess if the jump limit allow enough flexibility and explore potential improvements.
+

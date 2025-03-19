@@ -7,6 +7,7 @@ def define_variables(model, config, cal_C, cal_Rl, cal_C_lS):
     Vset = config.Vset
     Jset = config.Jset
     Tset = config.Tset
+    Wset = config.Wset
 
     # variable x[l, d]
     x = {}
@@ -52,4 +53,11 @@ def define_variables(model, config, cal_C, cal_Rl, cal_C_lS):
             for t in Tset:
                 Z_prime[l, w, t] = model.addVar(vtype=GRB.BINARY, name=f"Z_prime_{l}_{w}_{t}")
 
-    return x, y, Q, z, Z, Z_prime
+    # New decision variable u[v,w,t] that if a vessel v occupied wharf w at time t 
+    u = {}
+    for v in Vset:
+        for t in Tset:
+            for w in Wset:
+                u[v, w, t] = model.addVar(vtype=GRB.BINARY, name=f"u_{v}_{w}_{t}")
+
+    return x, y, Q, z, Z, Z_prime, u
