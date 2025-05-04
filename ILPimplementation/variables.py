@@ -53,11 +53,17 @@ def define_variables(model, config, cal_C, cal_Rl, cal_C_lS):
             for t in Tset:
                 Z_prime[l, w, t] = model.addVar(vtype=GRB.BINARY, name=f"Z_prime_{l}_{w}_{t}")
 
-    # New decision variable u[v,w,t] that if a vessel v occupied wharf w at time t 
+    # New variable u[v,w,t] that if a vessel v occupied wharf w at time t 
     u = {}
     for v in Vset:
         for t in Tset:
             for w in Wset:
                 u[v, w, t] = model.addVar(vtype=GRB.BINARY, name=f"u_{v}_{w}_{t}")
 
-    return x, y, Q, z, Z, Z_prime, u
+    # New Variable p_vt to record the panalty
+    p = {} 
+    for v in Vset:
+        for t in Tset[:-1]: 
+            p[v, t] = model.addVar(vtype=GRB.BINARY, name=f"p_{v}_{t}")
+
+    return x, y, Q, z, Z, Z_prime, u, p

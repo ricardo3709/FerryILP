@@ -3,20 +3,20 @@ from data_load import *
 
 #=================================== Parameters ==================================
 # Versioning & File Names 
-current_version = 'version7.1'
+current_version = 'v8'
 
 # Starting files
-starting_version = 'version7.0'
-prefix = "v7"
+starting_version = 'version8.0'
+prefix = 'v8'
 
 # Solver Settings 
 Gap = 0.2  # Optimality gap tolerance
-TimeLimit =  240#20 * 60 * 60  # in seconds
-alpha = 0  # % of the objectives that focus on fleet size
+TimeLimit =  22 * 60 * 60  # in seconds
+alpha = 0.5  # percentage of the objectives that focus on fleet size
 
 # pkl files
 generate_new_files = False
-pkl_file_prefix = 'v7'
+pkl_file_prefix = 'v8'
 
 # File Paths  
 # in the order of [x, y, Q, z, Z, Z_prime]
@@ -38,7 +38,7 @@ Dc = 30  # Crew break duration (minutes)
 Tc = 6 * 60  # Maximum separation time for crew breaks (minutes)
 
 # Charging Parameters 
-rv_plus = 0.16  # Charging rate (as percentage per period)
+rv_plus = 0.16 # 0.16  # Charging rate (as percentage per period)
 pc = 1  # Plugging/Unplugging time (minutes)
 
 # Print Simulation Configuration 
@@ -80,20 +80,16 @@ Lset = line_df['Line_No'].unique().tolist()
 # Tset: Set of Time Periods
 Tset = [i for i in range(1, total_operation_hours * 60 // period_length + 1)]
 
+
+# BERTHS
 # B+, set of wharves to charge
 Bplus = [wharf for wharf in charging_berth['Wharf_No'].unique().tolist()]
-
 # Non-loading berths
 original_non_loading_berths = wharf_df[wharf_df['Non_loading_berths'] != 0]['Wharf_No'].unique().tolist()
-
 # Bc, set of wharves to crew pause, is a copy of set B
 Bc = ['cp_' + wharf for wharf in original_non_loading_berths]
-
 # B, set of wharves to wait, any wharf with a charger belongs to B, and B contains wharves with original non-loading berths
 B =  wharf_df['Wharf_No'].unique().tolist() # full Bset
-
-# B = original_non_loading_berths.copy() 
-
 for wharf in Bplus:
     if wharf in B:  # wharf with a charger
         B.remove(wharf)
@@ -101,9 +97,12 @@ for wharf in Bplus:
     else:
         B.append(f'phi_{wharf}')  # input directly
 
+# TASKS
 Jset = [ele for ele in Lset + B + Bc + Bplus]
 
-# Zset: Set of Sailing linedf和headway df顺序要对的上
+
+# SAILINGS
+# Zset: Set of Sailing
 nl_ls = [len(headway_df[f"h{l}"].dropna().tolist()) + 1 for l in Lset]
 s_ls = [list(range(1, nl + 1)) for nl in nl_ls]
 Zset = [f'{line}_{sailing}' for line in Lset for sailing in s_ls[line - 1]]

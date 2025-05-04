@@ -48,7 +48,7 @@ config = SimulationConfig(
     rv_plus, pc, functions)
 
 # Define variables
-x, y, Q, z, Z, Z_prime,u = define_variables(model, config, cal_C, cal_Rl, cal_C_lS)
+x, y, Q, z, Z, Z_prime,u, p = define_variables(model, config, cal_C, cal_Rl, cal_C_lS)
 
 # Starting Points 
 partial_solutions = {key: load_partial_solution(file) for key, file in files.items()}
@@ -70,10 +70,10 @@ else:
     taskF_results, mu_results, xi_results, phi_results, E_results, nu_results = (results[f"{file_id}_results"] for file_id in file_ids)
 
 # Add constraints 
-add_constraints(model, config, x, y, Q, z, Z, Z_prime, u, phi_results, E_results, mu_results, taskF_results, xi_results, nu_results)
+add_constraints(model, config, x, y, Q, z, Z, Z_prime, u, p, phi_results, E_results, mu_results, taskF_results, xi_results, nu_results)
 
 # Set objective functions  
-psi = set_objective_functions(model, config, y, phi_results, u)
+psi = set_objective_functions(model, config, y, phi_results, p)
 
 # Run optimization 
 run_optimization(model, Gap, TimeLimit)

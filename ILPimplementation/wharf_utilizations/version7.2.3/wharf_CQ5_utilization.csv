@@ -1,0 +1,22 @@
+Vessel,Task,Wharf,Time
+V4,F5 - Neutral Bay,CQ5,06:17-06:20
+V4,Charging,CQ5,06:20-06:25
+V4,F2 - Zoo/Mosman (Peak),CQ5,06:25-06:26
+V8,F6 - Mosman (peak),CQ5,06:43-06:46
+V8,Charging,CQ5,06:50-06:55
+V1,F2 - Zoo/Mosman (Peak),CQ5,06:55-06:56
+V8,Charging,CQ5,06:55-07:00
+V8,Charging,CQ5,07:00-07:05
+V8,Charging,CQ5,07:05-07:10
+V7,F5 - Neutral Bay,CQ5,07:17-07:20
+V7,Charging,CQ5,07:20-07:25
+V7,F2 - Zoo/Mosman (Peak),CQ5,07:25-07:26
+V11,F7 - Double Bay,CQ5,07:52-07:55
+V10,F7 - Double Bay,CQ5,08:22-08:25
+V9,F7 - Double Bay,CQ5,08:52-08:55
+V8,F7 - Double Bay,CQ5,09:22-09:25
+V13,F4 - Pyrmont Bay,CQ5,09:45-09:48
+V6,F2 - Taronga Zoo (off peak),CQ5,10:01-10:05
+V13,Charging,CQ5,10:15-10:20
+V13,Charging,CQ5,10:20-10:25
+V13,Crew Break,CQ5,10:25-10:55

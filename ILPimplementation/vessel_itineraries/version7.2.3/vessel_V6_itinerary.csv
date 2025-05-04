@@ -1,0 +1,23 @@
+Vessel,Task,Start_Station,Start_Wharf,Start_Time,End_Station,End_Wharf,End_Time
+V6,Waiting,Balmain Shipyard,BSY3,05:40,Balmain Shipyard,BSY3,05:45
+V6,Waiting,Balmain Shipyard,BSY3,05:45,Balmain Shipyard,BSY3,05:50
+V6,Waiting,Balmain Shipyard,BSY3,05:50,Balmain Shipyard,BSY3,05:55
+V6,Crew Break,Barangaroo,Bar4,06:05,Barangaroo,Bar4,06:35
+V6,Charging,Circular Quay,CQEXTRA2,06:45,Circular Quay,CQEXTRA2,06:50
+V6,F8 - Cockatoo Island,Circular Quay,CQEXTRA2,06:50,Circular Quay,CQ4,08:02
+V6,Charging,Circular Quay,CQ4,08:05,Circular Quay,CQ4,08:10
+V6,Charging,Circular Quay,CQ4,08:10,Circular Quay,CQ4,08:15
+V6,Charging,Barangaroo,Bar2,08:25,Barangaroo,Bar2,08:30
+V6,Charging,Barangaroo,Bar2,08:30,Barangaroo,Bar2,08:35
+V6,Charging,Circular Quay,CQEXTRA1,08:45,Circular Quay,CQEXTRA1,08:50
+V6,F5 - Neutral Bay,Circular Quay,CQEXTRA1,08:50,Circular Quay,CQ4,09:20
+V6,Charging,Circular Quay,CQ4,09:20,Circular Quay,CQ4,09:25
+V6,F2 - Taronga Zoo (off peak),Circular Quay,CQ4,09:25,Circular Quay,CQ5,10:05
+V6,Waiting,Barangaroo,Bar5,10:15,Barangaroo,Bar5,10:20
+V6,Waiting,Barangaroo,Bar5,10:20,Barangaroo,Bar5,10:25
+V6,Charging,Circular Quay,CQ2,10:35,Circular Quay,CQ2,10:40
+V6,Charging,Circular Quay,CQ2,10:40,Circular Quay,CQ2,10:45
+V6,Charging,Circular Quay,CQ2,10:45,Circular Quay,CQ2,10:50
+V6,Charging,Circular Quay,CQ2,10:50,Circular Quay,CQ2,10:55
+V6,Charging,Circular Quay,CQ2,10:55,Circular Quay,CQ2,11:00
+V6,Waiting,Blackwattle Bay,BWB1,11:25,Blackwattle Bay,BWB1,11:30

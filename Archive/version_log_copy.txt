@@ -119,7 +119,6 @@ Vessel Utilization Value: 19.0
 Rebalancing Time Value: 175.0
 
 
-
 Version 6.1: (based on 6.0)---------------------------------------------------------------------------
     - 90% rebalancing focus + 10% fleetsize focus
     - Time limit: 30 min
@@ -221,12 +220,60 @@ Version 7: (based on 6.3)-------------------------------------------------------
         Rebalancing Time Value: 238.0
         Total panalise of tasks: 14.0
 
-    test 7 (only penalty) - results deleted 
-        Vessel Utilization Value: 19.0
-        Rebalancing Time Value: 238.0
-        Total panalise of tasks: 14.0
-
-    test 8 (only penalty) - results keeped as version7.0 
+    test 7 (only penalty) - results recorded as version7.0 
         Vessel Utilization Value: 19.0
         Rebalancing Time Value: 242.0
         Total panalise of tasks: 13.0
+
+    test 8 (only penalty) - results recorded as version7.1
+        Vessel Utilization Value: 19.0
+        Rebalancing Time Value: 242.0
+        Total penalise of tasks: 10.0
+
+    test 9 (only penalty) - results recorded as version7.2
+        Vessel Utilization Value: 19.0
+        Rebalancing Time Value: 248.0
+        Total penalise of tasks: 9.0
+
+10
+Vessel Utilization Value: 19.0
+Rebalancing Time Value: 257.0
+Total penalise of tasks: 8.0
+
+11
+Vessel Utilization Value: 19.0
+Rebalancing Time Value: 231.0
+Total penalise of tasks: 2.0
+
+12
+Vessel Utilization Value: 19.0
+Rebalancing Time Value: 231.0
+Total penalise of tasks: 2.0
+
+13
+Vessel Utilization Value: 19.0
+Rebalancing Time Value: 231.0
+Total penalise of tasks: 2.0
+
+14
+Vessel Utilization Value: 19.0
+Rebalancing Time Value: 231.0
+Total penalise of tasks: 2.0
+
+7.2.2 only focus on the panely 
+Vessel Utilization Value: 19.0
+Rebalancing Time Value: 231.0
+Total penalise of tasks: 2.0
+
+same
+
+version 7.2.3 based on 7.2.2 alpha = 0
+Vessel Utilization Value: 19.0
+Rebalancing Time Value: 231.0
+Total penalise of tasks: 2.0
+89.2%
+
+
+version 7.2.4 based on 7.2.2 alpha = 1
+gap 0 
+

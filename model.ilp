@@ -1,0 +1,8 @@
+\ Model Ferry ILP_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ A_le_q_vV18_j2_t1_tp1: A_vV18_j2_t1_tp1 <= -0.011
+Bounds
+End

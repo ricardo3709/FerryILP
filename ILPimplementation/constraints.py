@@ -6,6 +6,9 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, u, phi_results, E_res
     functions = config.functions
     vessel_df = config.vessel_df
 
+
+# PART1: TECHNICAL OPERATION
+
     # Constraint 1a: Each line has exactlt 1 initial departure
     for l in tqdm(config.Lset, desc='Constraint 1a'):
         model.addConstr(gp.quicksum(x[l, d] for d in config.Dset[l]) == 1, name=f"1a: departure_time_constraint_line{l}")
@@ -90,8 +93,7 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, u, phi_results, E_res
                     phi_w = f'phi_{w}'
                     model.addConstr(y[v, w, t] <= y[v, w, t + 1] + y[v, phi_w, t + 1], name=f"1k: full_period_charging_2_v{v}_w{w}_t{t}")
 
-
-    # Combined Constraint 2
+    # Constraint 2
     for j in tqdm(config.Jset, desc='Constraint 2'):
         for t in config.Tset:
             follow_tasks = taskF_results[(j, t)]
@@ -111,12 +113,32 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, u, phi_results, E_res
                 sum_nu_t_j_jprime = sum(len(nu_results[(t, j, j_prime)]) for j_prime in config.Jset) 
                 model.addConstr(sum_y_v_jprime_tprime <= sum_nu_t_j_jprime * (1 - y[v, j, t]),name=f"3_eq_v{v}_j{j}_t{t}")
 
-    # Constraint 4
+    # Constraint 4a
+    for v in tqdm(config.Vset, desc='Constraint 4a'):  
+        for t in config.Tset:
+            for w in config.Wset:
+                model.addConstr(u[v, w, t] == gp.quicksum(Z_prime[l, w, t] * y[v, l, t - mu_results[l] + 1] for l in config.Lset if (l, w, t) in Z_prime and (v, l, t - mu_results[l] + 1) in y) + gp.quicksum(y[v, j, t_prime] * z[w, j] for (j, t_prime) in E_results[(w, t)] if (v, j, t_prime) in y and (w, j) in z), name=f"4a: {v}_{w}_{t}")
+
+    # Constraint 4b
+    # count jumps
+    for v in tqdm(config.Vset, desc='Constraint 4b'):
+        for w in config.Wset:
+            for w_prime in config.Wset:
+                if w != w_prime: ## could be revised that only w != the w_p in the same station to save simulation time !!!!!!
+                    for t in config.Tset[:-1]:
+                        model.addConstr(p[v, t] >= u[v, w, t] + u[v, w_prime, t + 1] - 1, name=f"4b: {v}_{w}_{w_prime}_{t}")
+
+    # Constraint 4c
+    model.addConstr(gp.quicksum(p[v, t] for v in config.Vset for t in config.Tset[:-1]) <= 2, name=f"4c: keep min jumps")
+
+
+# PART2: CAPACITY
+    # Constraint 5
     # time period that the F3 occupies the wharves    
     Bar1_occupied = [14, 15, 22, 23, 24, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 52, 53, 56, 57, 60, 61, 64, 65, 68, 69]
     CQ5_occupied = [20, 21, 22, 25, 26, 27, 26, 27, 28, 31, 32, 33, 32, 33, 34, 35, 36, 37, 37, 38, 39, 38, 39, 40, 43, 44, 45, 46, 47, 48, 49, 50, 49, 50, 51, 54, 55, 56, 58, 59, 60, 62, 63, 64, 66, 67, 68]
 
-    for w in tqdm(config.Wset, desc='Constraint 4'):
+    for w in tqdm(config.Wset, desc='Constraint 5'):
         for t in config.Tset:
             sum_yz = gp.quicksum(y[v, j, t_prime] * z[w, j] for v in config.Vset for (j, t_prime) in E_results[(w, t)])
             sum_Z_prime = gp.quicksum(Z_prime[l, w, t] for l in config.Lset if (l, w, t) in Z_prime)
@@ -126,48 +148,85 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, u, phi_results, E_res
                 wharf_capacity -= CQ5_occupied.count(t)
             elif w == 'Bar1':
                 wharf_capacity -= Bar1_occupied.count(t)
-            model.addConstr(sum_yz + sum_Z_prime <= wharf_capacity, name=f"4: capacity_constraint_w{w}_t{t}")
+            model.addConstr(sum_yz + sum_Z_prime <= wharf_capacity, name=f"5: capacity_constraint_w{w}_t{t}")
 
 
-    # # CHARGING REQUIREMENT
-    # Constraint 5a
-    for v in tqdm(config.Vset, desc='Constraint 5a'):
+# PART3: CHARGING REQUIREMENT
+    # Constraint 6a
+    for v in tqdm(config.Vset, desc='Constraint 6a'):
         for t in config.Tset:
-            model.addConstr(Q[v, t] >= 0.5, name=f"5a: battery_non_negative_v{v}_t{t}")
-
-    # Constraint 5b
-    for v in tqdm(config.Vset, desc='Constraint 5b'):
+            model.addConstr(Q[v, t] >= 0.5, name=f"6a: battery_non_negative_v{v}_t{t}")
+    for v in tqdm(config.Vset, desc='Constraint 6a'):
         for t in config.Tset:
-            model.addConstr(Q[v, t] <= 1, name=f"5b: battery_max_capacity_v{v}_t{t}")
+            model.addConstr(Q[v, t] <= 1, name=f"6a: battery_max_capacity_v{v}_t{t}")
 
-    # Constraint 5c
+    # # Constraint 6b original
     rv = {v: vessel_df[vessel_df['Vessel code'] == v]['rv'].iloc[0] for v in config.Vset}
     Qv0 = {v: vessel_df[vessel_df['Vessel code'] == v]['Qv0'].iloc[0] for v in config.Vset}
 
-    for v in tqdm(config.Vset, desc='Constraint 5c'):
+    # for v in tqdm(config.Vset, desc='Constraint 6b'):
+    #     for t in config.Tset:
+    #         if t == 1:
+    #             model.addConstr(Qv0[v]
+    #                             + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
+    #                             + rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
+    #                             >= Q[v, t],
+    #                             name=f"6b: battery_update_v{v}_t{t}")
+    #         else:
+    #             model.addConstr(Q[v, t - 1]
+    #                             + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
+    #                             + rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
+    #                             >= Q[v, t],
+    #                             name=f"6b: battery_update_v{v}_t{t}")
+
+    # Constraint 6b after linearising the multiplicative term
+    # New A-vars for every (v,j,t,t′) pair
+    A = {}
+    for v in config.Vset:
+        for j in config.Jset:
+            for t in config.Tset:
+                for t_prime in phi_results[(j, t)]:
+                    A[v, j, t, t_prime] = model.addVar(lb=-1,ub=1,name=f"A_v{v}_j{j}_t{t}_tp{t_prime}")
+
+    # linearisation constraints
+    for v in config.Vset:
+        for j in config.Jset:
+            for t in config.Tset:
+                for t_prime in phi_results[(j, t)]:
+                    q_vjt = functions['cal_q'](config, v, j, t - t_prime)
+                    y_vjt = y[v, j, t_prime]
+                    model.addConstr(A[v, j, t, t_prime] <= y_vjt)
+                    model.addConstr(A[v, j, t, t_prime] >= -y_vjt)                    
+                    model.addConstr(A[v, j, t, t_prime] <= q_vjt + 1 - y_vjt)
+                    model.addConstr(A[v, j, t, t_prime] >= q_vjt - 1 + y_vjt)
+
+    # rewrite Constraint (6b) to use A instead of q*y
+    for v in tqdm(config.Vset, desc='Constraint 6b'):
         for t in config.Tset:
             if t == 1:
                 model.addConstr(Qv0[v]
-                                + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
+                                + gp.quicksum(A[v, j, t, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
                                 + rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
                                 >= Q[v, t],
-                                name=f"5c: battery_update_v{v}_t{t}")
+                                name=f"6b: battery_update_v{v}_t{t}")
             else:
                 model.addConstr(Q[v, t - 1]
-                                + gp.quicksum(functions['cal_q'](config, v, j, t - t_prime) * y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
+                                + gp.quicksum(A[v, j, t, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)])
                                 + rv[v] * (1 - gp.quicksum(y[v, j, t_prime] for j in config.Jset for t_prime in phi_results[(j, t)]))
                                 >= Q[v, t],
-                                name=f"5c: battery_update_v{v}_t{t}")
+                                name=f"6b: battery_update_v{v}_t{t}")
 
-    # # CREW PAUSE:
-    # Constraint 6a
-    for v in tqdm(config.Vset, desc='Constraint 6a'):
+
+
+# PART4: CREW PAUSE
+    # Constraint 7a
+    for v in tqdm(config.Vset, desc='Constraint 7a'):
         model.addConstr(
             gp.quicksum(y[v, j, t] for j in config.Bc for t in config.Tset) >= config.nc,
             name=f"6a: min_crew_pauses_{v}")
 
-    # Constraint 6b
-    for v in tqdm(config.Vset, desc='Constraint 6b'):
+    # Constraint 7b
+    for v in tqdm(config.Vset, desc='Constraint 7b'):
         for t in config.Tset:
             if t < (config.Tset[-1] - (config.Tc // config.period_length + 1)): # use cal_time_period function 
                 for t_prime in range(1, config.Tc // config.period_length + 1):
@@ -175,12 +234,6 @@ def add_constraints(model, config, x, y, Q, z, Z, Z_prime, u, phi_results, E_res
                         gp.quicksum(y[v, j, t + t_prime] for j in config.Bc) >= 1,
                         name=f"6b: max_distance_pauses_v{v}_t{t}_t_prime{t_prime}")
 
-
-    # new constraints for new variable records vessel location
-    for v in tqdm(config.Vset, desc='vessel location'):  
-        for t in config.Tset:
-            for w in config.Wset:
-                model.addConstr(u[v, w, t] == gp.quicksum(Z_prime[l, w, t] * y[v, l, t - mu_results[l] + 1] for l in config.Lset if (l, w, t) in Z_prime and (v, l, t - mu_results[l] + 1) in y) + gp.quicksum(y[v, j, t_prime] * z[w, j] for (j, t_prime) in E_results[(w, t)] if (v, j, t_prime) in y and (w, j) in z))
 
 
     print('All constraintrs are ready.\n')

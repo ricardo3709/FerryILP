@@ -24,21 +24,38 @@ Version 7:
     - keep with 5 wharf configuration but with more clear names.
     - Updated more strict jump penalty 
 
+    updated (4 MAY) jumps have been reduced to 0.
 
-Current Solution in Folder (version7.0) (Could be used as the starting version for later tests)
-    Vessel Utilization Value: 19.0
-    Rebalancing Time Value: 242.0
-    Total panalise of tasks: 13.0
+Current Solution in Folder (version8.0) (Could be used as the starting version for later tests)
+- Vessel Utilization Value: 19.0
+- Rebalancing Time Value: 240.0
+- Total penalise of tasks: 0.0
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Next steps:
-1.  Optimise Number of Jumps
-    - Focus on minimising the number of jumps in the objective function.
-    - Include fleet size with a small epsilon multiplier to avoid unnecessary extra ferries.
-    - Confirm if the minimum number of jumps is 22 (verify from the table).
+1.  Optimise Number of Jumps (Done)
+    current result:
+    - Vessel Utilization Value: 19.0
+    - Rebalancing Time Value: 240.0
+    - Total penalise of tasks: 0.0
 
 2. Apply Constraint & Re-Optimise
-    - Set a constraint: Number of jumps ≤ ??(TBD).
+    - Set a constraint: Number of jumps ≤ 0.
     - Return to the previous approach: Minimise the weighted objectives, alpha * fleet + (1-alpha) *rebalancing.
     - Assess if the jump limit allow enough flexibility and explore potential improvements.
 
+test requried:
+    - Charging rate
+    - Charging time at the outer terminal
+    - Other parameters (if possible)
+    - Alpha
+
+
+.....
+
+? Meeting with TfNSW Details:
+    - no charging at outer terminal
+    - Charging only available at CQ and Barangaroo
+    - Larger fleet size 26Vessels
+    - Bar 4,5 only for waiting/ crew break?

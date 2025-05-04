@@ -1,0 +1,65 @@
+Vessel,Task,Wharf,Time
+V16,Charging,CQ2,05:40-05:45
+V16,Charging,CQ2,05:45-05:50
+V16,Charging,CQ2,05:50-05:55
+V16,F9 - Rose Bay,CQ2,05:55-05:56
+V14,Charging,CQ2,06:05-06:10
+V14,Charging,CQ2,06:10-06:15
+V14,F9 - Rose Bay,CQ2,06:15-06:16
+V17,Charging,CQ2,06:30-06:35
+V16,F9 - Rose Bay,CQ2,06:32-06:36
+V17,F9 - Rose Bay,CQ2,06:35-06:36
+V16,Charging,CQ2,06:40-06:45
+V16,Charging,CQ2,06:45-06:50
+V2,F5 - Neutral Bay,CQ2,06:47-06:50
+V16,Charging,CQ2,06:50-06:55
+V16,F9 - Rose Bay,CQ2,06:55-06:56
+V12,F4 - Pyrmont Bay,CQ2,07:05-07:08
+V12,Charging,CQ2,07:10-07:15
+V12,F9 - Rose Bay,CQ2,07:15-07:16
+V15,F4 - Pyrmont Bay,CQ2,07:25-07:28
+V9,F8 - Cockatoo Island,CQ2,07:29-07:32
+V15,Charging,CQ2,07:30-07:35
+V15,F9 - Rose Bay,CQ2,07:35-07:36
+V9,Charging,CQ2,07:35-07:40
+V13,F4 - Pyrmont Bay,CQ2,07:45-07:48
+V13,Charging,CQ2,07:50-07:55
+V13,F9 - Rose Bay,CQ2,07:55-07:56
+V14,F4 - Pyrmont Bay,CQ2,08:05-08:08
+V14,Charging,CQ2,08:10-08:15
+V14,F9 - Rose Bay,CQ2,08:15-08:16
+V17,F4 - Pyrmont Bay,CQ2,08:25-08:28
+V5,F8 - Cockatoo Island,CQ2,08:29-08:32
+V17,Charging,CQ2,08:30-08:35
+V17,F9 - Rose Bay,CQ2,08:35-08:36
+V5,Charging,CQ2,08:35-08:40
+V16,F4 - Pyrmont Bay,CQ2,08:45-08:48
+V16,Charging,CQ2,08:50-08:55
+V16,F9 - Rose Bay,CQ2,08:55-08:56
+V1,F8 - Cockatoo Island,CQ2,08:59-09:02
+V1,Charging,CQ2,09:05-09:10
+V1,Charging,CQ2,09:10-09:15
+V17,F9 - Rose Bay,CQ2,09:12-09:16
+V1,Charging,CQ2,09:15-09:20
+V1,Charging,CQ2,09:20-09:25
+V1,Charging,CQ2,09:25-09:30
+V1,Charging,CQ2,09:30-09:35
+V16,F9 - Rose Bay,CQ2,09:32-09:36
+V16,Charging,CQ2,09:40-09:45
+V16,Charging,CQ2,09:45-09:50
+V16,Charging,CQ2,09:50-09:55
+V11,F8 - Cockatoo Island,CQ2,09:59-10:02
+V11,Charging,CQ2,10:05-10:10
+V18,Charging,CQ2,10:15-10:20
+V18,Charging,CQ2,10:20-10:25
+V18,Charging,CQ2,10:25-10:30
+V6,Charging,CQ2,10:35-10:40
+V10,Charging,CQ2,10:35-10:40
+V6,Charging,CQ2,10:40-10:45
+V6,Charging,CQ2,10:45-10:50
+V6,Charging,CQ2,10:50-10:55
+V6,Charging,CQ2,10:55-11:00
+V3,F2 - Taronga Zoo (off peak),CQ2,11:01-11:05
+V3,Charging,CQ2,11:05-11:10
+V3,Charging,CQ2,11:10-11:15
+V16,Charging,CQ2,11:25-11:30

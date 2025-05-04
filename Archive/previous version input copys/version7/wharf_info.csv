@@ -1,0 +1,26 @@
+﻿Station,Abbrev_Name,Wharf_No,Loading_berths,Non_loading_berths,Crew_pause
+Circular Quay,CQ,CQEXTRA1,1,1,Yes
+Circular Quay,CQ,CQ2,1,1,Yes
+Circular Quay,CQ,CQEXTRA2,1,1,Yes
+Circular Quay,CQ,CQ4,1,1,Yes
+Circular Quay,CQ,CQ5,1,1,Yes
+Cockatoo Island,CI,CI1,2,0,No
+Barangaroo,Bar,Bar1,1,1,Yes
+Barangaroo,Bar,Bar2,1,1,Yes
+Barangaroo,Bar,Bar4,1,1,Yes
+Barangaroo,Bar,Bar5,1,1,Yes
+Pyrmont Bay,PB,PB1,1,0,No
+Mosman,Mos,Mos1,2,0,No
+Taronga Zoo,TZ,TZ1,2,0,No
+Watsons Bay,WB,WB1,1,0,No
+Rose Bay,RB,RB1,1,0,No
+Double Bay,DB,DB1,1,0,No
+Balmain Shipyard,BSY,BSY1,0,2,Yes
+Balmain Shipyard,BSY,BSY2,0,2,Yes
+Balmain Shipyard,BSY,BSY3,0,2,Yes
+Balmain Shipyard,BSY,BSY4,0,2,Yes
+Balmain Shipyard,BSY,BSY5,0,2,Yes
+Balmain Shipyard,BSY,BSY6,0,2,Yes
+Blackwattle Bay,BWB,BWB1,1,0,No
+Pyrmont Bay,PB,PB1,1,0,No
+Neutral Bay,NB,NB1,1,0,No
